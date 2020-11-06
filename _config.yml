@@ -1,4 +1,4 @@
-remote_theme: daattali/beautiful-jekyll@3.0.0
+remote_theme: daattali/beautiful-jekyll@5.0.0
 
 # --- Basic options --- #
 
@@ -183,8 +183,10 @@ date_format: "%B %-d, %Y"
 timezone: "Europe/Madrid"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
-paginate: 10
+# permalink: /:year-:month-:day-:title/
+permalink: /blog/:title
+
+paginate: 7
 # https://jekyllrb.com/docs/pagination/
 paginate_path: "blog/page:num"
 

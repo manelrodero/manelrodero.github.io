@@ -3,9 +3,8 @@ layout: post
 title: Links tipo UNIX en Windows
 date: 2005-10-17 17:35:25.000000000 +02:00
 published: true
-categories:
-- Windows
 tags:
+- Windows
 - Drivers
 author:
   display_name: Manel Rodero

@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: MCPC vs HTPC vs STB
 date: 2006-01-28 22:53:10.000000000 +01:00
 published: true

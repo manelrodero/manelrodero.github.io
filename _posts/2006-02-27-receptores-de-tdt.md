@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Receptores de TDT
 date: 2006-02-27 23:35:57.000000000 +01:00
 published: true

@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: "¿Cómo descargar vídeos de YouTube, Google Video o iFilm?"
 date: 2006-02-19 21:20:13.000000000 +01:00
 published: true

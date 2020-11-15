@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Rollyo, creador de motores de búsqueda personales
 date: 2006-02-20 22:50:12.000000000 +01:00
 published: true

@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Instalación personalizada de Office ProPlus 2016
 date: 2019-02-21 22:26:59.000000000 +01:00
 published: true

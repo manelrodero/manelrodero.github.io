@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Microsoft .NET Framework 2.0
 date: 2006-02-19 11:08:27.000000000 +01:00
 published: true

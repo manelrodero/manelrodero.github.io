@@ -1,5 +1,6 @@
 ---
 layout : post
+blog-width: true
 title: '¿Qué portátil me compro para el teletrabajo?'
 date: '2020-11-07 20:05:44'
 published: true

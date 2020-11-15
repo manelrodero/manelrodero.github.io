@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Primer post en Jekyll
 ---
 

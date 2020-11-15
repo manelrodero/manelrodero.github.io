@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Mobility Email (Thunderbird en una llave USB)
 date: 2005-10-17 16:59:06.000000000 +02:00
 published: true

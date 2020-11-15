@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Imágenes de Windows 10 siempre actualizadas con OSBuilder
 date: 2019-01-26 14:00:13.000000000 +01:00
 published: true

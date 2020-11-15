@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Conocer la IP de una VM de Hyper-V
 date: 2019-03-01 18:56:58.000000000 +01:00
 published: true

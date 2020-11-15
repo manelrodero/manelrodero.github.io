@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: "¡ Feliz cumpleaños, papá !"
 date: 2006-01-08 22:58:15.000000000 +01:00
 published: true

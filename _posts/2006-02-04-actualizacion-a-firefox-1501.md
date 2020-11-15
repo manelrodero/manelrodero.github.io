@@ -1,5 +1,6 @@
 ---
 layout: post
+blog-width: true
 title: Actualización a Firefox 1.5.0.1
 date: 2006-02-04 21:18:24.000000000 +01:00
 published: true

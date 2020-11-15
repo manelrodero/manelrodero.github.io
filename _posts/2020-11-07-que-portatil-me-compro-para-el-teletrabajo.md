@@ -8,6 +8,7 @@ tags:
 - Hardware
 author:
   display_name: Manel Rodero
+cover-img: {"/assets/img/blog/2020-11-07_image_1.jpg" : "Fuente: Pinterest"}
 ---
 
 La situación excepcional en la que nos encontramos debido a la [pandemia de COVID-19](https://es.wikipedia.org/wiki/Pandemia_de_COVID-19) ha obligado a muchas empresas a establecer el **teletrabajo** como medida para minimizar la movilidad de sus empleados.
@@ -184,7 +185,7 @@ Una posible clasificación de los portátiles en función de su precio y el uso 
 
 > Por ejemplo: [HP 15s-eq0025ns](https://amzn.to/3kbOEG4) [529,99€ en Amazon, 08/11/2020]
 
-[![HP 15s-eq0025ns][11]](https://amzn.to/3p9qSOV)
+[![HP 15s-eq0025ns][11]](https://amzn.to/3kbOEG4)
 
 * **Avanzados** (entre 500€ y 700€). Suelen tener mejor rendimiento, mejor calidad de pantalla o incorporar una tarjeta gráfica discreta. Son una buena elección "todoterreno" para ofimática, programación, etc. Es lo que se recomienda gastar si se quiere que el equipo dure unos cuántos años.
 
@@ -217,11 +218,11 @@ Un saludo.
 [1]: /assets/img/blog/2020-11-07_image_1.jpg "Portátil con pantalla externa (Fuente: Pinterest)"
 [2]: /assets/img/blog/2020-11-07_image_2.png "Philips 243V7QDSB/00 (Fuente: Amazon)"
 [3]: /assets/img/blog/2020-11-07_image_3.png "Logitech MK295 (Fuente: Amazon)"
-[4]: /assets/img/blog/2020-11-07_image_4.png "Intel vs AMD"
-[5]: /assets/img/blog/2020-11-07_image_5.png "SATA vs NVMe"
-[6]: /assets/img/blog/2020-11-07_image_6.png "Descarga de Windows 10"
-[7]: /assets/img/blog/2020-11-07_image_7.png "Lenovo IdeaPad 3"
-[8]: /assets/img/blog/2020-11-07_image_8.png "MSI Modern 15 A10M-088XES"
-[9]: /assets/img/blog/2020-11-07_image_9.png "Lenovo Legion Y540"
-[10]: /assets/img/blog/2020-11-07_image_10.png "HP 15s-fq1158ns"
-[11]: /assets/img/blog/2020-11-07_image_11.png "HP 15s-eq0025ns"
+[4]: /assets/img/blog/2020-11-07_image_4.png "Intel vs AMD (Fuente: hardwarealdia.com"
+[5]: /assets/img/blog/2020-11-07_image_5.png "SATA vs NVMe (Fuente: hardzone.es"
+[6]: /assets/img/blog/2020-11-07_image_6.png "Descarga de Windows 10 (Fuente: Microsoft)"
+[7]: /assets/img/blog/2020-11-07_image_7.png "Lenovo IdeaPad 3 (Fuente: Amazon)"
+[8]: /assets/img/blog/2020-11-07_image_8.png "MSI Modern 15 A10M-088XES (Fuente: Amazon)"
+[9]: /assets/img/blog/2020-11-07_image_9.png "Lenovo Legion Y540 (Fuente: Amazon)"
+[10]: /assets/img/blog/2020-11-07_image_10.png "HP 15s-fq1158ns (Fuente: Amazon)"
+[11]: /assets/img/blog/2020-11-07_image_11.png "HP 15s-eq0025ns (Fuente: Amazon)"

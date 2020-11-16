@@ -9,6 +9,7 @@ tags:
 author:
   display_name: Manel Rodero
 cover-img: "/assets/img/blog/2020-11-07_image_1.jpg"
+thumbnail-img: ""
 ---
 
 La situación excepcional en la que nos encontramos debido a la [pandemia de COVID-19](https://es.wikipedia.org/wiki/Pandemia_de_COVID-19) ha obligado a muchas empresas a establecer el **teletrabajo** como medida para minimizar la movilidad de sus empleados.

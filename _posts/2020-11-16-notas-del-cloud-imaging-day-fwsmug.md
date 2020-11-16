@@ -11,8 +11,8 @@ tags:
 - MDT
 author:
   display_name: Manel Rodero
-share-image: "/assets/img/blog/2020-11-16_image_2.png"  
-thumbnail-image: ""
+share-img: "/assets/img/blog/2020-11-16_image_2.png"  
+thumbnail-img: ""
 ---
 
 El pasado 12 de noviembre de 2020 se celebró el evento **Cloud Imaging Day** del [FWSMUG](https://twitter.com/fwsmug) en el que [Johan Arwidmark](https://twitter.com/jarwidmark) y [Mikael Nystrom](https://twitter.com/mikael_nystrom), moderados por [Ami Arwidmark](https://twitter.com/AArwidmark), presentaron su _framework_ **[PowerShell Deployment Extension Kit](https://github.com/FriendsOfMDT/PSD)** que permite desplegar un equipo a través de Internet mediante HTTP/HTTPS.

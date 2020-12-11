@@ -19,14 +19,14 @@ El pasado 9 de diciembre de 2020 se celebró el evento [**MVPDays Online Decembe
 [Mikael Nystron](https://twitter.com/mikael_nystrom), que trabaja en [TrueSec.com](https://www.truesec.com/) y mantiene el blog [The Deployment Bunny](https://deploymentbunny.com/), explica que la mayoría de ataques se producen al aprovechar el robo de credenciales de cuentas con privilegios de administrador y que la solución pasa por cambiar la forma de trabajar y no por utilizar un password más fuerte.
 
 {: .box-note}
-**Nota**: Al avanzar la presentación, me he dado cuenta que es muy parecida a la del webcast [Stop giving your admin credentials](https://techtalk.truesec.com/webcast/stop-giving-your-admin-credentials-away/) del pasado 26 de agosto de 2020. El vídeo está disponible en [YouTube](https://youtu.be/4hdO47xvGJc) de forma oculta.
+**Nota**: Al avanzar la presentación, me he dado cuenta que es muy parecida a la del webcast [Stop giving your admin credentials](https://techtalk.truesec.com/webcast/stop-giving-your-admin-credentials-away/) del pasado 26 de agosto de 2020. El vídeo está disponible en [YouTube](https://youtu.be/4hdO47xvGJc).
 
 Si los atacantes logran entrar en un equipo en el que un administrador tiene una sesión iniciada (o la haya tenido en el pasado) pueden utilizar diferentes métodos para usar sus credenciales:
 
 * [Pass the Hash](https://attack.stealthbits.com/pass-the-hash-attack-explained)
 * [Pass the Ticket](https://attack.stealthbits.com/pass-the-ticket)
 
-Cada que vez que se inicia sesión de forma interactiva, las credenciales se guardan en el equipo. Por tanto, sólo se deberían utilizar en dispositivos en los que confiemos. De hecho, no deberíamos confiar en ninguno: **Zero Truest** ;-)
+Cada que vez que se inicia sesión de forma interactiva, las credenciales se guardan en el equipo. Por tanto, sólo se deberían utilizar en dispositivos en los que confiemos. De hecho, no deberíamos confiar en ninguno: **Zero Trust** ;-)
 
 La solución comienza por usar una [**PAW**](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/privileged-access-workstations) (Privileged Access Workstation), es decir, un ordenador que:
 

@@ -12,6 +12,9 @@ cover-img: "/assets/img/blog/2020-11-07_image_1.jpg"
 thumbnail-img: ""
 ---
 
+{: .box-note}
+**Actualización** (13-Diciembre-2020): En la sección [ofertas](/ofertas) iré añadiendo aquellas que me parecen interesantes al tratarse de productos con una buena relación calidad/precio.
+
 La situación excepcional en la que nos encontramos debido a la [pandemia de COVID-19](https://es.wikipedia.org/wiki/Pandemia_de_COVID-19) ha obligado a muchas empresas a establecer el **teletrabajo** como medida para minimizar la movilidad de sus empleados.
 
 La [Universitat Politècnica de Catalunya](https://www.upc.edu/) también ha tenido que adoptar esta medida y muchos PAS han tenido que acondicionar un espacio en su casa para trabajar de forma remota o, como dicen los anglosajones, _Work from Home_ (WFH).

@@ -11,6 +11,7 @@ tags:
 author:
   display_name: Manel Rodero
 cover-img: [ "/assets/img/blog/2020-12-12_cover.jpg" : "Foto: 42gears.com" ]
+thumbnail-img: ""
 ---
 
 El pasado 4 de diciembre de 2020 asistí a un taller impartido por [Sami Laiho](https://twitter.com/samilaiho) titulado "**ZeroTrust – Getting rid of Admin Rights**" en el que se explicó cómo deshacerse de los derechos de administrador local de los usuarios finales en esta nueva era de [**Seguridad de Confianza Cero**](https://docs.microsoft.com/en-us/security/zero-trust/).

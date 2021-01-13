@@ -84,9 +84,9 @@ A continuación detallaré la configuración que estoy utilizando actualmente, y
 
 | Opció | Estat | Comentari |
 | --- | --- | --- |
-| Chat | Desactivat | Porque el Chat tengo abierto en otra pestaña del navegador |
+| Chat | Desactivat | Porque el Chat lo tengo abierto en otra pestaña del navegador |
 | Posició del xat | A l'esquerra de la safata d'entrada | |
-| Meet | Amaga la secció Meet al menú principal | Porque los Meet se suelen abrir desde un Chat o desde un evento del Calendar |
+| Meet | Amaga la secció Meet al menú principal | Porque los Meet los suelo iniciar desde un Chat o desde un evento del Calendar |
 
 <p></p>
 

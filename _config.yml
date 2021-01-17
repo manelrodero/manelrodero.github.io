@@ -28,10 +28,10 @@ navbar-links:
 #      - Microsoft Office: "office"
 #      - Powershell: "powershell"
 #      - Windows 10: "windows10"
-#    Community:
-#      - Blogs: "blogs"
-#      - Reddit: "reddit"
-#      - YouTube: "youtube"
+  Community:
+      - Blogs & Twitter: "community/blogroll"
+      - YouTube: "community/youtube"
+      - Reddit: "community/reddit"
   Tags: "tags"
   About:
       - Me: "about/me"

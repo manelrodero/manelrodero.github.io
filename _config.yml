@@ -14,7 +14,6 @@ author: Manel Rodero
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Home: "/"
   Blog: "blog"
 #  Wiki: "wiki"
 #  OS Deployment:
@@ -34,8 +33,10 @@ navbar-links:
 #      - Reddit: "reddit"
 #      - YouTube: "youtube"
   Tags: "tags"
-  About Me:
-      - About: "about"
+  About:
+      - Me: "about/me"
+      - Laptop: "about/laptop"
+      - Software: "about/software"
 #      - Resume / CV: "resume/manel_rodero_cv.pdf"
 
 # --- Logo --- #

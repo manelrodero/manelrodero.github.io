@@ -33,7 +33,7 @@ navbar-links:
       - YouTube: "community/youtube"
       - Reddit: "community/reddit"
   Tags: "tags"
-  About:
+  "About ":
       - Me: "about/me"
       - Laptop: "about/laptop"
       - Software: "about/software"

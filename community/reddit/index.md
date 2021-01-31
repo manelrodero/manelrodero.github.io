@@ -14,7 +14,7 @@ Una lista de temas en [Reddit](https://www.reddit.com/) (_subreddits_) que recom
 
 ## Windows
 
-* Windows Subsystem for Linux ([r/bashonubuntuonwindows)](https://www.reddit.com/r/bashonubuntuonwindows/))
+* Windows Subsystem for Linux ([r/bashonubuntuonwindows)](https://www.reddit.com/r/bashonubuntuonwindows/)
 
 ## Hardware
 

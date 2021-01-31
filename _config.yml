@@ -16,27 +16,28 @@ author: Manel Rodero
 navbar-links:
   Blog: "blog"
 #  Wiki: "wiki"
-#  OS Deployment:
-#      - MDT: "mdt"
-#      - SCCM (ConfigMgr): "sccm"
-#      - Applications: "applications"
-#      - Tools: "tools"
-#      - Autopilot: "autopilot"
-#      - Azure AD: "azuread"
-#      - Intune: "intune"
-#    Windows:
-#      - Microsoft Office: "office"
-#      - Powershell: "powershell"
-#      - Windows 10: "windows10"
+  OS Deployment:
+      - Windows 10: "osd/windows10"
+      - MDT: "osd/mdt"
+      - SCCM (ConfigMgr): "osd/configmgr"
+      - Applications: "osd/applications"
+      - Microsoft Office: "osd/office"
+      - Powershell: "osd/powershell"
+      - Tools: "osd/tools"
+  Modern Mgmt:
+      - Azure AD: "modernmgmt/azuread"
+      - MEM: "modernmgmt/mem"
+      - Intune: "modernmgmt/intune"
+      - Autopilot: "modernmgmt/autopilot"
   Community:
       - Blogs & Twitter: "community/blogroll"
       - YouTube: "community/youtube"
       - Reddit: "community/reddit"
-  Tags: "tags"
   "About ":
       - Me: "about/me"
       - Laptop: "about/laptop"
       - Software: "about/software"
+      - Tags: "tags"
 #      - Resume / CV: "resume/manel_rodero_cv.pdf"
 
 # --- Logo --- #

@@ -12,15 +12,18 @@ En mis equipos suelo instalar las aplicaciones en diferentes formatos:
 * [**Win32**](#win32), son las aplicaciones que se instalan en la unidad `C:\`
 * [**UWP**](#uwp), son las aplicaciones instaladas desde la [Microsoft Store](https://www.microsoft.com/es-us/store/apps/)
 
-# Portable
+# <a name="portable">Portable
 
-# Run
+# <a name="run">Run
 
-# PortableApps
+# <a name="portableapps">PortableApps
 
-# Win32
+# <a name="win32">Win32
 
-## 7-Zip
+| [7-Zip](#7zip) | [BIG-IP Edge Client](#bigip) | [DNIe](#dnie) | [Docker Desktop](#docker) | [Eduroam](#eduroam) | [Gemalto IDGo 800](#gemalto) |
+| [Macrium Reflect Free](#macrium) | [Office Professional Plus 2019](#office) | [Oracle VM VirtualBox](#virtualbox) | [VMware Workstation Pro](#vmware) | | |
+
+## <a name="7zip">7-Zip
 
 | Nombre | [7-Zip](https://www.7-zip.org/) |
 | Descripción | 7-Zip is a file archiver with a high compression ratio |
@@ -39,7 +42,7 @@ Una vez instalado, ejecutar **7-Zip File Manager** y configurarlo de la siguient
 * Tools > Options
 * System > Associate 7-Zip with > All extensions/All users
 
-## BIG-IP Edge Client
+## <a name="bigip">BIG-IP Edge Client
 
 | Nombre | [F5 BIG-IP Edge Client](https://techdocs.f5.com/kb/en-us/bigip-edge-apps.html) |
 | Descripción | Cliente de VPN para conectarse a equipos F5 |
@@ -57,7 +60,7 @@ Una vez instalado, en `Control Panel\Programs\Programs and Features` aparecen do
 
 Al ejecutarlo por primera vez, se conecta con el servidor upclink.upc.edu que ya está preconfigurado y se actualiza el cliente a la versión **71.2020.0108.2059**. A partir de aquí únicamente hay que introducir las credenciales para conectarse tal como indica la [documentación](https://techdocs.f5.com/en-us/edge-client-7-1-8/big-ip-access-policy-manager-edge-client-and-application-configuration-7-1-8/big-ip-edge-client-for-windows.html).
 
-## DNIe
+## <a name="dnie">DNIe
 
 | Nombre | [DNIe](https://www.dnielectronico.es/PortalDNIe/) |
 | Descripción | Documento Nacional de Identidad |
@@ -92,7 +95,7 @@ Las [autoridades de certificación](https://www.dnielectronico.es/PortalDNIe/PRF
 * [AC Raíz](https://www.dnielectronico.es/PortalDNIe/PRF1_Cons02.action?pag=REF_077)
 * [AC Subordinadas](https://www.dnielectronico.es/PortalDNIe/PRF1_Cons02.action?pag=REF_078)
 
-## Docker Desktop
+## <a name="docker">Docker Desktop
 
 | Nombre | [Docker Desktop](https://www.docker.com/products/docker-desktop) |
 | Descripción | Aplicación para la creación y uso compartido de aplicaciones y microservicios en contenedores |
@@ -146,7 +149,7 @@ Referencias:
 * [Using Docker in WSL 2](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2)
 * [WSL2 for Dockerized .NET Core application](https://subhankarsarkar.com/wsl2-for-containerised-dot-net-core-development-using-docker/)
 
-## Eduroam
+## <a name="eduroam">Eduroam
 
 | Nombre | [Eduroam CAT](https://cat.eduroam.org/) |
 | Descripción | Instalador de Eduroam configurado con los parámetros de cada organización |
@@ -189,7 +192,7 @@ netsh.exe wlan export profile name="eduroam" folder="c:\export"
 netsh.exe wlan export profile name="eduroam© via Passpoint" folder="c:\export"
 ```
 
-## Gemalto IDGo 800
+## <a name="gemalto">Gemalto IDGo 800
 
 | Nombre | Gemalto IDGo 800|
 | Descripción | Drivers para tarjetas Gemalto IDPrime MD Smart Card |
@@ -249,7 +252,7 @@ Se ejecuta el programa y se configura de la siguiente manera:
     * Options > Add WiFi Support
   * Build ISO File &rarr; `Macrium_RescueCD_WinRE10.2004x64_7.3.5365.iso`
 
-## Office Professional Plus 2019
+## <a name="office">Office Professional Plus 2019
 
 | Nombre | [Office Professional Plus 2019](https://docs.microsoft.com/en-us/deployoffice/office2019/overview) |
 | Descripción | Herramientas ofimáticas que incluye el editor de textos Word, la hoja de cálculo Excel, etc. |
@@ -260,7 +263,7 @@ Se ejecuta el programa y se configura de la siguiente manera:
 
 La descarga e instalación de Office Professional Plus 2019 se realiza mediante [**Office Deployment Tool**](https://github.com/manelrodero/OSD/tree/main/ODT).
 
-# Oracle VM VirtualBox
+## <a name="virtualbox">Oracle VM VirtualBox
 
 | Nombre | [Oracle VM VirtualBox](https://www.oracle.com/virtualization/virtualbox/) |
 | Descripción | Hipervisor de escritorio que permite ejecutar máquinas virtuales |
@@ -295,7 +298,7 @@ Una vez instalado, se ejecuta el programa y se configura de la siguiente manera:
 * Language > English
 * Extensions > Instalar `Oracle_VM_VirtualBox_Extension_Pack-6.1.16.vbox-extpack`
 
-# VMware Workstation Pro
+## <a name="vmware">VMware Workstation Pro
 
 | Nombre | [VMware Workstation Pro](https://www.vmware.com/es/products/workstation-pro.html) |
 | Descripción | Hipervisor de escritorio que permite ejecutar máquinas virtuales, contenedores y clústeres de Kubernetes |
@@ -376,9 +379,11 @@ START /WAIT "" "%PROG%\VMware\VMware Workstation\vnetlib64.exe" -- start nat
 START /WAIT "" "%PROG%\VMware\VMware Workstation\vnetlib64.exe" -- start dhcp
 ```
 
-# UWP
+# <a name="uwp">UWP
 
-## F5 Access
+| [F5 Access](#f5) | [Ubuntu WSL](#ubuntu) |
+
+## <a name="f5">F5 Access
 
 ![Foto: Microsoft.com](https://store-images.s-microsoft.com/image/apps.6267.9007199266584715.3f40adb8-6e4f-433c-9d69-79e14f8208e0.d7fb5707-5965-4974-94e3-8c2494b87ea6?mode=scale&q=90&h=48&w=48&background=%230078D7)
 
@@ -397,3 +402,43 @@ Una vez instalado, se puede configurar una conexión VPN desde `Settings > Netwo
 * Connection name: UPClink
 * Server name or address: upclink.upc.edu
 * Remember my sign-in info
+
+## <a name="ubuntu">Ubuntu WSL
+
+![Foto: Microsoft.com](https://store-images.s-microsoft.com/image/apps.63954.14012035919677084.98492fa2-b361-426d-8534-028ce70fe7cc.89345076-a024-4d5f-9406-c76958d41636?mode=scale&q=90&h=48&w=48&background=%23E95420)
+
+| Nombre | [Ubuntu](https://www.microsoft.com/store/productId/9N6SVWS3RX71) |
+| Descripción | Distribución de Linux basada en Debian |
+| Empresa | [Canonical Group Limited](https://ubuntu.com/) |
+| Versión | 20.04 LTS |
+| Release | |
+| Install | 17 Enero 2021 |
+
+Si se ha instalado [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/) se puede instalar una distribución de Linux como Ubuntu 20.04 desde la Microsoft Store.
+
+Los pasos fundamentales para instalar WSL son:
+
+* Habilitar la característica `Microsoft-Windows-Subsystem-Linux`
+* Disponer de Windows 10 1903 o superior
+* Habilitar la característica `VirtualMachinePlatform`
+* Instalar la actualización del [kernel para WSL2](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+* Hacer que WSL2 sea la distribución por defecto
+
+```
+wsl.exe --set-default-version 2
+```
+<p></p>
+
+* Instalar una distribución desde la Microsoft Store
+* (Opcional) Instalar [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/get-started)
+
+También es posible instalar las distribuciones de forma [manual](https://docs.microsoft.com/en-us/windows/wsl/install-on-server) descargando los ficheros `*.appx` para instalarlos mediante `Add-AppxPackage`:
+
+```
+curl.exe -L -o wsl-ubuntu-2004.appx https://aka.ms/wslubuntu2004
+```
+
+{: .box-note}
+**Nota**: Los ficheros se podrían descargar en formato ZIP y usar `Expand-Archive` para descomprimirlos. Después se ejecutaría el fichero `*.exe` de la distribución tal como expliqué [durante la migración de este blog a Jekyll](https://www.manelrodero.com/blog/migracion-de-wordpress-a-jekyll-y-github-pages#instalaci%C3%B3n-de-ubuntu-1804).
+
+El siguiente [artículo de Puget Systems](https://www.pugetsystems.com/labs/hpc/Note-How-To-Copy-and-Rename-a-Microsoft-WSL-Linux-Distribution-1811/) explica como copiar y renombrar una distribución WSL.

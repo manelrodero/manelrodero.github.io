@@ -61,7 +61,7 @@ Para [actualizar Raspberry Pi OS](https://www.raspberrypi.org/documentation/rasp
 # Actualizar la lista de repositorios
 sudo apt update
 # Actualizar los paquetes instalados a la última versión
-sudo apt upgrade
+sudo apt upgrade -y
 # Reiniciar
 sudo reboot
 ```
@@ -106,7 +106,7 @@ Se puede cambiar éste y otros valores usando el comando [`sudo raspi-config`](h
 * System Options
   * Password: raspberry &rarr; nuevo password
   * Hostname: raspberry &rarr; pi4nas
-* Advanced Options
+* Localisation Options
   * Timezone: Europe/London &rarr; Europe/Madrid
   * Keyboard
   * WLAN Country: ES
@@ -131,10 +131,10 @@ echo "CPU => $((cpu/1000))'C"
 En mi caso, después de varias horas de uso, la caja está caliente sin llegar a quemar y la temperatura es la siguiente:
 
 ```
-Sat 20 Feb 19:10:28 CET 2021 @ pi4nas
+Thu 25 Feb 19:51:00 CET 2021 @ pi4nas
 -------------------------------------------
-GPU => temp=45.2'C
-CPU => 44'C
+GPU => temp=41.3'C
+CPU => 40'C
 ```
 
 Se puede probar a realizar un [_stress_](https://core-electronics.com.au/tutorials/stress-testing-your-raspberry-pi.html) de la CPU usando [`cpuburn-a7.S`](https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a7.S) mediante las siguientes herramientas:

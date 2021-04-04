@@ -8,6 +8,8 @@ tags:
 - Seguridad
 author:
   display_name: Manel Rodero
+cover-img: [ "/assets/img/blog/2021-04-04_cover.png" ]
+thumbnail-img: ""  
 ---
 
 Una forma rápida y segura de borrar cualquier disco HDD, USB o SSD es utilizar **BitLocker**.

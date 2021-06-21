@@ -62,8 +62,8 @@ Your username is user@domain.onmicrosoft.com
 We've sent a confirmation email to user@domain.com
 ```
 
-Si todo funciona correctamente, se dispondrá de una suscripción **Enterprise Mobility + Security E5 Trial** válida por 90 días con 250 licencias disponibles para explorar los recursos de [Azure](https://azure.microsoft.com/en-us/).
+Si todo funciona correctamente, se dispondrá de una suscripción "**Enterprise Mobility + Security E5 Trial**" válida por 90 días con 250 licencias disponibles para explorar los recursos de [Azure](https://azure.microsoft.com/en-us/).
 
-![Imagen][1]
+![EM+S E5 Trial][1]
 
-[1]: /assets/img/blog/2021-06-21_image_1.png "Imagen"
+[1]: /assets/img/blog/2021-06-21_image_1.png "EM+S E5 Trial"

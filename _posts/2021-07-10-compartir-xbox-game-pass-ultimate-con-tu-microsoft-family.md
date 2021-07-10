@@ -13,7 +13,9 @@ author:
 
 [**Xbox Game Pass Ultimate**](https://www.xbox.com/es-ES/xbox-game-pass) es la suscripción que permite disfrutar de más de 100 juegos de alta calidad en la consola Xbox, en el PC y en dispositivos móviles. A día de hoy tiene un precio de 12,99€/mes aunque suele haber ofertas interesantes al pagar por años enteros.
 
-Esta suscripción incluye [**Xbox Live Gold**](https://www.xbox.com/es-ES/live/gold) que permite el modo multijugador en la consola. Además permite obtener 2 juegos gratuitos al mes y descuentos de hasta el 50% en algunos títulos seleccionados de la Microsoft Store. El precio de esta suscripción por separado es de 6,99€/mes. También incluye **EA Play**, una biblioteca de de los mejores títulos de Electronic Arts para consola y PC.
+Esta suscripción incluye [**Xbox Live Gold**](https://www.xbox.com/es-ES/live/gold) que permite el modo multijugador en la consola. Además permite obtener 2 juegos gratuitos al mes y descuentos de hasta el 50% en algunos títulos seleccionados de la Microsoft Store. El precio de esta suscripción por separado es de 6,99€/mes.
+
+También incluye [**EA Play**](https://www.ea.com/es-es/ea-play/news/welcome-to-ea-play), una biblioteca con los mejores títulos de Electronic Arts para consola y PC. Esta suscripción agrupa los antiguos EA Access y Origin Access.
 
 ## Home Xbox
 
@@ -70,7 +72,13 @@ A continuación ya se puede **usar la suscripción en el ordenador de cualquier 
 
 Finalmente, es muy recomendable **desactivar** la opción que permite realizar **compras sin usar contraseña** para evitar alguna sorpresa inesperada debido a las compras _in app_ desde la Microsoft Store:
 
-![Desactivar ocmpras sin contraseña][5]
+![Desactivar compras sin contraseña][5]
+
+## EA Play
+
+Aunque en la aplicación `Xbox` aparecen los juegos de [**EA Play**](https://www.ea.com/ea-play/news/ea-desktop-open-beta), es mejor instalar la aplicación [`EA Desktop`](https://www.ea.com/ea-app-beta) e iniciar sesión en ella con la **cuenta EA que esté asociada en Xbox con la cuenta que tiene la suscripción**.
+
+![EA Play Desktop][6]
 
 <p></p>
 
@@ -79,3 +87,4 @@ Finalmente, es muy recomendable **desactivar** la opción que permite realizar *
 [3]: /assets/img/blog/2021-07-10_image_3.png "Xbox (settings después de asociar suscripción)"
 [4]: /assets/img/blog/2021-07-10_image_4.png "Mensaje sobre el uso de cuentas diferentes"
 [5]: /assets/img/blog/2021-07-10_image_5.png "Desactivar compras sin contraseña"
+[6]: /assets/img/blog/2021-07-10_image_6.png "EA Play Desktop"

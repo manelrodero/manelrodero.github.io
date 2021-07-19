@@ -21,7 +21,7 @@ La descarga del script de instalación se realiza mediante el siguiente comando:
 curl -fsSL https://get.docker.com -o get-docker.sh
 ```
 
-A continuación se puede ejecutar el siguiente comando para realizar la instalación:
+A continuación se pueden ejecutar los siguientes comandos para realizar la instalación:
 
 ```
 chmod u+x get-docker.sh
@@ -121,5 +121,6 @@ docker run hello-world
 
 * [How to Install Docker on Raspberry Pi 4](https://linuxhint.com/install_docker_raspberry_pi-2/)
 * [Docker y Raspberry. Instalar Docker y Docker Compose](https://www.atareao.es/como/docker-y-raspberry-instalar-docker-y-docker-compose/)
+* [The Best Docker Setup and Docker Guide](https://wiki.servarr.com/Docker_Guide)
 
 <p></p>

@@ -37,14 +37,13 @@ La primera vez que se accede a la aplicación hay que realizar una **configuraci
 La alternativa para instalar Portainer es utilizar `docker-compose`. Para ello se genera un fichero `docker-compose.yml` con el siguiente contenido:
 
 ```
-  portainer:
+  portainer-ce:
     image: portainer/portainer-ce
     container_name: portainer-ce
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - ./volumes/data:/data
+    - /home/pi/volumes/portainer-ce:/data
     ports:
-    - 8000:8000
     - 9000:9000
     restart: always
 ```
@@ -66,6 +65,8 @@ docker run -d -p 8000:8000 -p 9000:9000 --name=portainer-ce --restart=always -v 
 
 ## Referencias
 
-* [How To Share Data Between the Docker Container and the Host](https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host)
-* [docker-compose up](https://docs.docker.com/compose/reference/up/)
 * [Installing Portainer to the Raspberry Pi](https://pimylifeup.com/raspberry-pi-portainer/)
+* [Deploying Portainer CE in Docker](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/)
+* [How To Share Data Between the Docker Container and the Host](https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host)
+* [The Best Docker Setup: Consistent and well planned paths](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths)
+* [Ultimate Media Server : Episode 1 - OpenMediaVault, Docker & Portainer](https://youtu.be/ZLa5NGPKQv0?list=PLhMI0SExGwfAdXDmYJ9jt_SxjkEfcUwEB)

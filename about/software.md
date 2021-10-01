@@ -4,13 +4,14 @@ title: About my software
 blog-width: true
 ---
 
-En mis equipos suelo instalar las aplicaciones en diferentes formatos:
+Esta página contiene notas sobre diferentes programas que suelo "instalar" en mis ordenadores personales. Suelo utilizar los programas en su versión **portable** para evitar tener que reinstalarlos cuando cambio el Sistema Operativo.
 
 * [**Portable**](#portable) (`D:\SOFT\PORTABLE`), para tenerlas disponibles siempre que reinstalo el Sistema Operativo
 * [**Run**](#run) (`D:\SOFT\RUN`), son aquellas aplicaciones que realmente no tienen una versión portable pero se pueden ejecutar sin instalar
 * [**PortableApps**](#portableapps) (`D:\SOFT\PortableApps`), son las aplicaciones de la plataforma [Portableapps.com](https://portableapps.com/)
 * [**Win32**](#win32), son las aplicaciones que se instalan en la unidad `C:\`
 * [**UWP**](#uwp), son las aplicaciones instaladas desde la [Microsoft Store](https://www.microsoft.com/es-us/store/apps/)
+* [**Drivers**](#drivers), controladores de dispositivos
 
 # <a name="portable">Portable
 
@@ -442,3 +443,92 @@ curl.exe -L -o wsl-ubuntu-2004.appx https://aka.ms/wslubuntu2004
 **Nota**: Los ficheros se podrían descargar en formato ZIP y usar `Expand-Archive` para descomprimirlos. Después se ejecutaría el fichero `*.exe` de la distribución tal como expliqué [durante la migración de este blog a Jekyll](https://www.manelrodero.com/blog/migracion-de-wordpress-a-jekyll-y-github-pages#instalaci%C3%B3n-de-ubuntu-1804).
 
 El siguiente [artículo de Puget Systems](https://www.pugetsystems.com/labs/hpc/Note-How-To-Copy-and-Rename-a-Microsoft-WSL-Linux-Distribution-1811/) explica como copiar y renombrar una distribución WSL.
+
+# <a name="drivers">Drivers
+
+| [Epson EcoTank ET-3750](#et3750) |
+
+## <a name="et3750">Epson EcoTank ET-3750
+
+En Abril de 2020 compré una impresora [**Epson EcoTank ET-3750**](https://www.epson.es/products/printers/inkjet-printers/for-home/ecotank-et-3750) para sustituir a una antigua [Epson Stylus DX6000](https://www.epson.de/en/products/printers/inkjet-printers/for-home/epson-stylus-dx6000) que ya tenía 13 años.
+
+{: .box-note}
+**Nota**: Compré la DX6000 en Enero de 2007 y la vendí en Wallapop en Junio de 2020. Antes de la DX6000 tuve una [Epson Stylus CX5200](https://epson.com/Support/Printers/All-In-Ones/Epson-Stylus-Series/Epson-Stylus-CX5200/s/SPT_C11C496001) pero no recuerdo cuando la compré ni cuanto duró. Se la regalé a un compañero de trabajo para que la arreglase (limpieza de la tinta en la esponja).
+
+Desde la página de [soporte](https://www.epson.es/support?productID=22033) se pueden descargar los controladores y los manuales de la misma (aunque no han sido necesarios para instalarla y configurarla ya que se ha utilizado la web [Epson Setup Navi](http://epson.sn/?q=2)).
+
+Después de introducir el modelo, se accede a la página [ET-3750 Series Setup Page](https://support.epson.net/setupnavi/?LG2=EN&OSC=WS&MKN=ET-3750&toppage=&PINF=menu) donde un asistente guía el proceso de instalación.
+
+* Preparar la impresora
+  * Retirar todos los materiales de protección
+  * Rellenar todos los depósitos hasta el máximo utilizando las botellas suministradas
+  * Cerrar todas las cubiertas de las botellas de tinta y la impresora
+  * Conectar el cable de alimentación y encender la impresora
+  * Empezar la inicialización de la tinta
+  * Cargar papel sin formato de tamaño A4
+  * Confirmar el papel que se insertó
+  * Agregar más tinta a los depósitos
+* Descargar y ejecutar [`Epson_ET-3750_Series_LM_201_Web.exe`](https://download.ebz.epson.net/dsc/du/02/DriverDownloadInfo.do?LG2=ES&CN2=US&CTI=59&PRN=ET-3750%20Series&OSC=WS&DL)
+
+* Seguir las instrucciones del asistente:
+
+```
+[x] Download the latest software from Epson (recommended)
+[x] Status monitoring and automatic update software from Epson (recommended)
+[ ] Send usage information to Epson (Google Analytics)
+- Downloading and installing latest driver
+  * Epson Scan 2
+  * EPSON Manuals
+  * EpsonNet Print
+  * Epson Software Updater
+- Charging Ink? I have finished filling ink
+- Connection Method
+  * Ethernet Connection
+  * ET-3750 Series/381A524DE421/192.168.1.188
+- Print Test Page
+- Check Updated Software
+- Install application software
+  a) Essential
+  b) Other
+  [ ] Epson Connect 1.01
+  [ ] EpsonCustomerResearchParticipation 1.8.4.1
+  [ ] MyEpson Portal 1.1.2.0
+  [ ] EventManager 3.10.85 (escaner usando el panel de control) 
+  [ ] Epson Printer Connection Checker 3.1.0.0
+  [ ] Epson ScanSmart 3.00.04 (scan + save/sent)
+  [ ] Epson Scan OCR Component 3.00.04
+  [ ] Epson Scan PDF Extensions 1.03.02
+  [ ] Epson Photo Print 2.83.00
+  [ ] E-Web Print
+- Online Product Registration
+- Epson Connect
+  Allow print from anywhere in the world? No
+```
+
+Una vez instalada se comprueba la versión del firmware y del certificado raíz:
+
+```
+Firmware 10.58.LV12J7
+Latest version a 25-Abril-2020
+
+Certificado raíz 02.00
+Latest version a 25-Abril-2020
+```
+<p></p>
+
+- Se configura un dirección IP estática mediante DHCP (192.168.1.150)
+- Contraseña Administrador: `**********`
+- Desactivar Bonjour
+- Desactivar [SLP](https://en.wikipedia.org/wiki/Service_Location_Protocol) (sirve para anunciar servicios en la red)
+- Desactivar [WSD](https://en.wikipedia.org/wiki/Web_Services_for_Devices) (conexión a impresoras, escanners)
+- Desactivar [LLTD](https://en.wikipedia.org/wiki/Link_Layer_Topology_Discovery) (detección de toplogía de red, calidad de servicio)
+- Desactivar [LLNR](https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution) (resolución de nombres)
+- Desactivar IPP
+- Quedan activados LPR/RAW
+- Cambiar nombre: ET3750
+- Desactivar IPv6
+
+A continuación se podría registrar o activar la impresión desde cualquier lugar si fuera necesario (en mi caso **no lo es**):
+
+- [Online Product Registration](https://register.epson-europe.com/?LG2=EN&CN2=ES&PID=2246&SID=X4EU052584)
+- [Epson Connect](https://www.epsonconnect.com/?p=2&q=1#.XqRAUfbiuUk)

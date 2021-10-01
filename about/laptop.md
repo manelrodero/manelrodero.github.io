@@ -115,7 +115,7 @@ También se copian [algunos scripts](https://github.com/manelrodero/OSDBuilder/t
 
 ## Macrium Reflect Free
 
-El primer programa que suelo instalar en un equipo es [Macrium Reflect Free](software/#macrium-reflect-free) para poder hacer una copia de seguridad del mismo.
+El primer programa que suelo instalar en un equipo es [Macrium Reflect Free](software#macrium-reflect-free) para poder hacer una copia de seguridad del mismo.
 
 Después de instalarlo y configurarlo, se hace un primer **Backup** en `D:\EQUIPS\Macrium\Dell-Precision-7530-01-PreDrivers-00-00.mrimg` para poder volver a este punto si hay algún problema con la instalación de los drivers.
 
@@ -257,15 +257,15 @@ La configuración final de Windows es una mezcla de los parámetros incluidos en
 
 Las aplicaciones que se han instalado en este equipo usando los instaladores en `D:\SOFT\INSTALADORES` son las siguientes:
 
-* [BIG-IP Edge Client](software/#big-ip-edge-client)
-* [Office Professional Plus 2019](software/#office-professional-plus-2019)
-* [Eduroam](software/#eduroam)
-* [Docker Desktop](software/#docker-desktop)
-* [VMware Workstation Pro](software/#vmware-workstation-pro)
-* [Oracle VM VirtualBox](software/#oracle-vm-virtualbox)
-* [DNIe](software/#dnie)
-* [Gemalto IDGo 800](software/#gemalto-idgo-800)
-* [7-Zip](software/#7-zip)
+* [BIG-IP Edge Client](software#big-ip-edge-client)
+* [Office Professional Plus 2019](software#office-professional-plus-2019)
+* [Eduroam](software#eduroam)
+* [Docker Desktop](software#docker-desktop)
+* [VMware Workstation Pro](software#vmware-workstation-pro)
+* [Oracle VM VirtualBox](software#oracle-vm-virtualbox)
+* [DNIe](software#dnie)
+* [Gemalto IDGo 800](software#gemalto-idgo-800)
+* [7-Zip](software#7-zip)
 
 # Instalación manual de drivers
 

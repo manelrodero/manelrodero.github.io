@@ -18,6 +18,7 @@ navbar-links:
 #  Wiki: "wiki"
   OS Deployment:
       - Windows 10: "osd/windows10"
+      - Windows 11: "osd/windows11"      
       - MDT: "osd/mdt"
       - SCCM (ConfigMgr): "osd/configmgr"
       - Applications: "osd/applications"
@@ -33,6 +34,8 @@ navbar-links:
       - Blogs & Twitter: "community/blogroll"
       - YouTube: "community/youtube"
       - Reddit: "community/reddit"
+  Hobbies:
+      - Hiking: "hobbies/hiking"
   "About ":
       - Me: "about/me"
       - Laptop: "about/laptop"

@@ -11,14 +11,14 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 # <a name="actualizaciones"></a>[Actualizaciones](https://aka.ms/WindowsUpdateHistory){:target="_blank"}
 
 {: .box-note}
-**Nota**: El LCU indicado es el correspondiente al _Patch Tuesday_. Desde la versión 2004 también incluye el [SSU](https://docs.microsoft.com/en-us/windows/deployment/update/servicing-stack-updates).
+**Nota**: El LCU indicado es el correspondiente al _Patch Tuesday_ que también incluye el [SSU](https://docs.microsoft.com/en-us/windows/deployment/update/servicing-stack-updates).
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 21H1 | 19043.985 | 11 Mayo 2021 | [KB5003173](https://support.microsoft.com/en-us/help/5003173){:target="_blank"} | - |
-| 20H2 | 19042.985 | 11 Mayo 2021 | [KB5003173](https://support.microsoft.com/en-us/help/5003173){:target="_blank"} | - |
-| 2004 | 19041.985 | 11 Mayo 2021 | [KB5003173](https://support.microsoft.com/en-us/help/5003173){:target="_blank"} | - |
-| 1909 | 18363.1556 | 11 Mayo 2021 | [KB5003169](https://support.microsoft.com/en-us/help/5003169){:target="_blank"} | [KB5003244](https://support.microsoft.com/en-us/help/5003244){:target="_blank"} |
+| 21H1 | 19043.1288 | 12 Octubre 2021 | [KB5006670](https://support.microsoft.com/en-us/help/5006670){:target="_blank"} | 19043.1220 |
+| 20H2 | 19042.1288 | 12 Octubre 2021 | [KB5006670](https://support.microsoft.com/en-us/help/5006670){:target="_blank"} | 19042.1220 |
+| 2004 | 19041.1288 | 12 Octubre 2021 | [KB5006670](https://support.microsoft.com/en-us/help/5006670){:target="_blank"} | 19041.1220 |
+| 1909 | 18363.1854 | 12 Octubre 2021 | [KB5006667](https://support.microsoft.com/en-us/help/5006667){:target="_blank"} | 18363.1850 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 
@@ -29,18 +29,19 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | Compilación | Codename | Marketing | Fecha de liberación | Final de soporte |
 | --- | --- | --- | --- | --- | --- |
+| 21H2 | 19044 | 21H2 | November 2021 Update | n/d | n/d |
 | 21H1 | 19043 | 21H1 | May 2021 Update | 18 Mayo 2021 | 13 Diciembre 2022 |
 | 20H2 | 19042 | 20H2 | October 2020 Update | 20 Octubre 2020 | 9 Mayo 2023 |
 | 2004 | 19041 | 20H1 | May 2020 Update | 27 Mayo 2020 | 14 Diciembre 2021 |
 | 1909 | 18363 | 19H2 | November 2019 Update | 12 Noviembre 2019 | 10 Mayo 2022 |
-| ~~1903~~ | 18362 | 19H1 | May 2019 Update | 21 Mayo 2019 | 8 Diciembre 2020 |
-| ~~1809~~ | 17763 | Redstone 5 (RS5) | October 2018 Update| 13 Noviembre 2018 | 11 Mayo 2021 |
-| ~~1803~~ | 17134 | Redstone 4 (RS4) | April 2018 Update | 30 Abril 2018 | 11 Mayo 2021 |
-| ~~1709~~ | 16299 | Redstone 3 (RS3) | Fall Creators Update | 17 Octubre 2017 | 14 Abril 2020 |
-| ~~1703~~ | 15063 | Redstone 2 (RS2) | Creators Update | 5 Abril 2017 | 8 Octubre 2019 |
-| ~~1607~~ | 14393 | Redstone 1 (RS1) | Anniversary Update | 2 Agosto 2016 | 9 Abril 2019 |
-| ~~1511~~ | 10586 | Threshold 2 (TH2) | November Update | 10 Noviembre 2015 | 10 Octubre 2017 |
-| ~~1507~~ | 10240 | Threshold 1 (TH1) | | 29 Julio 2015 | 9 Mayo 2017 |
+| ~~1903~~ | 18362 | 19H1 | May 2019 Update | 21 Mayo 2019 | ~~8 Diciembre 2020~~ |
+| ~~1809~~ | 17763 | Redstone 5 (RS5) | October 2018 Update| 13 Noviembre 2018 | ~~11 Mayo 2021~~ |
+| ~~1803~~ | 17134 | Redstone 4 (RS4) | April 2018 Update | 30 Abril 2018 | ~~11 Mayo 2021~~ |
+| ~~1709~~ | 16299 | Redstone 3 (RS3) | Fall Creators Update | 17 Octubre 2017 | ~~14 Abril 2020~~ |
+| ~~1703~~ | 15063 | Redstone 2 (RS2) | Creators Update | 5 Abril 2017 | ~~8 Octubre 2019~~ |
+| ~~1607~~ | 14393 | Redstone 1 (RS1) | Anniversary Update | 2 Agosto 2016 | ~~9 Abril 2019~~ |
+| ~~1511~~ | 10586 | Threshold 2 (TH2) | November Update | 10 Noviembre 2015 | ~~10 Octubre 2017~~ |
+| ~~1507~~ | 10240 | Threshold 1 (TH1) | | 29 Julio 2015 | ~~9 Mayo 2017~~ |
 
 # <a name="admx"></a>Administrative Templates (*.ADMX)
 
@@ -55,7 +56,7 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 | Build | ADMX | Fecha de publicación | XLSX | Fecha de publicación |
 | --- | --- | --- | --- | --- |
 | 21H1 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103124) | 18 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103125) | 18 Mayo 2021 |
-| 20H2 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=102157) | 8 Octubre 2020 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=102158) | 8 Octubre 2020 |
+| 20H2 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=103060) | 7 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=102158) | 8 Octubre 2020 |
 | 2004 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101445) | 10 Junio 2020 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101451) | 20 Junio 2020 |
 | 1909 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=100591) | 18 Diciembre 2019 | | |
 | 1903 | [3.0](https://www.microsoft.com/en-us/download/details.aspx?id=58495) | 18 Diciembre 2019 | | |
@@ -102,19 +103,23 @@ Desde hace un tiempo, se han unificado todas las security baselines en el [**Mic
 * Windows Server
 * Microsoft Office
 * Microsoft Edge
-* Windows Update
 
 # <a name="adk"></a>Windows Assessment and Deployment Toolkit (Windows ADK)
 
 Cada versión de Windows 10 requiere de unas herramientas de personalización y despliegue diferentes. Para evitar problemas, se recomienda utilizar siempre [la última versión disponible](https://docs.microsoft.com/en-us/windows-hardware/get-started/what-s-new-in-kits-and-tools).
 
-- [1607](https://go.microsoft.com/fwlink/p/?LinkId=526740)
-- [1703](https://go.microsoft.com/fwlink/p/?LinkId=845542)
-- [1709](https://go.microsoft.com/fwlink/p/?linkid=859206)
-- [1803](https://go.microsoft.com/fwlink/?linkid=873065)
-- [1809](https://go.microsoft.com/fwlink/?linkid=2026036) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2022233)
-- [1903](https://go.microsoft.com/fwlink/?linkid=2086042) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2087112)
-- [2004](https://go.microsoft.com/fwlink/?linkid=2120254) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2120253)
+| ADK | Notas |
+| --- | --- |
+| 21H1 | Utilizar versión 2004 |
+| 20H2 | Utilizar versión 2004 |
+| [2004](https://go.microsoft.com/fwlink/?linkid=2120254) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2120253) | |
+| 1909 | Utilizar versión 1903 |
+| [1903](https://go.microsoft.com/fwlink/?linkid=2086042) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2087112) | |
+| [1809](https://go.microsoft.com/fwlink/?linkid=2026036) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2022233) | |
+| [1803](https://go.microsoft.com/fwlink/?linkid=873065) | |
+| [1709](https://go.microsoft.com/fwlink/p/?linkid=859206) | |
+| [1703](https://go.microsoft.com/fwlink/p/?LinkId=845542) | |
+| [1607](https://go.microsoft.com/fwlink/p/?LinkId=526740) | |
 
 # <a name="downloads">Descargas
 
@@ -126,7 +131,7 @@ Cada versión de Windows 10 requiere de unas herramientas de personalización y 
   * Lenguaje English, Spanish y otros
 * [Windows 10 Development Environment](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/)
   * Fecha de expiración concreta
-  * 20H2
+  * 21H1
   * 64 bits
   * Formato VMware, Hyper-V, VirtualBox y Parallels
   * Lenguaje English

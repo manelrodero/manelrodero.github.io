@@ -131,6 +131,13 @@ Si se vuelve a ejecutar el programa, todo debería continuar funcionando con nor
 
 ![Cryptomator portable actualizado][4]
 
+# Apéndice: WebDav
+
+El cliente **WebDav** de Windows únicamente permite trabajar con [ficheros de hasta 50MB](https://github.com/cryptomator/cryptomator-win/issues/22). Si hay que guardar ficheros en el _vault_ que tengan un tamaño superior a éste, hay que modificar la configuración de Windows ejecutando el fichero `patchWebDAV.bat` como **Administrador**.
+
+{: .box-note}
+**Nota**: Este script cambia el valor de la clave `HKLM:\SYSTEM\CurrentControlSet\Services\WebClient\Parameters\FileSizeLimitInBytes` a `0xffffffff` (su valor por defecto es `0x2faf080`).
+
 [1]: /assets/img/blog/2021-12-24_image_1.png "Vault vs Sistema de Ficheros"
 [2]: /assets/img/blog/2021-12-24_image_2.png "Vault portable en ..\data\vault"
 [3]: /assets/img/blog/2021-12-24_image_3.png "Actualización con versión oficial"

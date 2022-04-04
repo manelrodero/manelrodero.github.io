@@ -109,7 +109,7 @@ Si la validación es correcta, el servicio quedará configurado para usar 2FA a 
 ![Backup codes][4]
 
 {: .box-note}
-**Nota**: Es muy aconsejable **guardar los _backup codes_** en el mismo gestor de contraseñas local que el código QR y la clave secreta.
+**Nota**: Es muy aconsejable guardar los _backup codes_ en el mismo **gestor de contraseñas local** que el código QR y la clave secreta.
 
 [1]: /assets/img/blog/2022-04-02_image_1.png "Activación 2FA"
 [2]: /assets/img/blog/2022-04-02_image_2.png "Elección de TOTP"

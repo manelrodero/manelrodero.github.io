@@ -16,8 +16,7 @@ author:
 Portainer está formado por dos elementos, **Portainer Server** y **Portainer Agent**, que se ejecutan en un contenedor Docker ligero. La instalación de Portainer CE en un [entorno Docker](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/) es bastante sencilla:
 
 ```
-docker volume create portainer_data
-docker run -d -p 8000:8000 -p 9000:9000 --name=portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+docker run -d -p 9000:9000 --name=portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /home/pi/volumes/portainer-ce:/data portainer/portainer-ce
 ```
 
 # Configuración
@@ -60,7 +59,7 @@ Si ya se había instalado Portainer anteriormente, se puede actualizar de la sig
 docker stop portainer-ce
 docker rm portainer-ce
 docker rmi portainer/portainer-ce
-docker run -d -p 8000:8000 -p 9000:9000 --name=portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+docker run -d -p 9000:9000 --name=portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /home/pi/volumes/portainer-ce:/data portainer/portainer-ce
 ```
 
 ## Referencias

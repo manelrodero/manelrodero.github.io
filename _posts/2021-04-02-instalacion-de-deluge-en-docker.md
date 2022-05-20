@@ -68,6 +68,8 @@ Si ya se había instalado Deluge anteriormente, se puede actualizar de la siguie
 docker stop deluge
 docker rm deluge
 docker rmi ghcr.io/linuxserver/deluge
+
+# Únicamente si no se usa un 'stack' en Portainer
 docker run -d \
   --name=deluge \
   -e PUID=1001 \

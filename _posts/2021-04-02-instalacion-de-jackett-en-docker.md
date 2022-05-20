@@ -67,6 +67,8 @@ Si ya se había instalado Jackett anteriormente, se puede actualizar de la sigui
 docker stop jackett
 docker rm jackett
 docker rmi ghcr.io/linuxserver/jackett
+
+# Únicamente si no se usa un 'stack' en Portainer
 docker run -d \
   --name=jackett \
   -e PUID=1001 \

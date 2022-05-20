@@ -59,7 +59,25 @@ Si ya se había instalado Portainer anteriormente, se puede actualizar de la sig
 docker stop portainer-ce
 docker rm portainer-ce
 docker rmi portainer/portainer-ce
-docker run -d -p 9000:9000 --name=portainer-ce --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /home/pi/volumes/portainer-ce:/data portainer/portainer-ce
+docker run -d \
+  --name=portainer-ce \
+  -p 9000:9000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /home/pi/volumes/portainer-ce:/data \
+  --restart=always \
+  portainer/portainer-ce
+```
+
+# Soporte
+
+Algunos comandos para gestionar la configuración del contenedor:
+
+```
+# Acceder al shell mientras el contenedor está ejecutándose
+docker exec -it portainer-ce /bin/bash
+
+# Monitorizar los logs del contenedor en tiempo real
+docker logs -f portainer-ce
 ```
 
 ## Referencias

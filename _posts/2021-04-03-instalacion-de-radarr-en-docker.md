@@ -20,7 +20,7 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
 
 ```
   radarr:
-    image: ghcr.io/linuxserver/radarr
+    image: ghcr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
       - PUID=1001
@@ -147,7 +147,7 @@ docker run -d \
   -v /data/media/movies:/data/movies \
   -v /data/torrents:/data/torrents \  
   --restart unless-stopped \
-  ghcr.io/linuxserver/radarr
+  ghcr.io/linuxserver/radarr:latest
 ```
 
 # Soporte

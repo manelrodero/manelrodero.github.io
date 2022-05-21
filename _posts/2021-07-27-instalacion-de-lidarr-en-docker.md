@@ -20,7 +20,7 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
 
 ```
   lidarr:
-    image: ghcr.io/linuxserver/lidarr
+    image: ghcr.io/linuxserver/lidarr:latest
     container_name: lidarr
     environment:
       - PUID=1001
@@ -97,8 +97,7 @@ docker run -d \
   -v /data/media/music:/data/music \
   -v /data/torrents:/data/torrents \  
   --restart unless-stopped \
-  ghcr.io/linuxserver/lidarr
-
+  ghcr.io/linuxserver/lidarr:latest
 ```
 
 # Soporte

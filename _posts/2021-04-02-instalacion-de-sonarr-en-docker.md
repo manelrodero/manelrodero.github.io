@@ -20,7 +20,7 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
 
 ```
   sonarr:
-    image: ghcr.io/linuxserver/sonarr
+    image: ghcr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
       - PUID=1001
@@ -98,7 +98,7 @@ docker run -d \
   -v /data/media/tvseries:/data/tvseries \
   -v /data/torrents:/data/torrents \  
   --restart unless-stopped \
-  ghcr.io/linuxserver/sonarr
+  ghcr.io/linuxserver/sonarr:latest
 ```
 
 # Soporte

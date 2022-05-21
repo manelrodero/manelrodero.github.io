@@ -18,7 +18,7 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
 
 ```
   deluge:
-    image: ghcr.io/linuxserver/deluge
+    image: ghcr.io/linuxserver/deluge:latest
     container_name: deluge
     environment:
       - PUID=1001
@@ -81,7 +81,7 @@ docker run -d \
   -v /home/pi/volumes/deluge:/config \
   -v /data/torrents:/data/torrents \
   --restart unless-stopped \
-  ghcr.io/linuxserver/deluge
+  ghcr.io/linuxserver/deluge:latest
 ```
 
 # Soporte

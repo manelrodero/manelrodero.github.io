@@ -15,7 +15,7 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 21H2 (Original) | 22000.258 | 12 Octubre 2021 | [KB5006674](https://support.microsoft.com/en-us/help/5006674){:target="_blank"} | 22000.190 |
+| 21H2 (Original) | 22000.739 | 14 Junio 2022 | [KB5014697](https://support.microsoft.com/en-us/help/5014697){:target="_blank"} | 22000.702 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 

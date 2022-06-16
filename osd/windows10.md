@@ -15,10 +15,9 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 21H1 | 19043.1288 | 12 Octubre 2021 | [KB5006670](https://support.microsoft.com/en-us/help/5006670){:target="_blank"} | 19043.1220 |
-| 20H2 | 19042.1288 | 12 Octubre 2021 | [KB5006670](https://support.microsoft.com/en-us/help/5006670){:target="_blank"} | 19042.1220 |
-| 2004 | 19041.1288 | 12 Octubre 2021 | [KB5006670](https://support.microsoft.com/en-us/help/5006670){:target="_blank"} | 19041.1220 |
-| 1909 | 18363.1854 | 12 Octubre 2021 | [KB5006667](https://support.microsoft.com/en-us/help/5006667){:target="_blank"} | 18363.1850 |
+| 21H2 | 19043.1288 | 14 Junio 2022 | [KB5014699](https://support.microsoft.com/en-us/help/5014699){:target="_blank"} | 19044.1766 |
+| 21H1 | 19043.1288 | 14 Junio 2022 | [KB5014699](https://support.microsoft.com/en-us/help/5014699){:target="_blank"} | 19043.1766 |
+| 20H2 | 19042.1288 | 14 Junio 2022 | [KB5014699](https://support.microsoft.com/en-us/help/5014699){:target="_blank"} | 19042.1766 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 
@@ -32,8 +31,8 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 | 21H2 | 19044 | 21H2 | November 2021 Update | n/d | n/d |
 | 21H1 | 19043 | 21H1 | May 2021 Update | 18 Mayo 2021 | 13 Diciembre 2022 |
 | 20H2 | 19042 | 20H2 | October 2020 Update | 20 Octubre 2020 | 9 Mayo 2023 |
-| 2004 | 19041 | 20H1 | May 2020 Update | 27 Mayo 2020 | 14 Diciembre 2021 |
-| 1909 | 18363 | 19H2 | November 2019 Update | 12 Noviembre 2019 | 10 Mayo 2022 |
+| ~~2004~~ | 19041 | 20H1 | May 2020 Update | 27 Mayo 2020 | 14 Diciembre 2021 |
+| ~~1909~~ | 18363 | 19H2 | November 2019 Update | 12 Noviembre 2019 | 10 Mayo 2022 |
 | ~~1903~~ | 18362 | 19H1 | May 2019 Update | 21 Mayo 2019 | ~~8 Diciembre 2020~~ |
 | ~~1809~~ | 17763 | Redstone 5 (RS5) | October 2018 Update| 13 Noviembre 2018 | ~~11 Mayo 2021~~ |
 | ~~1803~~ | 17134 | Redstone 4 (RS4) | April 2018 Update | 30 Abril 2018 | ~~11 Mayo 2021~~ |
@@ -55,6 +54,7 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 
 | Build | ADMX | Fecha de publicación | XLSX | Fecha de publicación |
 | --- | --- | --- | --- | --- |
+| 21H2 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=104042) | 22 Marzo 2022 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=104043) | 22 Marzo 2022 |
 | 21H1 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103124) | 18 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103125) | 18 Mayo 2021 |
 | 20H2 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=103060) | 7 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=102158) | 8 Octubre 2020 |
 | 2004 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101445) | 10 Junio 2020 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101451) | 20 Junio 2020 |
@@ -84,6 +84,7 @@ Las líneas base de seguridad para cada versión de Windows 10 se ~~anuncian~~ a
 
 | Build | Fecha de publicación |
 | --- | --- |
+| [Windows 10 21H2](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-windows-10-version-21h2/ba-p/3042703) | 20 Diciembre 2021 |
 | [Windows 10 21H1](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-for-windows-10-version-21h1/ba-p/2362353) | 18 Mayo 2021 |
 | [Windows 10 & Windows Server 20H2](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-for-windows-10-and-windows-server/ba-p/1999393) | 17 Diciembre 2020 |
 | [Windows 10 & Windows Server 2004](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-windows-10-and-windows-server-version/ba-p/1543631) | 4 Agosto 2020 |
@@ -110,6 +111,7 @@ Cada versión de Windows 10 requiere de unas herramientas de personalización y 
 
 | ADK | Notas |
 | --- | --- |
+| 21H2 | Utilizar versión 2004 |
 | 21H1 | Utilizar versión 2004 |
 | 20H2 | Utilizar versión 2004 |
 | [2004](https://go.microsoft.com/fwlink/?linkid=2120254) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2120253) | |

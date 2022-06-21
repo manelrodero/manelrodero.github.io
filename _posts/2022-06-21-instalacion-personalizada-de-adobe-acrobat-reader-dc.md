@@ -191,6 +191,10 @@ msi=AcroRead.msi
 CmdLine=TRANSFORMS="AcroRead.mst"
 ```
 
+# Instalación (desatendida)
+
+Para instalar Adobe Acrobat Reader DC de forma desatendida con las opciones de configuración elegidas únicamente hay que ejecutar el `setup.exe` de la carpeta de instalación.
+
 # Referencias
 
 * [Bootstrapper](https://www.adobe.com/devnet-docs/acrobatetk/tools/DesktopDeployment/bootstrapper.html), opciones del fichero `setup.ini` y la línea de comandos

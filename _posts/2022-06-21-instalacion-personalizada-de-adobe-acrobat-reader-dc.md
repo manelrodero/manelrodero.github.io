@@ -45,6 +45,10 @@ A continuación se puede pulsar sobre el botón azul `Descargar Acrobat Reader` 
 
 > **Nota**: Podemos saltarnos los pasos 2 y 3 de la página web ya que únicamente nos interesa obtener el fichero con el instalador `AcroRdrDC2200120142_es_ES.exe`.
 
+> **Nota**: Si se selecciona `All languages (MUI)`, entonces es posible descargar un instalador de 64-bits (`AcroRdrDCx642200120142_MUI.exe`) pero faltaría comprobar si funciona la misma configuración.
+
+![Adobe Reader MUI][6]
+
 # Carpeta de instalación
 
 La creación de la carpeta desde la cual se realizará la instalación del programa es muy sencillo, únicamente es necesario crear el directorio y extraer el contenido del instalador:
@@ -207,3 +211,4 @@ Para instalar Adobe Acrobat Reader DC de forma desatendida con las opciones de c
 [3]: /assets/img/blog/2022-06-21_image_3.png "Download"
 [4]: /assets/img/blog/2022-06-21_image_4.png "Download"
 [5]: /assets/img/blog/2022-06-21_image_5.png "Acrobat Customization Wizard DC"
+[6]: /assets/img/blog/2022-06-21_image_6.png "Adobe Reader MUI"

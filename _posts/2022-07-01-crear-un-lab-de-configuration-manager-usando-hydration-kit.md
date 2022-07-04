@@ -234,7 +234,7 @@ A continuación, se puede ejecutar el script [`Copy-SoftwareToHydrationKitDS.ps1
 
 ```PowerShell
 # Para utilizar versiones de evaluación
-.\Copy-SoftwareToHydrationKitDS.ps1 -HydrationKitBase "D:\HydrationKitBase"
+.\Copy-SoftwareToHydrationKitDS.ps1 -HydrationKitBase "D:\HydrationKitBase" -CMLab "C:\Shares\CMLab"
 
 # Para utilizar versiones con licencia
 $SQLISOName = "SW_DVD9_NTRL_SQL_Svr_Standard_Edtn_2019Dec2019_64Bit_English_OEM_VL_X22-22109.ISO"

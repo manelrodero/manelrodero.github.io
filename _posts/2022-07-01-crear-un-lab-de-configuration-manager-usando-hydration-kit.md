@@ -296,6 +296,8 @@ A continuación se instalan las **VMware Tools** para proporcionar información 
 
 Finalmente, se desconecta el fichero `*.iso` del _Hydration Kit_ y se deja `DC01` en ejecución mienstras se implementan el resto de máquinas virtuales del laboratorio.
 
+![DC01][1]
+
 ## CM01
 
 Una vez que el controlador de dominio (`DC01`) está en funcionamiento, se puede implementar la máquina virtual `CM01`. No hay que olvidar tener `DC01` en ejecución mientras se implementa `CM01`, ya que ésta se unirá al dominio durante la instalación.
@@ -329,6 +331,8 @@ Después de aplicar todas las [actualizaciones](https://docs.microsoft.com/en-us
 
 A continuación se instalan las **VMware Tools** siguiendo los mismos pasos que en la máquina anterior y se desconecta el fichero `*.iso` del _Hydration Kit_ de la máquina virtual.
 
+![CM01][2]
+
 ## MDT01, DP01 y FS01
 
 Estas máquinas virtuales son opcionales y no son necesarias para probar la mayoría de características de MEMCM (más información al final del [artículo de Johan Arwidmark](https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/)):
@@ -359,3 +363,6 @@ Estas máquinas virtuales son opcionales y no son necesarias para probar la mayo
 * [Configuration Manager Tech Community](https://techcommunity.microsoft.com/t5/configuration-manager/bd-p/SystemCenterConfigurationManager)
 * [Which branch of Configuration Manager should I use?](https://docs.microsoft.com/mem/configmgr/core/understand/which-branch-should-i-use)
 * [Supported configurations for Configuration Manager](https://docs.microsoft.com/mem/configmgr/core/plan-design/configs/supported-configurations)
+
+[1]: /assets/img/blog/2022-07-01_image_1.png "DC01"
+[2]: /assets/img/blog/2022-07-01_image_2.png "CM01"

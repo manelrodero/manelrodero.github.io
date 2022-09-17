@@ -57,6 +57,8 @@ La configuración de la BIOS (se entra con `F2`) se ha relizado mediante los sig
 * General
   * Boot Sequence
     * UEFI: PM981 NVMe Samsung 256GB, Partition 1 &rarr; Windows Boot Manager
+    * Onboard NIC(IPV4) &rarr; Disabled
+    * Onboard NIC(IPV6) &rarr; Disabled
 
 * System Configuration
   * Integrated NIC
@@ -138,7 +140,7 @@ A continuación, se ha procedido a [instalar manualmente los drivers](#instalaci
 
 ### Instalación automática
 
-La instalación automática de drivers en un equipo Dell se realiza mediante la aplicación [Dell Command Update](https://www.dell.com/support/kbdoc/en-us/000177325/dell-command-update) (DCU). Esta aplicación permite actualizar la BIOS, el firmware, los controladores y las aplicaciones desde una interfaz gráfica o mediante la línea de comands (`dcu-cli.exe`).
+La instalación automática de drivers en un equipo Dell se realiza mediante la aplicación [Dell Command Update](https://www.dell.com/support/kbdoc/en-us/000177325/dell-command-update) (DCU). Esta aplicación permite actualizar la BIOS, el firmware, los controladores y las aplicaciones desde una interfaz gráfica o mediante la línea de comandos (`dcu-cli.exe`).
 
 * [Dell Command \| Update Application for Windows 10](https://www.dell.com/support/home/en-us/drivers/DriversDetails?driverId=PF5GJ)
 * [Dell Command \| Update Version 4.x User's Guide](https://dl.dell.com/topicspdf/command-update_users-guide_en-us.pdf)
@@ -951,7 +953,7 @@ Dell explica cómo [instalar los drivers desde un fichero CAB](https://www.dell.
 ```
 mkdir C:\Drivers
 expand "D:\EQUIPS\Dell Precision 7530\7530-WIN10-A11-PVTT1.CAB" C:\Drivers -f:*
-for /f "tokens=*" %a in ('dir C:\Drivers\*.inf /b /s') do (echo pnputil –i -a "%a")
+for /f "tokens=*" %a in ('dir C:\Drivers\*.inf /b /s') do (pnputil.exe –i -a "%a")
 ```
 
 {: .box-warning}

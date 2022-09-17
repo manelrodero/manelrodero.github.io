@@ -15,9 +15,9 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 21H2 | 19043.1288 | 14 Junio 2022 | [KB5014699](https://support.microsoft.com/en-us/help/5014699){:target="_blank"} | 19044.1766 |
-| 21H1 | 19043.1288 | 14 Junio 2022 | [KB5014699](https://support.microsoft.com/en-us/help/5014699){:target="_blank"} | 19043.1766 |
-| 20H2 | 19042.1288 | 14 Junio 2022 | [KB5014699](https://support.microsoft.com/en-us/help/5014699){:target="_blank"} | 19042.1766 |
+| 21H2 | 19044.2006 | 13 Septiembre 2022 | [KB5017308](https://support.microsoft.com/en-us/help/5017308){:target="_blank"} | 19044.1940 |
+| 21H1 | 19043.2006 | 13 Septiembre 2022 | [KB5017308](https://support.microsoft.com/en-us/help/5017308){:target="_blank"} | 19043.1940 |
+| 20H2 | 19042.2006 | 13 Septiembre 2022 | [KB5017308](https://support.microsoft.com/en-us/help/5017308){:target="_blank"} | 19042.1940 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 
@@ -28,7 +28,8 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | Compilación | Codename | Marketing | Fecha de liberación | Final de soporte |
 | --- | --- | --- | --- | --- | --- |
-| 21H2 | 19044 | 21H2 | November 2021 Update | n/d | n/d |
+| 22H2 | 19045 | 22H2 | N/A | N/A | N/A |
+| 21H2 | 19044 | 21H2 | November 2021 Update | 16 Noviembre 2021 | 11 Junio 2024 |
 | 21H1 | 19043 | 21H1 | May 2021 Update | 18 Mayo 2021 | 13 Diciembre 2022 |
 | 20H2 | 19042 | 20H2 | October 2020 Update | 20 Octubre 2020 | 9 Mayo 2023 |
 | ~~2004~~ | 19041 | 20H1 | May 2020 Update | 27 Mayo 2020 | 14 Diciembre 2021 |
@@ -57,13 +58,13 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 | 21H2 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=104042) | 22 Marzo 2022 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=104043) | 22 Marzo 2022 |
 | 21H1 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103124) | 18 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103125) | 18 Mayo 2021 |
 | 20H2 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=103060) | 7 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=102158) | 8 Octubre 2020 |
-| 2004 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101445) | 10 Junio 2020 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101451) | 20 Junio 2020 |
+| 2004 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101445) | 10 Septiembre 2020 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101451) | 20 Septiembre 2020 |
 | 1909 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=100591) | 18 Diciembre 2019 | | |
 | 1903 | [3.0](https://www.microsoft.com/en-us/download/details.aspx?id=58495) | 18 Diciembre 2019 | | |
 | 1809 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=57576) | 11 Diciembre 2019 | [1809](https://www.microsoft.com/en-us/download/details.aspx?id=57464) | 23 Octubre 2018 |
 | 1803 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=56880) | 13 Julio 2018 | | |
 | 1709 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=56121) | 18 Octubre 2017 | | |
-| 1703 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=55080) | 29 Junio 2017 | | |
+| 1703 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=55080) | 29 Septiembre 2017 | | |
 | 1607 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=53430) | 8 Enero 2017 | | |
 | 1511 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=48257) | 17 Noviembre 2015 | | |
 | 1507 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=48257) | 17 Noviembre 2015 | | |
@@ -105,12 +106,17 @@ Desde hace un tiempo, se han unificado todas las security baselines en el [**Mic
 * Microsoft Office
 * Microsoft Edge
 
+| Versión | Fecha de publicación |
+| --- | --- |
+| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319) | 13 Septiembre 2022 |
+
 # <a name="adk"></a>Windows Assessment and Deployment Toolkit (Windows ADK)
 
 Cada versión de Windows 10 requiere de unas herramientas de personalización y despliegue diferentes. Para evitar problemas, se recomienda utilizar siempre [la última versión disponible](https://docs.microsoft.com/en-us/windows-hardware/get-started/what-s-new-in-kits-and-tools).
 
 | ADK | Notas |
 | --- | --- |
+| 22H2 | Utilizar versión 2004 |
 | 21H2 | Utilizar versión 2004 |
 | 21H1 | Utilizar versión 2004 |
 | 20H2 | Utilizar versión 2004 |
@@ -127,21 +133,16 @@ Cada versión de Windows 10 requiere de unas herramientas de personalización y 
 
 * [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)
   * Evaluación por 90 días
-  * 21H1 y LTSC 2019
+  * 21H2 y LTSC 2021
   * 32 y 64 bits
   * Formato ISO
   * Lenguaje English, Spanish y otros
-* [Windows 10 Development Environment](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/)
-  * Fecha de expiración concreta
-  * 21H1
-  * 64 bits
-  * Formato VMware, Hyper-V, VirtualBox y Parallels
-  * Lenguaje English
 * [IE11 and Microsoft Edge Legacy](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
   * Evaluación por 90 días (se recomienda realizar snapshot antes de ejecutar)
   * 1809
   * 64 bits
   * Formato VMware, Hyper-V, VirtualBox, Parallels y Vagrant
   * Lenguaje English
+  * También se puede descargar IE8/IE9/IE10/IE11 en Windows 7 (x86) y IE11 en Windows 8.1 (x86)
 
 # <a name="posts">Artículos

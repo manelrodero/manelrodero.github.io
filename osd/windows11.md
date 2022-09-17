@@ -15,7 +15,7 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 21H2 (Original) | 22000.739 | 14 Junio 2022 | [KB5014697](https://support.microsoft.com/en-us/help/5014697){:target="_blank"} | 22000.702 |
+| 21H2 (Original) | 22000.978 | 13 Septiembre 2022 | [KB5017328](https://support.microsoft.com/en-us/help/5017328){:target="_blank"} | 22000.975 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 
@@ -26,7 +26,7 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | Compilación | Codename | Marketing | Fecha de liberación | Final de soporte |
 | --- | --- | --- | --- | --- | --- |
-| 21H2 (Original) | 22000 | 21H1 | n/d | 4 Octubre 2021 | 8 Octubre 2024 |
+| 21H2 (Original) | 22000 | 21H1 | October 2021 Update | 4 Octubre 2021 | 8 Octubre 2024 |
 
 # <a name="admx"></a>Administrative Templates (*.ADMX)
 
@@ -56,12 +56,12 @@ Desde hace un tiempo, se han unificado todas las security baselines en el [**Mic
 * Windows 11
 * Windows 10
 * Windows Server
-* Microsoft Office
+* Microsoft 365 Apps (Office)
 * Microsoft Edge
 
 | Versión | Fecha de publicación |
 | --- | --- |
-| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319) | 5 Octubre 2021 |
+| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319) | 13 Septiembre 2022 |
 
 # <a name="adk"></a>Windows Assessment and Deployment Toolkit (Windows ADK)
 
@@ -69,6 +69,7 @@ Cada versión de Windows 11 requiere de unas herramientas de personalización y 
 
 | ADK | Notas |
 | --- | --- |
+| [22H2](https://go.microsoft.com/fwlink/?linkid=2196127) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2196224) | [ConfigMgr 2111+](https://www.deploymentresearch.com/notes-from-the-lab-on-windows-adk-for-windows-11-22h2/) |
 | [21H2](https://go.microsoft.com/fwlink/?linkid=2165884) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2166133) | |
 
 # <a name="downloads">Descargas
@@ -79,17 +80,11 @@ Cada versión de Windows 11 requiere de unas herramientas de personalización y 
   * 64 bits
   * Formato ISO
   * Lenguaje English, Spanish y otros
-* [Windows 10 Development Environment](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/)
+* [Windows 11 Development Environment](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/)
   * Fecha de expiración concreta
   * 21H1
   * 64 bits
   * Formato VMware, Hyper-V, VirtualBox y Parallels
-  * Lenguaje English
-* [IE11 and Microsoft Edge Legacy](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
-  * Evaluación por 90 días (se recomienda realizar snapshot antes de ejecutar)
-  * 1809
-  * 64 bits
-  * Formato VMware, Hyper-V, VirtualBox, Parallels y Vagrant
   * Lenguaje English
 
 # <a name="posts">Artículos

@@ -74,9 +74,17 @@ Cada versión de Windows 11 requiere de unas herramientas de personalización y 
 
 # <a name="downloads">Descargas
 
+* [Windows 11 ISO](https://www.microsoft.com/en-us/software-download/windows11)
+  * Licencia requerida
+  * 22H2
+  * 64 bits
+  * Opciones:
+    * Windows 11 Installation Assistant
+    * Create Windows 11 Installation Media
+    * Windows 11 Disk Image (ISO)
 * [Windows 11 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-11-enterprise)
   * Evaluación por 90 días
-  * 21H2
+  * 22H2
   * 64 bits
   * Formato ISO
   * Lenguaje English, Spanish y otros

@@ -182,6 +182,14 @@ Por este motivo, se utilizará la versión **Community** de [**Master Packager**
 * Grabar el fichero de transformación mediante _File_ &rarr; _Save_
 * Salir del programa y renombrar el fichero de transformación a `FortiClientVPN-Custom.mst`
 
+**Update**: si se deja el fichero `*.mst` así, las claves de registro que se han añadido en `HKLM` se crearán bajo `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node`. Hay que forzar el componente añadido para que sea de 64-bits de la siguiente manera:
+
+* Seleccionar _View_ &rarr; _Table Editor_
+* Ir a la tabla **Registry**
+* Buscar el nombre del componente que se ha creado al añadir las claves de registro (p.ej `HKLM_C`)
+* Ir a la tabla **Component** y buscar el componente anterior
+* Modificar los [atributos](https://learn.microsoft.com/en-us/windows/win32/msi/component-table): `4` &rarr; `260`
+
 # Instalación mediante MSI
 
 A continuación se podría crear un script que instalase el cliente de forma desatendida mediante alguno de los siguientes comandos:

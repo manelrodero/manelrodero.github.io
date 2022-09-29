@@ -120,7 +120,7 @@ Después de hacer algunas pruebas se consiguen los siguientes ficheros con el co
 ```
 Windows Registry Editor Version 5.00
 
-; Conexión "VPN Custom" (Máquina)
+; Conexión VPN Custom
 [HKEY_LOCAL_MACHINE\SOFTWARE\Fortinet\FortiClient\Sslvpn\Tunnels\VPN Custom]
 "Description"="VPN Custom"
 "Server"="vpn.contoso.com:443"
@@ -137,11 +137,11 @@ Windows Registry Editor Version 5.00
 ```
 Windows Registry Editor Version 5.00
 
-; Aceptar el Disclaimer sobre la versión gratuita (para una versión concreta)
+; Aceptar el Disclaimer sobre la versión gratuita
 [HKEY_CURRENT_USER\software\fortinet\FortiClient\FA_UI\VPN-7.0.7.0345]
 "installed"=dword:630f39a6
 
-; Conexión "VPN Custom" (Usuario)
+; Conexión VPN Custom
 [HKEY_CURRENT_USER\software\fortinet\FortiClient\Sslvpn\Tunnels\VPN Custom]
 "promptusername"=dword:00000000
 "promptcertificate"=dword:00000000

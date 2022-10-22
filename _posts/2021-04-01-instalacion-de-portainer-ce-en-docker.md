@@ -10,6 +10,8 @@ author:
   display_name: Manel Rodero
 ---
 
+> **Actualización 2022-10-22**: Se cambia el puerto 9000 por el 9443 ya que ahora Portainer CE utiliza HTTPS.
+
 [Portainer CE](https://www.portainer.io/products/community-edition) es una herramienta de código abierto que ayuda a crear, administrar y mantener entornos de contenedores sin la necesidad de conocer comandos o sintaxis complejos.
 
 Portainer está formado por dos elementos, **Portainer Server** y **Portainer Agent**, que se ejecutan en un contenedor Docker ligero. La instalación de Portainer CE en un [entorno Docker](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/) es bastante sencilla:
@@ -42,7 +44,7 @@ La alternativa para instalar Portainer es utilizar `docker-compose`. Para ello s
     - /var/run/docker.sock:/var/run/docker.sock
     - /home/pi/volumes/portainer-ce:/data
     ports:
-    - 9000:9000
+    - 9443:9443
     restart: always
 ```
 
@@ -60,7 +62,7 @@ docker rm portainer-ce
 docker rmi portainer/portainer-ce
 docker run -d \
   --name=portainer-ce \
-  -p 9000:9000 \
+  -p 9443:9443 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /home/pi/volumes/portainer-ce:/data \
   --restart=always \

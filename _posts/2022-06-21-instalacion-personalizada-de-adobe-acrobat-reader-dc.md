@@ -1,7 +1,7 @@
 ---
 layout : post
 blog-width: true
-title: 'Instalación personalizada de Adobe Acrobat Reader DC'
+title: 'Instalación personalizada de Adobe Acrobat Reader'
 date: '2022-06-21 15:16:55'
 published: true
 tags:
@@ -9,6 +9,8 @@ tags:
 author:
   display_name: Manel Rodero
 ---
+
+> **27 de Octubre de 2022**: revisión de las versiones y la validez de las instrucciones.
 
 [Adobe Acrobat Reader](https://www.adobe.com/acrobat/pdf-reader.html) es un programa gratuito para ver, firmar, colaborar y anotar archivos PDF.
 
@@ -21,31 +23,41 @@ En este artículo se describe cómo realizar una instalación **desatendida** de
 
 # ¿Cuál es la versión actual?
 
-Para conocer cuál es la versión actual de **Acrobat y Acrobat Reader DC** se puede acceder a la página de las [_Release Notes_](https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html) de este programa.
+Para conocer cuál es la versión actual de **Acrobat y Acrobat Reader** se puede acceder a la página de las [_Release Notes_](https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html) de este programa.
 
-Se instalará la última versión correspondiente al [**Continuous Track**](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html) que, a día de hoy, es la `22.001.20142` del 14 de Junio de 2022.
+Se instalará la última versión correspondiente al [**Continuous Track**](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html) que, a día de hoy, es la `22.003.20263` del 22 de Octubre de 2022.
 
 Se ha elegido el _Continuous Track_ y no el _Classic Track_ para poder disponer de nuevas características, mejoras de seguridad y plataforma, y correcciones de errores como parte de actualizaciones silenciosas más frecuentes.
 
+La [numeración de las versiones](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html#product-versioning) de Adobe Acrobat Reader tiene el siguiente formato:
+
+* Año de liberación: `22`
+* _Build_ interna: `003`
+* Identificador del _track_:
+  * `20` (_Continuous_)
+  * `30` (_Classic_)
+* _Build_ interna: `263`
+* Lista de cambios: `xxxxx` (oculto, únicamente se ve en el _About_)
+
 # Instalador Acrobat Reader
 
-Para descargar el instalador se accede a la página de [distribución corporativa de Adobe Acrobat Reader DC](https://get.adobe.com/es/reader/enterprise/) y se selecciona el sistema operativo, el idioma y la versión:
+Para descargar el instalador se accede a la página de [distribución corporativa de Adobe Acrobat Reader](https://get.adobe.com/es/reader/enterprise/) y se selecciona el sistema operativo, el idioma y la versión:
 
 ![Download][3]
 
 En este caso se han seleccionado las siguientes opciones:
 
-* Sistema operativo: `Windows 10` (se podría escoger Windows 11)
+* Sistema operativo: `Windows 10` (también se podría escoger Windows 11)
 * Idioma: `Spanish`
-* Versión: `Reader DC 2022.001.20142 Spanish for Windows`
+* Versión: `Reader DC 2022.003.20263 Spanish for Windows`
 
 A continuación se puede pulsar sobre el botón azul `Descargar Acrobat Reader` para descargar el instalador:
 
 ![Download][4]
 
-> **Nota**: Podemos saltarnos los pasos 2 y 3 de la página web ya que únicamente nos interesa obtener el fichero con el instalador `AcroRdrDC2200120142_es_ES.exe`.
+> **Nota**: Podemos saltarnos el paso 2 de la página web ya que únicamente nos interesa obtener el fichero con el instalador [`AcroRdrDC2200320263_es_ES.exe`](https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200320263/AcroRdrDC2200320263_es_ES.exe).
 
-> **Nota**: Si se selecciona `All languages (MUI)`, entonces es posible descargar un instalador de 64-bits (`AcroRdrDCx642200120142_MUI.exe`) pero faltaría comprobar si funciona la misma configuración.
+> **Nota**: Si se selecciona `All languages (MUI)`, entonces es posible elegir la versión `Reader DC 2022.003.20263 MUI for Windows-64bit` y descargar un instalador de 64-bits [`AcroRdrDCx642200320263_MUI.exe`](https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2200320263/AcroRdrDCx642200320263_MUI.exe).
 
 ![Adobe Reader MUI][6]
 
@@ -54,24 +66,24 @@ A continuación se puede pulsar sobre el botón azul `Descargar Acrobat Reader` 
 La creación de la carpeta desde la cual se realizará la instalación del programa es muy sencillo, únicamente es necesario crear el directorio y extraer el contenido del instalador:
 
 ```Batch
-mkdir G:\ADOBE\Reader\DC
-AcroRdrDC2200120142_es_ES.exe -nos_o"G:\ADOBE\Reader\DC" -nos_ne
+mkdir G:\ADOBE\Reader
+AcroRdrDC2200320263_es_ES.exe -nos_o"G:\ADOBE\Reader" -nos_ne
 ```
 
-Esta carpeta contendrá los ficheros correspondientes al **instalador** (`setup.exe`), los parámetros de instalación (`abcpy.ini` y `setup.ini`) y la actualización correspondiente a la versión descargada (en este caso `AcroRdrDCUpd2200120142.msp`):
+Esta carpeta contendrá los ficheros correspondientes al **instalador** (`setup.exe`), los parámetros de instalación (`abcpy.ini` y `setup.ini`) y la actualización correspondiente a la versión descargada (en este caso `AcroRdrDCUpd2200320263.msp`):
 
 ```
- Directorio de G:\ADOBE\Reader\DC
+ Directory of G:\ADOBE\Reader
 
-21/06/2022  16:16    <DIR>          .
-21/06/2022  16:16    <DIR>          ..
-05/06/2022  05:28               608 abcpy.ini
-05/06/2022  05:28       311.099.392 AcroRdrDCUpd2200120142.msp
+10/27/2022  07:25 PM    <DIR>          .
+10/27/2022  07:25 PM    <DIR>          ..
+16/10/2022  22:43               605 abcpy.ini
+16/10/2022  22:43       413.716.480 AcroRdrDCUpd2200320263.msp
 17/03/2015  10:41         2.806.272 AcroRead.msi
 17/03/2015  10:35       179.823.429 Data1.cab
-05/06/2022  05:28           524.056 setup.exe
-05/06/2022  05:28                92 setup.ini
-               6 archivos    494.253.849 bytes
+16/10/2022  22:43           526.288 setup.exe
+16/10/2022  22:43                92 setup.ini
+               6 File(s)    596.873.166 bytes
 ```
 
 # Acrobat Customization Wizard
@@ -87,11 +99,11 @@ Para ello es necesario descargar e instalar la última versión disponible de [A
 Para personalizar la instalación, se ejecuta el asistente (`"C:\Program Files (x86)\Adobe\Acrobat Customization Wizard DC\CustWiz.exe"`) y se procede a modificar el contenido de la carpeta de instalación.
 
 * File > Open Package...
-* Seleccionar el paquete `"G:\ADOBE\Reader\DC\AcroRead.msi"`
+* Seleccionar el paquete `"G:\ADOBE\Reader\AcroRead.msi"`
 
 Una vez abierto el paquete, el asistente mostrará las diferentes secciones de configuración en el menú lateral izquierdo. Al pulsar sobre cada una de ellas, aparecerán los posibles valores a configurar en la parte derecha del asistente. En la parte inferior se muestra la ayuda correspondiente a cada sección.
 
-![Acrobat Customization Wizard DC][5]
+![Acrobat Customization Wizard][5]
 
 A continuación se detallan los valores que hemos utilizado desde hace años en los ordenadores del PDI/PAS de la [Facultat d'Informàtica de Barcelona](https://www.fib.upc.edu/).
 
@@ -103,8 +115,13 @@ A continuación se detallan los valores que hemos utilizado desde hace años en 
 ## Installation Options
 
 - Default viewer for PDF files: Seleccionar `Make Reader the default PDF viewer`
+- Dejar marcado `Remove all versions of Reader`
+- Dejar marcado `Enable Optimization`
 - Run Installation: Seleccionar `Silently (no interface)`
 - If reboot required at the end of installation: Seleccionar `Supress reboot`
+
+> Si se está personalizando la versión **MUI**, se podría escoger el lenguaje en que se desea realizar la instalación (por defecto es el `OS Language`).
+
 
 ## Files and Folders
 
@@ -112,8 +129,8 @@ A continuación se detallan los valores que hemos utilizado desde hace años en 
 
 ## Shortcuts
 
-- Start Menu > Programs > Acrobat Reader DC (dejar)
-- Desktop > Acrobat Reader DC &rarr; `Remove`
+- Start Menu > Programs > Dejar `Acrobat Reader DC`
+- Desktop > `Acrobat Reader DC` > Seleccionar `Remove`
 
 ## Server Locations
 
@@ -126,6 +143,8 @@ A continuación se detallan los valores que hemos utilizado desde hace años en 
 
 ## Digital Signature
 
+- Verification
+  - Dejar marcado `Verify signatures when the document is opened`
 - Creation
   - Marcar `Show location and contact information when signing`
   - Prevent signing until document warnings are reviewed: Cambiar `Never` a `When Certifying Only`
@@ -138,7 +157,7 @@ A continuación se detallan los valores que hemos utilizado desde hace años en 
 - Dejar desmarcado `Disable product updates` para tener [actualizaciones automáticas](https://helpx.adobe.com/acrobat/kb/automatic-updates---acrobat-reader.html)
 - Load trusted root certificates from Adobe: Cambiar `Enable & Ask before installing` a `Enabled & install silently`
 - Marcar `Disable upsell`
-- Marcar `Disable all Adobe services` deshabilitará los siguientes servicios:
+- Marcar `Disable all Adobe services` para deshabilitar los siguientes servicios:
 	- Adobe Acrobat Document Cloud services
 	- Adobe Sign
 	- Send for Review
@@ -168,18 +187,18 @@ Una vez se han revisado las diferentes opciones de configuración, se puede **gr
 La grabación del paquete modificará el contenido de la carpeta de instalación agregando un fichero de transformación `AcroRead.mst` con la configuración escogida en el asistente:
 
 ```
- Directorio de G:\ADOBE\Reader\DC
+ Directory of G:\ADOBE\Reader
 
-21/06/2022  17:07    <DIR>          .
-21/06/2022  17:07    <DIR>          ..
-05/06/2022  05:28               608 abcpy.ini
-05/06/2022  05:28       311.099.392 AcroRdrDCUpd2200120142.msp
-17/03/2015  10:41         2.806.272 AcroRead.msi
-21/06/2022  17:05            45.056 AcroRead.mst
-17/03/2015  10:35       179.823.429 Data1.cab
-05/06/2022  05:28           524.056 setup.exe
-21/06/2022  17:05               146 setup.ini
-               7 archivos    494.298.959 bytes
+10/27/2022  07:25 PM    <DIR>          .
+10/27/2022  07:25 PM    <DIR>          ..
+10/16/2022  10:43 PM               605 abcpy.ini
+10/16/2022  10:43 PM       413,716,480 AcroRdrDCUpd2200320263.msp
+03/17/2015  10:41 AM         2,806,272 AcroRead.msi
+10/27/2022  06:47 PM            45,056 AcroRead.mst
+03/17/2015  10:35 AM       179,823,429 Data1.cab
+10/16/2022  10:43 PM           526,288 setup.exe
+10/27/2022  06:47 PM               146 setup.ini
+               7 File(s)    596,918,276 bytes
 ```
 
 Además, se modificará el fichero `setup.ini` para indicar que la instalación use el fichero de transformación:
@@ -190,14 +209,14 @@ RequireMSI=3.0
 CmdLine=/sall /rs
 
 [Product]
-PATCH=AcroRdrDCUpd2200120142.msp
+PATCH=AcroRdrDCUpdd2200320263.msp
 msi=AcroRead.msi
 CmdLine=TRANSFORMS="AcroRead.mst"
 ```
 
 # Instalación (desatendida)
 
-Para instalar Adobe Acrobat Reader DC de forma desatendida con las opciones de configuración elegidas únicamente hay que ejecutar el `setup.exe` de la carpeta de instalación.
+Para instalar Adobe Acrobat Reader DC de forma desatendida con las opciones de configuración elegidas únicamente hay que ejecutar el `setup.exe` de la carpeta de instalación sin ningún otro parámetro.
 
 # Referencias
 
@@ -210,5 +229,5 @@ Para instalar Adobe Acrobat Reader DC de forma desatendida con las opciones de c
 [2]: /assets/img/blog/2022-06-21_image_2.png "Acrobat"
 [3]: /assets/img/blog/2022-06-21_image_3.png "Download"
 [4]: /assets/img/blog/2022-06-21_image_4.png "Download"
-[5]: /assets/img/blog/2022-06-21_image_5.png "Acrobat Customization Wizard DC"
+[5]: /assets/img/blog/2022-06-21_image_5.png "Acrobat Customization Wizard"
 [6]: /assets/img/blog/2022-06-21_image_6.png "Adobe Reader MUI"

@@ -6,7 +6,8 @@ blog-width: true
 
 Esta página contiene tablas y otros recursos de utilidad para los administradores del sistema operativo [Windows 11](https://docs.microsoft.com/en-us/windows/resources/){:target="_blank"}.
 
-| [Actualizaciones](#actualizaciones) | [Ciclo de vida](#lifecycle) | [ADMX](#admx) | [RSAT](#rsat) | [Security Baselines](#baselines) | [Windows ADK](#adk) | [Descargas](#downloads) | [Artículos](#posts) |
+| [Actualizaciones](#actualizaciones) | [Ciclo de vida](#lifecycle) | [ADMX](#admx) | [RSAT](#rsat) | [Security Baselines](#baselines) |
+| [Windows ADK](#adk) | [Aplicaciones universales](#appx) | [Descargas](#downloads) | [Artículos](#posts) |
 
 # <a name="actualizaciones"></a>[Actualizaciones](https://aka.ms/Windows11UpdateHistory){:target="_blank"}
 
@@ -26,7 +27,8 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | Compilación | Codename | Marketing | Fecha de liberación | Final de soporte |
 | --- | --- | --- | --- | --- | --- |
-| 21H2 (Original) | 22000 | 21H1 | October 2021 Update | 4 Octubre 2021 | 8 Octubre 2024 |
+| 22H2 | 22621 | 22H2 | September 2022 Update | 20 Septiembre 2022 | 14 Octubre 2025 |
+| 21H2 (Original) | 22000 | 21H2 | October 2021 Update | 4 Octubre 2021 | 8 Octubre 2024 |
 
 # <a name="admx"></a>Administrative Templates (*.ADMX)
 
@@ -71,6 +73,60 @@ Cada versión de Windows 11 requiere de unas herramientas de personalización y 
 | --- | --- |
 | [22H2](https://go.microsoft.com/fwlink/?linkid=2196127) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2196224) | [ConfigMgr 2111+](https://www.deploymentresearch.com/notes-from-the-lab-on-windows-adk-for-windows-11-22h2/) |
 | [21H2](https://go.microsoft.com/fwlink/?linkid=2165884) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2166133) | |
+
+# <a name="appx"></a>Aplicaciones universales
+
+Listado de aplicaciones universales (Appx) incluídas con cada versión del sistema operativo, añadiendo la decisión de mantenerlas o eliminarlas durante la construcción de una [OSBuild](https://github.com/manelrodero/OSDBuilder#eliminar-aplicaciones-universales-appx):
+
+| Paquete | 21H2 | 22H2 | Aplicación | Decisión |
+| --- | :---: | :---: | --- | :---: |
+| Clipchamp.Clipchamp | | x | Editor de vídeo | **Eliminar** |
+| Microsoft.549981C3F5F10 | x | x | Cortana | Conservar |
+| Microsoft.BingNews | x | x | Noticias | **Eliminar** |
+| Microsoft.BingWeather | x | x | El Tiempo | **Eliminar** |
+| Microsoft.DesktopAppInstaller | x | x | Instalador de aplicación | Conservar |
+| Microsoft.GamingApp | x | x | Servicios de juegos | **Eliminar** |
+| Microsoft.GetHelp | x | x | Obtener ayuda | **Eliminar** |
+| Microsoft.Getstarted | x | x | Recomendaciones | **Eliminar** |
+| Microsoft.HEIFImageExtension | x | x | Extensiones de imagen HEIF | Conservar |
+| Microsoft.HEVCVideoExtension | | x | Extensiones de vídeo HEVC | Conservar |
+| Microsoft.MicrosoftOfficeHub | x | x | Office | **Eliminar** |
+| Microsoft.MicrosoftSolitaireCollection | x | x | Microsoft Solitaire Collection | **Eliminar** |
+| Microsoft.MicrosoftStickyNotes | x | x | Sticky Notes | Conservar |
+| Microsoft.Paint | x | x | Paint | Conservar |
+| Microsoft.People | x | x | Contactos | **Eliminar** |
+| Microsoft.PowerAutomateDesktop | x | x | Power Automate | Conservar |
+| Microsoft.RawImageExtension | | x | Extensiones de imagen Raw | Conservar |
+| Microsoft.ScreenSketch | x | x | Recorte y anotación | Conservar |
+| Microsoft.SecHealthUI | x | x | | Conservar |
+| Microsoft.StorePurchaseApp | x | x | Store Purchase App | Conservar |
+| Microsoft.Todos | x | x | Aplicación To-Do | Conservar |
+| Microsoft.UI.Xaml.2.4 | x | | | Conservar |
+| Microsoft.VCLibs.140.00 | x | x | C++ Runtime for Desktop Bridge | Conservar |
+| Microsoft.VP9VideoExtensions | x | x | VP9 Video Extensions | Conservar |
+| Microsoft.WebMediaExtensions | x | x | Extensiones de multimedia web | Conservar |
+| Microsoft.WebpImageExtension | x | x | Extensiones de imagen Webp | Conservar |
+| Microsoft.Windows.Photos | x | x | Fotos | Conservar |
+| Microsoft.WindowsAlarms | x | x | Alarmas y reloj | Conservar |
+| Microsoft.WindowsCalculator | x | x | Calculadora | Conservar |
+| Microsoft.WindowsCamera | x | x | Cámara | Conservar |
+| microsoft.windowscommunicationsapps | x | x | Correo y Calendario | **Eliminar** |
+| Microsoft.WindowsFeedbackHub | x | x | Centro de opiniones | Conservar |
+| Microsoft.WindowsMaps | x | x | Mapas | **Eliminar** |
+| Microsoft.WindowsNotepad | x | x | Bloc de notas | Conservar |
+| Microsoft.WindowsSoundRecorder | x | x | Grabadora de voz | Conservar |
+| Microsoft.WindowsStore | x | x | Microsoft Store | Conservar |
+| Microsoft.WindowsTerminal | x | x | Terminal | Conservar |
+| Microsoft.Xbox.TCUI | x | x | Experiencia de Xbox Live en el juego | **Eliminar** |
+| Microsoft.XboxGameOverlay | x | x | Complemento de la barra de juego Xbox | **Eliminar** |
+| Microsoft.XboxGamingOverlay | x | x | Barra de juego de Xbox | **Eliminar** |
+| Microsoft.XboxIdentityProvider | x | x | Proveedor de identidades de Xbox | **Eliminar** |
+| Microsoft.XboxSpeechToTextOverlay | x | x | | **Eliminar** |
+| Microsoft.YourPhone | x | x | Tu Teléfono | **Eliminar** |
+| Microsoft.ZuneMusic | x | x | Groove Música | **Eliminar** |
+| Microsoft.ZuneVideo | x | x |  Películas y TV | **Eliminar** |
+| MicrosoftCorporationII.QuickAssist | | x | Asistencia rápida | Conservar |
+| MicrosoftWindows.Client.WebExperience | x | x | | **Eliminar** |
 
 # <a name="downloads">Descargas
 

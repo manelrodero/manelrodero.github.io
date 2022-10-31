@@ -6,7 +6,8 @@ blog-width: true
 
 Esta página contiene tablas y otros recursos de utilidad para los administradores del sistema operativo [Windows 10](https://docs.microsoft.com/en-us/windows/windows-10/){:target="_blank"}.
 
-| [Actualizaciones](#actualizaciones) | [Ciclo de vida](#lifecycle) | [ADMX](#admx) | [RSAT](#rsat) | [Security Baselines](#baselines) | [Windows ADK](#adk) | [Descargas](#downloads) | [Artículos](#posts) |
+| [Actualizaciones](#actualizaciones) | [Ciclo de vida](#lifecycle) | [ADMX](#admx) | [RSAT](#rsat) | [Security Baselines](#baselines) |
+| [Windows ADK](#adk) | [Aplicaciones universales](#appx) | [Descargas](#downloads) | [Artículos](#posts) |
 
 # <a name="actualizaciones"></a>[Actualizaciones](https://aka.ms/WindowsUpdateHistory){:target="_blank"}
 
@@ -41,7 +42,7 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 | ~~1703~~ | 15063 | Redstone 2 (RS2) | Creators Update | 5 Abril 2017 | ~~8 Octubre 2019~~ |
 | ~~1607~~ | 14393 | Redstone 1 (RS1) | Anniversary Update | 2 Agosto 2016 | ~~9 Abril 2019~~ |
 | ~~1511~~ | 10586 | Threshold 2 (TH2) | November Update | 10 Noviembre 2015 | ~~10 Octubre 2017~~ |
-| ~~1507~~ | 10240 | Threshold 1 (TH1) | | 29 Julio 2015 | ~~9 Mayo 2017~~ |
+| ~~1507~~ | 10240 | Threshold 1 (TH1) | 29 Julio 2015 | ~~9 Mayo 2017~~ |
 
 # <a name="admx"></a>Administrative Templates (*.ADMX)
 
@@ -59,15 +60,15 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 | 21H1 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103124) | 18 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=103125) | 18 Mayo 2021 |
 | 20H2 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=103060) | 7 Mayo 2021 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=102158) | 8 Octubre 2020 |
 | 2004 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101445) | 10 Septiembre 2020 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=101451) | 20 Septiembre 2020 |
-| 1909 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=100591) | 18 Diciembre 2019 | | |
-| 1903 | [3.0](https://www.microsoft.com/en-us/download/details.aspx?id=58495) | 18 Diciembre 2019 | | |
+| 1909 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=100591) | 18 Diciembre 2019 | |
+| 1903 | [3.0](https://www.microsoft.com/en-us/download/details.aspx?id=58495) | 18 Diciembre 2019 | |
 | 1809 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=57576) | 11 Diciembre 2019 | [1809](https://www.microsoft.com/en-us/download/details.aspx?id=57464) | 23 Octubre 2018 |
-| 1803 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=56880) | 13 Julio 2018 | | |
-| 1709 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=56121) | 18 Octubre 2017 | | |
-| 1703 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=55080) | 29 Septiembre 2017 | | |
-| 1607 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=53430) | 8 Enero 2017 | | |
-| 1511 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=48257) | 17 Noviembre 2015 | | |
-| 1507 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=48257) | 17 Noviembre 2015 | | |
+| 1803 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=56880) | 13 Julio 2018 | |
+| 1709 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=56121) | 18 Octubre 2017 | |
+| 1703 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=55080) | 29 Septiembre 2017 | |
+| 1607 | [2.0](https://www.microsoft.com/en-us/download/details.aspx?id=53430) | 8 Enero 2017 | |
+| 1511 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=48257) | 17 Noviembre 2015 | |
+| 1507 | [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=48257) | 17 Noviembre 2015 | |
 
 # <a name="rsat"></a>Remote Server Administration Tool (RSAT)
 
@@ -120,14 +121,62 @@ Cada versión de Windows 10 requiere de unas herramientas de personalización y 
 | 21H2 | Utilizar versión 2004 |
 | 21H1 | Utilizar versión 2004 |
 | 20H2 | Utilizar versión 2004 |
-| [2004](https://go.microsoft.com/fwlink/?linkid=2120254) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2120253) | |
+| [2004](https://go.microsoft.com/fwlink/?linkid=2120254) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2120253) |
 | 1909 | Utilizar versión 1903 |
-| [1903](https://go.microsoft.com/fwlink/?linkid=2086042) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2087112) | |
-| [1809](https://go.microsoft.com/fwlink/?linkid=2026036) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2022233) | |
-| [1803](https://go.microsoft.com/fwlink/?linkid=873065) | |
-| [1709](https://go.microsoft.com/fwlink/p/?linkid=859206) | |
-| [1703](https://go.microsoft.com/fwlink/p/?LinkId=845542) | |
-| [1607](https://go.microsoft.com/fwlink/p/?LinkId=526740) | |
+| [1903](https://go.microsoft.com/fwlink/?linkid=2086042) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2087112) |
+| [1809](https://go.microsoft.com/fwlink/?linkid=2026036) + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2022233) |
+| [1803](https://go.microsoft.com/fwlink/?linkid=873065) |
+| [1709](https://go.microsoft.com/fwlink/p/?linkid=859206) |
+| [1703](https://go.microsoft.com/fwlink/p/?LinkId=845542) |
+| [1607](https://go.microsoft.com/fwlink/p/?LinkId=526740) |
+
+# <a name="appx"></a>Aplicaciones universales
+
+Listado de aplicaciones universales (Appx) incluídas con cada versión del sistema operativo, añadiendo la decisión de mantenerlas o eliminarlas durante la construcción de una [OSBuild](https://github.com/manelrodero/OSDBuilder#eliminar-aplicaciones-universales-appx):
+
+| Paquete | 20H2 | 21H2 | 22H2 | Aplicación | Decisión |
+| --- | :---: | :---: | :---: | --- | :---: |
+| Microsoft.549981C3F5F10 | x | x | x | Cortana | Conservar |
+| Microsoft.BingWeather | x | x | x | El Tiempo | **Eliminar** |
+| Microsoft.DesktopAppInstaller | x | x | x | Instalador de aplicación | Conservar |
+| Microsoft.GetHelp | x | x | x | Obtener ayuda | **Eliminar** |
+| Microsoft.Getstarted | x | x | x | Recomendaciones | **Eliminar** |
+| Microsoft.HEIFImageExtension | x | x | x | Extensiones de imagen HEIF | Conservar |
+| Microsoft.Microsoft3DViewer | x | x | x | Visor 3D | **Eliminar** |
+| Microsoft.MicrosoftEdge.Stable | x | | | Microsoft Edge | Conservar |
+| Microsoft.MicrosoftOfficeHub | x | x | x | Office | **Eliminar** |
+| Microsoft.MicrosoftSolitaireCollection | x | x | x | Microsoft Solitaire Collection | **Eliminar** |
+| Microsoft.MicrosoftStickyNotes | x | x | x | Sticky Notes | Conservar |
+| Microsoft.MixedReality.Portal | x | x | x | Portal de realidad mixta | **Eliminar** |
+| Microsoft.MSPaint | x | x | x | Paint 3D | **Eliminar** |
+| Microsoft.Office.OneNote | x | x | x | OneNote | **Eliminar** |
+| Microsoft.People | x | x | x | Contactos | **Eliminar** |
+| Microsoft.ScreenSketch | x | x | x | Recorte y anotación | Conservar |
+| Microsoft.SkypeApp | x | x | x | Skype | **Eliminar** |
+| Microsoft.StorePurchaseApp | x | x | x | Store Purchase App | Conservar |
+| Microsoft.VCLibs.140.00 | x | x | x | C++ Runtime for Desktop Bridge | Conservar |
+| Microsoft.VP9VideoExtensions | x | x | x | VP9 Video Extensions | Conservar |
+| Microsoft.Wallet | x | x | x | Microsoft Pay | **Eliminar** |
+| Microsoft.WebMediaExtensions | x | x | x | Extensiones de multimedia web | Conservar |
+| Microsoft.WebpImageExtension | x | x | x | Extensiones de imagen Webp | Conservar |
+| Microsoft.Windows.Photos | x | x | x | Fotos | Conservar |
+| Microsoft.WindowsAlarms | x | x | x | Alarmas y reloj | Conservar |
+| Microsoft.WindowsCalculator | x | x | x | Calculadora | Conservar |
+| Microsoft.WindowsCamera | x | x | x | Cámara | Conservar |
+| microsoft.windowscommunicationsapps | x | x | x | Correo y Calendario | **Eliminar** |
+| Microsoft.WindowsFeedbackHub | x | x | x | Centro de opiniones | Conservar |
+| Microsoft.WindowsMaps | x | x | x | Mapas | **Eliminar** |
+| Microsoft.WindowsSoundRecorder | x | x | x | Grabadora de voz | Conservar |
+| Microsoft.WindowsStore | x | x | x | Microsoft Store | Conservar |
+| Microsoft.Xbox.TCUI | x | x | x | Experiencia de Xbox Live en el juego | **Eliminar** |
+| Microsoft.XboxApp | x | x | x | Xbox Console Companion | **Eliminar** |
+| Microsoft.XboxGameOverlay | x | x | x | Complemento de la barra de juego Xbox | **Eliminar** |
+| Microsoft.XboxGamingOverlay | x | x | x | Barra de juego de Xbox | **Eliminar** |
+| Microsoft.XboxIdentityProvider | x | x | x | Proveedor de identidades de Xbox | **Eliminar** |
+| Microsoft.XboxSpeechToTextOverlay | x | x | x | | **Eliminar** |
+| Microsoft.YourPhone | x | x | x | Tu Teléfono | **Eliminar** |
+| Microsoft.ZuneMusic | x | x | x | Groove Música | **Eliminar** |
+| Microsoft.ZuneVideo | x | x | x | Películas y TV | **Eliminar** |
 
 # <a name="downloads">Descargas
 

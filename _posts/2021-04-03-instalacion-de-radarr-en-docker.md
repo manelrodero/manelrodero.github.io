@@ -10,6 +10,12 @@ author:
   display_name: Manel Rodero
 ---
 
+#### _**Actualizaciones**:_
+
+* **2022-12-03**: Revisión del documento y corrección de errores.
+
+# Instalación
+
 [Radarr](https://radarr.video/) es un PVR para usuarios de Usenet y BitTorrent. Puede monitorizar múltiples feeds RSS para encontrar nuevas películas, descargarlas, clasificarlas y cambiarles el nombre de forma automática.
 
 También se puede configurar para actualizar automáticamente la calidad de los archivos ya descargados cuando esté disponible un formato de mejor calidad.
@@ -18,16 +24,18 @@ La [instalación en Docker](https://hub.docker.com/r/linuxserver/radarr) se real
 
 La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
-```
+```yaml
+version: '3'
+services:
   radarr:
-    image: ghcr.io/linuxserver/radarr:latest
+    image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
       - PUID=1001
       - PGID=115
       - TZ=Europe/Madrid
     volumes:
-      - /home/pi/volumes/radarr:/config
+      - ~/volumes/radarr:/config
       - /data/media/movies:/data/movies
       - /data/torrents:/data/torrents
     ports:
@@ -35,13 +43,13 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
     restart: unless-stopped
 ```
 
-Se puede usar `docker-compose up -d` o usar el contenido del fichero en Portainer.
+A continuación, se puede ejecutar el comando `docker-compose up -d` o usar el contenido del fichero en Portainer.
 
 # Configuración
 
 Una vez en marcha, se puede acceder a Radarr a través del puerto `7878` (en este ejemplo [http://192.168.1.180:7878](http://192.168.1.180:7878)) y comenzar la configuración.
 
-Lo primero y más importante es activar el login y crear una contraseña segura para el usuario administrador:
+Lo primero, y más importante, es activar el login y crear una contraseña segura para el usuario administrador:
 
 * Settings > General > Authentication > Forms (Login page)
 * Settings > General > Username > `admin`
@@ -73,9 +81,9 @@ Para encontrar los capítulos hay que añadir uno o más **indexer** de Jackett 
 
 ## libseccomp2
 
-> **Nota**: Este problema no se ha encontrado con la versión de 64-bits de Raspberry Pi OS.
+> **Nota**: En la versión de 64-bits de Raspberry Pi OS no se ha encontrado este problema.
 
-No se puede cargar WebUI en el puerto `7878`. Al probar el fichero de [LMDS with Docker on Raspberry Pi](https://greenfrognest.com/lmdsondocker.php) pasaba exactamente lo mismo.
+No se puede cargar WebUI en el puerto `7878`. Al probar el fichero de [LMDS with Docker on Raspberry Pi](https://greenfrognest.com/lmdsondocker.php) pasa exactamente lo mismo.
 
 Entonces se ha buscado en Google y se ha llegado al [issue 126](https://github.com/linuxserver/docker-radarr/issues/126) y después al [issue 118](https://github.com/linuxserver/docker-radarr/issues/118).
 
@@ -135,19 +143,7 @@ Si ya se había instalado Radarr anteriormente, se puede actualizar de la siguie
 docker stop radarr
 docker rm radarr
 docker rmi ghcr.io/linuxserver/radarr
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=radarr \
-  -e PUID=1001 \
-  -e PGID=115 \
-  -e TZ=Europe/Madrid \
-  -p 7878:7878 \
-  -v /home/pi/volumes/radarr:/config \
-  -v /data/media/movies:/data/movies \
-  -v /data/torrents:/data/torrents \  
-  --restart unless-stopped \
-  ghcr.io/linuxserver/radarr:latest
+docker-compose up -d
 ```
 
 # Soporte

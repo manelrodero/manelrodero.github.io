@@ -10,6 +10,12 @@ author:
   display_name: Manel Rodero
 ---
 
+#### _**Actualizaciones**:_
+
+* **2022-12-03**: Revisión del documento y corrección de errores.
+
+# Instalación
+
 [Sonarr](https://sonarr.tv/) es un PVR para usuarios de Usenet y BitTorrent. Puede monitorizar múltiples feeds RSS para encontrar nuevos episodios de una serie, descargarlos, clasificarlos y cambiarles el nombre de forma automática.
 
 También se puede configurar para actualizar automáticamente la calidad de los archivos ya descargados cuando esté disponible un formato de mejor calidad.
@@ -18,16 +24,18 @@ La [instalación en Docker](https://hub.docker.com/r/linuxserver/sonarr) se real
 
 La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
-```
+```yaml
+version: '3'
+services:
   sonarr:
-    image: ghcr.io/linuxserver/sonarr:latest
+    image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
       - PUID=1001
       - PGID=115
       - TZ=Europe/Madrid
     volumes:
-      - /home/pi/volumes/sonarr:/config
+      - ~/volumes/sonarr:/config
       - /data/media/tvseries:/data/tvseries
       - /data/torrents:/data/torrents
     ports:
@@ -35,13 +43,13 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
     restart: unless-stopped
 ```
 
-Se puede usar `docker-compose up -d` o usar el contenido del fichero en Portainer.
+A continuación, se puede ejecutar el comando `docker-compose up -d` o usar el contenido del fichero en Portainer.
 
 # Configuración
 
 Una vez en marcha, se puede acceder a Sonarr a través del puerto `8989` (en este ejemplo [http://192.168.1.180:8989](http://192.168.1.180:8989)) y comenzar la configuración.
 
-Lo primero y más importante es crear una contraseña para el usuario administrador:
+Lo primero, y más importante, es crear una contraseña para el usuario administrador:
 
 * Settings > General > Authentication > Forms (Login page)
 * Settings > General > Username > `admin`
@@ -85,20 +93,8 @@ Si ya se había instalado Sonarr anteriormente, se puede actualizar de la siguie
 ```
 docker stop sonarr
 docker rm sonarr
-docker rmi ghcr.io/linuxserver/sonarr
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=sonarr \
-  -e PUID=1001 \
-  -e PGID=115 \
-  -e TZ=Europe/Madrid \
-  -p 8989:8989 \
-  -v /home/pi/volumes/sonarr:/config \
-  -v /data/media/tvseries:/data/tvseries \
-  -v /data/torrents:/data/torrents \  
-  --restart unless-stopped \
-  ghcr.io/linuxserver/sonarr:latest
+docker rmi lscr.io/linuxserver/sonarr
+docker-compose up -d
 ```
 
 # Soporte

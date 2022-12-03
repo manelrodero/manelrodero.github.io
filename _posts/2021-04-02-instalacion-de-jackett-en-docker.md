@@ -10,17 +10,25 @@ author:
   display_name: Manel Rodero
 ---
 
+#### _**Actualizaciones**:_
+
+* **2022-12-03**: Revisión del documento y corrección de errores.
+
+# Instalación
+
 [Jackett](https://github.com/Jackett/Jackett) es una aplicación que funciona como un **servidor proxy** entre las aplicaciones ([Sonarr](https://sonarr.tv/), [Radarr](https://radarr.video/), [Lidarr](https://lidarr.audio/), etc.) y los _trackers_ de ficheros Torrent.
 
 Traduce las consultas de estas aplicaciones en consultas HTTP específicas para cada sitio de seguimiento, analiza la respuesta HTML y luego envía los resultados al software solicitante.
 
 La [instalación en Docker](https://hub.docker.com/r/linuxserver/jackett/) se realiza usando la imagen `linuxserver/jackett`.
 
-La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
+La forma más sencilla de hacerlo es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
-```
+```yaml
+version: '3'
+services:
   jackett:
-    image: ghcr.io/linuxserver/jackett
+    image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
     environment:
       - PUID=1001
@@ -28,20 +36,20 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
       - TZ=Europe/Madrid
       - AUTO_UPDATE=false
     volumes:
-      - /home/pi/volumes/jackett:/config
+      - ~/volumes/jackett:/config
       - /data/torrents:/data/torrents
     ports:
       - 9117:9117
     restart: unless-stopped
 ```
 
-Se puede usar `docker-compose up -d` o usar el contenido del fichero en Portainer.
+A continuación, se puede ejecutar el comando `docker-compose up -d` o usar el contenido del fichero en Portainer.
 
 # Configuración
 
 Una vez en marcha, se puede acceder a Jackett a través del puerto `9117` (en este ejemplo [http://192.168.1.180:9117](http://192.168.1.180:9117)) y comenzar la configuración.
 
-Lo primero y más importante es crear una contraseña para el usuario administrador:
+Lo primero y más importante es crear una contraseña para el usuario administrador y deshabilitar las actualizaciones:
 
 * Jackett Configuration
   * Admin password &rarr; `*********`
@@ -49,7 +57,7 @@ Lo primero y más importante es crear una contraseña para el usuario administra
 
 A continuación se puede añadir uno o más **Indexer** (públicos o privados) pulsado el botón `+Add indexer` en la parte superior de la pantalla.
 
-Estos _indexer_ se pueden añadir a Sonarr, Radarr, Lidarr, etc. realizando los pasos siguientes:
+Estos _indexer_ se pueden añadir después a Sonarr, Radarr, Lidarr, etc. realizando los pasos siguientes:
 
 * Copiar la URL del _indexer_ haciendo clic en el botón `Copy Torznab Feed` de Jackett
 * En Sonarr, Radarr, Lidarr, etc. ir a Settings > Indexers > Add > Torznab > Custom
@@ -66,20 +74,8 @@ Si ya se había instalado Jackett anteriormente, se puede actualizar de la sigui
 ```
 docker stop jackett
 docker rm jackett
-docker rmi ghcr.io/linuxserver/jackett
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=jackett \
-  -e PUID=1001 \
-  -e PGID=115 \
-  -e TZ=Europe/Madrid \
-  -e AUTO_UPDATE=false \
-  -p 9117:9117 \
-  -v /home/pi/volumes/jackett:/config \
-  -v /data/torrents:/data/torrents \
-  --restart unless-stopped \
-  ghcr.io/linuxserver/jackett
+docker rmi lscr.io/linuxserver/jackett
+docker-compose up -d
 ```
 
 # Soporte

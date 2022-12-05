@@ -38,7 +38,7 @@ En cambio, en HEVC **58 minutos** ocupan únicamente **304 MiB**:
 
 ```
 Format                                   : HEVC
-Format/Info                              : High Efficiency Format profile                           : Main 10@L4@Main
+Format/Info                              : High Efficiency Format profile
 Codec ID                                 : hvc1
 Duration                                 : 58 min 31 s
 Bit rate                                 : 3 538 kb/s

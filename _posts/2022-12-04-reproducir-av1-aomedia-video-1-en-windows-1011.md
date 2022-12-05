@@ -14,7 +14,7 @@ Hoy me han pasado un vídeo que Windows Media Player en Windows 11 no podía vis
 
 Usando [MediaInfo](https://mediaarea.net/en/MediaInfo) he obtenido información sobre el códec que usaba y se trataba de[AOMedia AV1](https://aomedia.org/av1-features/), una alternativa a H264 optimizado para _streaming_ y resoluciones hasta 4K UHD:
 
-![Imagen][1]
+![H264 vs AV1][1]
 
 Este nuevo códec tiene una mayor compresión (hasta un 30% más) que sus alternativas.
 
@@ -56,6 +56,9 @@ Como este códec está llamado a sustituir al `VP9` de Google o al costoso `HEVC
 * Buscar [`AV1 Video Extension`](https://www.microsoft.com/store/productId/9MVZQVXJBQ9V)
 * Instalarlo
 
+![Microsoft Store][2]
+
 Una vez instalado, ya se podrá reproducir cualquier fichero en formato `AV1` que nos encontremos.
 
-[1]: /assets/img/blog/2022-12-04_image_1.png "Imagen"
+[1]: /assets/img/blog/2022-12-04_image_1.png "H264 vs AV1"
+[2]: /assets/img/blog/2022-12-04_image_2.png "Microsoft Store"

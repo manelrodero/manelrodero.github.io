@@ -12,7 +12,7 @@ author:
 
 A la hora de utilizar un dominio propio con [SimpleLogin](https://simplelogin.io/) será necesario registrar diferentes registros en nuestro DNS tal como se muestra en la siguiente figura:
 
-![Imagen][1]
+![Registros DNS][1]
 
 # Registro MX
 
@@ -57,7 +57,7 @@ De esta manera, se reduce la posibilidad de que nuestros correos electrónicos t
   * Tipo = CNAME
   * Dominio = `dkim03._domainkey`
 
-> Nota: Algunos registradores de DNS pueden requerir una ruta de registro completa, `dkim._domainkey.midominio.com` como valor de dominio. Si se utiliza CloudFare **no hay que usar** la opción de _proxy_.
+> Nota: Algunos registradores de DNS pueden requerir una ruta de registro completa, `dkim._domainkey.midominio.com` como valor de dominio. Si se utiliza Cloudflare **no hay que usar** la opción de _proxy_.
 
 # DMARC (Registro TXT)
 
@@ -71,4 +71,4 @@ Construida alrededor de SPF y DKIM, una política DMARC le dice al servidor de c
 
 > Nota: Algunos registradores de DNS pueden requerir una ruta de registro completa, `_dmarc.midominio.com` como valor de dominio.
 
-[1]: /assets/img/blog/2022-12-17_image_1.png "Imagen"
+[1]: /assets/img/blog/2022-12-17_image_1.png "Registros DNS"

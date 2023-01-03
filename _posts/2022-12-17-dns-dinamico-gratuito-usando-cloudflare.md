@@ -191,7 +191,7 @@ Los túneles se gestionan desde un Dashboard diferente: [`https://one.dash.cloud
 
 Si se quiere acceder a [Home Assistant](instalacion-de-home-assistant-en-docker), es mucho más recomendable pagar una subscripción a [Nabu Casa](https://www.nabucasa.com/) y evitar los problemas de seguridad que pueden tener los túneles.
 
-De todos modos, lo mejor es **conectarse a la red local** [usando WireGuard como VPN](instalacion-de-vaultwarden-en-docker). De esta manera, se puede acceder a los servicios usando la dirección IP privada de cada servicio.
+De todos modos, lo mejor es **conectarse a la red local** [usando WireGuard como VPN](instalacion-de-wireguard-en-docker). De esta manera, se puede acceder a los servicios usando la dirección IP privada de cada servicio.
 
 # Referencias
 

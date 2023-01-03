@@ -113,6 +113,17 @@ Antes de continuar con la configuración de los clientes, es necesario habilitar
 
 ![Port Forwarding][2]
 
+# Actualizar
+
+Si ya se había instalado WireGuard anteriormente, se puede actualizar de la siguiente manera:
+
+```
+docker stop wireguard
+docker rm vireguard
+docker rmi lscr.io/linuxserver/wireguard
+docker-compose up -d
+```
+
 # Soporte
 
 Algunos comandos para gestionar la configuración del contenedor:

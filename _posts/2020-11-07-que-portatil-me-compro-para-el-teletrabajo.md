@@ -5,7 +5,7 @@ title: '¿Qué portátil me compro para el teletrabajo?'
 date: '2020-11-07 20:05:44'
 published: true
 tags:
-- Hardware
+- Compras
 author:
   display_name: Manel Rodero
 cover-img: "/assets/img/blog/2020-11-07_image_1.jpg"

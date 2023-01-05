@@ -5,7 +5,7 @@ title: 'Compartir Xbox Game Pass Ultimate con tu Microsoft Family'
 date: '2021-07-10 19:32:02'
 published: true
 tags:
-- Software
+- Trucos
 author:
   display_name: Manel Rodero
 ---

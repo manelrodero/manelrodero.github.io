@@ -5,7 +5,7 @@ title: '¿Cómo descargar un vídeo que se reproduce en el navegador?'
 date: '2021-12-17 11:38:01'
 published: true
 tags:
-- Internet
+- Trucos
 author:
   display_name: Manel Rodero
 ---

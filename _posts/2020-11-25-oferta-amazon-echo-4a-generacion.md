@@ -5,7 +5,7 @@ title: 'Oferta: Amazon Echo 4a generación'
 date: '2020-11-25 21:49:58'
 published: true
 tags:
-- Ofertas
+- Compras
 author:
   display_name: Manel Rodero
 ---

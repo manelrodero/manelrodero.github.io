@@ -5,7 +5,7 @@ title: 'Proteger las cuentas del administrador y los servicios'
 date: '2020-12-11 13:10:01'
 published: true
 tags:
-- Windows
+- Eventos
 author:
   display_name: Manel Rodero
 share-img: "/assets/img/blog/2020-12-11_image_1.jpg"

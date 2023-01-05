@@ -5,6 +5,7 @@ title: 'Instalar Raspberry Pi OS 64-bits'
 date: '2021-07-18 19:38:15'
 published: true
 tags:
+- HomeLab
 - Raspberry
 author:
   display_name: Manel Rodero

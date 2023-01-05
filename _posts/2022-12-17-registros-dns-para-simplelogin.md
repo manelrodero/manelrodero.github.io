@@ -5,7 +5,7 @@ title: 'Registros DNS para SimpleLogin'
 date: '2022-12-17 07:28:23'
 published: true
 tags:
-- Seguridad
+- Privacidad
 author:
   display_name: Manel Rodero
 ---

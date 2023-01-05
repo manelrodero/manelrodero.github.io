@@ -6,7 +6,7 @@ date: '2022-07-01 17:17:57'
 readtime: true
 published: true
 tags:
-- OSD
+- Configuration Manager
 author:
   display_name: Manel Rodero
 cover-img: "/assets/img/blog/2022-07-01_cover.png"

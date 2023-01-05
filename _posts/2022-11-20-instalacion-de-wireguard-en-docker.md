@@ -5,6 +5,7 @@ title: 'Instalación de WireGuard en Docker'
 date: '2022-11-20 18:49:38'
 published: true
 tags:
+- HomeLab
 - Docker
 author:
   display_name: Manel Rodero

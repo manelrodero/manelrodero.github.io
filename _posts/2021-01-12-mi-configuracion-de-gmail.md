@@ -5,7 +5,7 @@ title: 'Mi configuración de Gmail'
 date: '2021-01-12 19:32:03'
 published: true
 tags:
-- Internet
+- Privacidad
 author:
   display_name: Manel Rodero
 ---

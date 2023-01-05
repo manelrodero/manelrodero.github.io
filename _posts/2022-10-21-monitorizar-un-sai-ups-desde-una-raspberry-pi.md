@@ -5,6 +5,7 @@ title: 'Monitorizar un SAI (UPS) desde una Raspberry Pi'
 date: '2022-10-21 19:44:05'
 published: true
 tags:
+- HomeLab
 - Raspberry
 author:
   display_name: Manel Rodero

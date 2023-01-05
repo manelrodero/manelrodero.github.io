@@ -5,6 +5,7 @@ title: 'Instalación de Nginx Proxy Manager en Docker'
 date: '2022-11-10 22:09:28'
 published: true
 tags:
+- HomeLab
 - Docker
 author:
   display_name: Manel Rodero

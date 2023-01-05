@@ -5,7 +5,7 @@ title: 'Exportar diapositivas PowerPoint a 1920x1080'
 date: '2022-12-02 16:12:39'
 published: true
 tags:
-- Software
+- Trucos
 author:
   display_name: Manel Rodero
 ---

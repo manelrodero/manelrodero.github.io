@@ -6,7 +6,7 @@ date: '2020-06-06 13:14:45'
 readtime: true
 published: true
 tags:
-- Internet
+- Blog
 author:
   display_name: Manel Rodero
 cover-img: "/assets/img/blog/2020-06-06_cover.png"

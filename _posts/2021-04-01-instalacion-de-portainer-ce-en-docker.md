@@ -5,6 +5,7 @@ title: 'Instalación de Portainer CE en Docker'
 date: '2021-04-01 23:53:01'
 published: true
 tags:
+- HomeLab
 - Docker
 author:
   display_name: Manel Rodero

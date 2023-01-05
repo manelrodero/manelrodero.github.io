@@ -5,6 +5,7 @@ title: 'Iniciar una Raspberry Pi 4 desde USB (SSD)'
 date: '2021-02-20 10:11:06'
 published: true
 tags:
+- HomeLab
 - Raspberry
 author:
   display_name: Manel Rodero

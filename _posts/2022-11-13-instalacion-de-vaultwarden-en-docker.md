@@ -5,6 +5,7 @@ title: 'Instalación de Vaultwarden en Docker'
 date: '2022-11-13 18:20:26'
 published: true
 tags:
+- HomeLab
 - Docker
 author:
   display_name: Manel Rodero

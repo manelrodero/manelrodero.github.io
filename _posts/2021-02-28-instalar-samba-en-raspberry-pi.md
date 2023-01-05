@@ -5,6 +5,7 @@ title: 'Instalar Samba en Raspberry Pi'
 date: '2021-02-28 18:59:31'
 published: true
 tags:
+- HomeLab
 - Raspberry
 author:
   display_name: Manel Rodero

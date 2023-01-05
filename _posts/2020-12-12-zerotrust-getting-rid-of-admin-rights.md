@@ -5,7 +5,7 @@ title: 'ZeroTrust – Getting rid of Admin Rights'
 date: '2020-12-12 19:16:09'
 published: true
 tags:
-- Windows
+- Eventos
 author:
   display_name: Manel Rodero
 cover-img: [ "/assets/img/blog/2020-12-12_cover.jpg" : "Foto: 42gears.com" ]

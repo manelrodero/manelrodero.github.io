@@ -6,7 +6,7 @@ title: 'Notas del Cloud Imaging Day (FWSMUG)'
 date: '2020-11-16 08:42:48'
 published: true
 tags:
-- OSD
+- Eventos
 author:
   display_name: Manel Rodero
 share-img: "/assets/img/blog/2020-11-16_image_2.png"  

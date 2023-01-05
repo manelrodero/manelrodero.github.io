@@ -6,8 +6,6 @@ date: '2020-11-21 13:40:34'
 published: true
 tags:
 - Windows
-- MSIX
-- PowerShell
 author:
   display_name: Manel Rodero
 share-img: "/assets/img/blog/2020-11-21_cover.png"

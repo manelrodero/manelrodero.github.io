@@ -5,7 +5,6 @@ title: Descubrir PowerShell poco a poco
 date: 2019-02-16 21:27:30.000000000 +01:00
 published: true
 tags:
-- Windows
 - PowerShell
 author:
   display_name: Manel Rodero

@@ -5,7 +5,7 @@ title: 'Instalación y uso de Mobile Atlas Creator (MOBAC)'
 date: '2021-08-22 14:28:42'
 published: true
 tags:
-- GPS
+- Software
 author:
   display_name: Manel Rodero
 ---

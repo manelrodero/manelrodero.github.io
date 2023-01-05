@@ -10,6 +10,12 @@ author:
   display_name: Manel Rodero
 ---
 
+#### _**Actualizaciones**:_
+
+* **2022-12-03**: Revisión del documento y corrección de errores.
+
+# Instalación
+
 [Deluge](https://deluge-torrent.org/) es un cliente Bittorrent ligero, gratuito y multiplataforma.
 
 La [instalación en Docker](https://hub.docker.com/r/linuxserver/deluge) se realiza usando la imagen `linuxserver/deluge`.

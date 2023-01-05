@@ -5,7 +5,7 @@ title: 'Instalación de HACS en Home Assistant (Docker)'
 date: '2022-10-29 21:46:54'
 published: true
 tags:
-- Home Assistant
+- Docker
 author:
   display_name: Manel Rodero
 ---

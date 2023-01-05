@@ -10,22 +10,30 @@ author:
   display_name: Manel Rodero
 ---
 
-[Bazarr](https://www.bazarr.media/) es una aplicación auxiliar de [Sonarr](instalacion-de-sonarr-en-docker) y [Radarr](instalacion-de-radarr-en-docker) que gestiona y descarga subtítulos.
+#### _**Actualizaciones**:_
+
+* **2022-12-03**: Revisión del documento y corrección de errores.
+
+# Instalación
+
+[Bazarr](https://www.bazarr.media/) es una aplicación auxiliar para [Sonarr](instalacion-de-sonarr-en-docker) y [Radarr](instalacion-de-radarr-en-docker) que se encarga de gestionar y descargar los subtítulos de las series y películas.
 
 La [instalación en Docker](https://hub.docker.com/r/linuxserver/bazarr) se realiza usando la imagen `linuxserver/bazarr`.
 
 La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
-```
+```yaml
+version: '3'
+services:
   bazarr:
-    image: ghcr.io/linuxserver/bazarr:latest
+    image: lscr.io/linuxserver/bazarr:latest
     container_name: bazarr
     environment:
       - PUID=1001
       - PGID=115
       - TZ=Europe/Madrid
     volumes:
-      - /home/pi/volumes/bazarr:/config
+      - ~/volumes/bazarr:/config
       - /data/media/movies:/data/movies
       - /data/media/tvseries:/data/tvseries
     ports:
@@ -33,13 +41,13 @@ La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente 
     restart: unless-stopped
 ```
 
-Se puede usar `docker-compose up -d` o usar el contenido del fichero en Portainer.
+A continuación, se puede ejecutar el comando `docker-compose up -d` o usar el contenido del fichero en Portainer.
 
 # Configuración
 
 Una vez en marcha, se puede acceder a Lidarr a través del puerto `6767` (en este ejemplo http://192.168.1.180:6767/) y comenzar la configuración.
 
-Lo primero y más importante es crear una contraseña para el usuario administrador:
+Lo primero, y más importante, es crear una contraseña para el usuario administrador:
 
 * Settings > General > Authentication > Form
 * Settings > General > Username > `admin`
@@ -58,11 +66,11 @@ Para que la aplicación pueda descargar los subtítulos se deben configurar dife
   * Disable Upgrade Previously Downloaded Subtitles
 * Settings > Sonarr > Enable
   * Address: 192.168.1.180
-  * API Key
+  * `API Key`
   * Download only monitored
 * Settings > Radarr > Enable
   * Address: 192.168.1.180
-  * API Key
+  * `API Key`
   * Download only monitored
 
 ## Volúmenes comunes
@@ -76,25 +84,13 @@ Por ejemplo:
 
 # Actualizar
 
-Si ya se había instalado Lidarr anteriormente, se puede actualizar de la siguiente manera:
+Si ya se había instalado Bazarr anteriormente, se puede actualizar de la siguiente manera:
 
 ```
 docker stop bazarr
 docker rm bazarr
-docker rmi ghcr.io/linuxserver/bazarr
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=bazarr \
-  -e PUID=1001 \
-  -e PGID=115 \
-  -e TZ=Europe/Madrid \
-  -p 6767:6767 \
-  -v /home/pi/volumes/bazarr:/config \
-  -v /data/media/movies:/data/movies \
-  -v /data/media/tvseries:/data/tvseries \  
-  --restart unless-stopped \
-  ghcr.io/linuxserver/bazarr:latest
+docker rmi lscr.io/linuxserver/bazarr
+docker-compose up -d
 ```
 
 # Soporte

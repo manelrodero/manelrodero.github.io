@@ -5,7 +5,7 @@ title: 'Instalación de Home Assistant en Docker'
 date: '2022-10-22 19:02:51'
 published: true
 tags:
-- Home Assistant
+- Docker
 author:
   display_name: Manel Rodero
 ---

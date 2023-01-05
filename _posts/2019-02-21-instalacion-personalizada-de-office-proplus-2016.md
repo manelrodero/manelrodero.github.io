@@ -5,9 +5,7 @@ title: Instalación personalizada de Office ProPlus 2016
 date: 2019-02-21 22:26:59.000000000 +01:00
 published: true
 tags:
-- Windows
-- Office
-- OSDUpdate
+- Software
 author:
   display_name: Manel Rodero
 ---

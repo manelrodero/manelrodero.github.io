@@ -5,8 +5,7 @@ title: 'Añadir drivers a una Offline Standalone Media de ConfigMgr'
 date: '2021-02-14 21:44:23'
 published: true
 tags:
-- ConfigMgr
-- Drivers
+- OSD
 author:
   display_name: Manel Rodero
 ---

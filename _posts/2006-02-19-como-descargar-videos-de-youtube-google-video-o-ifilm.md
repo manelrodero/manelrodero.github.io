@@ -6,7 +6,6 @@ date: 2006-02-19 21:20:13.000000000 +01:00
 published: true
 tags:
 - Internet
-- YouTube
 author:
   display_name: Manel Rodero
 ---

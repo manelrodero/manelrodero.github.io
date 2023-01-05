@@ -5,9 +5,7 @@ title: Añadir RSAT en Windows 10 1809
 date: 2019-02-20 19:12:25.000000000 +01:00
 published: true
 tags:
-- Windows
 - Software
-- RSAT
 author:
   display_name: Manel Rodero
 ---

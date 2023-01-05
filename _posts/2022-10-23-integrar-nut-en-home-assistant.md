@@ -5,7 +5,7 @@ title: 'Integrar NUT en Home Assistant'
 date: '2022-10-23 16:31:08'
 published: true
 tags:
-- Home Assistant
+- Docker
 author:
   display_name: Manel Rodero
 ---

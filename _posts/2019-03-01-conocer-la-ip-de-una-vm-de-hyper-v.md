@@ -6,8 +6,6 @@ date: 2019-03-01 18:56:58.000000000 +01:00
 published: true
 tags:
 - Windows
-- Hyper-V
-- PowerShell
 author:
   display_name: Manel Rodero
 ---

@@ -5,7 +5,7 @@ title: 'Instalación de Windows Server 2022 en un Dell Precision 7530 para usar 
 date: '2021-11-06 13:54:00'
 published: true
 tags:
-- HomeLab
+- Windows
 author:
   display_name: Manel Rodero
 ---

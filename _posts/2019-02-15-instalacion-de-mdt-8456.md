@@ -5,9 +5,7 @@ title: Instalación de MDT 8456
 date: 2019-02-15 23:51:59.000000000 +01:00
 published: true
 tags:
-- Windows
 - OSD
-- MDT
 author:
   display_name: Manel Rodero
 ---

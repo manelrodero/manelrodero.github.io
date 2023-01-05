@@ -6,7 +6,6 @@ date: '2021-01-15 19:09:01'
 published: true
 tags:
 - Hardware
-- Audiovisuales
 author:
   display_name: Manel Rodero
 ---

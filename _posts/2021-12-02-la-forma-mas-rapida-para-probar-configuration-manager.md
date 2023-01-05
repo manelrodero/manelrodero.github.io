@@ -5,7 +5,7 @@ title: 'La forma más rápida para probar Configuration Manager'
 date: '2021-12-02 18:27:10'
 published: true
 tags:
-- MEMCM
+- OSD
 author:
   display_name: Manel Rodero
 ---

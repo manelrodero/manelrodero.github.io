@@ -145,6 +145,9 @@ docker exec -it vaultwarden /bin/bash
 
 # Monitorizar los logs del contenedor en tiempo real
 docker logs -f vaultwarden
+
+# Obtener la versión de Vaultwarden
+docker exec vaultwarden /vaultwarden --version
 ```
 
 # Referencias

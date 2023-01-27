@@ -94,7 +94,7 @@ Por ejemplo, si estuviésemos en la [página del reproductor web de Spotify](htt
 
 ![Creacion de contraseña][4]
 
-donde, comom mínimo, deberíamos:
+donde, como mínimo, deberíamos:
 
 * escribir el **username** (o generar uno aleatorio)
 * generar un **password** y seleccionarlo
@@ -108,7 +108,7 @@ Para introducir las contraseñas de forma automática en una determinada página
 
 ![Uso de contraseña][5]
 
-También es posible copiar el usuario, la contraseña o el código TOTP (si existe) pulsando en los iconos correspondientes.
+También es posible copiar el usuario, la contraseña o el código TOTP, si existe, pulsando en los iconos correspondientes (persona, llave y reloj).
 
 [1]: /assets/img/blog/2023-01-27_image_1.png "Descarga Bitwarden"
 [2]: /assets/img/blog/2023-01-27_image_2.png "Activación extensión"

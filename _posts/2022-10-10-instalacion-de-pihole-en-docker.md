@@ -62,6 +62,16 @@ A continuación hay que configurar el servidor de DNS _upstream_ que se quire ut
   * 9.9.9.9
   * 149.112.112.112
 
+# Listas
+
+Si en algún momento es necesario borras las _blocklist_ se puede hacer desde terminal `sqlite3 /etc/pihole/gravity.db "DELETE FROM adlist"` o accediendo a la opción `Adlists` del menú lateral.
+
+Para [restaurar la lista por defecto](https://discourse.pi-hole.net/t/restoring-default-pi-hole-adlist-s/32323) únicamente hay agregar la siguiente URL:
+
+* `https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts`
+
+Cada vez que se añaden o borran listas hay que actualizar **Gravity** (`Tools` &rarr; `Update Gravity`) para que se genere la base de datos completa, sin errores ni duplicados.
+
 # Actualizar
 
 Si ya se había instalado Pi-hole anteriormente, se puede actualizar de la siguiente manera:
@@ -90,3 +100,5 @@ docker logs -f pihole
 * [How to Set up Pihole in a Docker Container](https://adamtheautomator.com/pi-hole-in-docker/)
 * [Setting up Pi-hole as a recursive DNS server (Explained)](https://sidmulajkar.com/posts/setting-up-pihole-as-a-recursive-dns-server/)
 * [Pihole: Add custom DNS mappings](https://thiagowfx.github.io/2022/01/pihole-add-custom-dns-mappings/)
+* [Avoid The Hack: The Best Pi-Hole Blocklists](https://avoidthehack.com/best-pihole-blocklists)
+* [7 Best PiHole Blocklists – Safely Block all Ads](https://ninja-ide.org/pihole-blocklists-2022/)

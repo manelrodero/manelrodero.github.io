@@ -12,7 +12,8 @@ author:
 
 #### _**Actualizaciones**:_
 
-* **2022-12-03**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
 
 # Instalación
 
@@ -33,7 +34,7 @@ services:
       - PGID=115
       - TZ=Europe/Madrid
     volumes:
-      - ~/volumes/bazarr:/config
+      - /home/pi/volumes/bazarr:/config
       - /data/media/movies:/data/movies
       - /data/media/tvseries:/data/tvseries
     ports:
@@ -45,7 +46,7 @@ A continuación, se puede ejecutar el comando `docker-compose up -d` o usar el c
 
 # Configuración
 
-Una vez en marcha, se puede acceder a Lidarr a través del puerto `6767` (en este ejemplo http://192.168.1.180:6767/) y comenzar la configuración.
+Una vez en marcha, se puede acceder a Bazarr a través del puerto `6767` (en este ejemplo [http://192.168.1.180:6767/](http://192.168.1.180:6767/)) y comenzar la configuración.
 
 Lo primero, y más importante, es crear una contraseña para el usuario administrador:
 

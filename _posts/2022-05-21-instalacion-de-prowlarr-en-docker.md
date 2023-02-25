@@ -10,7 +10,14 @@ author:
   display_name: Manel Rodero
 ---
 
-[Prowlarr](https://github.com/Prowlarr/Prowlarr/) es una aplicación que funciona como un **servidor proxy** entre las aplicaciones ([Sonarr](https://sonarr.tv/), [Radarr](https://radarr.video/), [Lidarr](https://lidarr.audio/), [Readarr](https://readarr.com/) y [Mylar3](https://github.com/mylar3/mylar3)) y los _trackers_ Torrent o los _indexer_ Usenet.
+#### _**Actualizaciones**:_
+
+* **2023-01-15**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
+
+# Instalación
+
+[Prowlarr](https://github.com/Prowlarr/Prowlarr/) es una aplicación que funciona como un **servidor proxy** entre las aplicaciones ([Sonarr](instalacion-de-sonarr-en-docker), [Radarr](instalacion-de-radarr-en-docker), [Lidarr](instalacion-de-lidarr-en-docker), [Readarr](instalacion-de-readarr-en-docker) y [Mylar3](https://github.com/mylar3/mylar3)) y los _trackers_ Torrent o los _indexer_ Usenet.
 
 Traduce las consultas de estas aplicaciones en consultas HTTP específicas para cada sitio de seguimiento, analiza la respuesta HTML y luego envía los resultados al software solicitante.
 
@@ -18,9 +25,11 @@ La [instalación en Docker](https://hub.docker.com/r/linuxserver/prowlarr) se re
 
 La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
-```
+```yaml
+version: '3'
+services:
   prowlarr:
-    image: ghcr.io/linuxserver/prowlarr:develop
+    image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
     environment:
       - PUID=1001
@@ -61,14 +70,16 @@ Para que la aplicación pueda descargar ficheros, se debe configurar un cliente 
 
 A continuación se puede añadir uno o más **Indexer** (públicos o privados) pulsado el botón `+Add indexer` en la sección `Indexers` del menú lateral.
 
-Estos _indexer_ se pueden añadir a Sonarr, Radarr, Lidarr, etc. de forma automática realizando los pasos siguientes:
+Estos _indexer_ se pueden añadir a Sonarr, Radarr, Lidarr, etc. de forma automática desde Prowlarr añadiendo las aplicaciones correspondientes desde el menú `Settings` &rarr; `Apps`.
 
-* Settings > Applications > Add
+Por ejemplo, para añadir **Radarr** ser haría lo siguiente:
+
+* Settings > Apps > Add
   * Name: Radarr
   * Sync Level: Add and Remove Only
   * Prowlarr Server: `http://192.168.1.180:9696`
   * Radarr Server: `http://192.168.1.180:7878`
-  * ApiKey (copiarla desde Settings > General en Radarr)
+  * ApiKey (copiarla desde `Settings` &rarr; `General` de Radarr)
   * Test > Save
 
 # Actualizar
@@ -78,18 +89,8 @@ Si ya se había instalado Radarr anteriormente, se puede actualizar de la siguie
 ```
 docker stop prowlarr
 docker rm prowlarr
-docker rmi ghcr.io/linuxserver/prowlarr:develop
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=prowlarr \
-  -e PUID=1001 \
-  -e PGID=115 \
-  -e TZ=Europe/Madrid \
-  -p 9696:9696 \
-  -v /home/pi/volumes/prowlarr:/config \
-  --restart unless-stopped \
-  ghcr.io/linuxserver/prowlarr:develop
+docker rmi lscr.io/linuxserver/prowlarr
+docker-compose up -d
 ```
 
 # Soporte

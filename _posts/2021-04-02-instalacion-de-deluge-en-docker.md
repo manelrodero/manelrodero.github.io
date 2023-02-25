@@ -13,6 +13,7 @@ author:
 #### _**Actualizaciones**:_
 
 * **2022-12-03**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
 
 # Instalación
 
@@ -22,9 +23,11 @@ La [instalación en Docker](https://hub.docker.com/r/linuxserver/deluge) se real
 
 La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
-```
+```yaml
+version: '3'
+services:
   deluge:
-    image: ghcr.io/linuxserver/deluge:latest
+    image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
     environment:
       - PUID=1001
@@ -73,21 +76,8 @@ Si ya se había instalado Deluge anteriormente, se puede actualizar de la siguie
 ```
 docker stop deluge
 docker rm deluge
-docker rmi ghcr.io/linuxserver/deluge
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=deluge \
-  -e PUID=1001 \
-  -e PGID=115 \
-  -e TZ=Europe/Madrid \
-  -p 8112:8112 \
-  -p 6881:6881 \
-  -p 6881:6881/udp \  
-  -v /home/pi/volumes/deluge:/config \
-  -v /data/torrents:/data/torrents \
-  --restart unless-stopped \
-  ghcr.io/linuxserver/deluge:latest
+docker rmi lscr.io/linuxserver/deluge
+docker-compose up -d
 ```
 
 # Soporte

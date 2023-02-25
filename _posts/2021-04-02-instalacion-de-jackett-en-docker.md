@@ -13,10 +13,13 @@ author:
 #### _**Actualizaciones**:_
 
 * **2022-12-03**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
 
 # Instalación
 
-[Jackett](https://github.com/Jackett/Jackett) es una aplicación que funciona como un **servidor proxy** entre las aplicaciones ([Sonarr](https://sonarr.tv/), [Radarr](https://radarr.video/), [Lidarr](https://lidarr.audio/), etc.) y los _trackers_ de ficheros Torrent.
+> **Nota**: Se puede utilizar [Prowlarr](instalacion-de-prowlarr-en-docker) para **centralizar** la configuración de _indexers_ en una única aplicación.
+
+[Jackett](https://github.com/Jackett/Jackett) es una aplicación que funciona como un **servidor proxy** entre las aplicaciones ([Sonarr](instalacion-de-sonarr-en-docker), [Radarr](instalacion-de-radarr-en-docker), [Lidarr](instalacion-de-lidarr-en-docker), etc.) y los _trackers_ de ficheros Torrent.
 
 Traduce las consultas de estas aplicaciones en consultas HTTP específicas para cada sitio de seguimiento, analiza la respuesta HTML y luego envía los resultados al software solicitante.
 
@@ -36,7 +39,7 @@ services:
       - TZ=Europe/Madrid
       - AUTO_UPDATE=false
     volumes:
-      - ~/volumes/jackett:/config
+      - /home/pi/volumes/jackett:/config
       - /data/torrents:/data/torrents
     ports:
       - 9117:9117
@@ -65,7 +68,7 @@ Estos _indexer_ se pueden añadir después a Sonarr, Radarr, Lidarr, etc. realiz
 * Pegar la API Key de Jackett
 * Configurar los ID de las categorías
 
-También se puede [configurar la URL de **FlareSolverr**](https://github.com/Jackett/Jackett#configuring-flaresolverr) para aquellos índices que estén protegidos por Cloudflare (en este ejemplo [http://192.168.1.180:8191/](http://192.168.1.180:8191/)).
+También se puede **configurar la URL** de [**FlareSolverr**](instalacion-de-flaresolverr-en-docker) para aquellos índices que estén protegidos por Cloudflare.
 
 # Actualizar
 

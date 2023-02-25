@@ -13,6 +13,7 @@ author:
 #### _**Actualizaciones**:_
 
 * **2022-12-03**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
 
 # Instalación
 
@@ -35,7 +36,7 @@ services:
       - PGID=115
       - TZ=Europe/Madrid
     volumes:
-      - ~/volumes/radarr:/config
+      - /home/pi/volumes/radarr:/config
       - /data/media/movies:/data/movies
       - /data/torrents:/data/torrents
     ports:
@@ -142,7 +143,7 @@ Si ya se había instalado Radarr anteriormente, se puede actualizar de la siguie
 ```
 docker stop radarr
 docker rm radarr
-docker rmi ghcr.io/linuxserver/radarr
+docker rmi lscr.io/linuxserver/radarr
 docker-compose up -d
 ```
 

@@ -13,6 +13,7 @@ author:
 #### _**Actualizaciones**:_
 
 * **2022-12-03**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
 
 # Instalación
 
@@ -35,7 +36,7 @@ services:
       - PGID=115
       - TZ=Europe/Madrid
     volumes:
-      - ~/volumes/sonarr:/config
+      - /home/pi/volumes/sonarr:/config
       - /data/media/tvseries:/data/tvseries
       - /data/torrents:/data/torrents
     ports:

@@ -11,6 +11,12 @@ author:
   display_name: Manel Rodero
 ---
 
+#### _**Actualizaciones**:_
+
+* **2023-02-17**: Revisión del documento y corrección de errores.
+
+# Instalación
+
 [Home Assistant](https://www.home-assistant.io/) es un software que permite **automatizar** y **controlar** la **domótica** de un hogar.
 
 Las principales ventajas respecto a otras soluciones existentes para controlar la domótica del hogar son:
@@ -36,7 +42,7 @@ La [instalación en Docker](https://hub.docker.com/r/linuxserver/homeassistant) 
 
 La forma más sencilla es usar un fichero [`docker-compose.yml`](https://www.home-assistant.io/installation/raspberrypi#docker-compose) con el siguiente contenido:
 
-```
+```yaml
 version: '3'
 services:
   homeassistant:
@@ -105,18 +111,8 @@ Si ya se había instalado Home Assistant anteriormente, se puede actualizar de l
 ```
 docker stop homeassistant
 docker rm homeassistant
-docker rmi ghcr.io/home-assistant/home-assistant
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=homeassistant \
-  --privileged \
-  -e TZ=Europe/Madrid \
-  -v /home/pi/volumes/homeassistant:/config \
-  -v /etc/localtime:/etc/localtime:ro \
-  --restart unless-stopped \
-  --network=host \
-  ghcr.io/home-assistant/home-assistant:stable
+docker rmi ghcr.io/home-assistant/home-assistant:stable
+docker-compose up -d
 ```
 
 # Soporte

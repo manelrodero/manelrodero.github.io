@@ -11,17 +11,27 @@ author:
   display_name: Manel Rodero
 ---
 
+#### _**Actualizaciones**:_
+
+* **2023-03-02**: Revisión del documento y corrección de errores.
+
+# Introducción
+
 [Node-RED](https://nodered.org/) es una herramienta de programación para conectar dispositivos de hardware, API y servicios en línea de formas nuevas e interesantes.
 
 Proporciona un editor basado en navegador que facilita la conexión de flujos mediante la amplia gama de nodos de la paleta que se pueden ejecutar con un solo clic.
 
 ![Imagen][3]
 
+# Instalación
+
 La [instalación en Docker](https://hub.docker.com/r/nodered/node-red) se realiza usando la imagen `nodered/node-red`.
 
 La forma más sencilla es usar un fichero [`docker-compose.yml`](https://nodered.org/docs/getting-started/docker) con el siguiente contenido:
 
-```
+```yaml
+version: "3"
+services:
   node-red:
     image: nodered/node-red:latest
     container_name: node-red
@@ -40,6 +50,31 @@ Se puede usar `docker-compose up -d` o usar el contenido del fichero en Portaine
 
 Una vez en marcha, se puede acceder a Node-RED a través del puerto `1880` (en este ejemplo [http://192.168.1.180:1880](http://192.168.1.180:1880)) y comenzar la configuración.
 
+Una opción recomendable, además de utilizar HTTPS, es utilizar la autenticación de usuarios.
+
+Para ello hay que descomentar esta sección del fichero [`settings.js`](https://nodered.org/docs/user-guide/runtime/settings-file) para disponer de un usuario `admin` con todos los privilegios:
+
+```js
+    adminAuth: {
+        type: "credentials",
+        users: [{
+            username: "admin",
+            password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
+            permissions: "*"
+        }]
+    },
+```
+
+Para [generar la contraseña](https://nodered.org/docs/user-guide/runtime/securing-node-red#generating-the-password-hash) de este usuario hay que utilizar la herramienta `node-red` de la siguiente manera::
+
+```
+pi@pi4nas:~ $ docker exec -it node-red node-red admin hash-pw
+Password:
+$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.
+```
+
+A continuación se reinicia el contenedor para utilizar la nueva configuración.
+
 # Actualizar
 
 Si ya se había instalado Node-RED anteriormente, se puede actualizar de la siguiente manera:
@@ -48,14 +83,7 @@ Si ya se había instalado Node-RED anteriormente, se puede actualizar de la sigu
 docker stop node-red
 docker rm node-red
 docker rmi nodered/node-red
-
-# Únicamente si no se usa un 'stack' en Portainer
-docker run -d \
-  --name=node-red \
-  -e TZ=Europe/Madrid \
-  -v /home/pi/volumes/node-red:/data \
-  --restart unless-stopped \
-  nodered/node-red:latest
+docker-compose up -d
 ```
 
 # Soporte
@@ -73,6 +101,6 @@ docker logs -f node-red
 # Referencias
 
 * [Instalar Home Assistant y Node-RED con Docker](https://youtu.be/wi2b5ZcySuc) @ Un loco y su tecnología
-* [HA y Node-RED: Configuración rápida](https://youtu.be/ZbyT0EFzSTE) @ Un loco y su tecnología
+* [HA y Node-RED: Configuración rápida](https://www.youtube.com/watch?v=sIvzWJ4ytok) @ Un loco y su tecnología
 
 [3]: /assets/img/blog/2022-10-22_image_3.png "Node-RED"

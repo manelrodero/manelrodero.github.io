@@ -257,6 +257,10 @@ Para actualizar el _firmware_ es necesario abrir el _dongle_ ya que se necesita 
 
 > **Nota**: si el _dongle_ aparece en la sección `Other devices` del Administrador de Dispositivos significa que no están instalados los _drivers_ UART que hemos descargado anteriormente.
 
+![Other devices][6]
+
+![UART Bridge][7]
+
 ## _Flashing_
 
 El proceso de actualización del _firmware_ es bastante sencillo pero puede ser necesario un pequeño "truco" si aparece algún error:
@@ -269,6 +273,8 @@ El proceso de actualización del _firmware_ es bastante sencillo pero puede ser 
 * No desconectar la placa mientras se actualiza ;-)
 
 > **Nota**: si aparece un error de _timeout_ al esperar el ACK, se desconectará el _dongle_ y se volverá a conectar de la misma manera, manteniendo pulsado el botón `BOOT` hasta que empiece el proceso de actualización después de pulsar el botón `Start`.
+
+![ZigStar GW Multi Tool][8]
 
 ## Montaje del _dongle_
 
@@ -331,3 +337,6 @@ docker logs -f zigbee2mqtt
 [3]: /assets/img/blog/2023-03-05_image_3.png "SONOFF SNZB-02"
 [4]: /assets/img/blog/2023-03-05_image_4.png "Valores expuestos"
 [5]: /assets/img/blog/2023-03-05_image_5.png "Home Assistant"
+[6]: /assets/img/blog/2023-03-05_image_6.png "Other devices"
+[7]: /assets/img/blog/2023-03-05_image_7.png "UART Bridge"
+[8]: /assets/img/blog/2023-03-05_image_8.png "ZigStar GW Multi Tool"

@@ -316,8 +316,6 @@ docker logs -f zigbee2mqtt
 
 * [Zigbee 3.0 USB Dongle Plus–ZBDongle-E](https://itead.cc/product/zigbee-3-0-usb-dongle/)
 
-* https://github.com/Koenkk/zigbee2mqtt/issues/10209
-
 * Playlist [Zigbee2MQTT / Zigbee](https://www.youtube.com/playlist?list=PLMuAf-x9dLNgQMQMk_H1X_RSSbS_n5bvK) @ Un loco y su tecnología
   * [Empezar con Zigbee y Home Assistant: ¿Qué opciones hay? Zigbee2MQTT / ZHA / deCONZ - Capitulo 1](https://www.youtube.com/watch?v=FGTLpdgvfPI)
   * [Instala Zigbee2MQTT y conecta todos tus sensores a Home Assistant - Capitulo 2](https://www.youtube.com/watch?v=6ZhRWMtbXqo)

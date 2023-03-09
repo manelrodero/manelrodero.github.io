@@ -122,7 +122,8 @@ footer-link-col: "#404040"
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-gtag: "UA-308925-8"
+# gtag: "UA-308925-8"
+gtag: "G-YNK80N4WMN"
 
 # Fill in your Google Analytics ID to track your website using GA
 # google_analytics: "UA-308925-8"

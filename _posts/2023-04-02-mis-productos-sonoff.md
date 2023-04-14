@@ -17,11 +17,13 @@ author:
 
 # Gateway & Sensors
 
-## Zigbee 3.0 USB Dongle Plus-P
+## [Zigbee 3.0 USB Dongle Plus-P](https://sonoff.tech/product/gateway-amd-sensors/sonoff-zigbee-3-0-usb-dongle-plus-p/)
 
-El [SONOFF ZigBee 3.0 USB Dongle Plus](https://sonoff.tech/product/gateway-amd-sensors/sonoff-zigbee-3-0-usb-dongle-plus-p/) es un adaptador USB que se puede utilizar como una puerta de enlace Zigbee universal en Home Assistant] a través de [Zigbee2MQTT](https://www.zigbee2mqtt.io/devices/ZBDongle-E.html) para **controlar localmente todos los dispositivos Zigbee** sin necesidad de comprar concentradores Zigbee de diferentes marcas.
+El **ZigBee 3.0 USB Dongle Plus** es un adaptador USB que se puede utilizar como una puerta de enlace Zigbee universal en Home Assistant] a través de [Zigbee2MQTT](https://www.zigbee2mqtt.io/devices/ZBDongle-E.html) para **controlar localmente todos los dispositivos Zigbee** sin necesidad de comprar concentradores Zigbee de diferentes marcas.
 
 Se puede comprar en [AliExpress](https://es.aliexpress.com/item/1005003606767695.html) por unos 22,50€ (o 25,32€ con un cable de extensión USB de 1,5m) a fecha 14 de abril de 2023.
+
+![ZBDongle-P](https://www.zigbee2mqtt.io/images/devices/ZBDongle-E.jpg)
 
 Sus [especificaciones](https://sonoff.tech/wp-content/uploads/2021/11/%E4%BA%A7%E5%93%81%E5%8F%82%E6%95%B0%E8%A1%A8-ZBDongle-P-20211008.pdf) son las siguientes:
 

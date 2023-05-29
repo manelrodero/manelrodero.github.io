@@ -13,7 +13,7 @@ author:
 
 Hasta hace relativamente poco las Raspberry Pi únicamente podían iniciarse desde una tarjeta SD. Estas tarjetas, además de un ancho de banda relativamente bajo (50 Mbps en una Raspberry Pi 4), no suelen durar mucho si las aplicaciones que instalamos realizan escrituras constantes.
 
-Por estos motivos es mejor [iniciar desde un dispositivo USB](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md) (_pendrive_, disco SSD, etc.) aprovechando los puertos USB 3.0 que incorpora la Raspberry Pi 4.
+Por estos motivos es mejor [iniciar desde un dispositivo USB](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#usb-mass-storage-boot) (_pendrive_, disco SSD, etc.) aprovechando los puertos USB 3.0 que incorpora la Raspberry Pi 4.
 
 Para poder iniciar desde USB es necesario tener un **bootloader** con fecha igual o superior al 3 de septiembre de 2020. Si nuestra Raspberry Pi 4 se fabricó antes, habrá que actualizar la EEPROM.
 
@@ -90,19 +90,19 @@ CURRENT: 000138a1
  LATEST: 000138a1
 ```
 
-Mediante el comando `vcgencmd bootloader_config` se puede comprobar si el valor de [`BOOT_ORDER`](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md) es `0xf41`.
+Mediante el comando `vcgencmd bootloader_config` se puede comprobar si el valor de [`BOOT_ORDER`](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#BOOT_ORDER) es `0xf14`.
 
-Este valor indica que se intentará iniciar por USB de forma contínua si no hay una tarjeta SD insertada en la Raspberry Pi:
+Este valor, que se lee de derecha a izquierda, indica que se intentará iniciar desde USB-MSD y después desde SD CARD de forma contínua:
 
 ```
-0x1	SD CARD	SD card (or eMMC on Compute Module 4)
-0x4	USB-MSD	USB mass storage boot (since 2020-09-03)
-0xf	RESTART	Start again with the first boot order field. (since 2020-09-03)
+0x1 SD CARD SD card (or eMMC on Compute Module 4)
+0x4 USB-MSD USB mass storage boot (since 2020-09-03)
+0xf RESTART Restart from the first boot-mode in the BOOT_ORDER field i.e. loop (since 2020-09-03)
 ```
 
 ## Configuración
 
-Se puede cambiar éste y otros valores usando el comando [`sudo raspi-config`](https://www.raspberrypi.org/documentation/configuration/raspi-config.md):
+Se puede cambiar éste y otros valores usando el comando [`sudo raspi-config`](https://www.raspberrypi.com/documentation/computers/configuration.html):
 
 * System Options
   * Password: raspberry &rarr; nuevo password

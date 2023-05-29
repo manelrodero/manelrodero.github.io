@@ -26,7 +26,7 @@ Para poder iniciar desde USB es necesario tener un **bootloader** con fecha igua
 
 Para actualizar la EEPROM se puede realizar el siguiente proceso:
 
-* Descargar [Raspberry Pi Imager](https://www.raspberrypi.org/software/)
+* Descargar [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 * Ejecutar el programa
 * Escoger la imagen `Misc utility images > Raspberry Pi 4 EEPROM Boot Recovery`
 * Seleccionar la tarjeta SD correcta
@@ -56,7 +56,7 @@ Una vez iniciada, únicamente es necesario conocer la dirección IP asignada por
 
 ## Actualización de Raspberry Pi OS
 
-Para [actualizar Raspberry Pi OS](https://www.raspberrypi.org/documentation/raspbian/updating.md) a la última versión se tienen que ejecutar los siguientes comandos:
+Para [actualizar Raspberry Pi OS](https://www.raspberrypi.com/documentation/computers/os.html#using-apt) a la última versión se tienen que ejecutar los siguientes comandos:
 
 ```
 # Actualizar la lista de repositorios
@@ -68,7 +68,7 @@ sudo reboot
 ```
 
 {: .box-note}
-**Nota**: Los ingenieros de Raspberry [desaconsejan utilizar `rpi-update`](https://www.raspberrypi.org/documentation/raspbian/applications/rpi-update.md) ya que instala versiones que aún no son estables.
+**Nota**: Los ingenieros de Raspberry [desaconsejan utilizar `rpi-update`](https://www.raspberrypi.com/documentation/computers/os.html#using-rpi-update) ya que instala versiones que aún no son estables.
 
 Como se ha utilizado la imagen con la última EEPROM, ésta debería estar actualizada:
 

@@ -1,4 +1,4 @@
-remote_theme: daattali/beautiful-jekyll@5.0.0
+remote_theme: daattali/beautiful-jekyll@6.0.1
 
 # --- Basic options --- #
 
@@ -12,7 +12,7 @@ description: Un lugar donde anotar todo aquello que quiero volver a localizar f√
 author: Manel Rodero
 
 # --- List of links in the navigation bar --- #
-
+navbar-var-length: true
 navbar-links:
   Blog: "blog"
 #  Wiki: "wiki"
@@ -36,9 +36,10 @@ navbar-links:
       - Reddit: "community/reddit"
   Hobbies:
       - Hiking: "hobbies/hiking"
-  "About ":
+  "About":
       - Me: "about/me"
       - Laptop: "about/laptop"
+      - Desktop: "about/desktop"
       - Software: "about/software"
       - Tags: "tags"
 #      - Resume / CV: "resume/manel_rodero_cv.pdf"
@@ -195,6 +196,8 @@ permalink: /blog/:title
 paginate: 7
 # https://jekyllrb.com/docs/pagination/
 paginate_path: "blog/page:num"
+
+post_search: true
 
 kramdown:
   input: GFM

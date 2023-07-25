@@ -5,7 +5,7 @@ subtitle: Microsoft Deployment Toolkit
 blog-width: true
 ---
 
-Esta página contiene información relacionada con [**Microsoft Deployment Toolkit**](https://docs.microsoft.com/es-es/mem/configmgr/mdt/){:target="_blank"} (MDT), una colección unificada de herramientas, procesos y guías para automatizar las implementaciones de escritorio y de servidores.
+Esta página contiene información relacionada con [**Microsoft Deployment Toolkit**](https://docs.microsoft.com/en-us/mem/configmgr/mdt/){:target="_blank"} (MDT), una colección unificada de herramientas, procesos y guías para automatizar las implementaciones de escritorio y de servidores.
 
 | [Artículos](#posts) |
 

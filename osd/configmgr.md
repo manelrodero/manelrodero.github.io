@@ -1,18 +1,18 @@
 ---
 layout: page
 title: Configuration Manager
-subtitle: SMS / SCCM / MEMCM
+subtitle: SMS / SCCM / MEMCM / ConfigMgr
 blog-width: true
 ---
 
-Esta página contiene información relacionada con [**Microsoft Endpoint Configuration Manager**](https://docs.microsoft.com/es-es/mem/configmgr/){:target="_blank"} (MEMCM), una solución integrada para administrar todos los dispositivos de la empresa.
+Esta página contiene información relacionada con [**Microsoft Endpoint Configuration Manager**](https://docs.microsoft.com/en-us/mem/configmgr/){:target="_blank"} (MEMCM), una solución integrada para administrar todos los dispositivos de la empresa.
 
 | [Versiones](#versiones) | [Artículos](#posts) | [Vídeos](#videos) |
 
 # <a name="versiones">Versiones
 
 {: .box-note}
-**Nota**: A partir de la versión 1910, Configuration Manager forma parte de [Microsoft Endpoint Manager](https://docs.microsoft.com/es-es/mem){:target="_blank"}. La versión 1906 y anteriores siguen mostrando la marca [System Center](https://docs.microsoft.com/es-es/system-center/){:target="_blank"} Configuration Manager.
+**Nota**: A partir de la versión 1910, Configuration Manager forma parte de [Microsoft Endpoint Manager](https://docs.microsoft.com/en-us/mem){:target="_blank"}. La versión 1906 y anteriores siguen mostrando la marca [System Center](https://docs.microsoft.com/en-us/system-center/){:target="_blank"} Configuration Manager.
 
 Las versiones _baseline_ de este producto (que se pueden descargar desde [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx)) son las siguientes:
 
@@ -27,7 +27,7 @@ Las versiones _baseline_ de este producto (que se pueden descargar desde [VLSC](
 | ~~SCCM 1606~~	| 5.00.8412.1000 | 22 Julio 2016 | 22 Julio 2017 |
 | ~~SCCM Update 1511~~ | 5.00.8325.1000 | 8 Diciembre 2015 | 8 Diciembre 2016 |
 
-Prajwal Desai mantiene una [tabla de versiones](https://www.prajwaldesai.com/sccm-build-version-numbers/){:target="_blank"} que incluye los _hotfixes_ y las actualizaciones acumulativas. La documentación oficial mantiene las [versiones soportadas](https://docs.microsoft.com/es-es/mem/configmgr/core/servers/manage/updates#supported-versions){:target="_blank"}.
+Prajwal Desai mantiene una [tabla de versiones](https://www.prajwaldesai.com/sccm-build-version-numbers/){:target="_blank"} que incluye los _hotfixes_ y las actualizaciones acumulativas. La documentación oficial mantiene las [versiones soportadas](https://docs.microsoft.com/en-us/mem/configmgr/core/servers/manage/updates#supported-versions){:target="_blank"}.
 
 # <a name="posts">Artículos
 

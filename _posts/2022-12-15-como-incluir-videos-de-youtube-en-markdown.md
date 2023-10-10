@@ -80,15 +80,15 @@ Hay quien ha creado una API para obtener el _thumbnail_ del vídeo, añadirle un
 [![Comprehensive Markdown Crash Course](https://markdown-videos.deta.dev/youtube/FEa2diI2qgA)](https://www.youtube.com/watch?v=FEa2diI2qgA)
 ```
 
-Ejemplo:
-
-[![Comprehensive Markdown Crash Course](https://markdown-videos.deta.dev/youtube/FEa2diI2qgA)](https://www.youtube.com/watch?v=FEa2diI2qgA)
-
 El proyecto [Video to markdown!](https://video-to-markdown.marcomontalbano.com/) de [Marco Montalbano](https://www.marcomontalbano.com/) hace algo similar.
 
 ```markdown
 [![Comprehensive Markdown Crash Course](https://res.cloudinary.com/marcomontalbano/image/upload/v1671144387/video_to_markdown/images/youtube--FEa2diI2qgA-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=FEa2diI2qgA "Comprehensive Markdown Crash Course")
 ```
+
+Ejemplo:
+
+[![Comprehensive Markdown Crash Course](https://res.cloudinary.com/marcomontalbano/image/upload/v1671144387/video_to_markdown/images/youtube--FEa2diI2qgA-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=FEa2diI2qgA "Comprehensive Markdown Crash Course")
 
 # _includes
 

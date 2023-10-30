@@ -43,7 +43,7 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 
 | Build | ADMX | Fecha de publicación | XLSX | Fecha de publicación |
 | --- | --- | --- | --- | --- |
-| 22H2 | [1.0](https://www.microsoft.com/en-us/download/104593){:target="_blank"} | 21 Septiembre 2022 | [1.0](https://www.microsoft.com/en-us/download/104594){:target="_blank"} | 21 Septiembre 2022 |
+| 22H2 | [3.0](https://www.microsoft.com/en-us/download/105390){:target="_blank"} | 21 Julio 2023 | [2.0](https://www.microsoft.com/en-us/download/105094){:target="_blank"} | 15 Marzo 2023 |
 | 21H2 | [1.0](https://www.microsoft.com/en-us/download/103507){:target="_blank"} | 6 Octubre 2021 | [1.0](https://www.microsoft.com/en-us/download/103506){:target="_blank"} | 5 Octubre 2021 |
 
 # <a name="rsat"></a>[Remote Server Administration Tool (RSAT)](https://docs.microsoft.com/en-us/troubleshoot/windows-server/system-management-components/remote-server-administration-tools){:target="_blank"}

@@ -25,9 +25,9 @@ La herramienta [**Office Deployment Toolkit**](https://github.com/manelrodero/OS
 
 | Build | ADMX | Fecha de publicación |
 | --- | --- | --- |
-| 5104.1000 | [Office 365 ProPlus](https://www.microsoft.com/en-us/download/details.aspx?id=49030){:target="_blank"} | 7 Diciembre 2020 |
-| 5104.1000 | [Office 2019](https://www.microsoft.com/en-us/download/details.aspx?id=49030){:target="_blank"} | 7 Diciembre 2020 |
-| 5104.1000 | [Office 2016](https://www.microsoft.com/en-us/download/details.aspx?id=49030){:target="_blank"} | 7 Diciembre 2020 |
+| 5406.1000 | [Office 365 ProPlus](https://www.microsoft.com/en-us/download/details.aspx?id=49030){:target="_blank"} | 14 Julio 2023 |
+| 5406.1000 | [Office 2019](https://www.microsoft.com/en-us/download/details.aspx?id=49030){:target="_blank"} | 14 Julio 2023 |
+| 5406.1000 | [Office 2016](https://www.microsoft.com/en-us/download/details.aspx?id=49030){:target="_blank"} | 14 Julio 2023 |
 | 15.0.4869.1000 | [Office 2013](https://www.microsoft.com/en-us/download/details.aspx?id=35554){:target="_blank"} | 15 Diciembre 2017 |
 | 14.0.7129.5000 | [Office 2010](https://www.microsoft.com/en-us/download/details.aspx?id=18968){:target="_blank"} | 11 Julio 2014 |
 

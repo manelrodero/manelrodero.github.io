@@ -16,8 +16,8 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 22H2 | 22621.1992 | 11 Julio 2023 | [KB5028185](https://support.microsoft.com/en-us/help/5028185){:target="_blank"} | 22621.1989 |
-| 21H2 (Original) | 22000.2176 | 11 Julio 2023 | [KB5028182](https://support.microsoft.com/en-us/help/5028182){:target="_blank"} | 22000.975 |
+| 22H2 | 22621.2428 | 10 Octubre 2023 | [KB5031354](https://support.microsoft.com/en-us/help/5031354){:target="_blank"} | 22621.2423 |
+| 21H2 (Original) | 22000.2538 | 10 Octubre 2023 | [KB5031358](https://support.microsoft.com/en-us/help/5031358){:target="_blank"} | 22000.2531 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 
@@ -40,6 +40,9 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 
 {: .box-note}
 **Nota**: Para cada plantilla administrativa suele existir un fichero **Excel** con la referencia de todas las configuraciones incluidas en la misma. En algunos casos es una descarga independiente y en otros está incluida en las _security baselines_.
+
+{: .box-note}
+**Nota**: Desde el 21 Julio 2023 se pueden usar las plantillas de Windows 11 para administrar Windows 10. Más información en el artículo "[Windows 10 or Windows 11 GPO ADMX – An Update](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/windows-10-or-windows-11-gpo-admx-an-update/ba-p/3703548)".
 
 | Build | ADMX | Fecha de publicación | XLSX | Fecha de publicación |
 | --- | --- | --- | --- | --- |
@@ -65,16 +68,17 @@ Desde hace un tiempo, se han unificado todas las security baselines en el [**Mic
 
 | Versión | Fecha de publicación |
 | --- | --- |
-| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319){:target="_blank"} | 29 Junio 2023 |
+| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319){:target="_blank"} | 11 Octubre 2023 |
 
 # <a name="adk"></a>Windows Assessment and Deployment Toolkit (Windows ADK)
 
 Cada versión de Windows 11 requiere de unas herramientas de personalización y despliegue diferentes. Para evitar problemas, se recomienda utilizar siempre [la última versión disponible](https://docs.microsoft.com/en-us/windows-hardware/get-started/what-s-new-in-kits-and-tools){:target="_blank"}.
 
-| ADK | Notas |
-| --- | --- |
-| [22H2](https://go.microsoft.com/fwlink/?linkid=2196127){:target="_blank"} + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2196224){:target="_blank"} | [ConfigMgr 2111+](https://www.deploymentresearch.com/notes-from-the-lab-on-windows-adk-for-windows-11-22h2/){:target="_blank"} |
-| [21H2](https://go.microsoft.com/fwlink/?linkid=2165884){:target="_blank"} + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2166133){:target="_blank"} | |
+| ADK | Build | Notas |
+| --- | --- | --- |
+| [22H2](https://go.microsoft.com/fwlink/?linkid=2243390){:target="_blank"} + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2243391){:target="_blank"} | 10.1.22621.1 (Septiembre 2023) | [ConfigMgr 2207+](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/configs/support-for-windows-adk){:target="_blank"} |
+| [22H2](https://go.microsoft.com/fwlink/?linkid=2196127){:target="_blank"} + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2196224){:target="_blank"} | 10.1.22000 | [ConfigMgr 2111+](https://www.deploymentresearch.com/notes-from-the-lab-on-windows-adk-for-windows-11-22h2/){:target="_blank"} |
+| [21H2](https://go.microsoft.com/fwlink/?linkid=2165884){:target="_blank"} + [WinPE add-on](https://go.microsoft.com/fwlink/?linkid=2166133){:target="_blank"} | 10.1.19041 | |
 
 # <a name="appx"></a>Aplicaciones universales
 

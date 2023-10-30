@@ -9,15 +9,15 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 | [Actualizaciones](#actualizaciones) | [Ciclo de vida](#lifecycle) | [ADMX](#admx) | [RSAT](#rsat) | [Security Baselines](#baselines) |
 | [Windows ADK](#adk) | [Aplicaciones universales](#appx) | [Descargas](#downloads) | [Artículos](#posts) |
 
-# <a name="actualizaciones"></a>[Actualizaciones](https://aka.ms/WindowsUpdateHistory){:target="_blank"}
+# <a name="actualizaciones"></a>[Actualizaciones](https://support.microsoft.com/en-us/topic/windows-10-update-history-8127c2c6-6edf-4fdf-8b9f-0f7be1ef3562){:target="_blank"}
 
 {: .box-note}
 **Nota**: El LCU indicado es el correspondiente al _Patch Tuesday_ que también incluye el [SSU](https://docs.microsoft.com/en-us/windows/deployment/update/servicing-stack-updates){:target="_blank"}.
 
 | Versión | OS Build | Fecha actualización | Cumulative Update (CU) | Servicing Stack Update (SSU) |
 | --- | --- | --- | --- |
-| 22H2 | 19045.3208 | 11 Julio 2023 | [KB5028166](https://support.microsoft.com/en-us/help/5028166){:target="_blank"} | 19045.3205 |
-| 21H2 | 19044.3208 | 11 Julio 2023 | [KB5028166](https://support.microsoft.com/en-us/help/5028166){:target="_blank"} | 19044.1940 |
+| **22H2** | 19045.3570 | 10 Octubre 2023 | [KB5031356](https://support.microsoft.com/en-us/help/5031356){:target="_blank"} | 19045.3562 |
+| **21H2** | 19044.3570 | 10 Octubre 2023 | [KB5031356](https://support.microsoft.com/en-us/help/5031356){:target="_blank"} | 19044.3562 |
 
 <!-- https://en.wikipedia.org/wiki/Windows_10_version_history -->
 
@@ -28,8 +28,8 @@ Esta página contiene tablas y otros recursos de utilidad para los administrador
 
 | Versión | Compilación | Codename | Marketing | Fecha de liberación | Final de soporte |
 | --- | --- | --- | --- | --- | --- |
-| 22H2 | 19045 | 22H2 | October 2022 Update | 18 Octubre 2022 | 14 Octubre 2025 |
-| 21H2 | 19044 | 21H2 | November 2021 Update | 16 Noviembre 2021 | 11 Junio 2024 |
+| **22H2** | 19045 | 22H2 | October 2022 Update | 18 Octubre 2022 | 14 Octubre 2025 |
+| **21H2** | 19044 | 21H2 | November 2021 Update | 16 Noviembre 2021 | 11 Junio 2024 |
 | ~~21H1~~ | 19043 | 21H1 | May 2021 Update | 18 Mayo 2021 | 13 Diciembre 2022 |
 | ~~20H2~~ | 19042 | 20H2 | October 2020 Update | 20 Octubre 2020 | 9 Mayo 2023 |
 | ~~2004~~ | 19041 | 20H1 | May 2020 Update | 27 Mayo 2020 | 14 Diciembre 2021 |
@@ -52,6 +52,9 @@ Las políticas de grupo (GPO) permiten configurar muchísimos aspectos del siste
 
 {: .box-note}
 **Nota**: Para cada plantilla administrativa suele existir un fichero **Excel** con la referencia de todas las configuraciones incluidas en la misma. En algunos casos es una descarga independiente y en otros está incluida en las _security baselines_.
+
+{: .box-note}
+**Nota**: Desde el 21 Julio 2023 se pueden usar las [plantillas de Windows 11](windows11#admx) para administrar Windows 10. Más información en el artículo "[Windows 10 or Windows 11 GPO ADMX – An Update](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/windows-10-or-windows-11-gpo-admx-an-update/ba-p/3703548)".
 
 | Build | ADMX | Fecha de publicación | XLSX | Fecha de publicación |
 | --- | --- | --- | --- | --- |
@@ -110,7 +113,7 @@ Desde hace un tiempo, se han unificado todas las security baselines en el [**Mic
 
 | Versión | Fecha de publicación |
 | --- | --- |
-| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319){:target="_blank"} | 29 Junio 2023 |
+| [1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319){:target="_blank"} | 11 Octubre 2023 |
 
 # <a name="adk"></a>Windows Assessment and Deployment Toolkit (Windows ADK)
 

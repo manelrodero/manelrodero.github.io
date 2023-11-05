@@ -21,7 +21,7 @@ Para crear un par de claves pública/privada hay que ejecutar el comando `ssh-ke
 En este caso he ejecutado el comando desde mi ordenador personal con sistema operativo Windows para generar una clave `ECDSA` de `521 bits`
 
 ```
-ssh-keygen -t ecdsa -b 521 -C "pi@raspberry"
+ssh-keygen -t ecdsa -b 521 -C "%username%@%computername%"
 ```
 
 Se puede elegir una **frase** como **contraseña** de la clave privada que se generará tal como se puede ver en el siguiente ejemplo:
@@ -72,7 +72,7 @@ type "%userprofile%\.ssh\id_ecdsa.pub"
 En este ejemplo, se copia el siguiente texto que incluye el algoritmo utilizado, la clave pública y la identificación de la misma:
 
 ```
-ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAGV91+ldUiuM8pZRsC2W1OAjRv+Ttm1pabs2TF3Y75iVTukxytHO1QFH+nJ6T6/wNq80P87II95Y+mwpPi8b+Jt4AFujHmNKk4vHHDpCCRh/SPbLxPI8VqO9gFgq07P9KTIFvUiJPg65kgy5a9b4DaWmkb5baVBn701lCSqhy7gtHDXWg== pi@raspberry
+ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAGV91+ldUiuM8pZRsC2W1OAjRv+Ttm1pabs2TF3Y75iVTukxytHO1QFH+nJ6T6/wNq80P87II95Y+mwpPi8b+Jt4AFujHmNKk4vHHDpCCRh/SPbLxPI8VqO9gFgq07P9KTIFvUiJPg65kgy5a9b4DaWmkb5baVBn701lCSqhy7gtHDXWg== username@computername
 ```
 
 Después nos conectamos al servidor (todavía mediante usuario y contraseña), editamos el fichero `authorized_keys` y pegamos el texto anterior.

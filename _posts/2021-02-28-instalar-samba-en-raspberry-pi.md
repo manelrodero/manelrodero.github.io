@@ -183,7 +183,7 @@ sudo chown :sambashare /data/homes
 
 ## Creación de usuario
 
-Se crea el usuario que accederá a las carpetas compartidas, asignando la prote   cción [2770](https://chmodcommand.com/chmod-2770/) que incluye [`setgid`](https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits):
+Se crea el usuario que accederá a las carpetas compartidas, asignando la protección [2770](https://chmodcommand.com/chmod-2770/) que incluye [`setgid`](https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits):
 
 ```
 # Crear home directory:
@@ -211,7 +211,7 @@ Y se añade la siguiente definición al fichero `/etc/samba/smb.conf`:
 
 ```
 [manel]
-   path = /data/samba/manel
+   path = /data/homes/manel
    browseable = no
    read only = no
    force create mode = 0660
@@ -223,7 +223,7 @@ Si se quisiera crear una carpeta compartida para cualquiera que pertenezca al gr
 
 ```
 [everyone]
-   path = /data/samba/everyone
+   path = /data/homes/everyone
    browseable = no
    read only = no
    force create mode = 0660

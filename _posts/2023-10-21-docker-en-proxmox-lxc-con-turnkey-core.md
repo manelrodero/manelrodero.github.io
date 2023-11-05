@@ -1,7 +1,7 @@
 ---
 layout : post
 blog-width: true
-title: 'Docker en Proxmox LXC con Turnkey Core'
+title: 'Docker en Proxmox LXC con TurnKey Core'
 date: '2023-10-21 14:55:00'
 published: true
 tags:

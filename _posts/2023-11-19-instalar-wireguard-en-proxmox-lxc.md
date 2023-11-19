@@ -118,11 +118,12 @@ A continuación se usa el comando `pivpn -qrcode client1` para mostrar el códig
 
 * [Getting PiVPN to run on Proxmox LXC container](https://www.vanpolen.biz/posts/pivpn-on-lxc-container-proxmox/){:target=_blank}
 * [Set up Wireguard using PiVPN inside LXC](https://nocin.eu/wireguard-set-up-wireguard-using-pivpn-inside-lxc/){:target=_blank}
-* [OpenVPN in LXC](https://pve.proxmox.com/wiki/OpenVPN_in_LXC){:target=_blank} @ Proxmox Wiki 
+* [OpenVPN in LXC](https://pve.proxmox.com/wiki/OpenVPN_in_LXC){:target=_blank} @ Proxmox Wiki
+* [WireGuard VPN: Instalación y configuración de la mejor VPN](https://www.redeszone.net/tutoriales/vpn/wireguard-vpn-configuracion/){:target=_blank} @ RedesZone.net
 * [WGDashboard](https://github.com/donaldzou/WGDashboard){:target=_blank}, usada por _Proxmox VE Helper Scripts_
 * [Wg Gen Web](https://github.com/vx3r/wg-gen-web){:target=_blank}, para ejecutar en Docker
 * [Wireguard-UI](https://github.com/ngoduykhanh/wireguard-ui){:target=_blank}, interfaz realizada en Go
-* [Generating WireGuard QR codes for fast mobile deployments](https://serversideup.net/generating-wireguard-qr-codes-for-fast-mobile-deployments/){:target=_blank}
 * [How to monitor who's connected to your Wireguard VPN](https://www.procustodibus.com/blog/2021/01/how-to-monitor-wireguard-activity/){:target=_blank}
+* [WireGuard-Manager](https://github.com/complexorganizations/wireguard-manager){:target=_blank}
 
 [1]: /assets/img/blog/2023-11-19_image_1.png "Código QR Wireguard"

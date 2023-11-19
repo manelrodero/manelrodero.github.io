@@ -75,7 +75,7 @@ adduser --system --uid 200 --group qbittorrent-nox
 {: .box-note}
 **Nota**: Se utiliza el UID 200 y el GID 200 para que no haya solapamiento con otros usuarios del _host_ o de otros contenedores LXC (p.ej. el de Samba).
 
-A cotinuación se crea un grupo `sambashare` con el mismo GID 111 que tiene en el LXC de Samba y se añade al usuario `qbittorrent-nox` para no tener problemas con los permisos de los directorios montados bajo `/mnt/samba`:
+A continuación se crea un grupo `sambashare` con el mismo GID 111 que tiene en el LXC de Samba y se añade al usuario `qbittorrent-nox` para no tener problemas con los permisos de los directorios montados bajo `/mnt/samba`:
 
 ```Bash
 addgroup --system --gid 111 sambashare

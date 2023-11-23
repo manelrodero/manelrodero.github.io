@@ -18,7 +18,7 @@ En este ocasion, en lugar de realizar la [instalación de Wireguard en Docker](i
 
 # Características del LXC
 
-Esta **VPN** con [Wireguard](https://www.wireguard.com/){:target="_blank"} se creará sobre un LXC con las siguientes características:
+Esta **VPN** con [Wireguard](https://www.wireguard.com/){:target="_blank"} se ejecutará sobre un LXC con las siguientes características:
 
 * LXC no privilegiado, **con** _nesting_ y sin `keyctl`
 * CT ID: **303**

@@ -18,7 +18,7 @@ En este ocasion, en lugar de realizar la [instalación de Pi-hole en Docker](ins
 
 # Características del LXC
 
-Este **sumidero de DNS** con [Pi-hole](https://pi-hole.net/){:target="_blank"} se creará sobre un LXC con las siguientes características:
+Este **sumidero de DNS** con [Pi-hole](https://pi-hole.net/){:target="_blank"} se ejecutará sobre un LXC con las siguientes características:
 
 * LXC no privilegiado, sin _nesting_ y sin `keyctl`
 * CT ID 304

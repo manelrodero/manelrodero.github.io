@@ -18,7 +18,7 @@ En esta ocasión voy a instalar Samba en un LXC de Proxmox con TurnKey Core. El 
 
 # Características del LXC
 
-Este **servidor de ficheros** con [Samba](https://www.samba.org/) se creará sobre un LXC con las siguientes características:
+Este **servidor de ficheros** con [Samba](https://www.samba.org/) se ejecutará sobre un LXC con las siguientes características:
 
 * LXC no privilegiado, sin _nesting_ y sin `keyctl`
 * CT ID 300

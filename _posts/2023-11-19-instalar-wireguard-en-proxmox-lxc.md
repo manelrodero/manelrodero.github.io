@@ -30,7 +30,7 @@ Esta **VPN** con [Wireguard](https://www.wireguard.com/){:target="_blank"} se ej
 * IP estática: **192.168.1.83/24**
 * Gateway: **192.168.1.1**
 * Dominio: **home**
-* DNS: **192.168.1.81,192.168.1.82**
+* DNS: **192.168.1.81 192.168.1.82**
 
 A continuación se pone en marcha el LXC desde la CLI de Proxmox y se procede a configurarlo de la misma manera que ya expliqué en el artículo sobre [LXC y Docker](docker-en-proxmox-lxc-con-turnkey-core):
 

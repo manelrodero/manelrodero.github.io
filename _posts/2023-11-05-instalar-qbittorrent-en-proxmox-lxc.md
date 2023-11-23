@@ -18,7 +18,7 @@ En este ocasion, en lugar de realizar la [instalación de qBittorrent en Docker]
 
 # Características del LXC
 
-Este **cliente de Bittorrent** con [qBittorrent](https://www.qbittorrent.org/) se creará sobre un LXC con las siguientes características:
+Este **cliente de Bittorrent** con [qBittorrent](https://www.qbittorrent.org/) se ejecutará sobre un LXC con las siguientes características:
 
 * LXC no privilegiado, sin _nesting_ y sin `keyctl`
 * CT ID 301

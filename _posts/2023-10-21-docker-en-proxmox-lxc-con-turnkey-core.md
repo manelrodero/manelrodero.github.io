@@ -15,7 +15,7 @@ thumbnail-img: ""
 
 # Introducción
 
-Este artículo explica cómo instalar [**Docker Engine**](https://www.docker.com/products/container-runtime/) en un [**contenedor Linux (LXC)**](https://linuxcontainers.org/lxc/introduction/) que se ejecutará en el servidor [Proxmox VE 8.0.2](2023-07-08-proxmox-ve-802-en-un-dell-optiplex-7050) que instalé hace unos meses.
+Este artículo explica cómo instalar [**Docker Engine**](https://www.docker.com/products/container-runtime/) en un [**contenedor Linux (LXC)**](https://linuxcontainers.org/lxc/introduction/) que se ejecutará en el servidor [Proxmox VE 8.0.2](proxmox-ve-802-en-un-dell-optiplex-7050) que instalé hace unos meses.
 
 {: .box-note}
 **Nota**: El soporte oficial de Proxmox recomienda ejecutar Docker en máquinas virtuales, pero la desventaja es que éstas requieren más recursos del hipervisor. Un contenedor Linux (LXC) permite ejecutar Docker con una fracción de los requisitos de recursos y velocidades de arranque mucho más rápidas.

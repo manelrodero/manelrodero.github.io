@@ -310,7 +310,7 @@ Otras aplicaciones similares:
 
 ## 20 Security Controls
 
-El [Center for Internet Securiy](https://www.cisecurity.org/) (CIS) detallan los [20 controles de seguridad](https://www.cisecurity.org/controls/cis-controls-list/) [[PDF]((https://learn.cisecurity.org/cis-controls-download))] que se pueden implementar para bloquear el 99,99% de las amenazas de seguridad:
+El [Center for Internet Securiy](https://www.cisecurity.org/) (CIS) detallan los [20 controles de seguridad](https://www.cisecurity.org/controls/cis-controls-list/) [[PDF](https://learn.cisecurity.org/cis-controls-download)] que se pueden implementar para bloquear el 99,99% de las amenazas de seguridad:
 
 | &nbsp; | **Controles básicos de CIS** |
 | [1](https://www.cisecurity.org/controls/inventory-and-control-of-hardware-assets) | Inventario y control de activos de hardware |

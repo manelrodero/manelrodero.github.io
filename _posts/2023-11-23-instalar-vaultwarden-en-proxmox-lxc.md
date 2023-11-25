@@ -14,7 +14,7 @@ thumbnail-img: ""
 
 Para seguir el proceso de migración de mi _Home Lab_ desde una pequeña [Raspberry Pi 4](instalar-raspberry-pi-os-64bits) a un [OptiPlex 7050 ejecutando Proxmox](proxmox-ve-802-en-un-dell-optiplex-7050) ahora le toca el turno a [**Vaultwarden**](https://github.com/dani-garcia/vaultwarden){:target="_blank"}, una implementación no oficial y mucho más ligera del servidor [Bitwarden](https://github.com/bitwarden/server){:target="_blank"} que se puede instalar localmente y es compatible con los [clientes oficiales](https://bitwarden.com/download/){:target="_blank"}.
 
-En este ocasion, la [instalación de Vaultwarden en Docker](instalacion-de-vaultwarden-en-docker) se realizará en un contenedor ligero LXC de Proxmox con TurnKey Core. El procedimiento para crear este LXC es el mismo que usé para [ejecutar Docker en Proxmox LXC](docker-en-proxmox-lxc-con-turnkey-core).
+En esta ocasion, la [instalación de Vaultwarden en Docker](instalacion-de-vaultwarden-en-docker) se realizará en un contenedor ligero LXC de Proxmox con TurnKey Core. El procedimiento para crear este LXC es el mismo que usé para [ejecutar Docker en Proxmox LXC](docker-en-proxmox-lxc-con-turnkey-core).
 
 # Características del LXC
 

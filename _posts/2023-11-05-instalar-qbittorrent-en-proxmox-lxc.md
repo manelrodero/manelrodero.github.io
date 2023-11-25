@@ -14,7 +14,7 @@ thumbnail-img: ""
 
 Para seguir el proceso de migración de mi _Home Lab_ desde una pequeña [Raspberry Pi 4](instalar-raspberry-pi-os-64bits) a un [OptiPlex 7050 ejecutando Proxmox](proxmox-ve-802-en-un-dell-optiplex-7050) ahora le toca el turno a [**qBittorrent**](https://www.qbittorrent.org/), un cliente gratuito y fiable del protocolo P2P Bittorrent.
 
-En este ocasion, en lugar de realizar la [instalación de qBittorrent en Docker](instalacion-de-qbittorrent-en-docker), se utilizará un contenedor ligero LXC de Proxmox con TurnKey Core. El procedimiento para crear este LXC es el mismo que usé para [ejecutar Docker en Proxmox LXC](docker-en-proxmox-lxc-con-turnkey-core).
+En esta ocasion, en lugar de realizar la [instalación de qBittorrent en Docker](instalacion-de-qbittorrent-en-docker), se utilizará un contenedor ligero LXC de Proxmox con TurnKey Core. El procedimiento para crear este LXC es el mismo que usé para [ejecutar Docker en Proxmox LXC](docker-en-proxmox-lxc-con-turnkey-core).
 
 # Características del LXC
 

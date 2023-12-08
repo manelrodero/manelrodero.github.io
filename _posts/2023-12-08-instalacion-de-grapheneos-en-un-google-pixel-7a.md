@@ -274,7 +274,7 @@ F-Droid es un catálogo instalable de aplicaciones FOSS (software gratuito y de 
 Para instalar algunas aplicaciones que únicamente están en Google Play, se suele instalar [**Aurora Store**](https://f-droid.org/packages/com.aurora.store/){:target=_blank} desde F-Droid. Aurora Store es un _frontend_ de Google Play que respeta la privacidad y permite descargar los APKs de las aplicaciones que se necesiten.
 
 {: .box-note}
-**Nota**: Aunque se puede utilizar Aurora Store utilizando una cuenta anónima, es necesario utilizar una uenta de Google para descargar aplicaciones que se hayan pagado.
+**Nota**: Aunque se puede utilizar Aurora Store utilizando una cuenta anónima, es necesario utilizar una cuenta de Google para descargar aplicaciones que se hayan pagado.
 
 ## Aplicaciones
 

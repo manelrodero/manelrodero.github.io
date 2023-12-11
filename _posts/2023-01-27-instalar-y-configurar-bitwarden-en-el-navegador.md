@@ -3,14 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalar y configurar Bitwarden en el navegador'
 date: '2023-01-27 14:40:29'
+last-updated: '2023-12-11 07:54:29'
 published: true
 tags:
 - Seguridad
 author:
   display_name: Manel Rodero
 ---
-
-# Introducción
 
 [Bitwarden](https://bitwarden.com/) es un gestor de contraseñas de [código abierto](https://github.com/bitwarden) que se puede utilizar de forma gratuita o mediante una [suscripción personal o familiar](https://bitwarden.com/pricing/) para disponer de algunas características avanzadas (como 2FA o la compartición de cuentas).
 
@@ -50,17 +49,27 @@ Antes de poder utilizar y configurar Bitwarden es necesario **iniciar sesión** 
 
 Antes de empezar a guardar contraseñas, yo suelo configurarla de la siguiente manera accediendo a la pestaña `Settings`:
 
+* MANAGE
+  * AUTO-FILL
+    * Auto-fill on page load: `Disable`
+    * Default autofill settings for login items: `Do not auto-fill on page load`
+    * Default URI match detection: `Host`
+  * FOLDERS
+  * SYNC
+  * EXCLUDED DOMAINS
 * SECURITY
-  * Vault timeout: `On browser restart`
+  * Vault timeout: `30 minutes`
   * Vault timeout action: `Lock`
+  * Unlock with PIN: `Disable`
+  * Unlock with biometrics: `Disable`
 * OTHER
   * Options
     * GENERAL
-      * Default URI match detection: `Base domain`
       * Clear clipboard: `30 seconds`
       * Copy TOTP automatically: `Disable`
       * Ask to add login: `Disable`
       * Ask to update existing login: `Enable`
+      * Ask to save and use passkeys: `Enable`
       * Show contest menu options: `Enable`
     * DISPLAY
       * Show cards on Tab page: `Enable`
@@ -68,16 +77,14 @@ Antes de empezar a guardar contraseñas, yo suelo configurarla de la siguiente m
       * Show website icons: `Enable`
       * Show badge counter: `Enable`
       * Theme: `Default`
-    * AUTOFILL
-      * Auto-fill on page load: `Disable`
 
 Además, también accedo a la pestaña `Generator` para configurar las características de las contraseñas generadas:
 
 * What would you like to generate: `Password`
 * Password type: `Password`
-* Length: `25`
+* Length: `30`
 * A-Z: `Enabled`
-* a-z: `Enabled``
+* a-z: `Enabled`
 * 0-9: `Enabled`
 * !@#$%^&*: `Enabled`
 * Minimum numbers: 1
@@ -109,6 +116,11 @@ Para introducir las contraseñas de forma automática en una determinada página
 ![Uso de contraseña][5]
 
 También es posible copiar el usuario, la contraseña o el código TOTP, si existe, pulsando en los iconos correspondientes (persona, llave y reloj).
+
+### Historial de cambios
+
+* **2023-01-27**: Artículo original
+* **2023-12-11**: Revisión de los `Settings` para aumentar la seguridad al usar [auto-fill](https://borncity.com/win/2023/03/10/vulnerabilities-in-bitwarden-password-manager-browser-extension-can-reveal-passwords/){:target=_blank}
 
 [1]: /assets/img/blog/2023-01-27_image_1.png "Descarga Bitwarden"
 [2]: /assets/img/blog/2023-01-27_image_2.png "Activación extensión"

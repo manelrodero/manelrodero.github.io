@@ -3,9 +3,11 @@ layout : post
 blog-width: true
 title: 'Habilitar Wake-On-LAN en Unraid'
 date: '2023-07-13 17:43:59'
+last-updated: '2024-02-10 18:29:29'
 published: true
 tags:
 - HomeLab
+- Unraid
 author:
   display_name: Manel Rodero
 ---
@@ -57,7 +59,26 @@ eth0: flags=6211<UP,BROADCAST,RUNNING,SLAVE,MULTICAST>  mtu 1500
 
 > **Nota**: Se utiliza la interfaz física `eth0` y no las interfaces `br0` y `bond0` utilizadas internamente por Unraid.
 
-# Comprobar que funciona
+# Comprobar la configuración
+
+* Ejecutar el comando `ethtool eth0 | grep -i "Wake"` para mostrar los modos WOL soportados y el configurado:
+
+```
+        Supports Wake-on: pumbg
+        Wake-on: g
+```
+
+En este ejemplo se indica que está configurado el modo **g** (es decir, se pondrá en marcha cuando llegue un _magic packet_):
+
+* **d**: Deshabilitado
+* **p**: Actividad PHY
+* **u**: Actividad _unicast_
+* **m**: Actividad _multicast_
+* **b**: Actividad _broadcast_
+* **a**: Actividad ARP
+* **g**: Actividad _magic packet_
+
+# Comprobar el funcionamiento
 
 * Apagar el servidor desde `Main` &rarr; `Shutdown`
 * Descargar la herramienta `wolcmd.exe` de [Depicus](https://www.depicus.com/wake-on-lan/what-is-wake-on-lan)
@@ -96,3 +117,8 @@ Reply from 192.168.1.80: bytes=32 time<1ms TTL=64
 Reply from 192.168.1.80: bytes=32 time<1ms TTL=64
 [...]
 ```
+
+### Historial de cambios
+
+* **2023-07-13**: Documento inicial
+* **2024-02-10**: Taba de modos de _wake on_ 

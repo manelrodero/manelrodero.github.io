@@ -3,19 +3,14 @@ layout : post
 blog-width: true
 title: 'Instalación de Home Assistant en Docker'
 date: '2022-10-22 19:02:51'
+last-updated: '2024-02-11 08:29:29'
 published: true
 tags:
-- Home Assistant
 - Docker
+- Home Assistant
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2023-02-17**: Revisión del documento y corrección de errores.
-
-# Instalación
 
 [Home Assistant](https://www.home-assistant.io/) es un software que permite **automatizar** y **controlar** la **domótica** de un hogar.
 
@@ -132,6 +127,12 @@ docker logs -f homeassistant
 * [Instalar Home Assistant y Node-RED con Docker](https://youtu.be/wi2b5ZcySuc) @ Un loco y su tecnología
 * [Living without add-ons on Home Assistant Container](https://www.youtube.com/watch?v=DV_OD4OPKno) @ Home Automation Guy
 * [Home Assistant Community Store (HACS)](https://hacs.xyz/), la tienda de integraciones, _plugins_, etc. de la comunidad
+
+### Historial de cambios
+
+* **2022-10-22**: Documento inicial
+* **2023-02-17**: Revisión del documento y corrección de errores
+* **2024-02-11**: Historial de cambios al final del documento
 
 [1]: /assets/img/blog/2022-10-22_image_1.png "Home Assistant"
 [2]: /assets/img/blog/2022-10-22_image_2.png "Dispositivos en HA"

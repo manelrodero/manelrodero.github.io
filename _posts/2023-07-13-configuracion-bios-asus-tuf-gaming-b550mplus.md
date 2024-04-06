@@ -10,7 +10,7 @@ author:
   display_name: Manel Rodero
 ---
 
-Mi ordenador [**PCLyM 2021**](/about/desktop#pclym-2021) tiene los siguientes comonentes principales:
+Mi ordenador [**PCLyM 2021**](/about/desktop#pclym-2021) tiene los siguientes componentes principales:
 
 * Placa base **Asus TUF GAMING B550M-PLUS**
 * Procesador **AMD Ryzen 5 5600X 3.7GHz**

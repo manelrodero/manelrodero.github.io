@@ -31,7 +31,7 @@ El _peering_ es interesante en aquellos casos en que los cambios de configuraci�
 
 # Instalación
 
-En mi caso, no se usará la característica de _peering_ y se configurará una de las instancias (servidor `pihole1`) para que realice un **_push_** de la configuración a la otra (servidor `pihole1`).
+En mi caso, no se usará la característica de _peering_ y se configurará una de las instancias (servidor `pihole1`) para que realice un **_push_** de la configuración a la otra (servidor `pihole2`).
 
 ## Backup de la configuración de Pi-hole
 

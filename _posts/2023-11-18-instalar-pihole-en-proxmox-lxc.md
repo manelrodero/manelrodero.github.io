@@ -287,9 +287,11 @@ Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del m
 # Referencias
 
 * [You're running Pi-Hole wrong! Setting up your own Recursive DNS Server!](https://youtu.be/FnFtWsZ8IP0){:target="_blank"}, vídeo del canal "[Craft Computing](https://www.youtube.com/@CraftComputing){:target="_blank"}"
+* [Pi-hole as All-Around DNS Solution using Unbound](https://docs.pi-hole.net/guides/dns/unbound/){:target="_blank"}
 * [Installing Pi-Hole inside a Proxmox LXC Container](https://www.datahoards.com/installing-pi-hole-inside-a-proxmox-lxc-container/){:target="_blank"}
 * [Fixing Failed Network Name Resolution in Ubuntu with systemd-resolved](https://devicetests.com/fixing-network-name-resolution-ubuntu){:target="_blank"}
 * [How to Resolve Port 53 Conflict Between, systemd.resolved and pihole-dnscrypt docker](https://raspberrypi.stackexchange.com/questions/128288/how-to-resolve-port-53-conflict-between-systemd-resolved-and-pihole-dnscrypt-do){:target="_blank"}
 * [PiHole Unbound vs Cloudflared-DOH](https://robertoprubio.github.io/pi-hole-unbound-vs-cloudflare-doh/){:target="_blank"}, artículo de Roberto P. Rubio
 * [Unbound not resolving some domains](https://stackoverflow.com/questions/68210563/unbound-not-resolving-some-domains){:target="_blank"}
 * [12 Dig Command Examples To Query DNS In Linux](https://www.rootusers.com/12-dig-command-examples-to-query-dns-in-linux/){:target="_blank"}
+* [DNSSEC Resolver Test](https://wander.science/projects/dns/dnssec-resolver-test/){:target="_blank"}

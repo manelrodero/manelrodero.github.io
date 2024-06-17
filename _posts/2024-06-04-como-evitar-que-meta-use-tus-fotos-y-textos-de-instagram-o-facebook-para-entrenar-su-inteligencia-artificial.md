@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: '¿Cómo evitar que Meta use tus fotos y textos de Instagram o Facebook para entrenar su Inteligencia Artificial?'
 date: '2024-06-04 11:56:43'
-#last-updated: '2024-06-04 11:56:43'
+last-updated: '2024-06-17 09:27:43'
 published: true
 tags:
 - Seguridad
@@ -14,6 +14,9 @@ thumbnail-img: ""
 ---
 
 Meta, la empresa que engloba  a Facebook, WhatsApp, Instagram y Threads, lleva unos días enviando correos electrónicos a sus usuarios para avisarles que empezará a utilizar sus datos para entrenar a su Inteligencia Artificial (IA) a partir del próximo 26 de junio de 2024.
+
+{: .box-note}
+**14 de junio de 2024**: Aunque [Meta AI retrasa su lanzamiento en Europa](https://about.fb.com/news/2024/06/building-ai-technology-for-europeans-in-a-transparent-and-responsible-way/) debido a la petición de la DPC (_Data Protection Commission_) de Irlanda en nombre del resto de DPA europeas, yo recomiendo rellenar el formulario de oposición.
 
 # Política de privacidad
 
@@ -60,33 +63,53 @@ Al poco tiempo de haber enviado el formulario, Meta debería contestar con un co
 
 ![Respuesta a la oposición][2]
 
-## Ejemplo
+## Ejemplo de argumentación
 
 El texto que yo he utilizado para argumentar mi oposición ha sido el siguiente:
 
 ```
-Las publicaciones o fotografías pueden contener información personal que, de ser utilizada por la IA,
-podría servir para crear nuevo contenido que fuese similar o tuviese rasgos nuestros lo cual puede
-conducir a la confusión de otras personas.
+Las publicaciones o fotografías pueden contener información personal que,
+de ser utilizada por la IA, podría servir para crear nuevo contenido que
+fuese similar o tuviese rasgos nuestros lo cual puede conducir a la
+confusión de otras personas.
 
-Este uso de mis publicaciones y fotografías vulnera el Reglamento General de Protección de Datos (GDPR)
-de la Unión Europea así como el Artículo 18 de la Constitución Española.
+Este uso de mis publicaciones y fotografías vulnera el Reglamento General
+de Protección de Datos (GDPR) de la Unión Europea así como el Artículo 18
+de la Constitución Española.
 
-Por este motivo ME OPONGO a que cualquier información personal, publicación o fotografía que se haya
-publicado en los diferentes servicios de Meta (Facebook, Instagram, Threads, Messenger, WhatsApp, etc.)
-se utilice para entrenar a su IA y otros propósitos comerciales.
+Por este motivo ME OPONGO a que cualquier información personal, publicación
+o fotografía que se haya publicado en los diferentes servicios de Meta
+(Facebook, Instagram, Threads, Messenger, WhatsApp, etc.) se utilice para
+entrenar a su IA y otros propósitos comerciales.
 ```
 
-Podéis utilizar el mismo o adaptarlo a vuestras necesidades ;-)
+Podéis utilizar el mismo texto o adaptarlo a vuestras necesidades ;-)
+
+# ¿Y desde el móvil?
+
+Desde el móvil también se puede acceder al formulario de oposición, aunque es algo más engorroso encontrarlo. En este ejemplo, se muestra como llegar a él mediante la aplicación de **Instagram** (Android):
+
+* Abrir la aplicación de Instagram
+* Seleccionar nuestro perfil (la última opción del menú inferior con nuestra foto)
+* Seleccionar el menú contextual (el icono con tres rayas horizontales arriba a la derecha)
+* Si no aparece este menú volver a la página principal (el icono con la casa del menú inferior) y volver a seleccionar de nuevo nuestro perfil
+* En la pantalla (**Configuración y actividad**) hay que bajar hasta el final y seleccionar la opción "**Información**" del apartado "Más información y ayuda"
+* En la pantalla (**Información**) hay que seleccionar la opción "**Política de privacidad**"
+* Aquí se explica la política de privacidad de Meta y en el primer recuadro indica "_Vamos a actualizar nuestra Política de privacidad..._"
+* En ese mismo recuadro pulsaremos en el enlace acerca de tu "_**derecho a oponerte**_"
+* Aparecerá la pantalla con el mismo formulario de oposición en el que hay que introducir la misma información que he indicado anteriormente
 
 # Referencias
 
 * [Meta Privacy Policy](https://www.facebook.com/privacy/policy){:target=_blank}
 * [How Meta uses information for generative AI models and features](https://www.facebook.com/privacy/genai){:target=_blank}
+* [Building AI Technology for Europeans in a Transparent and Responsible Way](https://about.fb.com/news/2024/06/building-ai-technology-for-europeans-in-a-transparent-and-responsible-way/)
 
 ### Historial de cambios
 
 * **2024-06-04**: Documento inicial
+* **2024-06-14**: Meta AI retrasa su lanzamiento en Europa
+* **2024-06-17**: Instrucciones Instagram (Android)
 
 [1]: /assets/img/blog/2024-06-04_image_1.png "Mensaje de Meta"
 [2]: /assets/img/blog/2024-06-04_image_2.png "Respuesta a la oposición"

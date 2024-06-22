@@ -312,6 +312,9 @@ Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del m
 * Network &rarr; IP Address: `192.168.1.82/24`
 * DNS &rarr; Hostname: `pihole22`
 
+{: .box-note}
+**Nota**: Al clonar el primer contenedor LXC, éste tendrá las mismas claves SSH del servidor lo cual provoca confusión a la hora de conectarse (`This host key is known by the following other names/addresses`).<br><br>Para solucionarlo hay que conectarse a la `Console` del LXC en Proxmox para borrar las claves actuales **`rm /etc/ssh/ssh_host_*`** y reconfigurar el servidor SSH **`dpkg-reconfigure openssh-server`**.
+
 # Referencias
 
 * [You're running Pi-Hole wrong! Setting up your own Recursive DNS Server!](https://youtu.be/FnFtWsZ8IP0){:target="_blank"}, vídeo del canal "[Craft Computing](https://www.youtube.com/@CraftComputing){:target="_blank"}"

@@ -3,6 +3,7 @@ layout : post
 blog-width: true
 title: 'Instalar Pi-hole en Proxmox LXC'
 date: '2023-11-18 18:30:15'
+last-updated: '2024-06-22 11:53:28'
 published: true
 tags:
 - Proxmox
@@ -23,10 +24,21 @@ Este **sumidero de DNS** con [Pi-hole](https://pi-hole.net/){:target="_blank"} s
 * LXC no privilegiado, sin _nesting_ y sin `keyctl`
 * CT ID 304
 * Password + SSH key file
-* Disco de **4GB**
+* Disco de **8GB**
 * CPU con 1 _core_
 * 512MB de memoria
 * IP fija 192.168.1.81
+
+```
+pct create 304 local:vztmpl/debian-12-turnkey-core_18.0-1_amd64.tar.gz \
+  --ostype debian --arch amd64 \
+  --hostname pihole1 --unprivileged 1 --password P@ssw0rd --ssh-public-keys /root/id_edcsa.pub \
+  --storage local-lvm --rootfs volume=local-lvm:8 \
+  --cores 1 \
+  --memory 512 --swap 512 \
+  --net0 name=eth0,bridge=vmbr0,firewall=1,ip=192.168.1.81/24,gw=192.168.1.1 \
+  --start false
+```
 
 A continuación se pone en marcha el LXC desde la CLI de Proxmox y se procede a configurarlo de la misma manera que ya expliqué en el artículo sobre [LXC y Docker](docker-en-proxmox-lxc-con-turnkey-core):
 
@@ -42,6 +54,15 @@ Se puede acceder al LXC utilizando la opción `Console` de la GUI o, mucho mejor
 ssh root@192.168.1.81
 ```
 
+Una vez dentro del LXC, hay que: 
+
+* completar el asistente de instalación
+* reiniciar el LXC (sobretodo si hay una actualización del _kernel_)
+* reconfigurar la zona horaria
+* actualizar los paquetes
+* desinstalar el paquete `etckeeper`
+* reiniciar el LXC
+
 # Instalación de Pi-hole
 
 Antes de comenzar la instalación es necesario [deshabilitar el `DNSStubListener`](https://github.com/pi-hole/docker-pi-hole#installing-on-ubuntu-or-fedora){:target="_blank"} de forma manual para evitar errores al reconfigurar el servicio `systemd-resolved`:
@@ -50,6 +71,9 @@ Antes de comenzar la instalación es necesario [deshabilitar el `DNSStubListener
 sed -r -i.orig 's/#?DNSStubListener=yes/DNSStubListener=no/g' /etc/systemd/resolved.conf
 systemctl restart systemd-resolved.service
 ```
+
+{: .box-note}
+En TurnKey Core 18.0 (basado en Debian 12) no existe el fichero anterior y el servicio está _masked_.
 
 La [instalación de Pi-hole](https://docs.pi-hole.net/main/basic-install/){:target="_blank"} en una distribución basada en Debian es muy sencilla usando el _script_ `basic-install.sh`:
 
@@ -97,14 +121,14 @@ apt install unbound -y
 ```
 
 {: .box-note}
-**Nota**: Inicialmente aparecerá el error `Failed to start Unbound DNS server` ya que el puerto **53** está siendo usado por Pi-hole. 
+**Nota**: Inicialmente puede que aparezca el error `Failed to start Unbound DNS server` ya que el puerto **53** está siendo usado por Pi-hole. 
 
 ## Configuración
 
-Es necesario crear un fichero de configuración de `unbound` para indicar, entre otras cosas, el puerto **5335** en el que tiene que escuchar para que no haya conflictos:
+Es necesario crear un fichero de configuración de `unbound` para indicar, entre otras cosas, el puerto **5353** en el que tiene que escuchar para que no haya conflictos:
 
 ```
-sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+nano /etc/unbound/unbound.conf.d/pi-hole.conf
 ```
 
 Escribir el siguiente contenido y grabar el fichero de configuración:
@@ -116,7 +140,7 @@ server:
     verbosity: 0
 
     interface: 127.0.0.1
-    port: 5335
+    port: 5353
     do-ip4: yes
     do-udp: yes
     do-tcp: yes
@@ -198,13 +222,13 @@ systemctl status unbound.service
 Para comprobar que `unbound` resuelve nombres correctamente, se puede ejecutar el comando `dig` indicando la dirección IP y puerto donde escucha:
 
 ```
-dig pi-hole.net @127.0.0.1 -p 5335
+dig pi-hole.net @127.0.0.1 -p 5353
 ```
 
 Si funciona correctamente, se debería obtener un registro de tipo `A` tal como se muestra a continuación:
 
 ```
-; <<>> DiG 9.16.44-Debian <<>> pi-hole.net @127.0.0.1 -p 5335
+; <<>> DiG 9.16.44-Debian <<>> pi-hole.net @127.0.0.1 -p 5353
 ;; global options: +cmd
 ;; Got answer:
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54721
@@ -219,7 +243,7 @@ Si funciona correctamente, se debería obtener un registro de tipo `A` tal como 
 pi-hole.net.            300     IN      A       3.18.136.52
 
 ;; Query time: 71 msec
-;; SERVER: 127.0.0.1#5335(127.0.0.1)
+;; SERVER: 127.0.0.1#5353(127.0.0.1)
 ;; WHEN: Sat Nov 18 21:22:21 CET 2023
 ;; MSG SIZE  rcvd: 56
 ```
@@ -227,10 +251,10 @@ pi-hole.net.            300     IN      A       3.18.136.52
 También se puede realizar una prueba usando [**DNSSEC**](https://www.cloudflare.com/dns/dnssec/how-dnssec-works/){:target="_blank"} para resolver el dominio [`dnssec.works`](https://dnssec.works/){:target="_blank"}:
 
 ```
-dig dnssec.works +dnssec +multi @127.0.0.1 -p 5335
+dig dnssec.works +dnssec +multi @127.0.0.1 -p 5353
 ```
 ```
-; <<>> DiG 9.16.44-Debian <<>> dnssec.works +dnssec +multi @127.0.0.1 -p 5335
+; <<>> DiG 9.16.44-Debian <<>> dnssec.works +dnssec +multi @127.0.0.1 -p 5353
 ;; global options: +cmd
 ;; Got answer:
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52167
@@ -253,7 +277,7 @@ dnssec.works.           3514 IN RRSIG A 8 2 3600 (
                                 3dbQQCej8Dn808E9L6mZPmajUUdN+GXPyfZ3 )
 
 ;; Query time: 0 msec
-;; SERVER: 127.0.0.1#5335(127.0.0.1)
+;; SERVER: 127.0.0.1#5353(127.0.0.1)
 ;; WHEN: Sat Nov 18 21:27:17 CET 2023
 ;; MSG SIZE  rcvd: 293
 ```
@@ -266,11 +290,16 @@ Para hacer que Pi-hole utilice `unbound` en lugar de los servidores indicados du
 * Acceder a la sección `Settings`
 * Acceder a la pestaña `DNS`
 * Desmarcar los _Upstream DNS Servers_ de Quad9
-* Añadir uno de tipo _custom_: **127.0.0.1#5335**
+* Añadir uno de tipo _custom_: **127.0.0.1#5353**
 * Grabar la configuración
 
 {: .box-note}
-**Nota**: Con la configuración de `unbound` utilizada en esta instalación, los nombres que apunten a direcciones privadas según el [**RFC1918**](https://datatracker.ietf.org/doc/html/rfc1918.html){:target="_blank"} (por ejemplo `192.168.1.180`) no se resuelven por motivos de seguridad.<br><br>Si este es nuestro caso, se tiene que agregar la línea [`private-domain`](https://unbound.docs.nlnetlabs.nl/en/latest/manpages/unbound.conf.html#unbound-conf-private-domain){:target="_blank"} con el nombre del dominio que contiene direcciones privadas al fichero de configuración de `unbound`.
+**Nota**: Con la configuración de `unbound` indicada anteriormente, los nombres que apunten a direcciones privadas según el [**RFC1918**](https://datatracker.ietf.org/doc/html/rfc1918.html){:target="_blank"} (por ejemplo `192.168.1.180`) no se resuelven por motivos de seguridad.<br><br>Si este es nuestro caso, se tiene que agregar la línea [`private-domain`](https://unbound.docs.nlnetlabs.nl/en/latest/manpages/unbound.conf.html#unbound-conf-private-domain){:target="_blank"} con el nombre del dominio que contiene direcciones privadas al fichero de configuración de `unbound`.
+
+```
+    # Resolver mi dominio
+    private-domain: midominio.com
+```
 
 # Servidor secundario
 
@@ -278,11 +307,10 @@ Para evitar interrupciones en la resolución de nombres si el servicio Pi-hole n
 
 Aunque lo ideal sería tenerlo en una máquina física diferente, en este caso se aprovechará la flexibilidad de Proxmox para **clonar** el contenedor LXC en su estado actual.
 
-Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del mismo para evitar conflictos. También se aprovechará para hacer que el propio contenedor LXC resuelva localmente:
+Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del mismo para evitar conflictos:
 
 * Network &rarr; IP Address: `192.168.1.82/24`
-* DNS &rarr; Hostname: `pi-hole-2`
-* DNS &rarr; DNS Server: `127.0.0.1`
+* DNS &rarr; Hostname: `pihole22`
 
 # Referencias
 
@@ -295,3 +323,8 @@ Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del m
 * [Unbound not resolving some domains](https://stackoverflow.com/questions/68210563/unbound-not-resolving-some-domains){:target="_blank"}
 * [12 Dig Command Examples To Query DNS In Linux](https://www.rootusers.com/12-dig-command-examples-to-query-dns-in-linux/){:target="_blank"}
 * [DNSSEC Resolver Test](https://wander.science/projects/dns/dnssec-resolver-test/){:target="_blank"}
+
+### Historial de cambios
+
+* **2023-11-18**: Documento inicial
+* **2024-06-22**: Revisión y creación de LXC mediante CLI

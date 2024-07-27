@@ -74,7 +74,7 @@ Antes de poner en marcha el LXC, se pueden deshabilitar un par de opciones que n
     * Desmarcar la opción **Nesting**
 
 {: .box-note}
-Al deshabilitar _nesting_ en un [LXC Debian 12](https://pve.proxmox.com/pve-docs/pct.conf.5.html){:target="_blank"}, el acceso a la _Console_ del LXC es unos segunods más lento.
+Al deshabilitar _nesting_ en un [LXC Debian 12](https://pve.proxmox.com/pve-docs/pct.conf.5.html){:target="_blank"}, el acceso a la _Console_ del LXC es unos segundos más lento.
 
 A continuación, se reinicia el LXC mediante el comando `pct reboot 308` desde la _Shell_ de Proxmox o usando el botón `Reboot` desde la configuración del propio LXC.
 

@@ -105,7 +105,7 @@ Antes de poner en marcha el LXC, se pueden deshabilitar un par de opciones que n
     * Desmarcar la opción **Nesting**
 
 {: .box-note}
-Al deshabilitar _nesting_ en un [LXC Debian 12](https://pve.proxmox.com/pve-docs/pct.conf.5.html){:target="_blank"}, el acceso a la _Console_ del LXC es unos segunods más lento.
+Al deshabilitar _nesting_ en un [LXC Debian 12](https://pve.proxmox.com/pve-docs/pct.conf.5.html){:target="_blank"}, el acceso a la _Console_ del LXC es unos segundos más lento.
 
 En este punto se puede conectar, en un puerto USB del servidor Proxmox, un [adaptador Zigbee](https://www.zigbee2mqtt.io/guide/adapters/){:target="_blank"} que hará las funciones de coordinador de la red Zigbee.
 

@@ -74,15 +74,15 @@ Antes de poner en marcha el LXC, se pueden deshabilitar un par de opciones que n
     * Desmarcar la opción **Nesting**
 
 {: .box-note}
-Deshabilitar IPv6 implica añadir la siguiente configuración al LXC: `net.ipv6.conf.all.disable_ipv6 = 1`
+Al deshabilitar _nesting_ en un [LXC Debian 12](https://pve.proxmox.com/pve-docs/pct.conf.5.html){:target="_blank"}, el acceso a la _Console_ del LXC es unos segunods más lento.
 
-A continuación, se reinicia el LXC mediante el comando `pct reboot 308` desde la _Shell_ de Proxmox o usando el botón `Reboot` desde la interfaz gráfica del propio LXC.
+A continuación, se reinicia el LXC mediante el comando `pct reboot 308` desde la _Shell_ de Proxmox o usando el botón `Reboot` desde la configuración del propio LXC.
 
 # Configuración del LXC
 
 Al no haber habilitado el acceso para el usuario `root` mediante SSH, se puede acceder al LXC utilizando el botón `Console` desde la interfaz gráfica del propio LXC.
 
-Una vez dentro del LXC, se procederá a realizar una configuración similar a la realizada durante la instalación de Mosquitto (MQTT Broker) en Docker](instalacion-de-mosquitto-mqtt-broker-en-docker).
+Una vez dentro del LXC, se procederá a realizar una configuración similar a la realizada durante la instalación de [Mosquitto (MQTT Broker) en Docker](instalacion-de-mosquitto-mqtt-broker-en-docker).
 
 El primer paso es crear una contraseña para el usuario `admin` y grabarla en un fichero que se protegerá adecuadamente:
 

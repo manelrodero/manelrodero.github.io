@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Instalar Zigbee2MQTT en Proxmox LXC'
 date: '2024-07-24 22:31:46'
-#last-updated: '2024-07-24 22:31:46'
+last-updated: '2024-07-24 22:31:46'
 published: true
 tags:
 - Proxmox
@@ -251,6 +251,33 @@ root@zigbee2mqtt:~# ls -l /dev/ttyUSB0
 crw-rw---- 1 root root 188, 0 Jul 24 23:18 /dev/ttyUSB0
 ```
 
+{: .box-note}
+Al reiniciar Proxmox se recrean todos los dispositivos en `/dev` y esto hace que se pierdan los permisos del dispositivo `/dev/ttyUSB0`. Para evitarlo es necesario añadir una regla de `udev` tal como se explica a continuación.
+
+Se utiliza el comando `lsusb -v` para localizar el `idVendor` y el `idProduct` del _dongle_ de SONOFF:
+
+```
+[...]
+  idVendor           0x10c4 Silicon Labs
+  idProduct          0xea60 CP210x UART Bridge
+  iManufacturer           1 Silicon Labs
+  iProduct                2 Sonoff Zigbee 3.0 USB Dongle Plus
+[...]
+```
+
+A continuación se edita el fichero `/etc/udev/rules.d/99-usb-serial.rules` y se añade la siguiente línea:
+
+```
+SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0660", OWNER="100000", GROUP="100000"
+```
+
+Finalmente, se recargan y se aplican las reglas:
+
+```
+udevadm control --reload-rules
+udevadm trigger
+```
+
 # Frontend
 
 El acceso al _frontend_ de Zigbee2MQTT mediante la URL http://192.168.1.86:8080 debería funcionar correctamente usando la misma contraseña del entorno anterior.
@@ -293,3 +320,4 @@ systemctl start zigbee2mqtt
 
 * **2024-07-24**: Documento inicial
 * **2024-07-27**: Se añade fichero de configuración
+* **2024-07-28**: Regla de `udev` para permisos /dev/ttyUSB0

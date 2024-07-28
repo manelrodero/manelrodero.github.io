@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Instalar Mosquitto (MQTT Broker) en Proxmox LXC'
 date: '2024-07-23 20:35:52'
-#last-updated: '2024-07-23 20:35:52'
+last-updated: '2024-07-23 20:35:52'
 published: true
 tags:
 - Proxmox

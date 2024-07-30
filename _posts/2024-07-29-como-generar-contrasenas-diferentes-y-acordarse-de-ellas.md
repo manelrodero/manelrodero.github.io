@@ -128,7 +128,7 @@ Por ejemplo, si uso la palabra `Cebra`, ¿sabrías decirme qué contraseña se g
 
 Efectivamente, la contraseña sería `C3br4@lprdC@11$` que tardaría centenares de años en ser _crackeada_ según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target=_blank}:
 
-* Palabra: `Cabra` &rarr; `C3br4`
+* Palabra: `Cebra` &rarr; `C3br4`
 * Símbolo de separación: `@`
 * Nombre de la web: `elperiodico` &rarr; `lprdC`
 * Símbolo de separación: `@`

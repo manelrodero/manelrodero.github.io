@@ -43,7 +43,7 @@ Resulta que esta web ha sido comprometida recientemente porque está basada en u
 
 El resultado de este ataque ha sido un fichero de texto, compartido en la _Dark Web_, que contiene las credenciales de los miles de clientes de la frutería.
 
-Entre esos miles de direcciones de correo electrónico y contraseñas, que seguramente acaben registrada en [';--have i been pwned?](https://haveibeenpwned.com/){:target=_blank} en poco tiempo, también está la tuya:
+Entre esos miles de direcciones de correo electrónico y contraseñas, que seguramente acaben registradas en [';--have i been pwned?](https://haveibeenpwned.com/){:target=_blank} en poco tiempo, también está la tuya:
 
 
 ```
@@ -54,9 +54,9 @@ tunombreyapellidos@gmail.com,P@l@n24wrt65
 
 ¿Ves ahora el peligro? Supongo que sí, ¿verdad? Imagina que los ciberdelincuentes deciden analizar este fichero para encontrar direcciones de Gmail (`xxxxxxx@gmail.com`). Dado que un gran porcentaje de personas utiliza Gmail como correo electrónico personal, lo más probable es que encuentren muchísimas y, entre ellas, la tuya.
 
-¿Qué crees que será lo primero que hagan cuando encuentren esta información? ¡Correcto, has acertado! Intentarán acceder a tu cuenta de [Gmail](https://www.gmail.com/){:target=_blank} usando la cuenta `nombreyapellidos@gmail.com` y la contraseña `P@l@n24wrt65`.
+¿Qué crees que será lo primero que hagan cuando encuentren esta información? ¡Correcto, has acertado! Intentarán acceder a tu cuenta de [Gmail](https://www.gmail.com/){:target=_blank} con el usuario `nombreyapellidos@gmail.com` y la contraseña `P@l@n24wrt65`.
 
-¡Y esa es la contraseña correcta porque has usado la misma en Gmail y en la frutería!
+¡Y esa es la contraseña correcta, porque has usado la misma en Gmail y en la frutería!
 
 {: .box-note}
 Si no tienes activada la [**verificación en 2 pasos**](https://myaccount.google.com/security){:target=_blank} (aplicación de autenticación, teléfono, etc.) para validar los inicios de sesión, tu cuenta habrá caído en manos de los ciberdelincuentes.
@@ -124,9 +124,9 @@ Un ejemplo de patrón podría ser el siguiente (y no, no lo uses tú, que ahora 
 
 Usando este patrón se obtienen contraseñas que tienen letras (mayúsculas y minúsculas), números y símbolos. Además, al realizar cambios en las palabras, se consigue evitar encontrarlas en muchos de los diccionarios _online_ que utilizan los ciberdelincuentes.
 
-Por ejemplo, si uso la palabra `Cebra`, ¿sabrías decirme qué contraseña se generaría para acceder a [https://www.elperiodico.com/](https://www.elperiodico.com/){:target=_blank}? Te dejo unos segundos para pensar ;-)
+Por ejemplo, si uso la palabra `Cebra`, ¿sabrías decirme qué contraseña se generaría para acceder a [https://www.elperiodico.com/](https://www.elperiodico.com/){:target=_blank}? Te dejo unos segundos para pensar ...
 
-Efectivamente, la contraseña sería `C3br4@lprdC@11$` que tardaría centenares de años en ser _crackeada_ según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target=_blank}:
+Efectivamente, la contraseña sería `C3br4@lprdC@11$`, que tardaría centenares de años en ser _crackeada_ según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target=_blank}:
 
 * Palabra: `Cebra` &rarr; `C3br4`
 * Símbolo de separación: `@`

@@ -84,55 +84,64 @@ Cada versión de Windows 11 requiere de unas herramientas de personalización y 
 
 Listado de aplicaciones universales (Appx) incluídas con cada versión del sistema operativo, añadiendo la decisión de mantenerlas o eliminarlas durante la construcción de una [OSBuild](https://github.com/manelrodero/OSDBuilder#eliminar-aplicaciones-universales-appx){:target="_blank"}:
 
-| Paquete | 21H2 | 22H2 | Aplicación | Decisión |
-| --- | :---: | :---: | --- | :---: |
-| Clipchamp.Clipchamp | | x | Editor de vídeo | **Eliminar** |
-| Microsoft.549981C3F5F10 | x | x | Cortana | Conservar |
-| Microsoft.BingNews | x | x | Noticias | **Eliminar** |
-| Microsoft.BingWeather | x | x | El Tiempo | **Eliminar** |
-| Microsoft.DesktopAppInstaller | x | x | Instalador de aplicación | Conservar |
-| Microsoft.GamingApp | x | x | Servicios de juegos | **Eliminar** |
-| Microsoft.GetHelp | x | x | Obtener ayuda | **Eliminar** |
-| Microsoft.Getstarted | x | x | Recomendaciones | **Eliminar** |
-| Microsoft.HEIFImageExtension | x | x | Extensiones de imagen HEIF | Conservar |
-| Microsoft.HEVCVideoExtension | | x | Extensiones de vídeo HEVC | Conservar |
-| Microsoft.MicrosoftOfficeHub | x | x | Office | **Eliminar** |
-| Microsoft.MicrosoftSolitaireCollection | x | x | Microsoft Solitaire Collection | **Eliminar** |
-| Microsoft.MicrosoftStickyNotes | x | x | Sticky Notes | Conservar |
-| Microsoft.Paint | x | x | Paint | Conservar |
-| Microsoft.People | x | x | Contactos | **Eliminar** |
-| Microsoft.PowerAutomateDesktop | x | x | Power Automate | Conservar |
-| Microsoft.RawImageExtension | | x | Extensiones de imagen Raw | Conservar |
-| Microsoft.ScreenSketch | x | x | Recorte y anotación | Conservar |
-| Microsoft.SecHealthUI | x | x | | Conservar |
-| Microsoft.StorePurchaseApp | x | x | Store Purchase App | Conservar |
-| Microsoft.Todos | x | x | Aplicación To-Do | Conservar |
-| Microsoft.UI.Xaml.2.4 | x | | | Conservar |
-| Microsoft.VCLibs.140.00 | x | x | C++ Runtime for Desktop Bridge | Conservar |
-| Microsoft.VP9VideoExtensions | x | x | VP9 Video Extensions | Conservar |
-| Microsoft.WebMediaExtensions | x | x | Extensiones de multimedia web | Conservar |
-| Microsoft.WebpImageExtension | x | x | Extensiones de imagen Webp | Conservar |
-| Microsoft.Windows.Photos | x | x | Fotos | Conservar |
-| Microsoft.WindowsAlarms | x | x | Alarmas y reloj | Conservar |
-| Microsoft.WindowsCalculator | x | x | Calculadora | Conservar |
-| Microsoft.WindowsCamera | x | x | Cámara | Conservar |
-| microsoft.windowscommunicationsapps | x | x | Correo y Calendario | **Eliminar** |
-| Microsoft.WindowsFeedbackHub | x | x | Centro de opiniones | Conservar |
-| Microsoft.WindowsMaps | x | x | Mapas | **Eliminar** |
-| Microsoft.WindowsNotepad | x | x | Bloc de notas | Conservar |
-| Microsoft.WindowsSoundRecorder | x | x | Grabadora de voz | Conservar |
-| Microsoft.WindowsStore | x | x | Microsoft Store | Conservar |
-| Microsoft.WindowsTerminal | x | x | Terminal | Conservar |
-| Microsoft.Xbox.TCUI | x | x | Experiencia de Xbox Live en el juego | **Eliminar** |
-| Microsoft.XboxGameOverlay | x | x | Complemento de la barra de juego Xbox | **Eliminar** |
-| Microsoft.XboxGamingOverlay | x | x | Barra de juego de Xbox | **Eliminar** |
-| Microsoft.XboxIdentityProvider | x | x | Proveedor de identidades de Xbox | **Eliminar** |
-| Microsoft.XboxSpeechToTextOverlay | x | x | | **Eliminar** |
-| Microsoft.YourPhone | x | x | Tu Teléfono | **Eliminar** |
-| Microsoft.ZuneMusic | x | x | Groove Música | **Eliminar** |
-| Microsoft.ZuneVideo | x | x |  Películas y TV | **Eliminar** |
-| MicrosoftCorporationII.QuickAssist | | x | Asistencia rápida | Conservar |
-| MicrosoftWindows.Client.WebExperience | x | x | | **Eliminar** |
+| Paquete | 21H2 | 22H2 | 23H2 | 24H2 | Aplicación | Decisión |
+| --- | :---: | :---: | :---: | :---: | --- | :---: |
+| Clipchamp.Clipchamp | | x | x | x | Editor de vídeo | **Eliminar** |
+| Microsoft.549981C3F5F10 | x | x | x | | Cortana | Conservar |
+| Microsoft.ApplicationCompatibilityEnhancements | | | | x | Compatibilidad de aplicaciones | Conservar |
+| Microsoft.AV1VideoExtension | | | | x | Extensiones de vídeo AV1 | Conservar |
+| Microsoft.AVCEncoderVideoExtension | | | | x | Extensiones de vídeo AVC | Conservar |
+| Microsoft.BingNews | x | x | x | x | Noticias | **Eliminar** |
+| Microsoft.BingSearch | | | | x | Búsqueda Bing integrada en Windows | **Eliminar** |
+| Microsoft.BingWeather | x | x | x | x | El Tiempo | **Eliminar** |
+| Microsoft.DesktopAppInstaller | x | x | x | x | Instalador de aplicación | Conservar |
+| Microsoft.GamingApp | x | x | x | x | Servicios de juegos | **Eliminar** |
+| Microsoft.GetHelp | x | x | x | x | Obtener ayuda | **Eliminar** |
+| Microsoft.Getstarted | x | x | x | | Recomendaciones | **Eliminar** |
+| Microsoft.HEIFImageExtension | x | x | x | x | Extensiones de imagen HEIF | Conservar |
+| Microsoft.HEVCVideoExtension | | x | x | x | Extensiones de vídeo HEVC | Conservar |
+| Microsoft.MicrosoftOfficeHub | x | x | x | x | Office | **Eliminar** |
+| Microsoft.MicrosoftSolitaireCollection | x | x | x | x | Microsoft Solitaire Collection | **Eliminar** |
+| Microsoft.MicrosoftStickyNotes | x | x | x | x | Sticky Notes | Conservar |
+| Microsoft.MPEG2VideoExtension | | | | x | Extensiones de vídeo MPEG2 | Conservar |
+| Microsoft.OutlookForWindows | | | | x | Outlook para Windows | **Eliminar** |
+| Microsoft.Paint | x | x | x | x | Paint | Conservar |
+| Microsoft.People | x | x | x | | Contactos | **Eliminar** |
+| Microsoft.PowerAutomateDesktop | x | x | x | x | Power Automate | Conservar |
+| Microsoft.RawImageExtension | | x | x | x | Extensiones de imagen Raw | Conservar |
+| Microsoft.ScreenSketch | x | x | x | x | Recorte y anotación | Conservar |
+| Microsoft.SecHealthUI | x | x | x | x | UI de Windows Security | Conservar |
+| Microsoft.StorePurchaseApp | x | x | x | x | Store Purchase App | Conservar |
+| Microsoft.Todos | x | x | x | x | Aplicación To-Do | Conservar |
+| Microsoft.UI.Xaml.2.4 | x | | | | | Conservar |
+| Microsoft.VCLibs.140.00 | x | x | x | | C++ Runtime for Desktop Bridge | Conservar |
+| Microsoft.VP9VideoExtensions | x | x | x | x | VP9 Video Extensions | Conservar |
+| Microsoft.WebMediaExtensions | x | x | x | x | Extensiones de multimedia web | Conservar |
+| Microsoft.WebpImageExtension | x | x | x | x | Extensiones de imagen Webp | Conservar |
+| Microsoft.Windows.DevHome | | | | x | Centro de Control para desarrolladores | Conservar |
+| Microsoft.Windows.Photos | x | x | x | x | Fotos | Conservar |
+| Microsoft.WindowsAlarms | x | x | x | x | Alarmas y reloj | Conservar |
+| Microsoft.WindowsCalculator | x | x | x | x | Calculadora | Conservar |
+| Microsoft.WindowsCamera | x | x | x | x | Cámara | Conservar |
+| microsoft.windowscommunicationsapps | x | x | x | | Correo y Calendario | **Eliminar** |
+| Microsoft.WindowsFeedbackHub | x | x | x | x | Centro de opiniones | Conservar |
+| Microsoft.WindowsMaps | x | x | x | | Mapas | **Eliminar** |
+| Microsoft.WindowsNotepad | x | x | x | x | Bloc de notas | Conservar |
+| Microsoft.WindowsSoundRecorder | x | x | x | x | Grabadora de voz | Conservar |
+| Microsoft.WindowsStore | x | x | x | x | Microsoft Store | Conservar |
+| Microsoft.WindowsTerminal | x | x | x | x | Terminal | Conservar |
+| Microsoft.Xbox.TCUI | x | x | x | x | Experiencia de Xbox Live en el juego | **Eliminar** |
+| Microsoft.XboxGameOverlay | x | x | x | | Complemento de la barra de juego Xbox | **Eliminar** |
+| Microsoft.XboxGamingOverlay | x | x | x | x | Barra de juego de Xbox | **Eliminar** |
+| Microsoft.XboxIdentityProvider | x | x | x | x | Proveedor de identidades de Xbox | **Eliminar** |
+| Microsoft.XboxSpeechToTextOverlay | x | x | x | x | Transcripción de voz a texto | **Eliminar** |
+| Microsoft.YourPhone | x | x | x | x | Tu Teléfono | **Eliminar** |
+| Microsoft.ZuneMusic | x | x | x | x | Groove Música | **Eliminar** |
+| Microsoft.ZuneVideo | x | x | x | |  Películas y TV | **Eliminar** |
+| MicrosoftCorporationII.QuickAssist | | x | x | x | Asistencia rápida | Conservar |
+| MicrosoftWindows.Client.WebExperience | x | x | | | Widgets | **Eliminar** |
+| MicrosoftWindows.CrossDevice | | | | x | Sincronización entre dispositivos? | **Eliminar** |
+| MSTeams | | | | x | Microsoft Teams | **Eliminar** |
 
 # <a name="downloads">Descargas
 

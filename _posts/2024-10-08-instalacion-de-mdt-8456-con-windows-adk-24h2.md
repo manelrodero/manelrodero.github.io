@@ -69,6 +69,10 @@ Para solucionar algunos [problemas introducidos por los diferentes Windows ADK p
 
 A partir del **ADK for Windows 10, version 2004** es necesario **actualizar el fichero Microsoft.BDD.Utility.dll** para que MDT pueda desplegar una imagen de Windows 10 (o ahora Windows 11) en ordenadores que estén configurados en modo BIOS en lugar de UEFI.
 
+Si se utiliza la versión original, se producirá un error `0x80004005` como el mostrado a continuación:
+
+![Error 0x80004005][4]
+
 Para actualizar la instalación de MDT hay que hacer lo siguiente:
 
 * Descargar el fichero [MDT_KB4564442.exe](https://support.microsoft.com/en-us/topic/windows-10-deployments-fail-with-microsoft-deployment-toolkit-on-computers-with-bios-type-firmware-70557b0b-6be3-81d2-556f-b313e29e2cb7){:target=_blank}
@@ -244,3 +248,4 @@ Los pasos principales para configurar y usar Microsoft Deployment Toolkit son lo
 [1]: /assets/img/blog/2024-10-08_image_1.png "MMC Crash"
 [2]: /assets/img/blog/2024-10-08_image_2.png "Missing VBScript"
 [3]: /assets/img/blog/2024-10-08_image_3.png "Fix HTA"
+[4]: /assets/img/blog/2024-10-08_image_4.png "Error 0x80004005"

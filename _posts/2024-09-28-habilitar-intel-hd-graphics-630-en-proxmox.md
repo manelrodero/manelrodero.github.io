@@ -151,6 +151,23 @@ En mi caso, hay dos dispositivos:
 * `/dev/dri/card1` (ID 226,1) que representa la tarjeta gráfica
 * `/dev/dri/renderD128` (ID 226,128) que es usado para la renderización de gráficos
 
+Es posible que, al reiniciar Proxmox, la tarjeta gráfica se haya movido a `/dev/dri/card0` y el LXC no arranque. Para evitarlo, se puede usar el comando `udevadm info --name=/dev/dri/card0` para localizar el `ID_PATH`. Una vez localizado, se puede montar el dispositivo en el LXC usando ese identificador, p.ej. `/dev/dri/by-path/pci-0000:00:02.0-card`.
+
+Tambien es posible crear un **enlace simbólico** `/dev/hd630` creando un fichero de reglas `/etc/udev/rules.d/99-gpu-passthrough.rules` con el siguiente contenido:
+
+```
+SUBSYSTEM=="drm", ATTRS{vendor}=="0x8086", ATTRS{device}=="0x5912", SYMLINK+="hd630", GROUP="video", MODE="0660"
+```
+
+El _vendor_ y el _device_ se encuentran en la información obtenida por el comando `udevadm info -a -p /sys/class/drm/card1`.
+
+Una vez recargadas y ejecutadas las reglas `udev` mediante los siguientes comandos, se podrá montar el dispositivo en el LXC usando el enlace simbólico `/dev/hd630`:
+
+```
+udevadm control --reload
+udevadm trigger --verbose
+```
+
 # Referencias
 
 * [Setting up Intel GPU passthrough on Proxmox LXC containers](https://geekistheway.com/2022/12/23/setting-up-intel-gpu-passthrough-on-proxmox-lxc-containers/){:target="_blank"}

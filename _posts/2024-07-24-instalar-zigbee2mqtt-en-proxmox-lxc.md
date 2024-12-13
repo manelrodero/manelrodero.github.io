@@ -274,7 +274,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0660"
 Finalmente, se recargan y se aplican las reglas:
 
 ```
-udevadm control --reload-rules
+udevadm control --reload
 udevadm trigger
 ```
 

@@ -353,7 +353,6 @@ mkdir -p ~/volumes/portainer-ce
 # Crear el fichero docker-compose.yml
 cd dockers/portainer-ce
 cat > docker-compose.yml << EOF
-version: '3'
 services:
   portainer-ce:
     image: portainer/portainer-ce:latest
@@ -365,6 +364,8 @@ services:
     ports:
     - 9443:9443
     restart: always
+    security_opt:
+      - no-new-privileges:true    
 EOF
 
 # Poner en marcha el Docker

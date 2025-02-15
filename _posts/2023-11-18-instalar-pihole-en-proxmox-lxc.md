@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Instalar Pi-hole en Proxmox LXC'
 date: '2023-11-18 18:30:15'
-last-updated: '2024-06-22 11:53:28'
+last-updated: '2025-02-13 19:25:40'
 published: true
 tags:
 - Proxmox
@@ -58,9 +58,9 @@ Una vez dentro del LXC, hay que:
 
 * completar el asistente de instalación
 * reiniciar el LXC (sobretodo si hay una actualización del _kernel_)
-* reconfigurar la zona horaria
-* actualizar los paquetes
-* desinstalar el paquete `etckeeper`
+* reconfigurar la zona horaria (`dpkg-reconfigure tzdata` y seleccionar `Europe/Madrid`)
+* actualizar los paquetes (`apt update` y `apt upgrade -y`)
+* desinstalar el paquete `etckeeper` (`apt purge etckeeper`)
 * reiniciar el LXC
 
 # Instalación de Pi-hole
@@ -331,3 +331,4 @@ Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del m
 
 * **2023-11-18**: Documento inicial
 * **2024-06-22**: Revisión y creación de LXC mediante CLI
+* **2025-02-15**: Añadir comandos iniciales

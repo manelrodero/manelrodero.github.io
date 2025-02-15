@@ -3,6 +3,7 @@ layout : post
 blog-width: true
 title: 'Docker en Proxmox LXC con TurnKey Core'
 date: '2023-10-21 14:55:00'
+last-updated: '2025-02-13 19:25:40'
 published: true
 tags:
 - Proxmox
@@ -151,6 +152,9 @@ Cuando aparezca el asistente de instalación **First Boot Configuration**:
 * Pulsar el botón **Skip** en la pantalla _Initialize Hub Services_
 * Pulsar el botón **Skip** en la pantalla _System Notifications and Critical Security Alerts_
 * Pulsar el botón **Install** en la pantalla _Security updates_
+
+{: .box-note}
+Si aparece el mensaje `A security update to the kernel requires a reboot to go into effect` se reiniciará el LXC despues de salir del asistente.
 
 Al finalizar la instalación, en la _TurnKey GNU/Linux Configuration Console_ se mostrarán las URLs de servicio, por ejemplo:
 
@@ -404,3 +408,8 @@ A continuación se indican algunas referencias que van más allá al usar ZFS, F
 * [Running Docker in LXC With Proxmox 7.1](https://www.weisb.net/running-docker-in-lxc-with-proxmox-7-1/)
 * [FUSE-OverlayFS @ Reddit](https://www.reddit.com/r/Proxmox/comments/va76fz/fuse_overlayfs/)
 * [Docker LXC Unprivileged container on Proxmox 7 with ZFS](https://forum.proxmox.com/threads/docker-lxc-unprivileged-container-on-proxmox-7-with-zfs.99796/)
+
+### Historial de cambios
+
+* **2023-10-21**: Documento inicial
+* **2025-02-15**: Reinicio del LXC si hay actualización del kernel

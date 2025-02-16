@@ -99,6 +99,9 @@ La configuración de la BIOS (se entra con `F2`) se ha relizado mediante los sig
 
 # Instalación
 
+{: .box-note}
+En Noviembre de 2021, lo reinstalé con [Windows Server 2022 para usar deduplicación](/blog/instalacion-de-windows-server-2022-en-un-dell-precision-7530-para-usar-deduplicacion).
+
 | [Macrium Reflect Free](#macrium-reflect-free) | [Configuración Windows](#configuración-windows) | [Software](#software) |
 
 La instalación del portátil se ha realizado mediante una [*OSBuild*](https://github.com/manelrodero/OSDBuilder/blob/main/Prod/Tasks/OSBuild%20Windows%2010%20Education%20x64%2020H2%20BLANK.json) de **Windows 10 Education x64 20H2** multilenguaje (`es-es`, `en-us` y `ca-es`).

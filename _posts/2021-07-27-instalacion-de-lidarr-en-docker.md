@@ -3,19 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de Lidarr en Docker'
 date: '2021-07-27 22:43:58'
+last-updated: '2023-01-15 13:55:27'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2023-01-15**: Revisión del documento y corrección de errores.
-* **2023-01-15**: Cambio a _path_ absolutos.
-
-# Instalación
 
 [Lidarr](https://lidarr.audio/) es un gestor de la colección de música para usuarios de Usenet y BitTorrent. Puede monitorizar múltiples feeds RSS para encontrar nuevos álbumes de los artistas favoritos, descargarlos, clasificarlos y cambiarles el nombre de forma automática.
 
@@ -114,3 +108,10 @@ docker logs -f lidarr
 * [Ultimate Media Server : Episode 3 - Configuring Jackett, Lidarr, and Radarr](https://youtu.be/uvc4TnhVecA) @ DB Tech
 * [Ultimate Raspberry Pi Server with Lidarr, Radarr, Jackett, NZBGet and Deluge on Docker](https://www.youtube.com/watch?v=oLxsSQIqOMw) @ LMDS GreenFrog
 * [WikiArr: Lidarr](https://wiki.servarr.com/lidarr)
+
+### Historial de cambios
+
+* **2021-07-27**: Documento inicial
+* **2023-01-15**: Revisión del documento y corrección de errores
+* **2023-01-15**: Cambio a _path_ absolutos
+* **2024-10-06**: Adaptación formato cambios

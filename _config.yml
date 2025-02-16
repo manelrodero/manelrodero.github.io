@@ -37,6 +37,7 @@ navbar-links:
       - Reddit: "community/reddit"
   Hobbies:
       - Hiking: "hobbies/hiking"
+      - HomeLab: "hobbies/homelab"
   "About":
       - Me: "about/me"
       - Laptop: "about/laptop"

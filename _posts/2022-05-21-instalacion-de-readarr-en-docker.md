@@ -3,19 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de Readarr en Docker'
 date: '2022-05-21 16:17:57'
+last-updated: '2023-01-15 09:38:01'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2023-01-15**: Revisión del documento y corrección de errores.
-* **2023-01-15**: Cambio a _path_ absolutos.
-
-# Instalación
 
 [Readarr](https://readarr.com/) es un administrador de colecciones de libros electrónicos para usuarios de Usenet y BitTorrent. Puede monitorizar múltiples feeds RSS para encontrar nuevos libros, descargarlos, clasificarlos y cambiarles el nombre de forma automática.
 
@@ -102,3 +96,10 @@ docker logs -f readarr
 # Referencias
 
 * [WikiArr: Readarr](https://wiki.servarr.com/en/readarr)
+
+### Historial de cambios
+
+* **2022-05-21**: Documento inicial
+* **2023-01-15**: Revisión del documento y corrección de errores
+* **2023-01-15**: Cambio a _path_ absolutos
+* **2024-10-06**: Adaptación formato cambios

@@ -3,19 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de Sonarr en Docker'
 date: '2021-04-02 20:09:35'
+last-updated: '2024-10-06 09:30:50'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2022-12-03**: Revisión del documento y corrección de errores.
-* **2023-01-15**: Cambio a _path_ absolutos.
-
-# Instalación
 
 [Sonarr](https://sonarr.tv/) es un PVR para usuarios de Usenet y BitTorrent. Puede monitorizar múltiples feeds RSS para encontrar nuevos episodios de una serie, descargarlos, clasificarlos y cambiarles el nombre de forma automática.
 
@@ -117,3 +111,9 @@ docker logs -f sonarr
 * [Les Tutos: Docker No. 9: Multimedia Automation Part3: Sonarr - Séries](https://www.youtube.com/watch?v=_absmgualKM)
 * [TRaSH Guides: Sonarr](https://trash-guides.info/Sonarr/)
 * [WikiArr: Sonarr](https://wiki.servarr.com/sonarr)
+
+### Historial de cambios
+
+* **2022-12-03**: Revisión del documento y corrección de errores.
+* **2023-01-15**: Cambio a _path_ absolutos.
+* **2024-10-06**: Adaptación formato cambios.

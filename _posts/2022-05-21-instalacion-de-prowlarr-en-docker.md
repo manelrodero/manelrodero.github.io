@@ -3,19 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de Prowlarr en Docker'
 date: '2022-05-21 09:16:48'
+last-updated: '2024-10-06 09:38:01'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2023-01-15**: Revisión del documento y corrección de errores.
-* **2023-01-15**: Cambio a _path_ absolutos.
-
-# Instalación
 
 [Prowlarr](https://github.com/Prowlarr/Prowlarr/) es una aplicación que funciona como un **servidor proxy** entre las aplicaciones ([Sonarr](instalacion-de-sonarr-en-docker), [Radarr](instalacion-de-radarr-en-docker), [Lidarr](instalacion-de-lidarr-en-docker), [Readarr](instalacion-de-readarr-en-docker) y [Mylar3](https://github.com/mylar3/mylar3)) y los _trackers_ Torrent o los _indexer_ Usenet.
 
@@ -108,3 +102,10 @@ docker logs -f prowlarr
 # Referencias
 
 * [WikiArr: Prowlarr](https://wiki.servarr.com/en/prowlarr)
+
+### Historial de cambios
+
+* **2022-05-21**: Documento inicial
+* **2023-01-15**: Revisión del documento y corrección de errores
+* **2023-01-15**: Cambio a _path_ absolutos
+* **2024-10-06**: Adaptación formato cambios

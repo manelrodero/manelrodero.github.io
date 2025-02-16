@@ -3,19 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de Radarr en Docker'
 date: '2021-04-03 00:05:04'
+last-updated: '2024-10-06 09:38:01'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2022-12-03**: Revisión del documento y corrección de errores.
-* **2023-01-15**: Cambio a _path_ absolutos.
-
-# Instalación
 
 [Radarr](https://radarr.video/) es un PVR para usuarios de Usenet y BitTorrent. Puede monitorizar múltiples feeds RSS para encontrar nuevas películas, descargarlas, clasificarlas y cambiarles el nombre de forma automática.
 
@@ -167,3 +161,9 @@ docker logs -f radarr
 * [Les Tutos: Docker No. 9: Multimedia Automation Part2: Radarr - Films](https://www.youtube.com/watch?v=wwZ7o-eLvZg)
 * [TRaSH Guides: Radarr](https://trash-guides.info/Radarr/)
 * [WikiArr: Radarr](https://wiki.servarr.com/radarr)
+
+### Historial de cambios
+
+* **2022-12-03**: Revisión del documento y corrección de errores
+* **2023-01-15**: Cambio a _path_ absolutos
+* **2024-10-06**: Adaptación formato cambios

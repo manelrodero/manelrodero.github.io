@@ -3,18 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de FlareSolverr en Docker'
 date: '2021-07-25 17:19:11'
+last-updated: '2023-01-15 13:55:27'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2023-01-15**: Revisión del documento y corrección de errores.
-
-# Instalación
 
 [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) es un servidor proxy para saltarse las protecciones Cloudflare y DDoS-GUARD.
 
@@ -78,3 +73,9 @@ docker logs -f flaresolverr
 # Referencias
 
 * [Configuring FlareSolverr]( https://github.com/Jackett/Jackett#configuring-flaresolverr)
+
+### Historial de cambios
+
+* **2021-07-25**: Documento inicial
+* **2023-01-15**: Revisión del documento y corrección de errores
+* **2024-10-06**: Adaptación formato cambios

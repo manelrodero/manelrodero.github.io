@@ -3,19 +3,13 @@ layout : post
 blog-width: true
 title: 'Instalación de Bazarr en Docker'
 date: '2021-07-28 22:20:21'
+last-updated: '2023-01-15 13:55:27'
 published: true
 tags:
 - Docker
 author:
   display_name: Manel Rodero
 ---
-
-#### _**Actualizaciones**:_
-
-* **2023-01-15**: Revisión del documento y corrección de errores.
-* **2023-01-15**: Cambio a _path_ absolutos.
-
-# Instalación
 
 [Bazarr](https://www.bazarr.media/) es una aplicación auxiliar para [Sonarr](instalacion-de-sonarr-en-docker) y [Radarr](instalacion-de-radarr-en-docker) que se encarga de gestionar y descargar los subtítulos de las series y películas.
 
@@ -109,3 +103,10 @@ docker logs -f bazarr
 # Referencias
 
 * [Easy Automated Home Media Server: VPN, Radarr, Sonarr, Lidarr, Librarian in 10 Minutes](https://www.youtube.com/watch?v=5rtGBwBuzQE) @ Techo Dad Life
+
+### Historial de cambios
+
+* **2021-07-28**: Documento inicial
+* **2023-01-15**: Revisión del documento y corrección de errores
+* **2023-01-15**: Cambio a _path_ absolutos
+* **2024-10-06**: Adaptación formato cambios

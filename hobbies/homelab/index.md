@@ -6,9 +6,11 @@ blog-width: true
 
 Esta página contiene notas sobre diferentes aspectos de mi **HomeLab** que no están documentados explícitamente en algún artículo del [blog](/blog) con los _tags_ [HomeLab](/tags#HomeLab), [Docker](/tags#Docker), [Raspberry](/tags#Raspberry), [Proxmox](/tags#Proxmox), etc.
 
-| [Raspberry Pi 4](#raspberry-pi-4) | [Proxmox](#proxmox) |
+| [Raspberry Pi 4](#raspberry-pi-4) | [Proxmox](#proxmox) | [Unbound](#unbound) | [mDNS](#mdns) |
 
 # Raspberry Pi 4
+
+| [Fichero `/boot/cmdline.txt`](#fichero-bootcmdlinetxt) | [Fichero `/boot/config.txt`](#fichero-bootconfigtxt) | [Fichero `/etc/dhcpcd.conf`](#fichero-etcdhcpcdconf) | [Herramienta `pi-gen`](#herramienta-pi-gen) |
 
 ## Fichero `/boot/cmdline.txt`
 
@@ -113,10 +115,6 @@ dtoverlay=disable-bt
 
 Muchos de los parámetros son bastante estándar pero yo he añadido algunas opciones como **deshabilitar los adaptadores Wi-Fi y Bluetooth**.
 
-## Herramienta `pi-gen`
-
-La herramienta [**pi-gen**](https://github.com/RPi-Distro){:target="_blank"} se utiliza para crear las imágenes oficiales de Raspberry Pi OS (las de 32 bits basadas en Raspbian y las de 64 bits basadas en Debian).
-
 ## Fichero `/etc/dhcpcd.conf`
 
 El fichero `/etc/dhcpcd.conf` configura el comportamiento del cliente DHCP en sistemas Unix como la Raspberry Pi:
@@ -197,4 +195,132 @@ static domain_name_servers=1.1.1.1 1.0.0.1
 denyinterfaces veth*
 ```
 
+## Herramienta `pi-gen`
+
+La herramienta [**pi-gen**](https://github.com/RPi-Distro){:target="_blank"} se utiliza para crear las imágenes oficiales de Raspberry Pi OS (las de 32 bits basadas en Raspbian y las de 64 bits basadas en Debian).
+
 # Proxmox
+
+| [Fichero `/etc/sysctl.conf`](#fichero-etcsysctlconf) | [Fichero `/etc/resolv.conf`](#fichero-etcresolvconf) |
+
+## Fichero `/etc/sysctl.conf`
+
+El fichero `/etc/sysctl.conf` se utiliza para configurar parámetros del núcleo (**kernel**) en tiempo de ejecución. Algunas de las configuraciones que se pueden ajustar en este archivo son:
+
+* **Parámetros de red**: Se puede configurar el tamaño de los _buffers_ TCP/IP, habilitar/deshabilitar **IP forwarding**, ajustar el comportamiento del TCP/IP, etc.
+* **Parámetros de seguridad**: Se puede activar o desactivar características de seguridad como ASLR (Address Space Layout Randomization)
+* **Parámetros de memoria**: Se puede ajustar el comportamiento de la memoria swap, los límites de caché, etc.
+
+Cada línea del archivo generalmente tiene el formato `nombre_del_parámetro = valor` y para aplicar los cambios sin reiniciar el sistema hay que ejecutar el comando **`sysctl -p`**.
+
+En mi instalación de Proxmox he realizado los siguientes cambios:
+
+```
+# Al reiniciar por corte de red (Mensajes Bug: soft lockup - CPU#1 stuck for 320s!
+# https://www.suse.com/support/kb/doc/?id=000018705
+# https://wiki.debian.org/BootProcessSpeedup#Analyzing_the_boot_process
+# https://www.kernel.org/doc/html/latest/admin-guide/lockup-watchdogs.html
+kernel.watchdog_thresh = 20  # Soft lockup si núcleo CPU ocupado más de 20 segundos sin dejar que otros procesos se ejecuten (defecto = 10)
+kernel.softlockup_panic = 1  # Si se produce un Soft Lockup, se producirá un Panic (detenerse y mostrar error crítico)
+kernel.panic = 60            # Reiniciar el sistema después de 60 segundos de haberse producido el Panic
+
+# https://www.reddit.com/r/docker/comments/z3xbd2/how_to_fix_sosndbuf_sorcvbuf_warning_unbound_on/
+# Evitar error en LXC con Unbound (PiHole)
+net.core.rmem_max = 4194304
+```
+
+## Fichero `/etc/resolv.conf`
+
+El archivo `/etc/resolv.conf` se utiliza para configurar el _resolver_ de nombres de dominio (DNS) indicando, por ejemplo, los servidores DNS que el sistema usará para resolver nombres de dominio en direcciones IP o el sufijo de búsqueda que se agregará a un nombre de dominio corto para intentar resolverlo.
+
+En mi caso, he configurado los siguientes valores desde `Datacenter` &rarr; `pve` &rarr; `System` &rarr; `DNS`:
+
+```
+search home
+nameserver 1.1.1.1
+nameserver 1.0.0.1
+```
+
+# Unbound
+
+En la [instalación de Pi-hole en LXC](instalar-pihole-en-proxmox-lxc) se configuró **Unbound**.
+
+Para evitar errores relacionados con el _buffer_ de recepción, se aumentó la cantidad máxima de memoria que el _kernel_ asigna para la recepción de datos en un _socket_.
+
+```
+# Fichero /etc/sysctl.conf del host Proxmox
+net.core.rmem_max = 4194304
+```
+
+Además, para evitar mensajes de _warning_ relacionados con el módulo de caché que no se está usando se añaden las siguientes líneas al fichero `/etc/unbound/unbound.conf.d/pi-hole.conf`:
+
+```
+    # unbound-control status -> Dice que estamos usando los tres modulos, pero esta configuracion da un error:
+    # warning: subnetcache: prefetch is set but not working for data originating from the subnet module cache
+    #
+    # Segun Copilot, se podria desactivar el Prefetch o desactivar la Cache
+    # unbound-control stats -> Dice que no usamos la cache, por tanto la desactivamos
+    # module-config: "subnetcache validator iterator"
+    module-config: "validator iterator"
+```
+
+# mDNS
+
+**mDNS** (Multicast DNS) es un protocolo que permite la resolución de nombres de _host_ en una red local sin necesidad de un servidor DNS central. Si se tiene habilitado mDNS en la red, los dispositivos pueden anunciar y resolver nombres con el sufijo `.local`.
+
+En Linux (p.ej. en la Raspberry Pi 4) este protocolo es implementado por **Avahi**:
+
+```
+pi@pi4nas:~ $ dpkg -l | grep avahi-daemon
+ii  avahi-daemon                         0.8-5+deb11u3                      arm64        Avahi mDNS/DNS-SD daemon
+```
+
+Se puede comprobar el estado del servicio usando `systemctl`:
+
+```
+pi@pi4nas:~ $ systemctl status avahi-daemon.service
+● avahi-daemon.service - Avahi mDNS/DNS-SD Stack
+     Loaded: loaded (/lib/systemd/system/avahi-daemon.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2025-01-19 22:32:36 CET; 1 months 6 days ago
+TriggeredBy: ● avahi-daemon.socket
+   Main PID: 337 (avahi-daemon)
+     Status: "avahi-daemon 0.8 starting up."
+      Tasks: 2 (limit: 9293)
+        CPU: 2min 44.683s
+     CGroup: /system.slice/avahi-daemon.service
+             ├─337 avahi-daemon: running [pi4nas.local]
+             └─344 avahi-daemon: chroot helper
+```
+
+En Windows, la resolución de nombres se realiza en el siguiente orden:
+
+* **Caché de DNS** (se puede ver con `ipconfig /displaydns` y borrar con `ipconfig /flushdns`)
+* **Archivo _hosts_** (`C:\Windows\System32\drivers\etc\hosts`)
+* **DNS** (Domain Name System)
+* **mDNS** (Multicast DNS), sobretodo si el nombre acaba en `.local`
+* **LLMNR** (Link-Local Multicast Name Resolution), sobretodo en IPv6
+* **NetBIOS**
+
+Se puede deshabilitar mDNS mediante la siguiente clave de registro:
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
+"EnableMulticast"=dword:00000000
+```
+
+O añadiendo la siguiente GPO de `Computer Configuration`:
+
+* `Administrative Templates`
+  * `Network` &rarr; `DNS Client`
+    * `Turn off smart multi-homed name resolution` (**Enabled**)
+
+Después se aplicaría la política y se reiniciaría el servicio DNS:
+
+```
+gpupdate /force
+net stop dnscache && net start dnscache
+```
+
+Se puede utilizar **WireShark** y filtrar los paquetes UDP/5353 usando `udp.port == 5353` para ver los anuncios mDNS en la red local.

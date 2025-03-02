@@ -1,7 +1,7 @@
 ---
 layout : post
 blog-width: true
-css: /assets/css/youtube.css
+# css: /assets/css/youtube.css
 title: 'Notas del Cloud Imaging Day (FWSMUG)'
 date: '2020-11-16 08:42:48'
 published: true
@@ -44,7 +44,7 @@ También existe la posibilidad de realizar una pre-instalación de las mismas po
 
 El siguiente vídeo muestra los diferentes escenarios que soporta Windows Autopilot:
 
-* [Microsoft Windows Autopilot deployment scenarios](https://youtu.be/pmRLEBK55PU)
+{% include youtube.html id="pmRLEBK55PU" %}
 
 **Microsoft Graph** permite automatizar ciertas tareas desde el lado servidor. Se crea una aplicación en Microsoft Intune que tiene permisos para utilizar Microsoft Graph y realizar ciertas operaciones en Azure AD (por ejemplo añadir usuarios y/o máquinas).
 
@@ -131,7 +131,7 @@ Mikael explica que lo están usando en producción para desplegar en las siguien
 {: .box-warning}
 **Atención**: Se recomienda no tocar mucho el _script_ [`PSDStart.ps1`](https://github.com/FriendsOfMDT/PSD/blob/master/Scripts/PSDStart.ps1) ya que es el corazón de todo el módulo. Tampoco es recomendable tocar [`PSDGather.ps1`](https://github.com/FriendsOfMDT/PSD/blob/master/Scripts/PSDGather.ps1) ya que es el encargado de obtener información sobre el equipo y colocarla en variables que puedan ser consumidas desde el resto de scripts. Los demás no hay problemas por modificarlos.
 
-Johan y Mikael piden voluntarios para probar el módulo PSD. [Damien Van Robaeys](https://twitter.com/syst_and_deploy) y [Jérôme Bezet-Torres](https://twitter.com/JM2K69) están colaborando para mejorar la interfaz gráfica del _wizard_ que se ejecuta en la _boot image_. 
+Johan y Mikael piden voluntarios para probar el módulo PSD. [Damien Van Robaeys](https://twitter.com/syst_and_deploy) y [Jérôme Bezet-Torres](https://twitter.com/JM2K69) están colaborando para mejorar la interfaz gráfica del _wizard_ que se ejecuta en la _boot image_.
 
 [![PSD Wizard (PSD Extension for MDT)][2]](https://deploymentresearch.com/cloud-os-deployment-part-2-bare-metal-deployment-via-mdt-from-the-cloud/)
 
@@ -194,4 +194,4 @@ Otros artículos relacionados con PSD/MDT:
 * [Imaging from the Cloud – How to setup Powershell Deployment Extension (PSD) for MDT with HTTPS](https://brookspeppin.com/2020/06/26/how-to-setup-powershell-deployment-extension-for-mdt-with-https/) by [Brooks Peppin](https://twitter.com/brookspeppin)
 
 [1]: /assets/img/blog/2020-11-16_image_1.png "Windows Enrollment"
-[2]: /assets/img/blog/2020-11-16_image_2.png "PSD Wizard (PSD Extension for MDT)"
+[2]: /assets/img/blog/2020-11-16_image_2.png "PSD Wizard (PSD Extension for MDT)

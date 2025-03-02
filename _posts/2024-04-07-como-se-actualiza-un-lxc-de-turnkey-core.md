@@ -1,9 +1,9 @@
 ---
-layout : post
+layout: post
 blog-width: true
 title: '¿Cómo se actualiza un LXC de TurnKey Core?'
 date: '2024-04-07 15:45:16'
-#last-updated: '2024-04-07 15:45:16'
+last-updated: '2025-02-28 21:28:16'
 published: true
 tags:
 - HomeLab
@@ -63,7 +63,7 @@ TurnKey está configurada para [instalar automáticamnte estas actualizaciones d
 ```
 
 {: .box-note}
-Se puede utilizar el comando `turnkey-install-security-updates` para instalar las actualizaciones de seguridad de forma manual.
+La hora de ejecución es diferente en cada instalación para evitar que los clientes se conecten al mismo tiempo al repositorio. Se puede utilizar el comando `turnkey-install-security-updates` para instalar las actualizaciones de seguridad de forma manual.
 
 Cada ejecución automática guarda un registro en el fichero `/var/log/cron-apt/log`, comenzando por una línea que indica el comienzo de la misma:
 
@@ -112,3 +112,4 @@ Nótese que la versión de Samba depende de la versión de Debian. Por ejemplo, 
 ### Historial de cambios
 
 * **2024-04-07**: Documento inicial
+* **2025-02-28**: Correcciones

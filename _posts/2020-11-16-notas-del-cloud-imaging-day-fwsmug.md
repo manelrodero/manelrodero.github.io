@@ -194,4 +194,4 @@ Otros artículos relacionados con PSD/MDT:
 * [Imaging from the Cloud – How to setup Powershell Deployment Extension (PSD) for MDT with HTTPS](https://brookspeppin.com/2020/06/26/how-to-setup-powershell-deployment-extension-for-mdt-with-https/) by [Brooks Peppin](https://twitter.com/brookspeppin)
 
 [1]: /assets/img/blog/2020-11-16_image_1.png "Windows Enrollment"
-[2]: /assets/img/blog/2020-11-16_image_2.png "PSD Wizard (PSD Extension for MDT)
+[2]: /assets/img/blog/2020-11-16_image_2.png "PSD Wizard (PSD Extension for MDT)"

@@ -36,6 +36,7 @@ Durante su vida útil se amplió o renovó con los siguientes componentes:
 | Componente | Marca / Modelo | Precio |
 | --- | --- | --- |
 | Tarjeta gráfica | [MSI GeForce GTX 750 Ti LP 2GB GDDR5](https://www.pccomponentes.com/msi-geforce-gtx-750-ti-lp-2gb-gddr5) (PCLyM 2016) | 0,00€ |
+| Tarjeta gráfica | Gigabyte GeForce GTX 1650 4GB GDDR5 | 0,00€ |
 
 # PCLyM 2016
 

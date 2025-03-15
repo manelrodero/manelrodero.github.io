@@ -58,7 +58,7 @@ A continuación se realiza la configuración habitual:
 
 # Instalación de PiVPN
 
-La instalación de WireGuard usando [PiVPN](https://pivpn.io/){:target=_blank} es muy sencilla usando el script `install.sh`:
+La instalación de WireGuard usando [PiVPN](https://pivpn.io/){:target="_blank"} es muy sencilla usando el script `install.sh`:
 
 ```
 cd ~
@@ -68,7 +68,7 @@ bash install.sh
 
 Si se cumplen los requisitos para instalar WireGuard, se ejecutará el asistente _PiVPN Automated Installer_ mediante el cual se proporcionará la información necesaria para la instalación:
 
-* Force routing to block [IPv6 leak](https://ipv6leak.com/){:target=_blank}: **No**
+* Force routing to block [IPv6 leak](https://ipv6leak.com/){:target="_blank"}: **No**
 * Local user: `wireguard`
 * Password: `********`
 * Choose VPN: **WireGuard**
@@ -126,7 +126,7 @@ apt update && apt upgrade -y
 
 # DNS privado en Android
 
-Android 9+ admite DNS sobre TLS para proteger las consultas mediante cifrado. Esta opción, llamada [**DNS privado**](https://dnsprivacy.org/public_resolvers/){:target=_blank}, se encuentra en `Ajustes` &rarr; `Redes e Internet` &rarr; `Avanzado` &rarr; `DNS privado`.
+Android 9+ admite DNS sobre TLS para proteger las consultas mediante cifrado. Esta opción, llamada [**DNS privado**](https://dnsprivacy.org/public_resolvers/){:target="_blank"}, se encuentra en `Ajustes` &rarr; `Redes e Internet` &rarr; `Avanzado` &rarr; `DNS privado`.
 
 Para configurar esta opción se selecciona la opción `Nombre de host del proveedor de DNS privado` y se introduce el proveedor que se desee utilizar, por ejemplo:
 
@@ -151,23 +151,23 @@ ALLOWED_IPS="192.168.1.0/24, 9.9.9.9/32, 149.112.112.112/32"
 
 # Referencias
 
-* [Getting PiVPN to run on Proxmox LXC container](https://www.vanpolen.biz/posts/pivpn-on-lxc-container-proxmox/){:target=_blank}
-* [Set up WireGuard using PiVPN inside LXC](https://nocin.eu/wireguard-set-up-wireguard-using-pivpn-inside-lxc/){:target=_blank}
-* [OpenVPN in LXC](https://pve.proxmox.com/wiki/OpenVPN_in_LXC){:target=_blank} @ Proxmox Wiki
-* [WireGuard VPN: Instalación y configuración de la mejor VPN](https://www.redeszone.net/tutoriales/vpn/wireguard-vpn-configuracion/){:target=_blank} @ RedesZone.net
-* [WGDashboard](https://github.com/donaldzou/WGDashboard){:target=_blank}, usada por _Proxmox VE Helper Scripts_
-* [Wg Gen Web](https://github.com/vx3r/wg-gen-web){:target=_blank}, para ejecutar en Docker
-* [WireGuard-UI](https://github.com/ngoduykhanh/wireguard-ui){:target=_blank}, interfaz realizada en Go
-* [How to monitor who's connected to your WireGuard VPN](https://www.procustodibus.com/blog/2021/01/how-to-monitor-wireguard-activity/){:target=_blank}
-* [WireGuard-Manager](https://github.com/complexorganizations/wireguard-manager){:target=_blank}
-* [Wireguard Config Generator](https://www.wireguardconfig.com/){:target=_blank}
-* [Chris Swanda WireGuard Setup](https://gist.github.com/chrisswanda/88ade75fc463dcf964c6411d1e9b20f4){:target=_blank}
-* [Pro Custodibus](https://www.procustodibus.com/){:target=_blank}
+* [Getting PiVPN to run on Proxmox LXC container](https://www.vanpolen.biz/posts/pivpn-on-lxc-container-proxmox/){:target="_blank"}
+* [Set up WireGuard using PiVPN inside LXC](https://nocin.eu/wireguard-set-up-wireguard-using-pivpn-inside-lxc/){:target="_blank"}
+* [OpenVPN in LXC](https://pve.proxmox.com/wiki/OpenVPN_in_LXC){:target="_blank"} @ Proxmox Wiki
+* [WireGuard VPN: Instalación y configuración de la mejor VPN](https://www.redeszone.net/tutoriales/vpn/wireguard-vpn-configuracion/){:target="_blank"} @ RedesZone.net
+* [WGDashboard](https://github.com/donaldzou/WGDashboard){:target="_blank"}, usada por _Proxmox VE Helper Scripts_
+* [Wg Gen Web](https://github.com/vx3r/wg-gen-web){:target="_blank"}, para ejecutar en Docker
+* [WireGuard-UI](https://github.com/ngoduykhanh/wireguard-ui){:target="_blank"}, interfaz realizada en Go
+* [How to monitor who's connected to your WireGuard VPN](https://www.procustodibus.com/blog/2021/01/how-to-monitor-wireguard-activity/){:target="_blank"}
+* [WireGuard-Manager](https://github.com/complexorganizations/wireguard-manager){:target="_blank"}
+* [Wireguard Config Generator](https://www.wireguardconfig.com/){:target="_blank"}
+* [Chris Swanda WireGuard Setup](https://gist.github.com/chrisswanda/88ade75fc463dcf964c6411d1e9b20f4){:target="_blank"}
+* [Pro Custodibus](https://www.procustodibus.com/){:target="_blank"}
 
 ### Historial de cambios
 
 * **2023-11-19**: Artículo original
-* **2023-12-11**: Cambio de los DNS públicos a [Quad9](https://www.quad9.net/service/service-addresses-and-features/){:target=_blank}
+* **2023-12-11**: Cambio de los DNS públicos a [Quad9](https://www.quad9.net/service/service-addresses-and-features/){:target="_blank"}
 * **2024-02-12**: Cambio en Allowed IPs para soportar DNS privado en Android
 
 [1]: /assets/img/blog/2023-11-19_image_1.png "Código QR Wireguard"

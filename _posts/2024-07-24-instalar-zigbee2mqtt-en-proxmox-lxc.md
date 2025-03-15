@@ -314,7 +314,7 @@ systemctl start zigbee2mqtt
 
 # Referencias
 
-* [How to Separate Zigbee2MQTT from Home Assistant in Proxmox](https://smarthomescene.com/guides/how-to-separate-zigbee2mqtt-from-home-assistant-in-proxmox/){:target=_blank}
+* [How to Separate Zigbee2MQTT from Home Assistant in Proxmox](https://smarthomescene.com/guides/how-to-separate-zigbee2mqtt-from-home-assistant-in-proxmox/){:target="_blank"}
 
 ### Historial de cambios
 

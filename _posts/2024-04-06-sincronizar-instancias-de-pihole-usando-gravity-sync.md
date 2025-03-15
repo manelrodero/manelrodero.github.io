@@ -14,7 +14,7 @@ cover-img: "/assets/img/blog/2024-04-06_cover.png"
 thumbnail-img: ""
 ---
 
-Este artículo detalla la [instalación y configuración de Gravity Sync](https://github.com/vmstan/gravity-sync/){:target=_blank} para [sincronizar la configuración de varias instancias de Pi-Hole](https://pi-hole.net/){:target=_blank}.
+Este artículo detalla la [instalación y configuración de Gravity Sync](https://github.com/vmstan/gravity-sync/){:target="_blank"} para [sincronizar la configuración de varias instancias de Pi-Hole](https://pi-hole.net/){:target="_blank"}.
 
 # Introducción
 
@@ -24,7 +24,7 @@ Hasta ahora no había tenido la necesidad de sincronizar la configuración de es
 
 De momento, Pi-hole no incluye ninguna opción para realizar esta sincronización de forma nativa y hay que usar [Gravity Sync](https://github.com/vmstan/gravity-sync/), un proyecto de código abierto, para conseguirlo.
 
-La [versión 4.x de Gravity Sync](https://github.com/vmstan/gravity-sync/wiki/4.0){:target=_blank} tiene un funcionamiento radicalmente diferente a las versiones previas. El cambio más importante es que todas las instancias se pueden sincronizar entre ellas mediante **_peering_** en lugar de utilizar un modelo de servidor primario y servidor secundario.
+La [versión 4.x de Gravity Sync](https://github.com/vmstan/gravity-sync/wiki/4.0){:target="_blank"} tiene un funcionamiento radicalmente diferente a las versiones previas. El cambio más importante es que todas las instancias se pueden sincronizar entre ellas mediante **_peering_** en lugar de utilizar un modelo de servidor primario y servidor secundario.
 
 {: .box-note}
 El _peering_ es interesante en aquellos casos en que los cambios de configuración se pueden realizar en cualquier instancia de Pi-hole.
@@ -327,7 +327,7 @@ root@pihole1 ~# gravity-sync push
 
 ## Sincronización automática
 
-La configuración de la sincronización automática se realiza usando el [parámetro `auto quad`](https://github.com/vmstan/gravity-sync/wiki/Automation){:target=_blank} para indicar que se quiere hacer aproximadamente cada 15 minutos:
+La configuración de la sincronización automática se realiza usando el [parámetro `auto quad`](https://github.com/vmstan/gravity-sync/wiki/Automation){:target="_blank"} para indicar que se quiere hacer aproximadamente cada 15 minutos:
 
 ```Bash
 gravity-sync auto quad
@@ -380,7 +380,7 @@ root@pihole1 ~# gravity-sync version
 ∞ Gravity Sync VERSION exited after 0 seconds
 ```
 
-Si hubiese una nueva versión, se puede utilizar el [parámetro `update` para actualizarla](https://github.com/vmstan/gravity-sync/wiki/Updating){:target=_blank}.
+Si hubiese una nueva versión, se puede utilizar el [parámetro `update` para actualizarla](https://github.com/vmstan/gravity-sync/wiki/Updating){:target="_blank"}.
 
 # Referencias
 

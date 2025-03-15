@@ -14,9 +14,9 @@ thumbnail-img: ""
 
 La semana pasada [instalé GrapheneOS en un Google Pixel 7a](instalacion-de-grapheneos-en-un-google-pixel-7a) y durante los últimos días he estado "jugando" con el teléfono e instalando algunas aplicaciones para ver su comportamiento.
 
-Aunque la idea de todos aquellos que instalan este sistema operativo es librarse de Google usando F-Droid o Aurora Store para instalar las aplicaciones, yo he estado probando [**Sandboxed Google Play**](https://grapheneos.org/usage#sandboxed-google-play){:target=_blank}. En este modo, Google Play se instala como una aplicación más y no recibe permisos privilegiados ni interactúa con el sistema operativo como hace en un Android tradicional.
+Aunque la idea de todos aquellos que instalan este sistema operativo es librarse de Google usando F-Droid o Aurora Store para instalar las aplicaciones, yo he estado probando [**Sandboxed Google Play**](https://grapheneos.org/usage#sandboxed-google-play){:target="_blank"}. En este modo, Google Play se instala como una aplicación más y no recibe permisos privilegiados ni interactúa con el sistema operativo como hace en un Android tradicional.
 
-También he probado los [perfiles de usuario](https://grapheneos.org/features#improved-user-profiles){:target=_blank} para intentar separar las aplicaciones por tipo (las bancarias, las de redes sociales, las que necesitan los servicios de Google Play, etc.). Pero no me ha acabado de convencer su uso porque requiere configurar los diferentes aspectos del sistema en cada uno de ellos y porque, aunque existe la posibilidad de [reenviar las notificaciones](https://grapheneos.org/features#notification-forwarding){:target=_blank} de un perfil a otro, en muchas ocasiones no me ha funcionado.
+También he probado los [perfiles de usuario](https://grapheneos.org/features#improved-user-profiles){:target="_blank"} para intentar separar las aplicaciones por tipo (las bancarias, las de redes sociales, las que necesitan los servicios de Google Play, etc.). Pero no me ha acabado de convencer su uso porque requiere configurar los diferentes aspectos del sistema en cada uno de ellos y porque, aunque existe la posibilidad de [reenviar las notificaciones](https://grapheneos.org/features#notification-forwarding){:target="_blank"} de un perfil a otro, en muchas ocasiones no me ha funcionado.
 
 Al final he decidido usar **un único perfil de usuario** tal como he venido haciendo en todos los teléfonos anteriores sin ningún problema aparente más allá de los aspectos relacionados con la privacidad y seguridad de las aplicaciones.
 
@@ -72,7 +72,7 @@ Tap to open settings.
 
 # Gmail (com.google.android.gm)
 
-Dado que aún utilizo [**Gmail**](https://play.google.com/store/apps/details?id=com.google.android.gm){:target=_blank}, ésta será la primera aplicación que se instalará para comprobar el correcto funcionamiento de la tienda y las notificaciones.
+Dado que aún utilizo [**Gmail**](https://play.google.com/store/apps/details?id=com.google.android.gm){:target="_blank"}, ésta será la primera aplicación que se instalará para comprobar el correcto funcionamiento de la tienda y las notificaciones.
 
 La instalación se realiza de la forma habitual. Se accede a Google Play Store, se busca Gmail y se pulsa el botón correspondiente. La interfaz de usuario de GrapheneOS confirmará la instalación y los permisos de red (que, obviamente, necesita para poder acceder al correo que está en la nube de Google).
 
@@ -83,7 +83,7 @@ Al ejecutar por primera vez la aplicación, habrá que proporcionar/denegar perm
 
 # Microsoft Outlook (com.microsoft.office.outlook)
 
-Ahora se necesita una segunda aplicación de correo para probar el envío y recepción de notificaciones. Para ello instalo [**Microsoft Outlook**](https://play.google.com/store/apps/details?id=com.microsoft.office.outlook){:target=_blank} y la configuro usando mi cuenta Microsoft.
+Ahora se necesita una segunda aplicación de correo para probar el envío y recepción de notificaciones. Para ello instalo [**Microsoft Outlook**](https://play.google.com/store/apps/details?id=com.microsoft.office.outlook){:target="_blank"} y la configuro usando mi cuenta Microsoft.
 
 Los permisos otorgados son los siguientes:
 
@@ -99,7 +99,7 @@ Se observa que éstas llegan correctamente **aunque un poco más tarde** que en 
 
 # Google Maps (com.google.android.apps.maps)
 
-A continuación se instala la aplicación [**Google Maps**](https://play.google.com/store/apps/details?id=com.google.android.apps.maps){:target=_blank} mediante la cual se podrá comprobar el funcionamiento de la [**Ubicación**](https://grapheneos.org/usage#sandboxed-google-play-configuration){:target=_blank}.
+A continuación se instala la aplicación [**Google Maps**](https://play.google.com/store/apps/details?id=com.google.android.apps.maps){:target="_blank"} mediante la cual se podrá comprobar el funcionamiento de la [**Ubicación**](https://grapheneos.org/usage#sandboxed-google-play-configuration){:target="_blank"}.
 
 Por defecto, GrapheneOS redirige las peticiones de _location_ a una reimplementación propia de los servicios de geolocalización. Si se quieren utilizar los servicios de Google Play (por ejemplo, para tener una localización aproximada cuando hay cobertura de GPS) habría que desactivar la opción `Reroute location requests to OS APIs` y alguna configuración más.
 
@@ -114,7 +114,7 @@ Los permisos otorgados son los siguientes:
 
 # Google Calendar (com.google.android.calendar)
 
-La aplicación [**Google Calendar**](https://play.google.com/store/apps/details?id=com.google.android.calendar){:target=_blank} se instala con los siguientes permisos:
+La aplicación [**Google Calendar**](https://play.google.com/store/apps/details?id=com.google.android.calendar){:target="_blank"} se instala con los siguientes permisos:
 
 * Network &rarr; **Permitir**
 * Calendario &rarr; **Permitir**
@@ -133,10 +133,10 @@ Al ejecutarla por primera vez, recibimos las notificaciones visuales y de sonido
 
 # Google Drive (com.google.android.apps.docs)
 
-La aplicación [**Google Drive**](https://play.google.com/store/apps/details?id=com.google.android.apps.docs){:target=_blank} se instala con los siguientes permisos:
+La aplicación [**Google Drive**](https://play.google.com/store/apps/details?id=com.google.android.apps.docs){:target="_blank"} se instala con los siguientes permisos:
 
 * Network &rarr; **Permitir**
 
 # Referencias
 
-* [Exodus. The privacy audit platform for Android applications](https://reports.exodus-privacy.eu.org/en/){:target=_blank}
+* [Exodus. The privacy audit platform for Android applications](https://reports.exodus-privacy.eu.org/en/){:target="_blank"}

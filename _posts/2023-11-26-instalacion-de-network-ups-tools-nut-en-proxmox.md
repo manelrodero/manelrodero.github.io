@@ -18,7 +18,7 @@ La instalación de NUT se realizará en el **_host_ de Proxmox** mediante un pro
 
 La principal ventaja de instalarlo así, es que no hace falta instalar el cliente de NUT en los contenedores LXC o en las VM ya que el propio _host_ de Proxmox se encargará de apagarlos correctamente cuando sea necesario.
 
-En esta instalación utilizaremos la [configuración avanzada de NUT](https://networkupstools.org/docs/user-manual.chunked/ar01s03.html#_monitoring_diagrams){:target=_blank}, también llamada **netserver**, donde el _driver_ para comunicarse con el SAI (UPS) y los servicios `upsd` y `upsmon` se ejecutan en el _host_ de Proxmox. Al mismo tiempo, esta configuración permite que otras máquinas se conecten al servidor NUT a través de la red.
+En esta instalación utilizaremos la [configuración avanzada de NUT](https://networkupstools.org/docs/user-manual.chunked/ar01s03.html#_monitoring_diagrams){:target="_blank"}, también llamada **netserver**, donde el _driver_ para comunicarse con el SAI (UPS) y los servicios `upsd` y `upsmon` se ejecutan en el _host_ de Proxmox. Al mismo tiempo, esta configuración permite que otras máquinas se conecten al servidor NUT a través de la red.
 
 ![Overview of NUT][1]
 
@@ -28,13 +28,13 @@ En esta instalación utilizaremos la [configuración avanzada de NUT](https://ne
 
 Para poder realizar la monitorización del SAI es necesario que el sistema operativo lo detecte correctamente. Después de conectar el cable USB del SAI a un puerto USB del _host_, se ejecuta el comando `lsusb` para listar los dispositivos USB reconocidos.
 
-Si todo funciona correctamente, debería aparecer una línea correspondiente al SAI (en mi caso un [MGE Protection Center 750](http://powerquality.eaton.com/about-us/mgeops.asp){:target=_blank} identificado como `MGE UPS Systems UPS`):
+Si todo funciona correctamente, debería aparecer una línea correspondiente al SAI (en mi caso un [MGE Protection Center 750](http://powerquality.eaton.com/about-us/mgeops.asp){:target="_blank"} identificado como `MGE UPS Systems UPS`):
 
 ```
 Bus 001 Device 003: ID 0463:ffff MGE UPS Systems UPS
 ```
 
-Si usamos las opciones `-v -s 1:3` se puede obtener información más detallada de este dispositivo y se puede comprobar que soporta la [interfaz USB/HID](https://networkupstools.org/docs/man/usbhid-ups.html){:target=_blank} (_Human Interface Device_):
+Si usamos las opciones `-v -s 1:3` se puede obtener información más detallada de este dispositivo y se puede comprobar que soporta la [interfaz USB/HID](https://networkupstools.org/docs/man/usbhid-ups.html){:target="_blank"} (_Human Interface Device_):
 
 ```
 root@pve:~# lsusb -v -s 1:3
@@ -159,7 +159,7 @@ Scanning USB bus.
 
 ### Modo del servidor (`/etc/nut/nut.conf`)
 
-El modo de funcionamiento del servidor, en este caso **netserver**, se configura en el fichero [`/etc/nut/nut.conf`](https://networkupstools.org/docs/man/nut.conf.html){:target=_blank}:
+El modo de funcionamiento del servidor, en este caso **netserver**, se configura en el fichero [`/etc/nut/nut.conf`](https://networkupstools.org/docs/man/nut.conf.html){:target="_blank"}:
 
 ```
 MODE=netserver
@@ -167,9 +167,9 @@ MODE=netserver
 
 ### Driver de dispositivo (`/etc/nut/ups.conf`)
 
-Para que NUT se pueda comunicarse con el SAI necesita un _driver_ específico para cada [marca y modelo de la HCL](https://networkupstools.org/stable-hcl.html){:target=_blank}. En este caso, se utilizará el _driver_ [**USB/HID**](https://networkupstools.org/docs/man/usbhid-ups.html){:target=_blank} que permite detectar y usar cualquier SAI que utilice la clase _HID Power Device Class_. La cantidad de datos proporcionada variará en función de la marca y modelo.
+Para que NUT se pueda comunicarse con el SAI necesita un _driver_ específico para cada [marca y modelo de la HCL](https://networkupstools.org/stable-hcl.html){:target="_blank"}. En este caso, se utilizará el _driver_ [**USB/HID**](https://networkupstools.org/docs/man/usbhid-ups.html){:target="_blank"} que permite detectar y usar cualquier SAI que utilice la clase _HID Power Device Class_. La cantidad de datos proporcionada variará en función de la marca y modelo.
 
-La configuración del SAI se añadirá al final del fichero [`/etc/nut/ups.conf`](https://networkupstools.org/docs/man/ups.conf.html){:target=_blank} usando los valores obtenidos anteriormente:
+La configuración del SAI se añadirá al final del fichero [`/etc/nut/ups.conf`](https://networkupstools.org/docs/man/ups.conf.html){:target="_blank"} usando los valores obtenidos anteriormente:
 
 ```
 [mge750]
@@ -193,7 +193,7 @@ Using subdriver: MGE HID 1.46
 ```
 
 {: .box-note}
-**Nota**: La documentación oficial indica que es mejor utilizar el comando [`upsdrvsvcctl`](https://networkupstools.org/docs/man/upsdrvsvcctl.html){:target=_blank}, un _wrapper_ para controlar los _drivers_ usando servicios. Por ejemplo, este _script_ permite reconfigurar los servicios después de una actualización del paquete NUT.
+**Nota**: La documentación oficial indica que es mejor utilizar el comando [`upsdrvsvcctl`](https://networkupstools.org/docs/man/upsdrvsvcctl.html){:target="_blank"}, un _wrapper_ para controlar los _drivers_ usando servicios. Por ejemplo, este _script_ permite reconfigurar los servicios después de una actualización del paquete NUT.
 
 El comando `systemctl` permite obtener información sobre el _driver_ `nut-driver@mge750.service`:
 
@@ -216,7 +216,7 @@ root@pve:~# systemctl status nut-driver@mge750.service
 
 ## Fichero `/etc/nut/upsd.conf`
 
-En el fichero [`/etc/nut/upsd.conf`](https://networkupstools.org/docs/man/upsd.conf.html){:target=_blank} se pueden especificar bastantes parámetros pero lo mínimo imprescindible es indicar la **dirección IP** y el **puerto** donde escuchará el servidor:
+En el fichero [`/etc/nut/upsd.conf`](https://networkupstools.org/docs/man/upsd.conf.html){:target="_blank"} se pueden especificar bastantes parámetros pero lo mínimo imprescindible es indicar la **dirección IP** y el **puerto** donde escuchará el servidor:
 
 ```
 LISTEN 127.0.0.1 3493
@@ -224,7 +224,7 @@ LISTEN 127.0.0.1 3493
 
 ## Fichero `/etc/nut/upsd.users`
 
-Los usuarios que podrán conectarse al servidor, sus permisos y sus contraseñas se definen en el fichero [`/etc/nut/upsd.users`](https://networkupstools.org/docs/man/upsd.users.html){:target=_blank}:
+Los usuarios que podrán conectarse al servidor, sus permisos y sus contraseñas se definen en el fichero [`/etc/nut/upsd.users`](https://networkupstools.org/docs/man/upsd.users.html){:target="_blank"}:
 
 ```
 [admin]
@@ -320,7 +320,7 @@ ups.vendorid: 0463
 
 ## Fichero `/etc/nut/upsmon.conf`
 
-Los parámetros de monitorización se definen en el fichero [`/etc/nut/upsmon.conf`](https://networkupstools.org/docs/man/upsmon.conf.html){:target=_blank}.
+Los parámetros de monitorización se definen en el fichero [`/etc/nut/upsmon.conf`](https://networkupstools.org/docs/man/upsmon.conf.html){:target="_blank"}.
 
 En este fichero se indica la dirección IP del servidor y el SAI que se quiere monitorizar, el usuario que se utilizará (en este caso `monitor`) y su contraseña:
 
@@ -330,10 +330,10 @@ MONITOR mge750@127.0.0.1 1 monitor N3gbXHkfzHCxTuwABn master
 
 # Referencias
 
-* [NUT Configuration Examples](https://github.com/networkupstools/ConfigExamples/releases/latest){:target=_blank}, libro en PDF mantenido por Roger Price
-* [DIY HOME SERVER 2021 – Software – PROXMOX – NUT UPS Monitoring](https://www.kreaweb.be/diy-home-server-2021-software-proxmox-ups/){:target=_blank}
-* [Administración básica del sai Salicru SPSOne 900VA con NUT](https://www.jormc.es/tutoriales/administracion-basica-del-sai-salicru-spsone-900va-con-nut/){:target=_blank}
-* [Set up & Monitor your UPS: Proxmox & Home-Assistant](https://www.thesmarthomebook.com/2022/09/02/setting-up-monitor-your-ups-proxmox-home-assistant/){:target=_blank}
-* [UPS Nut Configuration Tutorial](https://www.sobyte.net/post/2023-03/ups-nut-configuration-tutorial/){:target=_blank}
+* [NUT Configuration Examples](https://github.com/networkupstools/ConfigExamples/releases/latest){:target="_blank"}, libro en PDF mantenido por Roger Price
+* [DIY HOME SERVER 2021 – Software – PROXMOX – NUT UPS Monitoring](https://www.kreaweb.be/diy-home-server-2021-software-proxmox-ups/){:target="_blank"}
+* [Administración básica del sai Salicru SPSOne 900VA con NUT](https://www.jormc.es/tutoriales/administracion-basica-del-sai-salicru-spsone-900va-con-nut/){:target="_blank"}
+* [Set up & Monitor your UPS: Proxmox & Home-Assistant](https://www.thesmarthomebook.com/2022/09/02/setting-up-monitor-your-ups-proxmox-home-assistant/){:target="_blank"}
+* [UPS Nut Configuration Tutorial](https://www.sobyte.net/post/2023-03/ups-nut-configuration-tutorial/){:target="_blank"}
 
 [1]: /assets/img/blog/2023-11-26_image_1.png "Overview of NUT"

@@ -20,11 +20,11 @@ Meta, la empresa que engloba  a Facebook, WhatsApp, Instagram y Threads, lleva u
 
 # Política de privacidad
 
-Meta ha cambiado las condiciones de su [política de privacidad](https://www.facebook.com/privacy/policy){:target=_blank} debido a la IA y tendremos que decidir si las aceptamos o, por el contrario, nos oponemos a que use nuestras fotos y textos para entrenarla.
+Meta ha cambiado las condiciones de su [política de privacidad](https://www.facebook.com/privacy/policy){:target="_blank"} debido a la IA y tendremos que decidir si las aceptamos o, por el contrario, nos oponemos a que use nuestras fotos y textos para entrenarla.
 
 ![Mensaje de Meta][1]
 
-La [actualización debido a la IA](https://www.facebook.com/privacy/genai){:target=_blank} entrará en vigor el próximo 26 de junio de 2024 y afecta a **Facebook**, **Instagram**, **Messenger** y **Threads**, pero no a WhatsApp (al menos de momento).
+La [actualización debido a la IA](https://www.facebook.com/privacy/genai){:target="_blank"} entrará en vigor el próximo 26 de junio de 2024 y afecta a **Facebook**, **Instagram**, **Messenger** y **Threads**, pero no a WhatsApp (al menos de momento).
 
 La IA en Meta es su colección de funciones y experiencias de IA generativas, como Meta AI y las herramientas creativas con IA, así como los modelos que las alimentan usando la información que compartimos:
 
@@ -41,8 +41,8 @@ Podemos rellenar un **formulario de oposición** a que nuestros datos se utilice
 
 Os dejo los enlaces al formulario a través de las plataformas Facebook e Instagram por si habéis borrado el correo electrónico o no lo habéis recibido:
 
-* [Oponerse a que tus datos se utilicen para IA en Meta](https://www.facebook.com/help/contact/6359191084165019){:target=_blank} (Facebook)
-* [Object to Your Information Being Used for AI at Meta](https://help.instagram.com/contact/233964459562201){:target=_blank} (Instagram)
+* [Oponerse a que tus datos se utilicen para IA en Meta](https://www.facebook.com/help/contact/6359191084165019){:target="_blank"} (Facebook)
+* [Object to Your Information Being Used for AI at Meta](https://help.instagram.com/contact/233964459562201){:target="_blank"} (Instagram)
 
 {: .box-note}
 Los enlaces anteriores únicamente son accesibles si hemos iniciado sesión en Facebook o Instagram respectivamente.
@@ -101,8 +101,8 @@ Desde el móvil también se puede acceder al formulario de oposición, aunque es
 
 # Referencias
 
-* [Meta Privacy Policy](https://www.facebook.com/privacy/policy){:target=_blank}
-* [How Meta uses information for generative AI models and features](https://www.facebook.com/privacy/genai){:target=_blank}
+* [Meta Privacy Policy](https://www.facebook.com/privacy/policy){:target="_blank"}
+* [How Meta uses information for generative AI models and features](https://www.facebook.com/privacy/genai){:target="_blank"}
 * [Building AI Technology for Europeans in a Transparent and Responsible Way](https://about.fb.com/news/2024/06/building-ai-technology-for-europeans-in-a-transparent-and-responsible-way/)
 
 ### Historial de cambios

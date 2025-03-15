@@ -12,11 +12,11 @@ cover-img: "/assets/img/blog/2023-12-02_cover.png"
 thumbnail-img: ""
 ---
 
-[**Windows Subsystem for Linux** (WSL)](https://learn.microsoft.com/en-us/windows/wsl/){:target=_blank} permite ejecutar un entorno GNU/Linux, incluida la mayoría de las herramientas, utilidades y aplicaciones de línea de comandos, directamente en Windows, sin modificaciones y sin la sobrecarga de una máquina virtual tradicional o una configuración de arranque dual.
+[**Windows Subsystem for Linux** (WSL)](https://learn.microsoft.com/en-us/windows/wsl/){:target="_blank"} permite ejecutar un entorno GNU/Linux, incluida la mayoría de las herramientas, utilidades y aplicaciones de línea de comandos, directamente en Windows, sin modificaciones y sin la sobrecarga de una máquina virtual tradicional o una configuración de arranque dual.
 
 # Instalación _inbox_
 
-Hasta ahora había usado el mismo método que se utiliza en la [instalación manual de WSL](https://learn.microsoft.com/en-us/windows/wsl/install-manual){:target=_blank} para agregar las siguientes [**características opcionales**](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-features){:target=_blank} a nuestra imagen `WIM` de Windows 10/11 usando el comando [`dism.exe` de forma _offline_](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/enable-or-disable-windows-features-using-dism){:target=_blank}:
+Hasta ahora había usado el mismo método que se utiliza en la [instalación manual de WSL](https://learn.microsoft.com/en-us/windows/wsl/install-manual){:target="_blank"} para agregar las siguientes [**características opcionales**](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-features){:target="_blank"} a nuestra imagen `WIM` de Windows 10/11 usando el comando [`dism.exe` de forma _offline_](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/enable-or-disable-windows-features-using-dism){:target="_blank"}:
 
 ```
 # Microsoft-Windows-Subsystem-Linux (WSL 1)
@@ -28,15 +28,15 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 ## WSL Update
 
-El método anterior requiere que se instale la versión más reciente del [**WSL 2 Linux Kernel**](https://github.com/microsoft/WSL2-Linux-Kernel){:target=_blank} para poder ejecutar WSL dentro de la imagen del sistema operativo Windows.
+El método anterior requiere que se instale la versión más reciente del [**WSL 2 Linux Kernel**](https://github.com/microsoft/WSL2-Linux-Kernel){:target="_blank"} para poder ejecutar WSL dentro de la imagen del sistema operativo Windows.
 
-El enlace a [`wsl_update_x64.msi`](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi){:target=_blank} para instalar el paquete `Windows Subsystem for Linux Update` debería apuntar siempre a la versión más reciente pero, a dia de hoy, únicamente instala la versión **5.10.16** tal como se muestra en la siguiente captura:
+El enlace a [`wsl_update_x64.msi`](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi){:target="_blank"} para instalar el paquete `Windows Subsystem for Linux Update` debería apuntar siempre a la versión más reciente pero, a dia de hoy, únicamente instala la versión **5.10.16** tal como se muestra en la siguiente captura:
 
 ![WSL Update 5.10.16][8]
 
-El último _kernel_ disponible a día de hoy a través de Windows Update es la versión **5.10.102.2** del 25 de marzo de 2022. Se puede descargar un fichero `*.cab` desde el [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Search.aspx?q=wsl){:target=_blank} para extraer el fichero `wsl_update_x64.msi` e instalarlo de forma desatendida.
+El último _kernel_ disponible a día de hoy a través de Windows Update es la versión **5.10.102.2** del 25 de marzo de 2022. Se puede descargar un fichero `*.cab` desde el [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Search.aspx?q=wsl){:target="_blank"} para extraer el fichero `wsl_update_x64.msi` e instalarlo de forma desatendida.
 
-En GitHub está disponible el código fuente de la versión estable más reciente del _kernel_ a día de hoy, la [**5.15.133.1**](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/linux-msft-wsl-5.15.133.1){:target=_blank} del 7 de octubre de 2023.
+En GitHub está disponible el código fuente de la versión estable más reciente del _kernel_ a día de hoy, la [**5.15.133.1**](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/linux-msft-wsl-5.15.133.1){:target="_blank"} del 7 de octubre de 2023.
 
 Para compilar este código fuente usando las opciones de configuración optimizadas por Microsoft para que funcione correctamente en Windows/WSL 2 hay que hacer lo siguiente desde una distribución reciente de Ubuntu:
 
@@ -47,19 +47,19 @@ make KCONFIG_CONFIG=Microsoft/config-wsl
 
 ## WSLg Preview
 
-Además, sería interesante instalar el componente **WSLg** o [Windows Subsystem for Linux GUI](https://github.com/microsoft/wslg){:target=_blank} que permite habilitar el soporte para ejecutar aplicaciones Linux gráficas (X11 y Wayland) integradas totalmente en la experiencia de escritorio de Windows.
+Además, sería interesante instalar el componente **WSLg** o [Windows Subsystem for Linux GUI](https://github.com/microsoft/wslg){:target="_blank"} que permite habilitar el soporte para ejecutar aplicaciones Linux gráficas (X11 y Wayland) integradas totalmente en la experiencia de escritorio de Windows.
 
 ![glxgears en WSLg][10]
 
-El enlace a [`wsl_graphics_support_x64.msi`](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_graphics_support_x64.msi){:target=_blank} para instalar el paquete `Windows Subsystem for Linux WSLg Preview` debería apuntar siempre a la versión más reciente pero, a dia de hoy, únicamente instala la versión **1.0.26** tal como se muestra en la siguiente captura:
+El enlace a [`wsl_graphics_support_x64.msi`](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_graphics_support_x64.msi){:target="_blank"} para instalar el paquete `Windows Subsystem for Linux WSLg Preview` debería apuntar siempre a la versión más reciente pero, a dia de hoy, únicamente instala la versión **1.0.26** tal como se muestra en la siguiente captura:
 
 ![WSLg Preview 1.0.26][9]
 
-En GitHub está disponible el código fuente de la versión estable más reciente de WSLg a día de hoy, la [**1.0.51**](https://github.com/microsoft/wslg/releases/download/v1.0.51/Microsoft.WSLg.1.0.51.zip){:target=_blank} del 24 de marzo de 2023.
+En GitHub está disponible el código fuente de la versión estable más reciente de WSLg a día de hoy, la [**1.0.51**](https://github.com/microsoft/wslg/releases/download/v1.0.51/Microsoft.WSLg.1.0.51.zip){:target="_blank"} del 24 de marzo de 2023.
 
-# [Microsoft Store](https://aka.ms/wslstorepage){:target=_blank}
+# [Microsoft Store](https://aka.ms/wslstorepage){:target="_blank"}
 
-El 22 de noviembre de 2022 se anunció que el [Windows Subsystem for Linux estaría en la Microsoft Store](https://devblogs.microsoft.com/commandline/the-windows-subsystem-for-linux-in-the-microsoft-store-is-now-generally-available-on-windows-10-and-11/){:target=_blank} para facilitar su actualización sin tener que esperar a una actualización del sistema operativo Windows.
+El 22 de noviembre de 2022 se anunció que el [Windows Subsystem for Linux estaría en la Microsoft Store](https://devblogs.microsoft.com/commandline/the-windows-subsystem-for-linux-in-the-microsoft-store-is-now-generally-available-on-windows-10-and-11/){:target="_blank"} para facilitar su actualización sin tener que esperar a una actualización del sistema operativo Windows.
 
 ![WSL en Microsoft Store][11]
 
@@ -91,9 +91,9 @@ También se puede comprobar que únicamente se ha instalado la característica o
 
 ## WSL 1
 
-En general interesa utilizar [WSL 2 en lugar de WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions){:target=_blank} ya que aumenta el rendimiento del sistema de archivos y agrega compatibilidad total con las llamadas al sistema gracias al uso de un _kernel_ de Linux real.
+En general interesa utilizar [WSL 2 en lugar de WSL 1](https://learn.microsoft.com/en-us/windows/wsl/compare-versions){:target="_blank"} ya que aumenta el rendimiento del sistema de archivos y agrega compatibilidad total con las llamadas al sistema gracias al uso de un _kernel_ de Linux real.
 
-Cuando es necesario [seguir usando WSL 1 por compatibilidad](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2){:target=_blank} se tiene que utilizar el parámetro `--enable-wsl1` para habilitarlo.
+Cuando es necesario [seguir usando WSL 1 por compatibilidad](https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2){:target="_blank"} se tiene que utilizar el parámetro `--enable-wsl1` para habilitarlo.
 
 Algunos de los motivos para usar WSL 1 en lugar de WSL 2 son:
 
@@ -124,7 +124,7 @@ A día de hoy, aún teniendo permisos de Administrador, aparece un mensaje de UA
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/QgdMSswiS5o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
 
 {: .box-note}
-**Nota**: En el repositorio de WSL en GitHub hay abierta la [_issue 9032_](https://github.com/microsoft/WSL/issues/9032){:target=_blank} sobre este problema.
+**Nota**: En el repositorio de WSL en GitHub hay abierta la [_issue 9032_](https://github.com/microsoft/WSL/issues/9032){:target="_blank"} sobre este problema.
 
 ## Cada usuario necesita su _kernel_
 
@@ -149,7 +149,7 @@ El _kernel_ instalado usando el `MSI` o las actualizaciones directas desde Windo
 En cambio, si se ha instalado a través de la Microsoft Store o la descarga web desde GitHub, se encuentra en `C:\Program Files\WSL\tools\kernel`.
 
 {: .box-note}
-**Nota**: Se puede utilizar el fichero [`.wslconfig`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config){:target=_blank} para indicar cuál de ellos se quiere utilizar.
+**Nota**: Se puede utilizar el fichero [`.wslconfig`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config){:target="_blank"} para indicar cuál de ellos se quiere utilizar.
 
 # Soluciones
 
@@ -164,21 +164,21 @@ Para evitar la instalación de componentes desde la Microsoft Store es necesario
 
 Con esta instalación, un usuario sin permisos de Administrador puede **instalar** una distribución usando el comando `wsl.exe --install -d <Distro>` y que funcionen las aplicaciones gráficas.
 
-Y, además, puede **actualizar** WSL desde la Microsof Store, usando el comando `wsl.exe --update --web-download` (aunque la ayuda indique lo contrario tal como [he explicado en este hilo de X](https://twitter.com/manelrodero/status/1731325541981020454){:target=_blank}):
+Y, además, puede **actualizar** WSL desde la Microsof Store, usando el comando `wsl.exe --update --web-download` (aunque la ayuda indique lo contrario tal como [he explicado en este hilo de X](https://twitter.com/manelrodero/status/1731325541981020454){:target="_blank"}):
 
 ![WSL Inbox to Store][12]
 
 ## Usar MakeMeAdmin
 
-Otra opción, para evitar trabajar siempre con permisos de Administrador, es usar [MakeMeAdmin](https://github.com/pseymour/MakeMeAdmin){:target=_blank}, una aplicación de código abierto que permite elevar temporalmente los permisos de una cuenta de usuario estándard al nivel del Administrador.
+Otra opción, para evitar trabajar siempre con permisos de Administrador, es usar [MakeMeAdmin](https://github.com/pseymour/MakeMeAdmin){:target="_blank"}, una aplicación de código abierto que permite elevar temporalmente los permisos de una cuenta de usuario estándard al nivel del Administrador.
 
 La instalación de cualquier componente de WSL que requiera elevación, se haría mediante la ayuda de MakeMeAdmin para tener los permisos necesarios.
 
 # Referencias
 
-* [Windows Subsystem for Linux Documentation](https://learn.microsoft.com/en-us/windows/wsl/){:target=_blank}
-* [Troubleshooting Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting){:target=_blank}
-* [Craig Loewen, @craigaloewen](https://twitter.com/craigaloewen){:target=_blank}, Product Manager at Microsoft
+* [Windows Subsystem for Linux Documentation](https://learn.microsoft.com/en-us/windows/wsl/){:target="_blank"}
+* [Troubleshooting Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting){:target="_blank"}
+* [Craig Loewen, @craigaloewen](https://twitter.com/craigaloewen){:target="_blank"}, Product Manager at Microsoft
 
 [1]: /assets/img/blog/2023-12-02_image_1.png "Instalación WSL 2 desde Microsoft Store"
 [2]: /assets/img/blog/2023-12-02_image_2.png "Habilitar WSL 1 al instalar desde WSL 2 desde la Microsoft Store"

@@ -13,7 +13,7 @@ cover-img: "/assets/img/blog/2025-02-24_cover.png"
 thumbnail-img: ""
 ---
 
-[Tailscale](https://tailscale.com/){:target=_blank} es un servicio de red privada virtual (VPN) que facilita la creación de redes seguras y privadas entre dispositivos, usuarios y servicios.
+[Tailscale](https://tailscale.com/){:target="_blank"} es un servicio de red privada virtual (VPN) que facilita la creación de redes seguras y privadas entre dispositivos, usuarios y servicios.
 
 # Introducción
 
@@ -78,7 +78,7 @@ Una vez dentro del LXC, hay que:
 
 # Instalación de Tailscale
 
-La instalación de [Tailscale en **Debian** `bookworm`](https://tailscale.com/kb/1174/install-debian-bookworm){:target=_blank} es muy sencilla siguiendo estos pasos:
+La instalación de [Tailscale en **Debian** `bookworm`](https://tailscale.com/kb/1174/install-debian-bookworm){:target="_blank"} es muy sencilla siguiendo estos pasos:
 
 ```
 # Añadir la clave oficial GPG de Tailscale
@@ -151,7 +151,7 @@ En mi caso utilizaré **GitHub** para autenticarme y añadir el dispositivo tal 
 
 ![Login Tailscale][1]
 
-La máquina añadida se debería ver en la sección **Machines** del [Panel de Administración](https://login.tailscale.com/admin/machines){:target=_blank} formando parte de nuestra nueva red Tailscale o **tailnet**:
+La máquina añadida se debería ver en la sección **Machines** del [Panel de Administración](https://login.tailscale.com/admin/machines){:target="_blank"} formando parte de nuestra nueva red Tailscale o **tailnet**:
 
 ![Machine][2]
 
@@ -159,8 +159,8 @@ La máquina añadida se debería ver en la sección **Machines** del [Panel de A
 
 Dos de las configuraciones más habituales de un node en Tailscale son:
 
-* habilitar el [**subnet**](https://tailscale.com/kb/1019/subnets){:target=_blank} para permitir el acceso a la red LAN
-* convertirlo en un [**exit node**](https://tailscale.com/kb/1103/exit-nodes){:target=_blank} para permitir la salida a Internet a través de él cuando estamos fuera de la LAN
+* habilitar el [**subnet**](https://tailscale.com/kb/1019/subnets){:target="_blank"} para permitir el acceso a la red LAN
+* convertirlo en un [**exit node**](https://tailscale.com/kb/1103/exit-nodes){:target="_blank"} para permitir la salida a Internet a través de él cuando estamos fuera de la LAN
 
 {: .box-note}
 El uso de un nodo de salida es especialmente útil para utilizar servicios sensibles a la dirección IP ;-)
@@ -173,7 +173,7 @@ tailscale up --advertise-routes=192.168.1.0/24 --advertise-exit-node
 ```
 
 {: .box-note}
-Si aparece una advertencia sobre `UDP GRO forwarding` hay que realizar un [cambio en la interfaz `eth0`](https://tailscale.com/s/ethtool-config-udp-gro){:target=_blank}.
+Si aparece una advertencia sobre `UDP GRO forwarding` hay que realizar un [cambio en la interfaz `eth0`](https://tailscale.com/s/ethtool-config-udp-gro){:target="_blank"}.
 
 En el Panel de Administración, el equipo debería aparecer con los iconos `Subnets` y `Exit Node` tal como muestra la siguiente imagen:
 
@@ -244,7 +244,7 @@ awk -F'=' '{print $2}')"
 
 # Tailscale en Android
 
-La [instalación de Tailscale en Android](https://tailscale.com/kb/1079/install-android){:target=_blank} es muy sencilla. Después de haber descargado la aplicación desde la [Play Store](https://play.google.com/store/apps/details?id=com.tailscale.ipn){:target=_blank}, únicamente hay que autenticarse para registrar el dispositivo en nuestra _tailnet_.
+La [instalación de Tailscale en Android](https://tailscale.com/kb/1079/install-android){:target="_blank"} es muy sencilla. Después de haber descargado la aplicación desde la [Play Store](https://play.google.com/store/apps/details?id=com.tailscale.ipn){:target="_blank"}, únicamente hay que autenticarse para registrar el dispositivo en nuestra _tailnet_.
 
 Cuando se activa Tailscale en Android funciona como cualquier otra VPN pero:
 
@@ -252,12 +252,12 @@ Cuando se activa Tailscale en Android funciona como cualquier otra VPN pero:
 * si se activa el _exit node_, la salida a Internet se realizará a través del nodo que tenemos en casa. Esto hará que la dirección del teléfono sea la dirección IP pública de casa ;-)
 
 {: .box-note}
-Se puede comprobar fácilmente nuestra dirección IP con el servicio [2ip.io](https://2ip.io/){:target=_blank}.
+Se puede comprobar fácilmente nuestra dirección IP con el servicio [2ip.io](https://2ip.io/){:target="_blank"}.
 
-[En Android no existe "_VPN on Demand_"](https://github.com/tailscale/tailscale/issues/12086){:target=_blank} como en iOS por lo que habrá que activar o desactivar la VPN de forma manual o utilizar alguna aplicación como [**Tasker**](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm){:target=_blank} para automatizarlo.
+[En Android no existe "_VPN on Demand_"](https://github.com/tailscale/tailscale/issues/12086){:target="_blank"} como en iOS por lo que habrá que activar o desactivar la VPN de forma manual o utilizar alguna aplicación como [**Tasker**](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm){:target="_blank"} para automatizarlo.
 
 {: .box-note}
-Se puede encontrar un ejemplo de este método en el siguiente [Tutorial: Turn Taiscale on/off automatically using Tasker (Android)](https://www.reddit.com/r/Tailscale/comments/141rkyy/tutorial_turn_taiscale_onoff_automatically_using/?rdt=48879){:target=_blank}.
+Se puede encontrar un ejemplo de este método en el siguiente [Tutorial: Turn Taiscale on/off automatically using Tasker (Android)](https://www.reddit.com/r/Tailscale/comments/141rkyy/tutorial_turn_taiscale_onoff_automatically_using/?rdt=48879){:target="_blank"}.
 
 # Usar Pi-hole como DNS
 
@@ -272,12 +272,12 @@ Esto puede ser útil para utilizar las capacidades de bloqueo de anuncios y publ
 
 # Referencias
 
-* [Tailscale on a Proxmox host](https://tailscale.com/kb/1133/proxmox){:target=_blank}
-* [Tailscale in LXC containers](https://tailscale.com/kb/1130/lxc-unprivileged){:target=_blank}
-* [Exit nodes (route all traffic)](https://tailscale.com/kb/1103/exit-nodes){:target=_blank}
-* [Proxmox: Running Tailscale](https://medium.com/@rar1871/proxmox-running-tailscale-7929b3eaa31f){:target=_blank}, @Medium
-* [Proxmox VE Helper-Scripts: Tailscale](https://community-scripts.github.io/ProxmoxVE/scripts?id=add-tailscale-lxc){:target=_blank}
-* [How to create a Tailscale subnet router in an LXC container using Proxmox VE 8.x](https://nihalatwal.com/projects/tailscale-subnet-router-proxmox/){:target=_blank}
+* [Tailscale on a Proxmox host](https://tailscale.com/kb/1133/proxmox){:target="_blank"}
+* [Tailscale in LXC containers](https://tailscale.com/kb/1130/lxc-unprivileged){:target="_blank"}
+* [Exit nodes (route all traffic)](https://tailscale.com/kb/1103/exit-nodes){:target="_blank"}
+* [Proxmox: Running Tailscale](https://medium.com/@rar1871/proxmox-running-tailscale-7929b3eaa31f){:target="_blank"}, @Medium
+* [Proxmox VE Helper-Scripts: Tailscale](https://community-scripts.github.io/ProxmoxVE/scripts?id=add-tailscale-lxc){:target="_blank"}
+* [How to create a Tailscale subnet router in an LXC container using Proxmox VE 8.x](https://nihalatwal.com/projects/tailscale-subnet-router-proxmox/){:target="_blank"}
 
 ### Historial de cambios
 

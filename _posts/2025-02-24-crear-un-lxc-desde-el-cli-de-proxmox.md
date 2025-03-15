@@ -52,7 +52,7 @@ La explicación de cada parámetro es la siguiente:
 * `--nameserver "$nameserver"`: Especifica el servidor DNS para el contenedor
 * `--start false`: Indica que el contenedor no debe arrancar automáticamente después de ser creado
 
-Como se puede observar, se utilizan variables en muchos valores porque este comando se integra en un pequeño _shell script_ [`create_ct.sh`](https://gist.github.com/manelrodero/ab36b56690a8f7b565cdd5c22fd33476){:target=_blank} para preguntarlos.
+Como se puede observar, se utilizan variables en muchos valores porque este comando se integra en un pequeño _shell script_ [`create_ct.sh`](https://gist.github.com/manelrodero/ab36b56690a8f7b565cdd5c22fd33476){:target="_blank"} para preguntarlos.
 
 Si no se especifica lo contrario, los valores predeterminados para mi entorno los siguientes:
 
@@ -121,8 +121,8 @@ done: SHA256:<redacted> root@test
 
 # Referencias
 
-* [pct - Tool to manage Linux Containers (LXC) on Proxmox VE](https://pve.proxmox.com/pve-docs/pct.1.html){:target=_blank}
-* [Proxmox VE Helper-Scripts: Debian LXC](https://community-scripts.github.io/ProxmoxVE/scripts?id=debian){:target=_blank}
+* [pct - Tool to manage Linux Containers (LXC) on Proxmox VE](https://pve.proxmox.com/pve-docs/pct.1.html){:target="_blank"}
+* [Proxmox VE Helper-Scripts: Debian LXC](https://community-scripts.github.io/ProxmoxVE/scripts?id=debian){:target="_blank"}
 
 ### Historial de cambios
 

@@ -13,7 +13,7 @@ author:
 thumbnail-img: ""
 ---
 
-Cuando se intenta abrir una conexión [**Remote-SSH**](https://code.visualstudio.com/docs/remote/ssh){:target=_blank} desde [Visual Studio Code](https://code.visualstudio.com/){:target=_blank} a un contenedor LXC basado en TurnKey Core aparece el siguiente mensaje de error: "_Setting up SSH Host hostname: Waiting for port forwarding to be ready_".
+Cuando se intenta abrir una conexión [**Remote-SSH**](https://code.visualstudio.com/docs/remote/ssh){:target="_blank"} desde [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"} a un contenedor LXC basado en TurnKey Core aparece el siguiente mensaje de error: "_Setting up SSH Host hostname: Waiting for port forwarding to be ready_".
 
 ![Remote-SSH Port Forwarding][2]
 

@@ -40,7 +40,7 @@ A continuación se modifican sus características:
 {: .box-note}
 **Nota**: Como se han cambiado algunos valores de _cloud init_, es necesario regenerar la imagen antes de iniciar la máquina virtual.
 
-A continuación se accede a la consola de la VM y se pone en marcha para proceder a instalar el [agente de QEMU](https://pve.proxmox.com/wiki/Qemu-guest-agent){:target=_blank}:
+A continuación se accede a la consola de la VM y se pone en marcha para proceder a instalar el [agente de QEMU](https://pve.proxmox.com/wiki/Qemu-guest-agent){:target="_blank"}:
 
 ```bash
 sudo apt install qemu-guest-agent -y
@@ -72,7 +72,7 @@ sudo dpkg-reconfigure tzdata
 
 # Instalación de Docker Engine
 
-La [instalación de **Docker Engine**](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository){:target=_blank} se realiza desde el repositorio `apt` oficial ejecutando los siguientes comandos:
+La [instalación de **Docker Engine**](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository){:target="_blank"} se realiza desde el repositorio `apt` oficial ejecutando los siguientes comandos:
 
 ```bash
 # Add Docker's official GPG key:
@@ -92,7 +92,7 @@ sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
-Para que mi usuario que no es `root` pueda ejecutar Docker correctamente hay que añadirlo al grupo correspondiente (hay que tener en cuenta posibles [problemas de seguridad](https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface){:target=_blank}):
+Para que mi usuario que no es `root` pueda ejecutar Docker correctamente hay que añadirlo al grupo correspondiente (hay que tener en cuenta posibles [problemas de seguridad](https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface){:target="_blank"}):
 
 ```bash
 sudo usermod -aG docker $(whoami)
@@ -108,7 +108,7 @@ Y cuando haya reiniciado, se puede comprobar la versión mediante el comando `do
 
 # Instalación de Home Assistant
 
-La [instalación en Docker](https://hub.docker.com/r/linuxserver/homeassistant){:target=_blank} se realiza usando la imagen `linuxserver/homeassistant`.
+La [instalación en Docker](https://hub.docker.com/r/linuxserver/homeassistant){:target="_blank"} se realiza usando la imagen `linuxserver/homeassistant`.
 
 La forma más sencilla es usar un fichero `docker-compose.yml` con el siguiente contenido:
 
@@ -139,11 +139,11 @@ na vez en marcha, se puede acceder a Home Assistant a través del puerto `8123` 
 
 Los siguientes pasos serían similares a los realizados en la Raspberry Pi 4:
 
-* Instalar [Network UPS Tools](https://networkupstools.org/){:target=_blank}
+* Instalar [Network UPS Tools](https://networkupstools.org/){:target="_blank"}
 * Integrar `NUT` en Home Assistant
-* Instalar [HACS](https://hacs.xyz/){:target=_blank}
-* Instalar [Mosquitto](https://www.mosquitto.org/){:target=_blank}
-* Instalar [Zigbee2MQTT](https://www.zigbee2mqtt.io/){:target=_blank}
+* Instalar [HACS](https://hacs.xyz/){:target="_blank"}
+* Instalar [Mosquitto](https://www.mosquitto.org/){:target="_blank"}
+* Instalar [Zigbee2MQTT](https://www.zigbee2mqtt.io/){:target="_blank"}
 * Etc.
 
 # HACS
@@ -164,7 +164,7 @@ A continuación se reinicia el contenedor y se vuelve a iniciar sesión para fin
 
 # Referencias
 
-* [Why does /etc/resolv.conf point at 127.0.0.53?](https://unix.stackexchange.com/questions/612416/why-does-etc-resolv-conf-point-at-127-0-0-53){:target=_blank}
+* [Why does /etc/resolv.conf point at 127.0.0.53?](https://unix.stackexchange.com/questions/612416/why-does-etc-resolv-conf-point-at-127-0-0-53){:target="_blank"}
 * [Monitorizar un SAI (UPS) desde una Raspberry Pi](monitorizar-un-sai-ups-desde-una-raspberry-pi)
 * [Integrar NUT en Home Assistant](integrar-nut-en-home-assistant)
 * [Instalación de HACS en Home Assistant (Docker)](instalacion-de-hacs-en-home-assistant-docker)

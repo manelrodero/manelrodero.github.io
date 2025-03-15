@@ -23,9 +23,9 @@ La idea es indicarle al programa que instale en un directorio de la unidad `C:\`
 C:\D\SOFT –> D:\SOFT
 ```
 
-Buscando, buscando, he encontrado el [siguiente artículo de Shell-Shocked.org](https://web.archive.org/web/20050909025458/http://shell-shocked.org/article.php?id=284){:target=_blank} relacionado con los enláces simbólicos bajo Windows, cómo funcionan, qué herramientas hay para crearlos, etc. que me ha parecido bastante interesante.
+Buscando, buscando, he encontrado el [siguiente artículo de Shell-Shocked.org](https://web.archive.org/web/20050909025458/http://shell-shocked.org/article.php?id=284){:target="_blank"} relacionado con los enláces simbólicos bajo Windows, cómo funcionan, qué herramientas hay para crearlos, etc. que me ha parecido bastante interesante.
 
-En el artículo anterior se menciona la utilidad `junction.exe` de [SysInternals](https://learn.microsoft.com/en-us/sysinternals/){:target=_blank} mediante la cual se pueden crear los enlaces entre unidades (en Windows XP existe una utilidad llamada `fsutil.exe` para hacer este tipo de enlaces pero únicamente funciona entre ficheros y directorios de la misma unidad).
+En el artículo anterior se menciona la utilidad `junction.exe` de [SysInternals](https://learn.microsoft.com/en-us/sysinternals/){:target="_blank"} mediante la cual se pueden crear los enlaces entre unidades (en Windows XP existe una utilidad llamada `fsutil.exe` para hacer este tipo de enlaces pero únicamente funciona entre ficheros y directorios de la misma unidad).
 
 ¡La instalación ha funcionado perfectamente!
 

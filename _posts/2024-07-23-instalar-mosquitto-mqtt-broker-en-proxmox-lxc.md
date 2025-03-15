@@ -156,9 +156,9 @@ Hello World!
 
 # Referencias
 
-* [How to Separate Zigbee2MQTT from Home Assistant in Proxmox](https://smarthomescene.com/guides/how-to-separate-zigbee2mqtt-from-home-assistant-in-proxmox/){:target=_blank}
-* [Quick Guide to The Mosquitto.conf File With Examples](http://www.steves-internet-guide.com/mossquitto-conf-file/){:target=_blank}
-* [Mosquitto MQTT Cheat Sheet](https://mpolinowski.github.io/docs/Development/Javascript/2021-06-02--mqtt-cheat-sheet/2021-06-02/){:target=_blank}
+* [How to Separate Zigbee2MQTT from Home Assistant in Proxmox](https://smarthomescene.com/guides/how-to-separate-zigbee2mqtt-from-home-assistant-in-proxmox/){:target="_blank"}
+* [Quick Guide to The Mosquitto.conf File With Examples](http://www.steves-internet-guide.com/mossquitto-conf-file/){:target="_blank"}
+* [Mosquitto MQTT Cheat Sheet](https://mpolinowski.github.io/docs/Development/Javascript/2021-06-02--mqtt-cheat-sheet/2021-06-02/){:target="_blank"}
 
 ### Historial de cambios
 

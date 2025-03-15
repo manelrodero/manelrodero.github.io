@@ -33,17 +33,17 @@ En el primer caso, los ciberdelincuentes ya dispondrían de una contraseña vál
 
 Imagina que tienes una cuenta de Google que es la dirección de correo electrónico de tu identidad digital online (p.ej. `tunombreyapellidos@gmail.com`).
 
-Como habías escuchado alguna vez que "**las contraseñas tienen que ser difíciles y no estar en diccionarios**", decidiste utilizar `P@l@n24wrt65` como contraseña de esta cuenta (que según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target=_blank} se tardaría en _crackear_ unos 4 meses).
+Como habías escuchado alguna vez que "**las contraseñas tienen que ser difíciles y no estar en diccionarios**", decidiste utilizar `P@l@n24wrt65` como contraseña de esta cuenta (que según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target="_blank"} se tardaría en _crackear_ unos 4 meses).
 
 Ahora bien, como tienes poca memoria y te cuesta recordar las contraseñas, también decidiste usar la misma contraseña cuando te registraste en la tienda _online_ "La Huerta de mi Abuela" donde compras frutas y verduras a buen precio. Obviamente, usando tu dirección de correo electrónico `tunombreyapellidos@gmail.com` para realizar el registro.
 
 ¿Ves ahora el problema? ¿No? Sigo con el ejemplo ;-)
 
-Resulta que esta web ha sido comprometida recientemente porque está basada en una versión de [WooCommerce vulnerable a ataques XSS](https://developer.woocommerce.com/2024/06/10/developer-advisory-xss-vulnerability-8-8-0/){:target=_blank} que no ha sido actualizada a tiempo. Los atacantes han conseguido acceder al contenido de la base de datos de usuarios y contraseñas que, para más inri, no estaba cifrado.
+Resulta que esta web ha sido comprometida recientemente porque está basada en una versión de [WooCommerce vulnerable a ataques XSS](https://developer.woocommerce.com/2024/06/10/developer-advisory-xss-vulnerability-8-8-0/){:target="_blank"} que no ha sido actualizada a tiempo. Los atacantes han conseguido acceder al contenido de la base de datos de usuarios y contraseñas que, para más inri, no estaba cifrado.
 
 El resultado de este ataque ha sido un fichero de texto, compartido en la _Dark Web_, que contiene las credenciales de los miles de clientes de la frutería.
 
-Entre esos miles de direcciones de correo electrónico y contraseñas, que seguramente acaben registradas en [';--have i been pwned?](https://haveibeenpwned.com/){:target=_blank} en poco tiempo, también está la tuya:
+Entre esos miles de direcciones de correo electrónico y contraseñas, que seguramente acaben registradas en [';--have i been pwned?](https://haveibeenpwned.com/){:target="_blank"} en poco tiempo, también está la tuya:
 
 
 ```
@@ -54,12 +54,12 @@ tunombreyapellidos@gmail.com,P@l@n24wrt65
 
 ¿Ves ahora el peligro? Supongo que sí, ¿verdad? Imagina que los ciberdelincuentes deciden analizar este fichero para encontrar direcciones de Gmail (`xxxxxxx@gmail.com`). Dado que un gran porcentaje de personas utiliza Gmail como correo electrónico personal, lo más probable es que encuentren muchísimas y, entre ellas, la tuya.
 
-¿Qué crees que será lo primero que hagan cuando encuentren esta información? ¡Correcto, has acertado! Intentarán acceder a tu cuenta de [Gmail](https://www.gmail.com/){:target=_blank} con el usuario `nombreyapellidos@gmail.com` y la contraseña `P@l@n24wrt65`.
+¿Qué crees que será lo primero que hagan cuando encuentren esta información? ¡Correcto, has acertado! Intentarán acceder a tu cuenta de [Gmail](https://www.gmail.com/){:target="_blank"} con el usuario `nombreyapellidos@gmail.com` y la contraseña `P@l@n24wrt65`.
 
 ¡Y esa es la contraseña correcta, porque has usado la misma en Gmail y en la frutería!
 
 {: .box-note}
-Si no tienes activada la [**verificación en 2 pasos**](https://myaccount.google.com/security){:target=_blank} (aplicación de autenticación, teléfono, etc.) para validar los inicios de sesión, tu cuenta habrá caído en manos de los ciberdelincuentes.
+Si no tienes activada la [**verificación en 2 pasos**](https://myaccount.google.com/security){:target="_blank"} (aplicación de autenticación, teléfono, etc.) para validar los inicios de sesión, tu cuenta habrá caído en manos de los ciberdelincuentes.
 
 A partir de aquí imagina lo que pueden llegar a hacer:
 
@@ -77,11 +77,11 @@ Además, es muy recomendable [**activar el 2FA**](activar-2fa-de-forma-segura) e
 
 En este momento, estarás pensando en la gran cantidad de servicios web en los que estás registrado, algunos usados a diario y otros de forma puntual. Y seguramente también estés pensando en la imposibilidad de acordarse de todos ellos y, mucho menos de una contraseña diferente para cada uno, con la memoria que tienes ;-)
 
-Tienes razón, si no tienes una memoria prodigiosa para recordar todas las contraseñas, una solución muy recomendable es utilizar un **gestor de contraseñas** ([KeePassXC](https://keepassxc.org/){:target=_blank}, [Bitwarden](https://bitwarden.com/){:target=_blank}, etc.) para almacenarlas de forma segura. Si usamos uno de estos programas, únicamente necesitaremos recordar una **contraseña maestra** para acceder al resto de contraseñas que hayamos guardado en él.
+Tienes razón, si no tienes una memoria prodigiosa para recordar todas las contraseñas, una solución muy recomendable es utilizar un **gestor de contraseñas** ([KeePassXC](https://keepassxc.org/){:target="_blank"}, [Bitwarden](https://bitwarden.com/){:target="_blank"}, etc.) para almacenarlas de forma segura. Si usamos uno de estos programas, únicamente necesitaremos recordar una **contraseña maestra** para acceder al resto de contraseñas que hayamos guardado en él.
 
 Uno de los gestores de contraseñas más conocido, **Bitwarden**, se puede [configurar fácilmente en el navegador](instalar-y-configurar-bitwarden-en-el-navegador) para ayudarnos a generar y guardar contraseñas completamente aleatorias para cada servicio web.
 
-Bitwarden dispone un plan gratuito para uso personal, un plan para compartir contraseñas entre la familia (6 usuarios por $40 al año), etc. Es una buena solución si no quieres complicarte la vida. Además, [según explican en su FAQ](https://bitwarden.com/es-la/help/security-faqs/){:target=_blank}, las contraseñas se almacen cifradas mediante la contraseña maestra que únicamente tendréis vosotros.
+Bitwarden dispone un plan gratuito para uso personal, un plan para compartir contraseñas entre la familia (6 usuarios por $40 al año), etc. Es una buena solución si no quieres complicarte la vida. Además, [según explican en su FAQ](https://bitwarden.com/es-la/help/security-faqs/){:target="_blank"}, las contraseñas se almacen cifradas mediante la contraseña maestra que únicamente tendréis vosotros.
 
 {: .box-note}
 También es posible [instalar Vaultwarden](instalacion-de-vaultwarden-en-docker) en tu propio servidor. Se trata de una implementación no oficial que permite compartir contraseñas entre familiares sin necesidad de pagar una cuota anual. Esta opción no está pensada para todos los públicos ;-)
@@ -124,9 +124,9 @@ Un ejemplo de patrón podría ser el siguiente (y no, no lo uses tú, que ahora 
 
 Usando este patrón se obtienen contraseñas que tienen letras (mayúsculas y minúsculas), números y símbolos. Además, al realizar cambios en las palabras, se consigue evitar encontrarlas en muchos de los diccionarios _online_ que utilizan los ciberdelincuentes.
 
-Por ejemplo, si uso la palabra `Cebra`, ¿sabrías decirme qué contraseña se generaría para acceder a [https://www.elperiodico.com/](https://www.elperiodico.com/){:target=_blank}? Te dejo unos segundos para pensar ...
+Por ejemplo, si uso la palabra `Cebra`, ¿sabrías decirme qué contraseña se generaría para acceder a [https://www.elperiodico.com/](https://www.elperiodico.com/){:target="_blank"}? Te dejo unos segundos para pensar ...
 
-Efectivamente, la contraseña sería `C3br4@lprdC@11$`, que tardaría centenares de años en ser _crackeada_ según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target=_blank}:
+Efectivamente, la contraseña sería `C3br4@lprdC@11$`, que tardaría centenares de años en ser _crackeada_ según [Password Strength Testing Tool](https://bitwarden.com/password-strength/){:target="_blank"}:
 
 * Palabra: `Cebra` &rarr; `C3br4`
 * Símbolo de separación: `@`

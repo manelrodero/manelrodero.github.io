@@ -120,7 +120,7 @@ También es posible copiar el usuario, la contraseña o el código TOTP, si exis
 ### Historial de cambios
 
 * **2023-01-27**: Artículo original
-* **2023-12-11**: Revisión de los `Settings` para aumentar la seguridad al usar [auto-fill](https://borncity.com/win/2023/03/10/vulnerabilities-in-bitwarden-password-manager-browser-extension-can-reveal-passwords/){:target=_blank}
+* **2023-12-11**: Revisión de los `Settings` para aumentar la seguridad al usar [auto-fill](https://borncity.com/win/2023/03/10/vulnerabilities-in-bitwarden-password-manager-browser-extension-can-reveal-passwords/){:target="_blank"}
 
 [1]: /assets/img/blog/2023-01-27_image_1.png "Descarga Bitwarden"
 [2]: /assets/img/blog/2023-01-27_image_2.png "Activación extensión"

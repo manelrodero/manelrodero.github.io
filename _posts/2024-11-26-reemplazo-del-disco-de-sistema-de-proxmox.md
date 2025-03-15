@@ -67,7 +67,7 @@ SMART support is: Enabled
 
 # Logical Volume Manager (LVM)
 
-Proxmox VE utiliza por defecto el _framework_ [**Logical Volume Manager** (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)){:target=_blank} para gestionar el disco local seleccionado durante el proceso de instalación (en mi caso `/dev/sdb`).
+Proxmox VE utiliza por defecto el _framework_ [**Logical Volume Manager** (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)){:target="_blank"} para gestionar el disco local seleccionado durante el proceso de instalación (en mi caso `/dev/sdb`).
 
 * Un **physical volume** (PV) está formados por un único disco o partición física
 * Un **volume group** (VG) está formado por uno o más PVs
@@ -295,7 +295,7 @@ En mi instalación, al ser bastante simple, únicamente se utilizan los siguient
 | LVM-thin | `lvmthin` | block | no | yes | yes |
 
 {: .box-note}
-El [capítulo 7 de la "Proxmox VE Administration Guide"](https://pve.proxmox.com/pve-docs/pve-admin-guide.html#chapter_storage){:target=_blank} está dedicado completamente al almacenamiento en Proxmox VE.
+El [capítulo 7 de la "Proxmox VE Administration Guide"](https://pve.proxmox.com/pve-docs/pve-admin-guide.html#chapter_storage){:target="_blank"} está dedicado completamente al almacenamiento en Proxmox VE.
 
 La configuración de los _storage pools_ de Proxmox se define desde `Datacenter` &rarr; `Storage`. En mi caso tengo los siguientes a día de hoy:
 
@@ -474,8 +474,8 @@ Queda claro que, aunque no me cuadren los números, al crear este nuevo LXC esta
 
 Para poder actualizar el disco de sistema he comprado un nuevo **disco M.2 NVMe** y una **carcasa** compatible:
 
-* [WD Blue SN580 1 TB, M.2 NVMe SSD, PCIe Gen4 x4](https://amzn.to/4iWCFMt){:target=_blank}, Amazon, 56,99€
-* [UGREEN Carcasa M.2 NVMe PCIe USB C 3.2 Gen 2](https://amzn.to/4gGIeNv){:target=_blank}, Amazon, 22,49€
+* [WD Blue SN580 1 TB, M.2 NVMe SSD, PCIe Gen4 x4](https://amzn.to/4iWCFMt){:target="_blank"}, Amazon, 56,99€
+* [UGREEN Carcasa M.2 NVMe PCIe USB C 3.2 Gen 2](https://amzn.to/4gGIeNv){:target="_blank"}, Amazon, 22,49€
 
 La idea es la siguiente:
 
@@ -540,9 +540,9 @@ El comando `fdisk -l` también muestra los volúmenes lógicos `/dev/mapper/xxxx
 
 ## Clonezilla
 
-Para realizar el **clonado** del disco `/dev/sdb` en el disco `/dev/sdc` he utilizado [Clonezilla](https://clonezilla.org/){:target=_blank}, una herramienta gratuita y de código abierto que permite clonar y hacer imágenes de discos.
+Para realizar el **clonado** del disco `/dev/sdb` en el disco `/dev/sdc` he utilizado [Clonezilla](https://clonezilla.org/){:target="_blank"}, una herramienta gratuita y de código abierto que permite clonar y hacer imágenes de discos.
 
-He descargado la versión **stable 3.2.0-5** de Clonezilla en formato `ISO` para `amd64` y la he grabado en un _pendrive_ que tengo formateado con [Ventoy](https://www.ventoy.net/en/index.html){:target=_blank}.
+He descargado la versión **stable 3.2.0-5** de Clonezilla en formato `ISO` para `amd64` y la he grabado en un _pendrive_ que tengo formateado con [Ventoy](https://www.ventoy.net/en/index.html){:target="_blank"}.
 
 A continuación he reiniciado el servidor y he pulsado `F12` para seleccionar el _pendrive_ anterior y arrancar desde él. Una vez dentro de Ventoy se ha seleccionado el fichero `clonezilla-live-3.2.0-5-amd64.iso` para iniciar Clonezilla:
 
@@ -788,9 +788,9 @@ Una vez comprobado que todo funciona igual que con el disco original, llega el m
 
 ## GParted
 
-Para realizar la **ampliación** de la partición `/dev/nvme0n1p3` he utilizado [GParted](https://gparted.org/){:target=_blank}, una herramienta gratuita que permite gestionar las particiones.
+Para realizar la **ampliación** de la partición `/dev/nvme0n1p3` he utilizado [GParted](https://gparted.org/){:target="_blank"}, una herramienta gratuita que permite gestionar las particiones.
 
-He descargado la versión **1.6.0-10** de GParted en formato `ISO` para `amd64` y la he grabado en un _pendrive_ que tengo formateado con [Ventoy](https://www.ventoy.net/en/index.html){:target=_blank}.
+He descargado la versión **1.6.0-10** de GParted en formato `ISO` para `amd64` y la he grabado en un _pendrive_ que tengo formateado con [Ventoy](https://www.ventoy.net/en/index.html){:target="_blank"}.
 
 A continuación he reiniciado el servidor y he pulsado `F12` para seleccionar el _pendrive_ anterior y arrancar desde él. Una vez dentro de Ventoy se ha seleccionado el fichero `gparted-live-1.6.0-10-amd64.iso` para iniciar GParted:
 
@@ -927,20 +927,20 @@ El servidor Dell OptiPlex 7050 Micro tiene un _socket_ M.2 que soporta tanto dis
 | **Disco** | **Capacidad** | **Velocidad de lectura secuencial** | **Velocidad de escritura secuencial** | **Interfaz** | **Tecnología NAND** | **Factor de forma** | **Garantía** |
 |-----------|---------------|------------------------------------|--------------------------------------|--------------|---------------------|---------------------|--------------|
 | **Micron 1100** | 275 GB - 2 TB | Hasta 530 MB/s | Hasta 500 MB/s | SATA | TLC | 2.5" y M.2 | 3 años |
-| [**Crucial P3 1TB M.2 PCIe Gen3 NVMe SSD**](https://amzn.to/4gYUfxq){:target=_blank} | 1 TB | 3500 MB/s | 3000 MB/s | PCIe 3.0 | QLC | M.2 (2280) | 5 años |
-| [**Crucial P3 Plus SSD 1TB PCIe Gen4 NVMe M.2**](https://amzn.to/40kZguE){:target=_blank} | 1 TB | 5000 MB/s | 4200 MB/s | PCIe 4.0 | QLC | M.2 (2280) | 5 años |
-| [**WD Blue SN580 1 TB, M.2 NVMe SSD, PCIe Gen4 x4**](https://amzn.to/3DTV2kT){:target=_blank} | 1 TB | 5600 MB/s | 3100 MB/s | PCIe 4.0 | TLC | M.2 (2280) | 5 años |
-| [**Samsung 980 1 TB PCIe 3.0**](https://amzn.to/3DSmorz){:target=_blank} | 1 TB | 3500 MB/s | 3300 MB/s | PCIe 3.0 | TLC | M.2 (2280) | 5 años |
+| [**Crucial P3 1TB M.2 PCIe Gen3 NVMe SSD**](https://amzn.to/4gYUfxq){:target="_blank"} | 1 TB | 3500 MB/s | 3000 MB/s | PCIe 3.0 | QLC | M.2 (2280) | 5 años |
+| [**Crucial P3 Plus SSD 1TB PCIe Gen4 NVMe M.2**](https://amzn.to/40kZguE){:target="_blank"} | 1 TB | 5000 MB/s | 4200 MB/s | PCIe 4.0 | QLC | M.2 (2280) | 5 años |
+| [**WD Blue SN580 1 TB, M.2 NVMe SSD, PCIe Gen4 x4**](https://amzn.to/3DTV2kT){:target="_blank"} | 1 TB | 5600 MB/s | 3100 MB/s | PCIe 4.0 | TLC | M.2 (2280) | 5 años |
+| [**Samsung 980 1 TB PCIe 3.0**](https://amzn.to/3DSmorz){:target="_blank"} | 1 TB | 3500 MB/s | 3300 MB/s | PCIe 3.0 | TLC | M.2 (2280) | 5 años |
 
 # Referencias
 
-* [Proxmox VE Administration Guide](https://pve.proxmox.com/pve-docs/pve-admin-guide.pdf){:target=_blank}
-* [Brief Introduction to Logical Volume Manager (LVM) – Concept and example of application](https://www.brainupdaters.net/es/brief-introduction-logical-volumes-lv-concept-example-application-2/){:target=_blank}
-* [The Complete Beginner's Guide to LVM in Linux](https://linuxhandbook.com/lvm-guide/){:target=_blank}
-* [Linux Logical Volume Manager (LVM) tutorial](https://linuxconfig.org/linux-lvm-logical-volume-manager){:target=_blank}
-* [Dell OptiPlex 7050M](https://www.hardware-corner.net/desktop-models/Dell-OptiPlex-7050M/){:target=_blank}
-* [What is M.2? Keys and Sockets Explained](https://www.atpinc.com/blog/what-is-m.2-M-B-BM-key-socket-3){:target=_blank}
-* [M.2 M vs M.2 (B+M): What’s the Difference?](https://www.partitionwizard.com/partitionmanager/m2-m-vs-bm.html){:target=_blank}
+* [Proxmox VE Administration Guide](https://pve.proxmox.com/pve-docs/pve-admin-guide.pdf){:target="_blank"}
+* [Brief Introduction to Logical Volume Manager (LVM) – Concept and example of application](https://www.brainupdaters.net/es/brief-introduction-logical-volumes-lv-concept-example-application-2/){:target="_blank"}
+* [The Complete Beginner's Guide to LVM in Linux](https://linuxhandbook.com/lvm-guide/){:target="_blank"}
+* [Linux Logical Volume Manager (LVM) tutorial](https://linuxconfig.org/linux-lvm-logical-volume-manager){:target="_blank"}
+* [Dell OptiPlex 7050M](https://www.hardware-corner.net/desktop-models/Dell-OptiPlex-7050M/){:target="_blank"}
+* [What is M.2? Keys and Sockets Explained](https://www.atpinc.com/blog/what-is-m.2-M-B-BM-key-socket-3){:target="_blank"}
+* [M.2 M vs M.2 (B+M): What’s the Difference?](https://www.partitionwizard.com/partitionmanager/m2-m-vs-bm.html){:target="_blank"}
 
 ### Historial de cambios
 

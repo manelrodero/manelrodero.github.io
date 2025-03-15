@@ -18,10 +18,10 @@ Desde que comencé a utilizar LXC de TurnKey Core en Proxmox hace 6 meses, siemp
 
 # TurnKey ~ Debian
 
-Las _appliances_ de [TurnKey GNU/Linux](https://www.turnkeylinux.org/){:target=_blank} son imágenes construidas utilizando los binarios sin modificar de los repositorios oficiales de [Debian](https://www.debian.org/){:target=_blank}.
+Las _appliances_ de [TurnKey GNU/Linux](https://www.turnkeylinux.org/){:target="_blank"} son imágenes construidas utilizando los binarios sin modificar de los repositorios oficiales de [Debian](https://www.debian.org/){:target="_blank"}.
 
 {: .box-note}
-TurnKey Core LXC es una imagen Debian ya preinstalada, es decir, no hay que instalar el sistema operativo mediante el asistente como pasa al utilizar la [ISO Live](https://github.com/turnkeylinux/di-live){:target=_blank}.
+TurnKey Core LXC es una imagen Debian ya preinstalada, es decir, no hay que instalar el sistema operativo mediante el asistente como pasa al utilizar la [ISO Live](https://github.com/turnkeylinux/di-live){:target="_blank"}.
 
 La correspondencia entre las versiones de TurnKey y Debian se muestran en la siguiente tabla:
 
@@ -54,9 +54,9 @@ Codename:       bullseye
 
 # Actualizaciones de seguridad
 
-TurnKey se construye a partir de la **rama estable** de Debian por lo que únicamente recibe [**actualizaciones de seguridad**](https://security-team.debian.org/){:target=_blank}.
+TurnKey se construye a partir de la **rama estable** de Debian por lo que únicamente recibe [**actualizaciones de seguridad**](https://security-team.debian.org/){:target="_blank"}.
 
-TurnKey está configurada para [instalar automáticamnte estas actualizaciones de seguridad](https://www.turnkeylinux.org/docs/auto-secupdates){:target=_blank} la primera vez que despliega una _appliance_ y cada noche según la programación indicada en el fichero `/etc/cron.d/cron-apt`:
+TurnKey está configurada para [instalar automáticamnte estas actualizaciones de seguridad](https://www.turnkeylinux.org/docs/auto-secupdates){:target="_blank"} la primera vez que despliega una _appliance_ y cada noche según la programación indicada en el fichero `/etc/cron.d/cron-apt`:
 
 ```
 20 1 * * * root test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt

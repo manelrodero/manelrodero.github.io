@@ -9,7 +9,7 @@ tags:
 - PowerShell
 author:
   display_name: Manel Rodero
-#cover-img: "/assets/img/blog/2025-03-22_cover.png"
+cover-img: "/assets/img/blog/2025-03-22_cover.png"
 thumbnail-img: ""
 ---
 

@@ -43,7 +43,7 @@ qm create 702 --name ubuntu-2404-bios \
 **Nota**: El comando anterior crea una VM usando el tipo de máquina `i440fx` y la BIOS `SeaBIOS`. Si se requiere **UEFI** o **PCIe passthrough** es mejor crearla usando `q35` y `OVMF (UEFI)`.
 
 ```bash
-qm create 703 --name ubuntu-2404-uefi \
+qm create 702 --name ubuntu-2404-uefi \
 --machine q35 \
 --bios ovmf \
 --ostype l26 \

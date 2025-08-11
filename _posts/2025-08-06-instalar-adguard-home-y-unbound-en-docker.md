@@ -343,9 +343,7 @@ server:
   private-address: fe80::/10
 
   # Permitir que este dominio y todos sus subdominios contengan direcciones privadas
-  private-domain: ropafamily.com
-  private-domain: upc.es
-  private-domain: upc.edu
+  private-domain: yourdomain.com
 
   # Enviar una cantidad mínima de información a los servidores upstream para mejorar la privacidad
   qname-minimisation: yes

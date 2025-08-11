@@ -20,7 +20,7 @@ La [creación de una **plantilla**](https://pve.proxmox.com/pve-docs/chapter-qm.
 Para crear esta plantilla se utilizará una [imagen oficial de **Ubuntu Cloud**](https://cloud-images.ubuntu.com/){:target="_blank"}, concretamente una [**Ubuntu Minimal 24.04 LTS**](https://cloud-images.ubuntu.com/minimal/releases/noble/release/){:target="_blank"} (_Noble Numbat_), que se desplegará utilizando [**cloud-init**](https://cloudinit.readthedocs.io/en/latest/){:target="_blank"} para inicializar el usuario y la configuración de red.
 
 {: .box-note}
-**Nota**: En esta ocasión se utilizará la _shell_ para crear esta plantilla aunque, tal como expliqué al crear la [plantilla de Ubuntu Minimal 22.04 LTS](creacion-de-una-plantilla-de-ubuntu-en-proxmox-ve), también se puede relizar desde la interfaz gráfica.
+**Nota**: En esta ocasión se utilizará la _shell_ para crear esta plantilla aunque, tal como expliqué al crear la [plantilla de Ubuntu Minimal 22.04 LTS](creacion-de-una-plantilla-de-ubuntu-en-proxmox-ve), también se puede realizar desde la interfaz gráfica.
 
 ## 1. Crear una máquina virtual
 

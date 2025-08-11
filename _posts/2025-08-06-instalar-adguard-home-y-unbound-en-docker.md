@@ -664,6 +664,21 @@ Algunos valores que no se han cambiado por tener valores correctos por defecto s
 * `outgoing-range: 8192`, la imagen de @klutchell usa `libevent` y las conexiones salientes no están limitadas a 1024
   * `num-queries-per-thread: 4096`
 
+## _Tuning_ de AdGuard Home
+
+Algunos cambios adicionales en AdGuard Home son los siguientes:
+
+* Settings
+  * DNS settings
+    * DNS server configuration
+      * Rate limit: 20 &rarr; **50**
+* Filters
+  * DNS blocklists
+    * Add blocklist > Choose from the list
+      * **OISD Blocklist Big**
+      * **Steven Black's List**
+    * Activar `AdAway Default Blocklist`
+
 ## Referencias
 
 * [Pi-hole vs AdGuard Home: Network-Wide Ad Blocking Solution Performance Test 2025](https://markaicode.com/pihole-vs-adguard-home-performance-test/){:target="_blank"}, MARK Ai code, 27 May 2025

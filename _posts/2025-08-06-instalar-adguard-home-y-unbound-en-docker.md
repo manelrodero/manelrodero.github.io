@@ -448,7 +448,7 @@ docker compose up -d
 
 ## AdGuard Home + Unbound
 
-Ahora que ya está configurado AdGuard Home y Unbound, se pueden unir para que el **upstream server** sea Unbound y no `https://dns10.quad9.net/dns-query`.
+Ahora que ya están configurados tanto AdGuard Home como Unbound, se pueden unir para que el **upstream server** sea Unbound y no `https://dns10.quad9.net/dns-query`:
 
 * Se accede al panel de administración de AdGuard Home
 * Se accede a **Settings** &rarr; **DNS Settings**
@@ -649,12 +649,12 @@ Se puede observar que el propietario de los ficheros es `_rpc:input` (equivale a
 
 ### [Performance Tuning](https://unbound.docs.nlnetlabs.nl/en/latest/topics/core/performance.html){:target="_blank"}
 
-Se han cambiado algunos valores de la configuración según el documento "[Performance Tuning](https://unbound.docs.nlnetlabs.nl/en/latest/topics/core/performance.html){:target="_blank"}:
+Se han cambiado algunos valores de la configuración según el documento "[Performance Tuning](https://unbound.docs.nlnetlabs.nl/en/latest/topics/core/performance.html){:target="_blank"} de la documentación de Unbound:
 
 * `num-threads`: igual al número de núcleos de la CPU del sistema (**4** en el caso de una Raspberry Pi)
 * `so-rcvbuf` y `so-sndbuf`: `4m` (**4194304**) para servidores con mucha demanda
 
-Algunos valores que no se han cambiado por tener valores correctos son los siguientes:
+Algunos valores que no se han cambiado por tener valores correctos por defecto son los siguientes:
 
 * `so-reuseport: yes`, UDP más rápido con multiproceso (sólo en Linux)
 * `msg-cache-slabs: 4`, potencia de 2 cercana al `num-threads`

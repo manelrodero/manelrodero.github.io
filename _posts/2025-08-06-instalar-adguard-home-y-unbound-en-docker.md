@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Instalar AdGuard Home y Unbound en Docker'
 date: '2025-08-06 07:47:04'
-last-updated: '2025-08-08 16:47:04'
+last-updated: '2025-08-11 10:08:04'
 published: true
 tags:
 - HomeLab
@@ -65,17 +65,19 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
 
-      # Wizard inicial
+      # Wizard inicial de AdGuard Home
       - "3000:3000/tcp"
 
-      # Panel de administración de AdGuard Home / Servidor DNS-over-HTTPS (DoH)
+      # Panel de administración (HTTP)
       - "80:80/tcp"
+
+      # Panel de administración (HTTPS) / Servidor DNS-over-HTTPS (DoH)
       - "443:443/tcp"
       - "443:443/udp"
 
       # Los siguientes puertos están expuestos internamente por la imagen de AdGuard Home
       # porque están declarados como EXPOSE en su Dockerfile (pero no estarán accesibles
-      # desde fuera del host a menos que se publiquen aquí)
+      # desde fuera del host a menos que se publiquen en este fichero)
       # ss -tuln | grep -E '67|68|853|5443|6060'
 
       # Servidor DNS-over-TLS
@@ -131,7 +133,7 @@ A continuación, se puede acceder a `http://<IP>:3000` para completar el **asist
 
 Si todo está bien configurado, debería aparecer el panel de administración de AdGuard Home: 
 
-![Imagen][1]
+![AdGuard Home][1]
 
 A partir de aquí, se pueden explorar los `Settings` donde hay gran cantidad de cosas a configurar.
 
@@ -173,16 +175,25 @@ server:
   # REGISTRO DE ACTIVIDAD
   # =====================
 
-  # Configuración para privacidad (no se registran consultas/respuestas; no se generan estadísticas)
-
+  # No registrar consultas (timestamp, IP, nombre, tipo y clase)
   log-queries: no
+
+  # No registrar respuestas (timestamp, IP, nombre, tipo, clase, código de retorno, tiempo de resolución, de caché, tamaño)
   log-replies: no
+
+  # Deshabilitar estadísticas en los log cada 'x' segundos para cada hilo
   statistics-interval: 0
 
-  # Se puede activar fichero de log de forma temporal para monitorizar (por defecto en 'syslog')
-  # logfile: "/var/log/unbound.log"
+  # Usar un fichero de log en lugar de 'syslog' (es decir, equivale a use-syslog: no)
+  logfile: "/var/log/unbound.log"
 
-  # Verbosidad de logs (1 = errores y advertencias, 2 = información, 3 = depuración)
+  # Verbosidad de los logs de Unbound
+  # 0 = solo errores
+  # 1 = información operativa
+  # 2 = información operativa detallada, incluyendo información breve por consulta
+  # 3 = información a nivel de consulta y salida por consulta
+  # 4 = información a nivel de algoritmo
+  # 5 = registra la identificación del cliente en caso de fallas de caché
   verbosity: 1
 
   # ==================
@@ -190,41 +201,64 @@ server:
   # ==================
 
   # Imprescindible escuchar en todas las interfaces al usar 'unbound' en Docker
-  interface: 0.0.0.0
+  # El fichero 'unbound.conf' de la imagen de @klutchell ya define la interfaz
+  # https://github.com/klutchell/unbound-docker/blob/main/rootfs_overlay/etc/unbound/unbound.conf
+  # interface: 0.0.0.0
+
+  # Puerto de Unbound (en el 53 está AdGuard Home)
   port: 5335
 
   # ==========================
   # PROTOCOLOS (IPv4, no IPv6)
   # ==========================
 
+  # Utilizar IPv4 únicamente para consultas/respuestas
   do-ip4: yes
   do-ip6: no
+
+  # Utilizar tanto UDP como TCP
   do-udp: yes
   do-tcp: yes
 
   # Preferir el uso de IPv4, al no haber IPv6 nativo
-  # Cuando se usa 6to4 y túneles Teredo, el navegador debería preferir IPv4 por la misma razón
+  prefer-ip4: yes
   prefer-ip6: no
 
   # ======================
   # SEGURIDAD Y PRIVACIDAD
   # ======================
 
-  # Opciones para proteger contra spoofing, glue attacks y manipulación de delegaciones
-
+  # Rechazar las peticiones 'id.server' y 'hostname.bind'
   hide-identity: yes
+
+  # Rechazar las peticiones 'version.server' y 'version.bind'
   hide-version: yes
 
-  # Confiar (glue) solo si está dentro de la autoridad del servidor
+  # Confiar en Glue solo si está dentro de la autoridad del servidor
   harden-glue: yes
 
-  # Requerir datos DNSSEC para zonas de confianza ancladas (trust-anchored)
-  # Si dichos datos no están presentes, la zona se vuelve falsa (BOGUS)
+  # Requerir datos DNSSEC para zonas ancladas en la confianza (trust-anchored),
+  # si dichos datos no están presentes, la zona se vuelve falsa (Bogus)
   harden-dnssec-stripped: yes
+
+  # Realizar consultas adicionales para validar los registros NS y
+  # sus direcciones IP (glue records) en la cadena de delegación
+  # Aplica DNSSEC a esos datos si están firmados
+  # Protege contra ataques como NS hijacking o manipulación de delegaciones
+  # Más estricto que la validación DNSSEC estándar y no está en el RFC
   harden-referral-path: yes
 
-  # Pi-hole recomendaba no usar 'caps-for-id' (aleatorización de mayúsculas) a causa de problemas en DNSSEC
-  # https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378
+  # Niveles de profundidad a seguir para validar los targets (NS y glue records)
+  # 3 -> registro A (dirección IPv4 del servidor NS)
+  # 2 -> registro AAAA (dirección IPv6 del servidor NS)
+  # 1 -> registro MX (servidores de correo)
+  # 0 -> registro SRV (servicios específicos: SIP, LDAP, etc.)
+  # 0 -> registro PTR (resolución inversa IP -> nombre)
+  target-fetch-policy: "3 2 1 0 0"
+
+  # Utilizar bits aleatorios codificados en 0x20 en la consulta para frustrar intentos de suplantación
+  # Pi-hole recomendaba no usar 'caps-for-id' a causa de problemas en DNSSEC:
+  # + https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378
   # Como no hay errores en los logs, se deja en "yes" para mejorar la protección contra spoofing
   use-caps-for-id: yes
 
@@ -236,42 +270,57 @@ server:
   # https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en
 
   # Se configura 'unbound' para realizar la validación criptográfica de DNSSEC
-  # Para ello se usa la 'root trust anchor' (ancla de confianza raíz) definida en el fichero root.key
-  # El Dockerfile de la imagen Unbound de @klutchell se encarga de obtener el fichero 'root.key'
+  # Para ello se usa la 'root trust anchor' (ancla de confianza raíz) definida en el fichero 'root.key'
+  # + https://datatracker.ietf.org/doc/html/rfc5011.html
+  # El Dockerfile de la imagen de @klutchell se encarga de obtener el fichero 'root.key'
   # https://github.com/klutchell/unbound-docker/blob/main/Dockerfile
   # auto-trust-anchor-file: root.key
+
+  # Enviar una consulta de etiqueta clave RFC 8145 después de preparar el ancla de confianza
+  # + https://datatracker.ietf.org/doc/html/rfc8145.html
   trust-anchor-signaling: yes
-  val-log-level: 1
+
+  # El validador registra los fallos de validación, independientemente del nivel de verbosity
+  val-log-level: 2
 
   # ===================
   # RENDIMIENTO Y CACHÉ
   # ===================
 
-  # Ajustado para una red doméstica con alto rendimiento y bajo riesgo de fragmentación
-
-  # Un hilo debería ser suficiente (con Pi-hole es lo que usaba) pero se puede aumentar en máquinas potentes:
+  # En Pi-hole usaba 1 hilo y, aunque debería ser suficiente, según Copilot se podría aumentar:
   # + Red doméstica (hasta ~20 dispositivos) -> 1
   # + Red media (~20–100 dispositivos) -> 2
   # + Red alta carga o tráfico DNS intenso -> 4
+  # Según la documentación "Performance Tuning" de Unbound:
+  # Debería ser igual al número de núcleos del sistema (Raspberry Pi 4):
+  # - CPU: Broadcom BCM2711
+  # - Arquitectura: ARM Cortex-A72 (ARMv8-A de 64 bits)
+  # - Número de núcleos (cores): 4 núcleos
   # Para ver el número de hilos en uso, se puede ejecutar:
-  # unbound-control stats_noreset | grep thread
-  num-threads: 2
+  # docker exec -it unbound unbound-control status | grep -i num-threads
+  num-threads: 4
 
+  # Según la documentación "Performance Tuning" de Unbound:
   # Asegurar búfer del kernel suficientemente grande para no perder mensajes en picos de tráfico
-  so-rcvbuf: 1m
-  so-sndbuf: 1m
+  so-rcvbuf: 4m
+  so-sndbuf: 4m
   msg-cache-size: 50m
   rrset-cache-size: 100m
+
+  # Tiempo de vida máximo (1 día) y mínimo (1 hora) para RRsets y mensajes en la caché
   cache-max-ttl: 86400
   cache-min-ttl: 3600
+
+  # Tiempo de vida máximo (1 hora) y mínimo (5 minutos) para respuestas negativas,
+  # estas tienen una SOA en la sección de autoridad que es limitada en el tiempo
   cache-max-negative-ttl: 3600
+  cache-min-negative-ttl: 300
 
   # ==========
   # ROOT HINTS
   # ==========
 
-  # Si se usa el paquete dns-root-data predeterminado, Unbound lo encontrará automáticamente
-  # Si no es así, hay que descargar la lista de servidores raíz primarios o "root hints"
+  # Lista de servidores raíz del DNS (los 13 servidores raíz como a.root-servers.net, etc.), con sus direcciones IP
   # El Dockerfile de la imagen Unbound de @klutchell se encarga de obtener el fichero 'root.hints'
   # https://github.com/klutchell/unbound-docker/blob/main/Dockerfile
   # root-hints: root.hints
@@ -280,10 +329,12 @@ server:
   # CONTROL DE ACCESO Y PRIVACIDAD
   # ==============================
 
+  # Permitir consultas a este servidor que se originen desde las siguientes direciones IP
   access-control: 127.0.0.1 allow
-  access-control: ::1 allow
   access-control: 192.168.0.0/16 allow
 
+  # Direcciones de la red privada que no se pueden devolver para nombres de internet públicos
+  # https://datatracker.ietf.org/doc/html/rfc1918.html
   private-address: 192.168.0.0/16
   private-address: 169.254.0.0/16
   private-address: 172.16.0.0/12
@@ -291,23 +342,39 @@ server:
   private-address: fd00::/8
   private-address: fe80::/10
 
-  private-domain: midominio.com
+  # Permitir que este dominio y todos sus subdominios contengan direcciones privadas
+  private-domain: ropafamily.com
+  private-domain: upc.es
+  private-domain: upc.edu
 
+  # Enviar una cantidad mínima de información a los servidores upstream para mejorar la privacidad
   qname-minimisation: yes
-  qname-minimisation-strict: yes
+
+  # QNAME estricto: no se envía el QNAME completo a servidores DNS potencialmente dañados
+  # Muchos dominios no se podrán resolver cuando esta opción esté habilitada (p.ej. HBO)
+  # qname-minimisation-strict: yes
+
+  # Usar la cadena DNSSEC NSEC para sintetizar NXDOMAIN y otras denegaciones,
+  # utilizando información de respuestas NXDOMAIN anteriores
   aggressive-nsec: yes
 
   # ======================
   # EDNS BUFFER Y PREFETCH
   # ======================
 
-  # Búfer recomendado para evitar problemas de fragmentación al usar UDP
+  # Número de bytes que se anunciarán como tamaño del búfer de reensamblaje de EDNS
+  # Búfer recomendado para evitar problemas de fragmentación al usar UDP en las consultas/respuestas
   # Este valor se basa en un estudio de NLnet Labs y el DNS Flag Day 2020
+  # https://dnsflagday.net/2020/
   edns-buffer-size: 1232
 
   # Precarga de entradas de caché próximas a caducar para dominios consultados frecuentemente
+  # Genera aproximadamente un 10 por ciento más de tráfico y carga en la máquina,
+  # pero las entradas populares no caducan de la caché
   prefetch: yes
 
+  # Configuración "validator iterator" para activar la validación DNSSEC
+  # También hay que configurar anclas de confianza (trust-anchors) para que la validación sea útil
   # No se usa el módulo 'subnetcache' para evitar errores como el siguiente:
   # warning: subnetcache: prefetch is set but not working for data originating from the subnet module cache
   module-config: "validator iterator"
@@ -319,7 +386,7 @@ server:
 remote-control:
   control-enable: yes
   # La interfaz de control remoto por defecto escucha en 127.0.0.1 y ::1 (puerto 8953)
-  # Se utiliza un socket para no tener que usar certificados con la configuración anterior
+  # Se utiliza un socket para no evitar el uso de certificados
   control-interface: /run/unbound.ctl
 ```
 
@@ -328,7 +395,7 @@ Para utilizar esta configuración, se necesitan un par de ficheros adicionales:
 * `root.key`: fichero generado por la IANA que contiene la **clave pública** de la **zona raíz del DNS**. Este fichero, firmado por la **clave raíz de DNSSEC**, contiene la clave que permite validar las respuestas DNS mediante este protocolo
 * `root.hints`: fichero que contiene una **lista de servidores raíz del DNS**. Son los primeros puntos de contacto que Unbound usa para empezar a resolver cualquier nombre de dominio
 
-> **Nota**: Al usar la imagen de **@klutchell** no es necesario obtener por nuestra cuenta estos ficheros ya que la propia construcción de la misma se encarga de ello.
+> **Nota**: Al usar la imagen de **@klutchell** no es necesario ejecutar el siguiente comando `docker run` para obtener por nuestra cuenta estos ficheros ya que la propia imagen se encarga de hacerlo.
 
 Para obtener el fichero `root.key` se necesita usar el comando `unbound-anchor` instalado en el sistema o desde el mismo contenedor de Unbound.
 
@@ -345,7 +412,7 @@ docker run --rm \
          unbound-anchor -a /unbound/root.key"
 ```
 
-Una vez tenemos los ficheros necesarios para ejecutar Unbound, se puede añadir lo siguiente al fichero `compose.yaml`:
+Una vez tenemos los ficheros necesarios para ejecutar Unbound, se puede añadir el siguiente código al fichero `compose.yaml`:
 
 ```yaml
   unbound:
@@ -359,13 +426,13 @@ Una vez tenemos los ficheros necesarios para ejecutar Unbound, se puede añadir 
       - /etc/localtime:/etc/localtime:ro
       - ./unbound/unbound.conf:/etc/unbound/custom.conf.d/unbound.conf
 
-      # Si se quiere un log externo, se crea este fichero y se define en 'unbound.conf'
-      #- ./unbound/unbound.log:/var/log/unbound.log
+      # Si se quiere log externo, se crea este fichero y se define en 'unbound.conf'
+      - ./unbound/unbound.log:/var/log/unbound.log
 
-      # El Dockerfile de esta imagen se encarga de obtener los ficheros root.key y root.hints
+      # El Dockerfile de esta imagen descarga el fichero 'root.hints' y genera el fichero 'root.key'
       # https://github.com/klutchell/unbound-docker/blob/main/Dockerfile
-      #- ./unbound/root.key:/var/lib/unbound/root.key
       #- ./unbound/root.hints:/var/lib/unbound/root.hints
+      #- ./unbound/root.key:/var/lib/unbound/root.key
 
       # Directorio para el socket 'unbound.ctl' (remote control)
       - ./unbound/run:/run
@@ -379,11 +446,35 @@ Y poner en marcha el contenedor de la forma habitual:
 docker compose up -d
 ```
 
+## AdGuard Home + Unbound
+
+Ahora que ya está configurado AdGuard Home y Unbound, se pueden unir para que el **upstream server** sea Unbound y no `https://dns10.quad9.net/dns-query`.
+
+* Se accede al panel de administración de AdGuard Home
+* Se accede a **Settings** &rarr; **DNS Settings**
+* Se cambia el los _Upstream DNS servers_ por los siguientes:
+
+```plaintext
+udp://<IP>:5335
+tcp://<IP>:5335
+```
+
+> **Nota**: `<IP>` es la dirección IP del _host_ (en mi caso la Raspberry Pi)
+
+Una vez hecho ésto, se puede pulsar el botón `Test upstreams` y, si todo funciona correctamente, pulsar el botón `Apply`.
+
+## Optimización y _troubleshooting_
+
 ### `so-rcvbuf` y `so-sndbuf`
 
-La configuración definida en `unbound.conf` utiliza un búfer de recepción y de envío de 1MB.
+Cuando se configuró un búfer de recepción `so-rcvbuf` y uno de envío `so-sndbuf` de `1m`:
 
-Si se observan advertencias similares a las siguientes en los registros de Unbound será necesario cambiar la configuración del host:
+```yaml
+  so-rcvbuf: 1m
+  so-sndbuf: 1m
+```
+
+En los registros de Unbound se podían observar advertencias similares a las siguientes porque el _host_ no le proporcionaba ese valor:
 
 ```plaintext
 unbound      | [1754646979] unbound[1:0] warning: so-rcvbuf 1048576 was not granted. Got 425984. To fix: start with root permissions(linux) or sysctl bigger net.core.rmem_max(linux) or kern.ipc.maxsockbuf(bsd) values.
@@ -405,19 +496,17 @@ echo "net.core.wmem_max=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
 
-### Instalación de `dig`
+### Verificación de DNSSEC
 
-Para probar el funcionamiento del servidor DNS de AdGuard Home y de Unbound, lo mejor es utilizar el comando `dig` que forma parte del paquete `dnsutils` (junto a los comandos `nslookup` y `host`).
+Para probar el funcionamiento del servidor DNS de AdGuard Home y de Unbound, lo mejor es utilizar el comando `dig` que forma parte del paquete `dnsutils` (este paquete también incluye los comandos `nslookup` y `host`).
 
-Se puede instalar este paquete en la Raspberry Pi mediante el siguiente comando:
+Se puede instalar este paquete en la Raspberry Pi usando `apt` de la manera habitual:
 
 ```bash
 sudo apt install dnsutils
 ```
 
-## Verificación de DNSSEC
-
-Se puede comprobar que **DNSSEC** está funcionando correctamente consultando `dnssec-tools.org` y viendo que obtenemos un resultado **NOERROR** como el mostrado a continuación:
+Una vez instalado, se puede comprobar que **DNSSEC** está funcionando correctamente consultando `dnssec-tools.org` y viendo que obtenemos un resultado **NOERROR** como el mostrado a continuación:
 
 ```bash
 dig @127.0.0.1 -p 5335 dnssec-tools.org
@@ -474,35 +563,19 @@ dig @127.0.0.1 -p 5335 dnssec-failed.org
 
 ```
 
-## AdGuard Home + Unbound
+### `unbound-control`
 
-Ahora que ya está configurado AdGuard Home y Unbound, se pueden unir para que el **upstream server** sea Unbound y no `https://dns10.quad9.net/dns-query`.
+El comando `unbound-control` permite interactuar con Unbound en tiempo real, sin tener que reiniciar el servicio ni modificar el fichero de configuración.
 
-* Se accede al panel de administración de AdGuard Home
-* Se accede a **Settings** &rarr; **DNS Settings**
-* Se cambia el los _Upstream DNS servers_ por los siguientes:
+Algunas de sus funciones más útiles son:
 
-```plaintext
-tcp://<IP>:5335
-udp://<IP>:5335
-```
+* Recargar la configuración sin reiniciar: `unbound-control reload`
+* Vaciar la caché DNS: `unbound-control flush` o `unbound-control flush www.youtube.com`
+* Consultar el estado del servidor: `unbound-control status`
+* Ver estadísticas en tiempo real: `unbound-control stats`
+* Buscar en la caché: `unbound-control lookup www.youtube.com`
 
-> **Nota**: `<IP>` es la dirección IP del _host_ (en mi caso la Raspberry Pi)
-
-Una vez hecho ésto, se puede pulsar el botón `Test upstreams` y, si todo funciona correctamente, pulsar el botón `Apply`.
-
-Además, como no hemos usado nombres a la hora de definir los _upstream servers_, se pueden borrar los **boostrap DNS servers** originales para que este campo quede vacío:
-
-```plaintext
-9.9.9.10
-149.112.112.10
-2620:fe::10
-2620:fe::fe:10
-```
-
-### Estadísticas
-
-Se puede obtener el **estado** de Unbound usando el comando `unbound-control status` de la siguiente manera:
+En mi caso, al usar Unbound en un contenedor Docker, la forma más fácil de ejecutar el comando es usar `docker exec` de la siguiente manera:
 
 ```bash
 docker exec unbound unbound-control status
@@ -510,53 +583,88 @@ docker exec unbound unbound-control status
 
 ```plaintext
 version: 1.23.1
-verbosity: 1
-threads: 2
+verbosity: 3
+threads: 4
 modules: 2 [ validator iterator ]
-uptime: 8 seconds
+uptime: 363 seconds
 options: reuseport control(namedpipe)
 unbound (pid 1) is running...
 ```
 
-También se pueden obtener **estadísticas** usando el mismo comando:
+### `unbound-checkconf`
+
+El comando `unbound-checkconf` permite comprobar que la configuración de Unbound sea correcta:
 
 ```bash
-docker exec unbound unbound-control stats
+docker exec unbound unbound-checkconf
+```
+
+Además, también se puede utilizar para comprobar cuál es la **configuración efectiva** de un determinado parámetro (útil cuando se utilizan ficheros de configuración _custom_ que sobreescriben la configuración por defecto de la imagen):
+
+```bash
+docker exec -it unbound unbound-checkconf -o num-threads
 ```
 
 ```plaintext
-thread0.num.queries=3
-thread0.num.queries_ip_ratelimited=0
-thread0.num.queries_cookie_valid=0
-thread0.num.queries_cookie_client=0
-[...]
-total.tcpusage=0
-time.now=1754662384.630842
-time.up=70.132025
-time.elapsed=70.132025
+4
 ```
 
-## Ficheros
+### Monitorizar el rendimiento
 
-El contenido del directorio `./unbound` en la Raspbery Pi es el siguiente:
+Se puede usar el comando `docker stats` para ver el consumo de recursos de cada contenedor Docker:
 
 ```plaintext
-drwxr-xr-x 3 manel manel 4096 Aug  8 17:06 .
-drwxr-xr-x 5 manel manel 4096 Aug  8 17:07 ..
--rw-r----- 1 _rpc  input 3310 Aug  8 12:19 root.hints (no es necesario)
--rw-r----- 1 _rpc  input 1250 Aug  8 13:02 root.key (no es necesario)
-drwxr-xr-x 2 manel manel 4096 Aug  8 17:08 run
--rw-r----- 1 _rpc  input 5131 Aug  8 17:06 unbound.conf
--rw-r----- 1 _rpc  input    0 Aug  8 17:52 unbound.log (no es necesario)
-
-./run:
-total 8
-drwxr-xr-x 2 manel manel 4096 Aug  8 17:08 .
-drwxr-xr-x 3 manel manel 4096 Aug  8 17:06 ..
-srw-rw---- 1 _rpc  input    0 Aug  8 17:08 unbound.ctl
+CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O    PIDS
+635720702d8a   adguardhome     0.03%     0B / 0B             0.00%     2.14MB / 2.28MB   0B / 0B      12
+e79b95133016   unbound         0.00%     0B / 0B             0.00%     4.72MB / 1.73MB   0B / 0B      2
 ```
 
-Se puede observar que el propietario de los ficheros es `_rpc:input`, es decir `101:102` tal como requiere la imagen de Unbound utilizada.
+Tambíen se puede usar el comando `htop` para ver el uso de CPU por cada núcleo de los procesos de Unbound y AdGuard Home:
+
+```bash
+htop -p $(pgrep -d',' -f 'unbound|adguardhome')
+```
+
+![htop][2]
+
+### Ficheros de Unbound
+
+El contenido del directorio `./unbound` que utiliza el contenedor Docker es el siguiente:
+
+```plaintext
+unbound/:
+total 6252
+-rw-r----- 1 _rpc input    3310 Aug  8 12:19 root.hints
+-rw-r----- 1 _rpc input    1250 Aug  8 13:02 root.key
+drwxr-xr-x 2 _rpc input    4096 Aug 11 11:22 run
+-rw-r----- 1 _rpc input    5651 Aug 11 10:50 unbound.conf
+-rw-r----- 1 _rpc input 6378914 Aug 11 11:33 unbound.log
+
+unbound/run:
+total 0
+srw-rw---- 1 _rpc input 0 Aug 11 11:22 unbound.ctl
+```
+
+Se puede observar que el propietario de los ficheros es `_rpc:input` (equivale a `101:102`) tal como requiere la imagen de Unbound de @klutchell.
+
+### [Performance Tuning](https://unbound.docs.nlnetlabs.nl/en/latest/topics/core/performance.html){:target="_blank"}
+
+Se han cambiado algunos valores de la configuración según el documento "[Performance Tuning](https://unbound.docs.nlnetlabs.nl/en/latest/topics/core/performance.html){:target="_blank"}:
+
+* `num-threads`: igual al número de núcleos de la CPU del sistema (**4** en el caso de una Raspberry Pi)
+* `so-rcvbuf` y `so-sndbuf`: `4m` (**4194304**) para servidores con mucha demanda
+
+Algunos valores que no se han cambiado por tener valores correctos son los siguientes:
+
+* `so-reuseport: yes`, UDP más rápido con multiproceso (sólo en Linux)
+* `msg-cache-slabs: 4`, potencia de 2 cercana al `num-threads`
+  * `rrset-cache-slabs: 4`
+  * `infra-cache-slabs: 4`
+  * `key-cache-slabs: 4`
+* `rrset-cache-size: 100m`, más memoria caché, rrset=msg*2
+  * `msg-cache-size: 50m`
+* `outgoing-range: 8192`, la imagen de @klutchell usa `libevent` y las conexiones salientes no están limitadas a 1024
+  * `num-queries-per-thread: 4096`
 
 ## Referencias
 
@@ -567,10 +675,15 @@ Se puede observar que el propietario de los ficheros es `_rpc:input`, es decir `
 * [AdGuardHome sync](https://github.com/bakito/adguardhome-sync){:target="_blank"}, Marc Brugger
 * [Installing Unbound for Pi-Hole on the Raspberry Pi](https://pimylifeup.com/raspberry-pi-unbound/){:target="_blank"}, PiMyLifeUp, 10 Oct 2023
 * [HomeLab: AdGuard: The One Reason to Use Unbound DNS ( IMHO )](https://medium.com/@life-is-short-so-enjoy-it/homelab-adguard-the-one-reason-to-use-unbound-dns-imho-3ee297377365){:target="_blank"}, 23 Oct 2023
+* [Unbound documentation](https://unbound.docs.nlnetlabs.nl/en/latest/index.html){:target="_blank"}
+  * [unbound.conf(5)](https://unbound.docs.nlnetlabs.nl/en/latest/manpages/unbound.conf.html){:target="_blank"}
+  * [Example of unbound.conf file](https://github.com/NLnetLabs/unbound/blob/master/doc/example.conf.in){:target="_blank"}
 
 ### Historial de cambios
 
 * **2025-08-06**: Documento inicial
-* **2025-08-08**: Configuración optimizada de Unbound
+* **2025-08-08**: Configuración optimizada de Unbound/AdGuard
+* **2025-08-11**: Cambios en 'unbound.conf'
 
 [1]: /assets/img/blog/2025-08-06_image_1.png "AdGuard Home"
+[2]: /assets/img/blog/2025-08-06_image_2.png "htop"

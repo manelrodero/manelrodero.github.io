@@ -417,4 +417,4 @@ Finalmente, se crea el fichero [`~/dockers/backup_dockers.sh`](https://gist.gith
 
 ### Historial de cambios
 
-* **2025-03-111**: Documento inicial
+* **2025-03-11**: Documento inicial

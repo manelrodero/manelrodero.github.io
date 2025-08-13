@@ -51,48 +51,86 @@ pveam download local debian-12-standard_12.7-1_amd64.tar.zst
 
 ## Crear el contenedor base
 
-Para crear el contenedor se ejecutará el comando `pct create` desde la CLI de Proxmox.
-
-Para hacerlo más flexible y seguro, se pregunta el `CT ID` y el `password` antes de ejecutarlo:
+Para crear el contenedor se usa el comando `pct create` desde la CLI de Proxmox, preguntando antes una serie de parámetros imprescindibles (el `ID` del contenedor, la contraseña del usuario `root`, la dirección IP y la puerta de enlace):
 
 ```bash
+clear
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+CYAN='\033[1;36m'
+NC='\033[0m'
+
+echo -e "${GREEN}Introduce el nombre de la plantilla:${NC}"
+read -p "> " lxcname
+
 while true; do
-  read -p "Introduce el CT ID: " ct_id
+  echo -e "${GREEN}Introduce el CT ID:${NC}"
+  read -p "> " ct_id
   if pct list | awk '{print $1}' | grep -qw "$ct_id"; then
-    echo "Error: El CT ID $ct_id ya existe. Por favor, introduce un CT ID diferente."
+    echo -e "${RED}Error: El CT ID $ct_id ya existe.${NC}"
   else
     break
   fi
 done
 
 while true; do
-  read -s -p "Introduce el password del usuario 'root': " password1
+  echo -e "${GREEN}Introduce el password de 'root':${NC}"
+  read -s -p "> " password1
   echo
-  read -s -p "Confirma el password del usuario 'root': " password2
+  echo -e "${GREEN}Confirma el password de 'root':${NC}"
+  read -s -p "> " password2
   echo
   if [ "$password1" == "$password2" ]; then
     password=$password1
     break
   else
-    echo "Error: Los passwords no coinciden. Por favor, inténtalo de nuevo."
+    echo -e "${RED}Error: Los passwords no coinciden.${NC}"
   fi
 done
 
+valid_ip() {
+  [[ "$1" =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]] || return 1
+  IFS='.' read -r o1 o2 o3 o4 <<< "$1"
+  for octet in "$o1" "$o2" "$o3" "$o4"; do
+    (( octet >= 0 && octet <= 255 )) || return 1
+  done
+  return 0
+}
+
+while true; do
+  echo -e "${GREEN}Introduce la dirección IP:${NC}"
+  read -p "> " ip
+  if valid_ip "$ip"; then
+    ip="$ip/24"
+    break
+  else
+    echo -e "${RED}Formato de IP inválido.${NC}"
+  fi
+done
+
+while true; do
+  echo -e "${GREEN}Introduce la puerta de enlace:${NC}"
+  read -p "> " gw
+  if valid_ip "$gw"; then
+    break
+  else
+    echo -e "${RED}Formato de IP inválido.${NC}"
+  fi
+done
+
+echo -e "${CYAN}Creando el contenedor ${ct_id}...${NC}"
 pct create "$ct_id" local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
   --ostype debian --arch amd64 \
-  --hostname debian12-lxc --unprivileged 1 \
+  --hostname "$lxcname" --unprivileged 1 \
   --password "$password" --ssh-public-keys /root/id_edcsa.pub \
-  --storage local-lvm --rootfs local-lvm:4 \
+  --storage local-lvm --rootfs local-lvm:3 \
   --cores 1 \
   --memory 512 --swap 512 \
-  --net0 name=eth0,bridge=vmbr0,firewall=1,ip=192.168.1.200/24,gw=192.168.1.1 \
+  --net0 name=eth0,bridge=vmbr0,firewall=1,ip="$ip",gw="$gw" \
   --features nesting=1,keyctl=1 \
   --onboot 1 \
   --start 0
-
-unset password
-unset password1
-unset password2
 ```
 
 {: .box-note}
@@ -229,12 +267,22 @@ docker run hello-world
 Me gusta crear un usuario sin privilegios para ejecutar los contenedores Docker:
 
 ```bash
-# Usuario sin privilegios (se usará en los siguientes comandos)
-user="manel"
+clear
 
-# Crear el usuario $user
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+CYAN='\033[1;36m'
+NC='\033[0m'
+
+echo -e "${GREEN}Introduce el nombre del usuario sin privilegios:${NC}"
+read -p "> " user
+
+echo -e "${CYAN}Creando el usuario '${user}'...${NC}"
 useradd -m -u 1000 -U -G docker -s /bin/bash "$user"
+
+echo -e "${CYAN}Estableciendo contraseña para '${user}'...${NC}"
 passwd "$user"
+
 cat /etc/passwd | grep -i "$user"
 cat /etc/group | grep -i "$user"
 ```
@@ -338,7 +386,11 @@ unattended-upgrades -d
 
 ## Convertir en plantilla para nuevos CT
 
-Una vez configurado el contenedor LXC, se usa el comando `exit` para abonadarlo y volver a Proxmox.
+Una vez configurado, se puede abandonar el contenedor LXC y volver a Proxmox:
+
+```bash
+exit
+```
 
 Desde allí se para el contenedor y se convierte en plantilla mediante los siguientes comandos:
 
@@ -352,19 +404,45 @@ pct template "$ct_id"
 Al clonar la plantilla usando la opción **full clone** se crea un nuevo CT totalmente independiente:
 
 ```bash
-# Nombre del LXC (se usará en los siguientes comandos)
-lxcname="lxc-test"
+clear
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+CYAN='\033[1;36m'
+NC='\033[0m'
+
+echo -e "${GREEN}Introduce el nombre del nuevo contenedor:${NC}"
+read -p "> " lxcname
 
 while true; do
-  read -p "Introduce el nuevo CT ID: " new_ct_id
-  if pct list | awk '{print $1}' | grep -qw "$new_ct_id"; then
-    echo "Error: El nuevo CT ID $ct_id ya existe. Por favor, introduce un CT ID diferente."
+  echo -e "${GREEN}Introduce el CT ID de la plantilla:${NC}"
+  read -p "> " ct_id
+
+  if ! pct status "$ct_id" &>/dev/null; then
+    echo -e "${RED}Error: El CT ID $ct_id no existe.${NC}"
+    continue
+  fi
+
+  if ! pct config "$ct_id" | grep -q "^template: 1"; then
+    echo -e "${RED}Error: El CT ID $ct_id no es una plantilla.${NC}"
+    continue
+  fi
+
+  break
+done
+
+while true; do
+  echo -e "${GREEN}Introduce el CT ID del nuevo contenedor:${NC}"
+  read -p "> " new_ct_id
+
+  if pct status "$new_ct_id" &>/dev/null; then
+    echo -e "${RED}Error: El CT ID $new_ct_id ya existe.${NC}"
   else
     break
   fi
 done
 
-# Clonar la plantilla "$ct_id" en el LXC 901
+echo -e "${CYAN}Clonando la plantilla...${NC}"
 pct clone "$ct_id" "$new_ct_id" --hostname "$lxcname" --full
 ```
 
@@ -381,21 +459,114 @@ pct set "$new_ct_id" -mp0 "/backups/rsync/$lxcname,mp=/mnt/rsync"
 
 ## Cambiar la dirección IP
 
-En este ejemplo se utilizará una IP no utilizada en mi entorno, por ejemplo `192.168.1.250`:
-
 ```bash
-pct set "$new_ct_id" -net0 name=eth0,bridge=vmbr0,ip=192.168.1.250/24,gw=192.168.1.1
+clear
+
+valid_ip() {
+  [[ "$1" =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]] || return 1
+  IFS='.' read -r o1 o2 o3 o4 <<< "$1"
+  for octet in "$o1" "$o2" "$o3" "$o4"; do
+    (( octet >= 0 && octet <= 255 )) || return 1
+  done
+  return 0
+}
+
+while true; do
+  echo -e "${GREEN}Introduce la IP del nuevo contenedor:${NC}"
+  read -p "> " ip
+  if valid_ip "$ip"; then
+    ip="$ip/24"
+    break
+  else
+    echo -e "${RED}Formato de IP inválido.${NC}"
+  fi
+done
+
+while true; do
+  echo -e "${GREEN}Introduce la IP del gateway:${NC}"
+  read -p "> " gw
+  if valid_ip "$gw"; then
+    break
+  else
+    echo -e "${RED}Formato de IP inválido.${NC}"
+  fi
+done
+
+echo -e "${CYAN}Configurando red...${NC}"
+pct set "$new_ct_id" -net0 name=eth0,bridge=vmbr0,ip="$ip",gw="$gw"
 ```
 
 ## (Opcional) Cambiar los parámetros hardware
 
 ```bash
-pct set "$new_ct_id" -cores 2 -memory 1024 -swap 512
+clear
+
+while true; do
+  echo -e "${GREEN}Introduce el número de cores (ej: 2):${NC}"
+  read -p "> " cores
+  if [[ "$cores" =~ ^[1-9][0-9]*$ ]]; then
+    break
+  else
+    echo -e "${RED}Número inválido. Debe ser un entero positivo.${NC}"
+  fi
+done
+
+while true; do
+  echo -e "${GREEN}Introduce la memoria RAM en MB (ej: 1024):${NC}"
+  read -p "> " memory
+  if [[ "$memory" =~ ^[1-9][0-9]*$ ]]; then
+    break
+  else
+    echo -e "${RED}Cantidad inválida. Debe ser un entero positivo.${NC}"
+  fi
+done
+
+while true; do
+  echo -e "${GREEN}Introduce el tamaño de swap en MB (ej: 512):${NC}"
+  read -p "> " swap
+  if [[ "$swap" =~ ^[0-9]+$ ]]; then
+    break
+  else
+    echo -e "${RED}Cantidad inválida. Debe ser un número entero (puede ser 0).${NC}"
+  fi
+done
+
+echo -e "${CYAN}Aplicando configuración de hardware...${NC}"
+pct set "$new_ct_id" -cores "$cores" -memory "$memory" -swap "$swap"
+```
+
+## (Opcional) Ampliar el tamaño del disco
+
+```bash
+clear
+
+# Obtener tamaño actual del disco en GB
+current_gb=$(pct config "$new_ct_id" | grep -oP 'rootfs:.*?,size=\K[0-9]+(?=G)')
+
+echo -e "${CYAN}Tamaño actual del disco de $new_ct_id: ${NC}${GREEN}${current_gb}G${NC}"
+
+while true; do
+  echo -e "${GREEN}Introduce el nuevo tamaño del disco en GB (debe ser mayor que ${current_gb}):${NC}"
+  read -p "> " disk_size
+  if [[ "$disk_size" =~ ^[1-9][0-9]*$ ]]; then
+    if (( disk_size > current_gb )); then
+      break
+    else
+      echo -e "${RED}El nuevo tamaño debe ser mayor que el actual (${current_gb}G).${NC}"
+    fi
+  else
+    echo -e "${RED}Tamaño inválido. Debe ser un número entero positivo.${NC}"
+  fi
+done
+
+echo -e "${CYAN}Ampliando el disco del contenedor $new_ct_id...${NC}"
+pct resize "$new_ct_id" rootfs "${disk_size}G"
 ```
 
 ## Iniciar el contenedor
 
 ```bash
+pct config "$new_ct_id" 
 pct start "$new_ct_id"
 ```
 
@@ -404,7 +575,7 @@ pct start "$new_ct_id"
 Si las claves SSH se han configurado correctamente, se podrá iniciar sesión sin necesidad de contraseña usando el comando:
 
 ```bash
-ssh manel@192.168.1.250
+ssh manel@<ip_lxc>
 ```
 
 A partir de aquí ya solo queda "jugar" con este LXC para instalar la aplicación que se necesite ;-)

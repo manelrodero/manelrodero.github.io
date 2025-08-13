@@ -56,7 +56,7 @@ Codename:       bullseye
 
 TurnKey se construye a partir de la **rama estable** de Debian por lo que únicamente recibe [**actualizaciones de seguridad**](https://security-team.debian.org/){:target="_blank"}.
 
-TurnKey está configurada para [instalar automáticamnte estas actualizaciones de seguridad](https://www.turnkeylinux.org/docs/auto-secupdates){:target="_blank"} la primera vez que despliega una _appliance_ y cada noche según la programación indicada en el fichero `/etc/cron.d/cron-apt`:
+TurnKey está configurada para [instalar automáticamente estas actualizaciones de seguridad](https://www.turnkeylinux.org/docs/auto-secupdates){:target="_blank"} la primera vez que despliega una _appliance_ y cada noche según la programación indicada en el fichero `/etc/cron.d/cron-apt`:
 
 ```
 20 1 * * * root test -x /usr/sbin/cron-apt && /usr/sbin/cron-apt

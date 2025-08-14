@@ -124,7 +124,7 @@ pct create "$ct_id" local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
   --ostype debian --arch amd64 \
   --hostname "$lxcname" --unprivileged 1 \
   --password "$password" --ssh-public-keys /root/id_edcsa.pub \
-  --storage local-lvm --rootfs local-lvm:3 \
+  --storage local-lvm --rootfs local-lvm:2 \
   --cores 1 \
   --memory 512 --swap 512 \
   --net0 name=eth0,bridge=vmbr0,firewall=1,ip="$ip",gw="$gw" \
@@ -175,7 +175,13 @@ Para solucionarlo, únicamente hay que **generar** los locales que se requieran,
 
 ```bash
 sed -i 's/^# *\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen
+sed -i 's/^# *\(es_ES.UTF-8 UTF-8\)/\1/' /etc/locale.gen
 locale-gen
+cat <<EOF > /etc/default/locale
+LANG=en_US.UTF-8
+LANGUAGE=en_US:en
+LC_CTYPE=es_ES.UTF-8
+EOF
 ```
 
 ## Configurar la zona horaria
@@ -336,11 +342,13 @@ echo "$user ALL=(ALL) NOPASSWD: /usr/bin/rsync" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/bin/nano" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/bin/rm" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/bin/ls" >> "/etc/sudoers.d/$user"
+echo "$user ALL=(ALL) NOPASSWD: /usr/sbin/reboot" >> "/etc/sudoers.d/$user"
+echo "$user ALL=(ALL) NOPASSWD: /usr/sbin/shutdown" >> "/etc/sudoers.d/$user"
 chmod 0440 "/etc/sudoers.d/$user"
 visudo -cf "/etc/sudoers.d/$user"
 ```
 
-## Instalar `unattended-upgrades`
+## (Opcional) Instalar `unattended-upgrades`
 
 Una de las cosas que más me gustaban de TurnKey Core es que [instalaba automáticamente las actualizaciones de seguridad](como-se-actualiza-un-lxc-de-turnkey-core).
 

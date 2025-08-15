@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Plantilla de LXC con Debian 12 para ejecutar Docker en Proxmox'
 date: '2025-08-12 20:14:43'
-last-updated: '2025-08-13 16:40:00'
+last-updated: '2025-08-15 13:01:00'
 published: true
 tags:
 - Proxmox
@@ -253,21 +253,13 @@ Se pueden aceptar los nuevos metadatos del repositorio (`Suite` y `Version`) eje
 apt update --allow-releaseinfo-change
 ```
 
-## Actualizar paquetes
-
-A continuación se procede a actualizar los paquetes de la manera habitual:
-
-```bash
-apt upgrade -y
-```
-
 ## Instalar Docker Engine
 
 La instalación de **Docker Engine** se realiza desde el repositorio oficial ejecutando los siguientes comandos:
 
 ```bash
 # Add Docker's official GPG key:
-apt install ca-certificates curl
+apt install ca-certificates curl -y
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 chmod a+r /etc/apt/keyrings/docker.asc
@@ -372,15 +364,15 @@ visudo -cf "/etc/sudoers.d/$user"
 
 ## (Opcional) Instalar `unattended-upgrades`
 
-Una de las cosas que más me gustaban de TurnKey Core es que [instalaba automáticamente las actualizaciones de seguridad](como-se-actualiza-un-lxc-de-turnkey-core).
+Una de las cosas que más me gustaban de TurnKey Core es que [instalaba automáticamente las actualizaciones de seguridad](como-se-actualiza-un-lxc-de-turnkey-core) sin tener que hacerlo manualmente.
 
-En esta plantilla usando Debian 12 se hará lo mismo instalando `unattended-upgrades`:
+En esta plantilla usando Debian 12 se conseguirá lo mismo instalando el paquete `unattended-upgrades`:
 
 ```bash
 apt install -y unattended-upgrades apt-listchanges
 ```
 
-En esta primera toma de contacto, se deja la configuración por defecto que utiliza los siguientes ficheros en `/etc/apt/apt.conf.d`:
+La configuración se define en siguientes ficheros de `/etc/apt/apt.conf.d`:
 
 | Archivo | Propósito |
 | --- | --- |
@@ -390,7 +382,58 @@ En esta primera toma de contacto, se deja la configuración por defecto que util
 | `50unattended-upgrades` | Define qué actualizaciones se instalan automáticamente |
 | `70debconf` | Configuración generada por debconf (no relevante aquí) |
 
-Se puede ver si un paquete está actualizado usando el comando `apt policy`. Por ejemplo, la versión de `curl` instalada actualmente es la más reciente:
+Al principio del fichero `50unattended-upgrades` se definen qué actualizaciones se instalarán según el patrón `Origins-Pattern`:
+
+```plaintext
+Unattended-Upgrade::Origins-Pattern {
+        // Codename based matching:
+        // This will follow the migration of a release through different
+        // archives (e.g. from testing to stable and later oldstable).
+        // Software will be the latest available for the named release,
+        // but the Debian release itself will not be automatically upgraded.
+//      "origin=Debian,codename=${distro_codename}-updates";
+//      "origin=Debian,codename=${distro_codename}-proposed-updates";
+        "origin=Debian,codename=${distro_codename},label=Debian";
+        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+        "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
+```
+
+Según este patrón, inicialmente únicamente se actualizan los paquetes:
+
+* `bookworm` con etiqueta `Debian`
+* `bookworm` con etiqueta `Debian-Security`
+* `bookworm-security` con etiqueta `Debian-Security`
+
+Para que también se instalen los paquetes `bookworm-updates` será necesario descomentar la línea correspondiente del fichero mediante el siguiente comando:
+
+```bash
+sed -i -E 's|^([[:space:]]*)//([[:space:]]*)"origin=Debian,codename=\$\{distro_codename\}-updates";|\1  \2"origin=Debian,codename=${distro_codename}-updates";|' /etc/apt/apt.conf.d/50unattended-upgrades
+```
+
+Finalmente, se fuerza una ejecución manual de `unattended-upgrades` con el flag `-d` para depurar lo que hace por pantalla:
+
+```bash
+unattended-upgrades -d
+```
+
+Si todo funciona correctamente, cuando acabe el proceso todos los paquetes deberían estar actualizados:
+
+```bash
+apt update
+```
+
+```plaintext
+Hit:1 https://download.docker.com/linux/debian bookworm InRelease
+Hit:2 http://deb.debian.org/debian bookworm InRelease
+Hit:3 http://security.debian.org bookworm-security InRelease
+Hit:4 http://deb.debian.org/debian bookworm-updates InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+All packages are up to date.
+```
+
+Para ver si un paquete está actualizado se puede usar el comando `apt policy`. Por ejemplo, la versión de `curl` instalada actualmente es la más reciente:
 
 ```bash
 apt policy curl
@@ -408,11 +451,22 @@ curl:
         500 http://security.debian.org bookworm-security/main amd64 Packages
 ```
 
-Se puede comprobar el funcionamiento de las actualizaciones automáticas ejecutando el comando:
+## Instalar paquetes adicionales
+
+Se instalan algunos paquetes útiles para monitorizar el rendimiento del sistema y las conexiones de red:
 
 ```bash
-unattended-upgrades -d
+apt install htop net-tools -y
 ```
+
+El paquete `net-tools`, aunque bastante antiguo, se ha incluido para tener los comandos clásicos:
+
+| Acción | net-tools | iproute2 |
+| --- | --- | --- |
+| Ver interfaces de red | `ifconfig` | `ip addr` o `ip link` |
+| Ver rutas | `route -n` | `ip route` |
+| Ver conexiones TCP/UDP | `netstat -tulnp` | `ss -tulnp` |
+| Activar interfaz | `ifconfig eth0 up` | `ip link set eth0 up` |
 
 ## Limpieza del historial
 
@@ -624,3 +678,5 @@ A partir de aquí ya solo queda "jugar" con este LXC para instalar la aplicació
 
 * **2025-08-12**: Documento inicial
 * **2025-08-13**: Simplificación y automatización de comandos
+* **2025-08-14**: Mejoras en la plantilla (locales, bashrc, etc.)
+* **2025-08-15**: Configuración de unattended-upgrades

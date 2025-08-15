@@ -182,4 +182,4 @@ udevadm trigger --verbose
 
 * **2024-09-28**: Documento inicial
 
-[1]: /assets/img/blog/2024-09-28_image_5.png "Hardware Acceleration"
+[1]: /assets/img/blog/2024-09-28_image_1.png "Hardware Acceleration"

@@ -212,6 +212,20 @@ Wed Aug 13 04:39:38 PM CEST 2025
 Wed Aug 13 02:39:38 PM UTC 2025
 ```
 
+## Configurar `.bashrc`
+
+```bash
+# Forzar colores en PROMPT y grep
+sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' /etc/skel/.bashrc
+sed -i -E "s/^([[:space:]]*)#([[:space:]]*)alias grep='grep --color=auto'/\1\2alias grep='grep --color=auto'/" /etc/skel/.bashrc
+
+# Aplicar también al usuario root
+cp ~/.bashrc ~/.bashrc.bak
+cp ~/.profile ~/.profile.bak
+cp /etc/skel/.bashrc ~/.bashrc
+cp /etc/skel/.profile ~/.profile
+```
+
 ## Actualizar repositorios
 
 Para poder instalar los paquetes que requiere esta plantilla, es necesario actualizar los repositorios que incluye Debian 12 usando el comando `apt update`.

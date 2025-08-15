@@ -9,7 +9,7 @@ tags:
 - Proxmox
 author:
   display_name: Manel Rodero
-#cover-img: "/assets/img/blog/2025-08-15_cover.png"
+cover-img: "/assets/img/blog/2025-08-15_cover.png"
 thumbnail-img: ""
 ---
 

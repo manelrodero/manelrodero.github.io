@@ -91,7 +91,7 @@ apt install vainfo -y
 
 La herramienta `intel_gpu_top` del paquete [`intel-gpu-tools`](https://packages.debian.org/intel-gpu-tools){:target="_blank"} permite confirmar que se está usando aceleración gráfica:
 
-![Hardware Acceleration][5]
+![Hardware Acceleration][1]
 
 {: .box-note}
 Si la sección `Engine/Video` tiene un uso superior al 0%, cuando se reproduce un vídeo, significa que se está usando la aceleración gráfica.

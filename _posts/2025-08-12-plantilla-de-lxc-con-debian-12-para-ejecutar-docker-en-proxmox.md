@@ -414,6 +414,16 @@ Se puede comprobar el funcionamiento de las actualizaciones automáticas ejecuta
 unattended-upgrades -d
 ```
 
+## Limpieza del historial
+
+Se limpia el historial (en memoria y el archivo persistente):
+
+```bash
+history -c
+unset HISTFILE
+rm -f ~/.bash_history
+```
+
 ## Convertir en plantilla para nuevos CT
 
 Una vez configurado, se puede abandonar el contenedor LXC y volver a Proxmox:

@@ -224,6 +224,14 @@ cp ~/.bashrc ~/.bashrc.bak
 cp ~/.profile ~/.profile.bak
 cp /etc/skel/.bashrc ~/.bashrc
 cp /etc/skel/.profile ~/.profile
+
+# Logout per inactivitat
+cat <<EOF >> /etc/bash.bashrc
+
+# Logout per inactivitat 10 minuts
+export TMOUT=600
+readonly TMOUT
+EOF
 ```
 
 ## Actualizar repositorios

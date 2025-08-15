@@ -679,6 +679,32 @@ Algunos cambios adicionales en AdGuard Home son los siguientes:
       * **Steven Black's List**
     * Activar `AdAway Default Blocklist`
 
+## Cambiar contraseña de AdGuard Home
+
+La contraseña del panel de administración de AdGuard Home se guarda en formato **hash bcrypt** en el fichero `AdGuardHome.yaml`.
+
+Se puede generar una contraseña en este formato usando un contenedor Docker temporal de [`httpd`](https://hub.docker.com/_/httpd){:target="_blank"}:
+
+```bash
+docker run --rm httpd:2.4 htpasswd -B -n -b admin LaContraseñaDeAdGuardHome
+```
+
+En pantalla se verá algo así:
+
+```plaintext
+admin:$2y$05$32Fn.bwDVpMYHZ5L6/Ql/OSyDUEz19ZiQ.CRSICkFfBHs8mKFr3WO
+```
+
+En el fichero `AdGuardHome.yaml` se modificará la siguiente línea con el _hash_ anterior:
+
+```yaml
+users:
+  - name: admin
+    password: $2y$05$32Fn.bwDVpMYHZ5L6/Ql/OSyDUEz19ZiQ.CRSICkFfBHs8mKFr3WO
+```
+
+A continuación, se reinicia el contenedor de AdGuard Home.
+
 ## Referencias
 
 * [Pi-hole vs AdGuard Home: Network-Wide Ad Blocking Solution Performance Test 2025](https://markaicode.com/pihole-vs-adguard-home-performance-test/){:target="_blank"}, MARK Ai code, 27 May 2025

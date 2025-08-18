@@ -333,7 +333,7 @@ crontab -u "$user" -l
 rm "/tmp/${user}_cron"
 ```
 
-## (Opcional) Directorio para `rsync`
+## (Opcional) Configuración para `rsync`
 
 En mi caso, me gusta que los LXC monten en el directorio `/mnt/rsync` un directorio del _host_ Proxmox para poder realizar copias de seguridad fuera del contenedor.
 
@@ -341,6 +341,7 @@ En mi caso, me gusta que los LXC monten en el directorio `/mnt/rsync` un directo
 mkdir /mnt/rsync
 chown root:"$user" /mnt/rsync
 chmod 770 /mnt/rsync
+apt install rsync -y
 ```
 
 ## (Opcional) Instalación y configuración de `sudo`
@@ -456,7 +457,8 @@ curl:
 Se instalan algunos paquetes útiles para monitorizar el rendimiento del sistema y las conexiones de red:
 
 ```bash
-apt install htop net-tools -y
+apt install htop -y
+apt install net-tools -y
 ```
 
 El paquete `net-tools`, aunque bastante antiguo, se ha incluido para tener los comandos clásicos:

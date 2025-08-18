@@ -146,7 +146,7 @@ Dado que este contenedor LXC ya está preconfigurado (ver más adelante) con tod
 * `Administration` &rarr; `Dashboard` &rarr; `Playback` &rarr; `Transcoding`
   * Hardware acceleration: `Intel QuickSync (QSV)`
 
-Si se reproduce la misma película y se fuerza la resolución a `360p - 420 kbps` para simular un dispositivo no compatible con el formato original de la película en la librería, se observa como Jellyfin realiza el **trascoding** al vuelo:
+Si se reproduce la misma película y se fuerza la resolución a `360p - 420 kbps` para simular un dispositivo no compatible con el formato original de la película en la librería, se observa como Jellyfin realiza el **transcoding** al vuelo:
 
 ![Transcoding][3]
 

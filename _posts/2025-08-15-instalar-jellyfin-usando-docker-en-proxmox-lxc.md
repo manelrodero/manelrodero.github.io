@@ -23,7 +23,7 @@ Aprovechando la [plantilla de LXC con Debian 12 para ejecutar Docker en Proxmox]
 
 ## Crear contenedor
 
-Para crear el contenedor se siguen las instrucciones de la plantilla para obtener este código que ejecuta en la _shell_ de Proxmox:
+Para crear el contenedor se siguen las instrucciones de la plantilla para obtener este código que se ejecuta en la _shell_ de Proxmox:
 
 ```bash
 # Plantilla

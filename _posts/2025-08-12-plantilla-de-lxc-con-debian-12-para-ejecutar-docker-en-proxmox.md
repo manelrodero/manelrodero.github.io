@@ -547,10 +547,10 @@ El proceso de clonación de un LXC tarda unos pocos segundos.
 ## (Opcional) Añadir el **mountpoint** para los _backups_
 
 ```bash
-mkdir "/backups/rsync/$lxcname"
-chown 100000:101000 "/backups/rsync/$lxcname"
-chmod 770 "/backups/rsync/$lxcname"
-pct set "$new_ct_id" -mp0 "/backups/rsync/$lxcname,mp=/mnt/rsync"
+mkdir "/backups/rsync/$new_ct_id-$lxcname"
+chown 100000:101000 "/backups/rsync/$new_ct_id-$lxcname"
+chmod 770 "/backups/rsync/$new_ct_id-$lxcname"
+pct set "$new_ct_id" -mp0 "/backups/rsync/$new_ct_id-$lxcname,mp=/mnt/rsync"
 ```
 
 ## Cambiar la dirección IP

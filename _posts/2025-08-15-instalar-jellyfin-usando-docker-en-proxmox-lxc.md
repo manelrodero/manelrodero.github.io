@@ -43,10 +43,10 @@ disk_size="5"
 pct clone "$ct_id" "$new_ct_id" --hostname "$lxcname" --full
 
 # Añadir mountpoint para backups rsync
-mkdir "/backups/rsync/$lxcname"
-chown 100000:101000 "/backups/rsync/$lxcname"
-chmod 770 "/backups/rsync/$lxcname"
-pct set "$new_ct_id" -mp0 "/backups/rsync/$lxcname,mp=/mnt/rsync"
+mkdir "/backups/rsync/$new_ct_id-$lxcname"
+chown 100000:101000 "/backups/rsync/$new_ct_id-$lxcname"
+chmod 770 "/backups/rsync/$new_ct_id-$lxcname"
+pct set "$new_ct_id" -mp0 "/backups/rsync/$new_ct_id-$lxcname,mp=/mnt/rsync"
 
 # (Opcional) Añadir mountpoint para media
 # pct set "$new_ct_id" -mp1 "/datos/samba/media,mp=/mnt/samba"

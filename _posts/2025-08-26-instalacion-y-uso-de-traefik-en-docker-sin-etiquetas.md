@@ -331,6 +331,8 @@ docker run -it --rm httpd:2.4 /bin/sh
 htpasswd -B -n admin
 ```
 
+![Traefik Dashboard][2]
+
 ## Referencias
 
 * [Traefik Proxy Documentation](https://doc.traefik.io/traefik/){:target="_blank"}
@@ -345,3 +347,4 @@ htpasswd -B -n admin
 * **2025-08-26**: Documento inicial
 
 [1]: /assets/img/blog/2025-08-26_image_1.png "Certificado Let's Encrypt"
+[2]: /assets/img/blog/2025-08-26_image_2.png "Traefik Dashboard"

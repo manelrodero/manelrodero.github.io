@@ -243,7 +243,7 @@ nameserver 1.0.0.1
 
 # Unbound
 
-En la [instalación de Pi-hole en LXC](instalar-pihole-en-proxmox-lxc) se configuró **Unbound**.
+En la [instalación de Pi-hole en LXC](/blog/instalar-pihole-en-proxmox-lxc) se configuró **Unbound**.
 
 Para evitar errores relacionados con el _buffer_ de recepción, se aumentó la cantidad máxima de memoria que el _kernel_ asigna para la recepción de datos en un _socket_.
 

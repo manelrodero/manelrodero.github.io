@@ -663,4 +663,4 @@ A partir de aquí ya solo queda "jugar" con este LXC para instalar la aplicació
 
 ### Historial de cambios
 
-* **2025-08-12**: Documento inicial
+* **2025-09-10**: Documento inicial

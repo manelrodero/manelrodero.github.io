@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Plantilla de LXC con Debian 13 para ejecutar Docker en Proxmox'
 date: '2025-09-10 19:21:34'
-#last-updated: '2025-09-10 19:21:34'
+last-updated: '2025-09-12 20:47:34'
 published: true
 tags:
 - Proxmox
@@ -665,3 +665,4 @@ A partir de aquí ya solo queda "jugar" con este LXC para instalar la aplicació
 ### Historial de cambios
 
 * **2025-09-10**: Documento inicial
+* **2025-09-12**: Corregir backup_dockers.sh / Añadir 'cat' a 'sudo'

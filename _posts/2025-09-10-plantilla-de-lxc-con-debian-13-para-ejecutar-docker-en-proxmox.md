@@ -310,7 +310,7 @@ Se crea la estructura necesaria para ejecutar de madrugada el _script_ [`~/docke
 ```bash
 # Crear el directorio 'dockers' y descargar el fichero 'backup_dockers.sh'
 mkdir "/home/$user/dockers"
-curl -fsSL https://gist.githubusercontent.com/manelrodero/a693616deacf2a04e93f9959a7a6ee2e/raw/74c28ea97357c7e8366ce0ab01dbfa9c5360a508/backup_dockers.sh -o "/home/$user/dockers/backup_dockers.sh"
+curl -fsSL https://gist.githubusercontent.com/manelrodero/a693616deacf2a04e93f9959a7a6ee2e/raw/d3b7e727690e0189334136f66ad1752606c3245e/backup_dockers.sh -o "/home/$user/dockers/backup_dockers.sh"
 chmod +x "/home/$user/dockers/backup_dockers.sh"
 chown -R "$user:$user" "/home/$user/dockers"
 
@@ -346,6 +346,7 @@ echo "$user ALL=(ALL) NOPASSWD: /usr/bin/rsync" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/bin/nano" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/bin/rm" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/bin/ls" >> "/etc/sudoers.d/$user"
+echo "$user ALL=(ALL) NOPASSWD: /usr/bin/cat" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/sbin/reboot" >> "/etc/sudoers.d/$user"
 echo "$user ALL=(ALL) NOPASSWD: /usr/sbin/shutdown" >> "/etc/sudoers.d/$user"
 chmod 0440 "/etc/sudoers.d/$user"

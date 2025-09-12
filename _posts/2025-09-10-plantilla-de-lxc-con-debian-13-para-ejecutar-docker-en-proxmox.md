@@ -310,7 +310,7 @@ Se crea la estructura necesaria para ejecutar de madrugada el _script_ [`~/docke
 ```bash
 # Crear el directorio 'dockers' y descargar el fichero 'backup_dockers.sh'
 mkdir "/home/$user/dockers"
-curl -fsSL https://gist.githubusercontent.com/manelrodero/a693616deacf2a04e93f9959a7a6ee2e/raw/d3b7e727690e0189334136f66ad1752606c3245e/backup_dockers.sh -o "/home/$user/dockers/backup_dockers.sh"
+curl -fsSL https://gist.githubusercontent.com/manelrodero/a693616deacf2a04e93f9959a7a6ee2e/raw/93ea4c9a657f3c25c2543f4df2908ef21d43f82d/backup_dockers.sh -o "/home/$user/dockers/backup_dockers.sh"
 chmod +x "/home/$user/dockers/backup_dockers.sh"
 chown -R "$user:$user" "/home/$user/dockers"
 

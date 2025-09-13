@@ -9,7 +9,7 @@ tags:
 - Proxmox
 author:
   display_name: Manel Rodero
-#cover-img: "/assets/img/blog/2025-09-13_cover.png"
+cover-img: "/assets/img/blog/2025-09-13_cover.png"
 thumbnail-img: ""
 ---
 
@@ -277,6 +277,7 @@ Ahora toca la "prueba de fuego", reiniciar el servidor Proxmox y dejar que cargu
 ### Historial de cambios
 
 * **2025-09-13**: Documento inicial
+* **2025-09-13**: Actualización cover
 
 [1]: /assets/img/blog/2025-09-13_image_1.png "25% of 4 CPU(s)"
 [2]: /assets/img/blog/2025-09-13_image_2.png "htop: 100% CPU0"

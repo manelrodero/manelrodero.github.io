@@ -273,7 +273,7 @@ El contenido del fichero `my-immich-server` es el siguiente:
     <Icon>https://raw.githubusercontent.com/homarr-labs/dashboard-icons/refs/heads/main/png/immich.png</Icon>
     <ExtraParams>--hostname immich</ExtraParams>
     <Config Name="DB_USERNAME" Target="DB_USERNAME" Default="postgres" Mode="" Description="PostgreSQL Username" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
-    <Config Name="DB_PASSWORD" Target="DB_PASSWORD" Default="postgres" Mode="" Description="PostgreSQL Password" Type="Variable" Display="always" Required="true" Mask="true">hxXVmzxFYN5zKUe253cWDneBL</Config>
+    <Config Name="DB_PASSWORD" Target="DB_PASSWORD" Default="postgres" Mode="" Description="PostgreSQL Password" Type="Variable" Display="always" Required="true" Mask="true">postgres</Config>
     <Config Name="DB_DATABASE_NAME" Target="DB_DATABASE_NAME" Default="immich" Mode="" Description="PostgreSQL Database Name" Type="Variable" Display="always" Required="true" Mask="false">immich</Config>
     <Config Name="IMMICH_LOG_LEVEL" Target="IMMICH_LOG_LEVEL" Default="log" Mode="" Description="Log level (verbose, debug, log, warn, error)" Type="Variable" Display="advanced" Required="false" Mask="false">log</Config>
     <Config Name="Upload Location" Target="/data" Default="/mnt/user/photos/immich" Mode="rw" Description="Directory where uploaded photos and videos are stored" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/photos/immich</Config>

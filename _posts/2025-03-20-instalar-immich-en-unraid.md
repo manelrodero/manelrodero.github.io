@@ -251,7 +251,7 @@ El contenido del fichero `my-immich-machine-learning.xml` es el siguiente:
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Icon>https://raw.githubusercontent.com/homarr-labs/dashboard-icons/refs/heads/main/png/immich.png</Icon>
-    <ExtraParams>--hostname immich-ml --dns=1.1.1.1</ExtraParams>
+    <ExtraParams>--hostname immich-machine-learning --dns=1.1.1.1</ExtraParams>
     <Config Name="IMMICH_LOG_LEVEL" Target="IMMICH_LOG_LEVEL" Default="log" Mode="" Description="Log level (verbose, debug, log, warn, error)" Type="Variable" Display="advanced" Required="false" Mask="false">log</Config>
     <Config Name="Machine Learning model cache" Target="/cache" Default="/mnt/user/appdata/immich-machine-learning/cache" Mode="rw" Description="Directory where models are downloaded" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/immich-machine-learning/cache</Config>
     <Config Name="TZ" Target="TZ" Default="Europe/Madrid" Mode="" Description="Container time zone" Type="Variable" Display="always" Required="false" Mask="false">Europe/Madrid</Config>
@@ -271,7 +271,7 @@ El contenido del fichero `my-immich-server` es el siguiente:
     <WebUI>http://[IP]:[PORT:2283]</WebUI>
     <TemplateURL/>
     <Icon>https://raw.githubusercontent.com/homarr-labs/dashboard-icons/refs/heads/main/png/immich.png</Icon>
-    <ExtraParams>--hostname immich</ExtraParams>
+    <ExtraParams>--hostname immich-server --dns=1.1.1.1</ExtraParams>
     <Config Name="DB_USERNAME" Target="DB_USERNAME" Default="postgres" Mode="" Description="PostgreSQL Username" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
     <Config Name="DB_PASSWORD" Target="DB_PASSWORD" Default="postgres" Mode="" Description="PostgreSQL Password" Type="Variable" Display="always" Required="true" Mask="true">postgres</Config>
     <Config Name="DB_DATABASE_NAME" Target="DB_DATABASE_NAME" Default="immich" Mode="" Description="PostgreSQL Database Name" Type="Variable" Display="always" Required="true" Mask="false">immich</Config>

@@ -51,7 +51,7 @@ UPLOAD_LOCATION=./library
 DB_DATA_LOCATION=./postgres
 
 # Zona horaria (ver referencias)
-TZ=Paris/Madrid
+TZ=Europe/Madrid
 
 # Versión de Immich que queremos usar (release, v1.129.0, etc.)
 IMMICH_VERSION=release

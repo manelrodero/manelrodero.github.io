@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Plantilla de LXC con Debian 12 para ejecutar Docker en Proxmox'
 date: '2025-08-12 20:14:43'
-last-updated: '2025-08-15 13:01:00'
+last-updated: '2025-11-30 08:01:00'
 published: true
 tags:
 - Proxmox
@@ -123,7 +123,7 @@ echo -e "${CYAN}Creando el contenedor ${ct_id}...${NC}"
 pct create "$ct_id" local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
   --ostype debian --arch amd64 \
   --hostname "$lxcname" --unprivileged 1 \
-  --password "$password" --ssh-public-keys /root/id_edcsa.pub \
+  --password "$password" --ssh-public-keys /root/id_ed25519.pub \
   --storage local-lvm --rootfs local-lvm:2 \
   --cores 1 \
   --memory 512 --swap 512 \
@@ -682,3 +682,4 @@ A partir de aquí ya solo queda "jugar" con este LXC para instalar la aplicació
 * **2025-08-13**: Simplificación y automatización de comandos
 * **2025-08-14**: Mejoras en la plantilla (locales, bashrc, etc.)
 * **2025-08-15**: Configuración de unattended-upgrades
+* **2025-11-30**: Cambio ECDSA a ED25519

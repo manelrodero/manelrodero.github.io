@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Crear un LXC desde el CLI de Proxmox'
 date: '2025-02-24 19:48:30'
-#last-updated: '2025-02-24 19:48:30'
+last-updated: '2025-11-30 08:48:30'
 published: true
 tags:
 - Proxmox
@@ -20,7 +20,7 @@ El comando que suelo utilizar para crear los contenedores LXC es el siguiente:
 ```bash
 pct create $ct_id local:vztmpl/debian-12-turnkey-core_18.0-1_amd64.tar.gz \
   --ostype debian --arch amd64 \
-  --hostname $hostname --unprivileged $unprivileged --password $password --ssh-public-keys /root/id_edcsa.pub \
+  --hostname $hostname --unprivileged $unprivileged --password $password --ssh-public-keys /root/id_ed25519.pub \
   --storage local-lvm --rootfs volume=local-lvm:${disk_size} \
   --cores $cores \
   --memory $memory --swap $default_swap \
@@ -38,7 +38,7 @@ La explicación de cada parámetro es la siguiente:
 * `--hostname $hostname`: Nombre de host del contenedor
 * `--unprivileged $unprivileged`: Indica si el contenedor debe ser no privilegiado (_unprivileged_)
 * `--password $password`: Contraseña para el usuario `root` del contenedor
-* `--ssh-public-keys /root/id_edcsa.pub`: Llave pública SSH para acceder al contenedor
+* `--ssh-public-keys /root/id_ed25519.pub`: Llave pública SSH para acceder al contenedor
 * `--storage local-lvm`: Almacenamiento del contenedor en `local-lvm`
 * `--rootfs volume=local-lvm:${disk_size}`: Sistema de archivos raíz del contenedor con un tamaño específico
 * `--cores $cores`: Número de núcleos de CPU asignados al contenedor
@@ -127,3 +127,4 @@ done: SHA256:<redacted> root@test
 ### Historial de cambios
 
 * **2025-02-24**: Documento inicial
+* **2025-11-30**: Cambio ECDSA a ED25519

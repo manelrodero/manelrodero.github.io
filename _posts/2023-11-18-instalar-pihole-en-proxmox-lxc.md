@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Instalar Pi-hole en Proxmox LXC'
 date: '2023-11-18 18:30:15'
-last-updated: '2025-02-13 19:25:40'
+last-updated: '2025-11-30 08:25:40'
 published: true
 tags:
 - Proxmox
@@ -32,7 +32,7 @@ Este **sumidero de DNS** con [Pi-hole](https://pi-hole.net/){:target="_blank"} s
 ```
 pct create 304 local:vztmpl/debian-12-turnkey-core_18.0-1_amd64.tar.gz \
   --ostype debian --arch amd64 \
-  --hostname pihole1 --unprivileged 1 --password P@ssw0rd --ssh-public-keys /root/id_edcsa.pub \
+  --hostname pihole1 --unprivileged 1 --password P@ssw0rd --ssh-public-keys /root/id_ed25519.pub \
   --storage local-lvm --rootfs volume=local-lvm:8 \
   --cores 1 \
   --memory 512 --swap 512 \
@@ -332,3 +332,4 @@ Antes de ponerlo en marcha habrá que cambiar el nombre y la dirección IP del m
 * **2023-11-18**: Documento inicial
 * **2024-06-22**: Revisión y creación de LXC mediante CLI
 * **2025-02-15**: Añadir comandos iniciales
+* **2025-11-30**: Cambio ECDSA a ED25519

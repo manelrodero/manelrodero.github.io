@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Plantilla de Ubuntu Minimal 24.04 LTS en Proxmox VE 8.4.6'
 date: '2025-08-11 18:35:10'
-#last-updated: '2025-08-11 18:35:10'
+last-updated: '2025-11-30 08:35:10'
 published: true
 tags:
 - Proxmox
@@ -61,7 +61,7 @@ qm create 702 --name ubuntu-2404-uefi \
 ```bash
 qm set 702 --ciuser manel \
 --cipassword P@ssw0rd! \
---sshkeys id_edcsa.pub \
+--sshkeys id_ed25519.pub \
 --ipconfig0 ip=dhcp
 ```
 
@@ -189,5 +189,6 @@ ssh manel@<ip_vm>
 ### Historial de cambios
 
 * **2025-08-11**: Documento inicial
+* **2025-11-30**: Cambio ECDSA a ED25519
 
 [1]: /assets/img/blog/2025-08-11_image_1.png "Cloud Init"

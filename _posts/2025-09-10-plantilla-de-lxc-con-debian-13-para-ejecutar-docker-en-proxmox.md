@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Plantilla de LXC con Debian 13 para ejecutar Docker en Proxmox'
 date: '2025-09-10 19:21:34'
-last-updated: '2025-09-12 20:47:34'
+last-updated: '2025-11-30 08:47:34'
 published: true
 tags:
 - Proxmox
@@ -123,7 +123,7 @@ echo -e "${CYAN}Creando el contenedor ${ct_id}...${NC}"
 pct create "$ct_id" local:vztmpl/debian-13-standard_13.1-1_amd64.tar.zst \
   --ostype debian --arch amd64 \
   --hostname "$lxcname" --unprivileged 1 \
-  --password "$password" --ssh-public-keys /root/id_edcsa.pub \
+  --password "$password" --ssh-public-keys /root/id_ed25519.pub \
   --storage local-lvm --rootfs local-lvm:2 \
   --cores 1 \
   --memory 512 --swap 512 \
@@ -666,3 +666,4 @@ A partir de aquí ya solo queda "jugar" con este LXC para instalar la aplicació
 
 * **2025-09-10**: Documento inicial
 * **2025-09-12**: Corregir backup_dockers.sh / Añadir 'cat' a 'sudo'
+* **2025-11-30**: Cambio ECDSA a ED25519

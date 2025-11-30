@@ -3,6 +3,7 @@ layout : post
 blog-width: true
 title: 'Creación de una plantilla de Ubuntu en Proxmox VE'
 date: '2023-10-28 17:16:18'
+last-updated: '2025-11-30 08:44:24'
 published: true
 tags:
 - Proxmox
@@ -268,7 +269,7 @@ qm set 701 --ide0 local-lvm:cloudinit
 ```
 qm set 701 --ciuser manel \
 --cipassword P@ssw0rd! \
---sshkeys id_edcsa.pub \
+--sshkeys id_ed25519.pub \
 --ipconfig0 ip=dhcp
 ```
 
@@ -412,3 +413,8 @@ sudo reboot
 ```
 
 Después de reiniciar, si todo funciona correctamente, Proxmox mostrará información acerca de la máquina virtual.
+
+### Historial de cambios
+
+* **2023-10-28**: Documento inicial
+* **2025-11-30**: Cambio ECDSA a ED25519

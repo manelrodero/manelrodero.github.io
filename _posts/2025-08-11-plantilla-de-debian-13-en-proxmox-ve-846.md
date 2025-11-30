@@ -3,7 +3,7 @@ layout : post
 blog-width: true
 title: 'Plantilla de Debian 13 en Proxmox VE 8.4.6'
 date: '2025-08-11 20:51:13'
-#last-updated: '2025-08-11 20:51:13'
+last-updated: '2025-11-30 08:51:13'
 published: true
 tags:
 - Proxmox
@@ -61,7 +61,7 @@ qm create 703 --name debian-13-uefi \
 ```bash
 qm set 703 --ciuser manel \
 --cipassword P@ssw0rd! \
---sshkeys id_edcsa.pub \
+--sshkeys id_ed25519.pub \
 --ipconfig0 ip=dhcp
 ```
 
@@ -189,5 +189,6 @@ ssh manel@<ip_vm>
 ### Historial de cambios
 
 * **2025-08-11**: Documento inicial
+* **2025-11-30**: Cambio ECDSA a ED25519
 
 [2]: /assets/img/blog/2025-08-11_image_2.png "Cloud Init"

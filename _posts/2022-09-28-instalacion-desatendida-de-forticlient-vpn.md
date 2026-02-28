@@ -206,7 +206,7 @@ Windows Registry Editor Version 5.00
 "promptcertificate"=dword:00000000
 ```
 
-Estos ficheros se deberían instalar para todos los perfiles de usuario **existentes** y **futuros** del ordenador. Esto se puede conseguir usando el script [WriteToHKCUFromSystem.ps1](https://gist.github.com/manelrodero/0e359de5390ced29c566076861d151cc) que se encarga de introducir la información en cada uno de los **SID** en `HKEY_USERS\$sid` y en `C:\Users\Default\NTUSER.DAT` (el registro del usuario por defecto).
+Estos ficheros se deberían instalar para todos los perfiles de usuario **existentes** y **futuros** del ordenador. Esto se puede conseguir usando el script [WriteToHKCUFromSystem.ps1](https://github.com/manelrodero/HomeLab/blob/main/Scripts/WriteToHKCUFromSystem.ps1) que se encarga de introducir la información en cada uno de los **SID** en `HKEY_USERS\$sid` y en `C:\Users\Default\NTUSER.DAT` (el registro del usuario por defecto).
 
 ## Transformación del MSI
 

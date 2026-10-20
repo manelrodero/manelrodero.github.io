@@ -9,7 +9,7 @@ tags:
 - Raspberry
 author:
   display_name: Manel Rodero & Claude
-#cover-img: "/assets/img/blog/2026-10-20_cover.png"
+cover-img: "/assets/img/blog/2026-10-20_cover.png"
 thumbnail-img: ""
 ---
 
